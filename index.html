@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FETD - Formação em Engenharia de Intenção</title>
+  <meta name="description" content="Domine IA, Redes e Automação para Transformar sua Carreira na Nova Economia. 4 trilhas personalizadas para diferentes perfis profissionais.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'operacional': '#3B82F6',
+            'comunicador': '#10B981',
+            'talento': '#F59E0B',
+            'tecnico': '#F97316',
+            'success': '#22C55E',
+            'warning': '#F59E0B',
+            'error': '#EF4444',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* Quiz styles */
+    .quiz-option {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .quiz-option:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .quiz-option.selected {
+      border-width: 3px;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 0.6s ease-out;
+    }
+  </style>
+</head>
+
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+
+        <!-- Logo -->
+        <div class="flex items-center">
+          <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-operacional to-comunicador bg-clip-text text-transparent">
+            🎓 FETD
+          </a>
+        </div>
+
+        <!-- Links Desktop -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#sobre" class="text-neutral-700 dark:text-neutral-300 hover:text-operacional transition-colors">Sobre</a>
+          <a href="#trilhas" class="text-neutral-700 dark:text-neutral-300 hover:text-operacional transition-colors">Trilhas</a>
+          <a href="#quiz" class="text-neutral-700 dark:text-neutral-300 hover:text-operacional transition-colors">Começar</a>
+
+          <!-- Dark Mode Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600 transition-colors">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-neutral-700 dark:text-neutral-300">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-neutral-800 border-t border-neutral-200 dark:border-neutral-700">
+      <div class="px-4 py-2 space-y-1">
+        <a href="#sobre" class="block px-3 py-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-700">Sobre</a>
+        <a href="#trilhas" class="block px-3 py-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-700">Trilhas</a>
+        <a href="#quiz" class="block px-3 py-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-700">Começar</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-operacional via-purple-600 to-comunicador py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white text-center">
+
+      <div class="animate-fadeIn">
+        <h1 class="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+          Domine IA, Redes e Automação<br>
+          <span class="text-yellow-300">Transforme Sua Carreira</span>
+        </h1>
+
+        <p class="text-xl lg:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
+          Formação completa e adaptativa que ensina pessoas comuns a conversarem com máquinas, automatizarem processos e criarem valor na nova economia.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a href="#quiz" class="px-8 py-4 bg-white text-operacional rounded-lg font-bold text-lg hover:bg-yellow-300 hover:text-neutral-900 transition-all shadow-lg">
+            🚀 Descobrir Minha Trilha
+          </a>
+          <a href="#trilhas" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-bold text-lg hover:bg-white hover:text-operacional transition-all">
+            Ver Todas as Trilhas
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid md:grid-cols-4 gap-6 mt-16">
+          <div class="bg-white/10 backdrop-blur p-6 rounded-xl">
+            <div class="text-4xl font-bold">4</div>
+            <div class="text-sm text-white/80">Trilhas Personalizadas</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur p-6 rounded-xl">
+            <div class="text-4xl font-bold">40</div>
+            <div class="text-sm text-white/80">Módulos Práticos</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur p-6 rounded-xl">
+            <div class="text-4xl font-bold">100+</div>
+            <div class="text-sm text-white/80">Exercícios Reais</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur p-6 rounded-xl">
+            <div class="text-4xl font-bold">100%</div>
+            <div class="text-sm text-white/80">Online e Gratuito</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Section -->
+  <section id="sobre" class="py-20 bg-white dark:bg-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">Por Que FETD é Diferente?</h2>
+        <p class="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
+          Não é mais um curso genérico de IA. É uma formação adaptativa que entende suas necessidades específicas.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Card 1 -->
+        <div class="bg-neutral-50 dark:bg-neutral-900 p-8 rounded-2xl border-2 border-transparent hover:border-operacional transition-all">
+          <div class="text-4xl mb-4">🎯</div>
+          <h3 class="text-2xl font-bold mb-3">Personalizado para Você</h3>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            4 trilhas diferentes para 4 perfis profissionais. Conteúdo, linguagem e exemplos adaptados para sua realidade.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-neutral-50 dark:bg-neutral-900 p-8 rounded-2xl border-2 border-transparent hover:border-comunicador transition-all">
+          <div class="text-4xl mb-4">⚡</div>
+          <h3 class="text-2xl font-bold mb-3">Prático do Início ao Fim</h3>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Cada módulo tem exercícios práticos. Você sai com portfólio real, não só certificado.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-neutral-50 dark:bg-neutral-900 p-8 rounded-2xl border-2 border-transparent hover:border-talento transition-all">
+          <div class="text-4xl mb-4">🚀</div>
+          <h3 class="text-2xl font-bold mb-3">Resultados Mensuráveis</h3>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Objetivos claros: economizar 15h/semana, 3x mais vendas, portfólio completo ou autoridade reconhecida.
+          </p>
+        </div>
+      </div>
+
+      <!-- Frameworks -->
+      <div class="mt-16 bg-gradient-to-r from-operacional/10 to-comunicador/10 dark:from-operacional/20 dark:to-comunicador/20 p-8 rounded-2xl">
+        <h3 class="text-2xl font-bold mb-6 text-center">Baseado em Frameworks Comprovados</h3>
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-operacional mb-2">60/30/10</div>
+            <div class="text-sm">Golden Ratio</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-comunicador mb-2">LRP</div>
+            <div class="text-sm">Listen / Repeat / Poke</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-talento mb-2">4R's</div>
+            <div class="text-sm">Result / Roadmap / Risk / Review</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-tecnico mb-2">ACA</div>
+            <div class="text-sm">Acknowledge / Compliment / Ask</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiz Section -->
+  <section id="quiz" class="py-20 bg-neutral-50 dark:bg-neutral-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">🎯 Descubra Sua Trilha Ideal</h2>
+        <p class="text-xl text-neutral-600 dark:text-neutral-400">
+          Responda 5 perguntas rápidas e veja qual trilha foi feita para você
+        </p>
+      </div>
+
+      <!-- Quiz Container -->
+      <div id="quiz-container" class="bg-white dark:bg-neutral-800 rounded-2xl shadow-2xl p-8">
+
+        <!-- Question -->
+        <div id="quiz-question" class="mb-8">
+          <div class="text-sm text-operacional font-semibold mb-2">PERGUNTA <span id="question-number">1</span> DE 5</div>
+          <h3 class="text-2xl font-bold mb-6" id="question-text">Como é seu dia de trabalho?</h3>
+
+          <!-- Options -->
+          <div id="quiz-options" class="space-y-4">
+            <!-- Options will be inserted here by JS -->
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex justify-between items-center pt-6 border-t border-neutral-200 dark:border-neutral-700">
+          <button id="quiz-prev" class="px-6 py-3 bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg font-semibold hover:bg-neutral-200 dark:hover:bg-neutral-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+            ← Anterior
+          </button>
+          <div class="flex gap-2">
+            <div class="w-2 h-2 rounded-full bg-operacional quiz-progress" data-step="1"></div>
+            <div class="w-2 h-2 rounded-full bg-neutral-300 dark:bg-neutral-600 quiz-progress" data-step="2"></div>
+            <div class="w-2 h-2 rounded-full bg-neutral-300 dark:bg-neutral-600 quiz-progress" data-step="3"></div>
+            <div class="w-2 h-2 rounded-full bg-neutral-300 dark:bg-neutral-600 quiz-progress" data-step="4"></div>
+            <div class="w-2 h-2 rounded-full bg-neutral-300 dark:bg-neutral-600 quiz-progress" data-step="5"></div>
+          </div>
+          <button id="quiz-next" class="px-6 py-3 bg-operacional text-white rounded-lg font-semibold hover:opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+            Próxima →
+          </button>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div id="quiz-result" class="hidden bg-white dark:bg-neutral-800 rounded-2xl shadow-2xl p-8 animate-fadeIn">
+        <!-- Result will be inserted here by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Trilhas Section -->
+  <section id="trilhas" class="py-20 bg-white dark:bg-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">Conheça as 4 Trilhas</h2>
+        <p class="text-xl text-neutral-600 dark:text-neutral-400">
+          Cada uma desenhada para um perfil profissional específico
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Trilha 1: Operacional -->
+        <div class="bg-gradient-to-br from-operacional/10 to-operacional/5 dark:from-operacional/20 dark:to-operacional/10 p-8 rounded-2xl border-2 border-operacional/30 hover:border-operacional transition-all">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="text-4xl">🔵</div>
+            <div>
+              <span class="inline-block px-3 py-1 bg-operacional/20 text-operacional rounded-full text-sm font-semibold">Trilha 1</span>
+              <h3 class="text-2xl font-bold mt-1">Operacional Produtivo</h3>
+            </div>
+          </div>
+
+          <p class="text-lg font-semibold text-operacional mb-4">
+            "Pare de Perder Tempo com Tarefas Manuais"
+          </p>
+
+          <p class="text-neutral-600 dark:text-neutral-400 mb-4">
+            Para profissionais de backoffice e tarefas repetitivas que querem automatizar 80% do trabalho e recuperar 15h/semana.
+          </p>
+
+          <div class="mb-6">
+            <div class="text-sm font-semibold mb-2">Você vai conseguir:</div>
+            <ul class="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+              <li class="flex items-start gap-2">
+                <span class="text-operacional">✓</span>
+                <span>Automatizar 80% das tarefas repetitivas</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-operacional">✓</span>
+                <span>Recuperar 15-20 horas por semana</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-operacional">✓</span>
+                <span>Criar 10+ automações funcionando</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-operacional">✓</span>
+                <span>Ganhar reconhecimento e promoção</span>
+              </li>
+            </ul>
+          </div>
+
+          <a href="trilhas/operacional.html" class="block w-full text-center px-6 py-3 bg-operacional text-white rounded-lg font-semibold hover:opacity-90 transition-all">
+            Começar Trilha Operacional →
+          </a>
+        </div>
+
+        <!-- Trilha 2: Comunicador -->
+        <div class="bg-gradient-to-br from-comunicador/10 to-comunicador/5 dark:from-comunicador/20 dark:to-comunicador/10 p-8 rounded-2xl border-2 border-comunicador/30 hover:border-comunicador transition-all">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="text-4xl">🟢</div>
+            <div>
+              <span class="inline-block px-3 py-1 bg-comunicador/20 text-comunicador rounded-full text-sm font-semibold">Trilha 2</span>
+              <h3 class="text-2xl font-bold mt-1">Comunicador Estratégico</h3>
+            </div>
+          </div>
+
+          <p class="text-lg font-semibold text-comunicador mb-4">
+            "Atenda Mais, Venda Mais, Sem Perder a Qualidade"
+          </p>
+
+          <p class="text-neutral-600 dark:text-neutral-400 mb-4">
+            Para profissionais de atendimento e vendas que querem atender 3x mais clientes e aumentar conversão em 50%.
+          </p>
+
+          <div class="mb-6">
+            <div class="text-sm font-semibold mb-2">Você vai conseguir:</div>
+            <ul class="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+              <li class="flex items-start gap-2">
+                <span class="text-comunicador">✓</span>
+                <span>Atender 3x mais clientes no mesmo tempo</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-comunicador">✓</span>
+                <span>Aumentar suas vendas em 50%</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-comunicador">✓</span>
+                <span>Sistema de follow-up automático</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-comunicador">✓</span>
+                <span>Nunca mais perder oportunidades</span>
+              </li>
+            </ul>
+          </div>
+
+          <a href="trilhas/comunicador.html" class="block w-full text-center px-6 py-3 bg-comunicador text-white rounded-lg font-semibold hover:opacity-90 transition-all">
+            Começar Trilha Comunicador →
+          </a>
+        </div>
+
+        <!-- Trilha 3: Talento -->
+        <div class="bg-gradient-to-br from-talento/10 to-talento/5 dark:from-talento/20 dark:to-talento/10 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="text-4xl">🟡</div>
+            <div>
+              <span class="inline-block px-3 py-1 bg-talento/20 text-talento rounded-full text-sm font-semibold">Trilha 3</span>
+              <h3 class="text-2xl font-bold mt-1">Talento Emergente</h3>
+            </div>
+          </div>
+
+          <p class="text-lg font-semibold text-talento mb-4">
+            "De Zero a Empregável em 60 Dias"
+          </p>
+
+          <p class="text-neutral-600 dark:text-neutral-400 mb-4">
+            Para jovens sem experiência que querem construir portfólio e conseguir primeira oportunidade profissional.
+          </p>
+
+          <div class="mb-6">
+            <div class="text-sm font-semibold mb-2">Você vai conseguir:</div>
+            <ul class="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+              <li class="flex items-start gap-2">
+                <span class="text-talento">✓</span>
+                <span>Construir portfólio com 10 projetos reais</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-talento">✓</span>
+                <span>Presença profissional no LinkedIn/GitHub</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-talento">✓</span>
+                <span>Dominar habilidades mais procuradas</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-talento">✓</span>
+                <span>Conseguir primeira oportunidade</span>
+              </li>
+            </ul>
+          </div>
+
+          <a href="trilhas/talento.html" class="block w-full text-center px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90 transition-all">
+            Começar Trilha Talento →
+          </a>
+        </div>
+
+        <!-- Trilha 4: Técnico -->
+        <div class="bg-gradient-to-br from-tecnico/10 to-tecnico/5 dark:from-tecnico/20 dark:to-tecnico/10 p-8 rounded-2xl border-2 border-tecnico/30 hover:border-tecnico transition-all">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="text-4xl">🟠</div>
+            <div>
+              <span class="inline-block px-3 py-1 bg-tecnico/20 text-tecnico rounded-full text-sm font-semibold">Trilha 4</span>
+              <h3 class="text-2xl font-bold mt-1">Técnico Comunicador</h3>
+            </div>
+          </div>
+
+          <p class="text-lg font-semibold text-tecnico mb-4">
+            "Transforme Conhecimento Técnico em Autoridade"
+          </p>
+
+          <p class="text-neutral-600 dark:text-neutral-400 mb-4">
+            Para profissionais técnicos que querem comunicar valor e receber propostas 2-3x mais valorizadas.
+          </p>
+
+          <div class="mb-6">
+            <div class="text-sm font-semibold mb-2">Você vai conseguir:</div>
+            <ul class="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+              <li class="flex items-start gap-2">
+                <span class="text-tecnico">✓</span>
+                <span>Comunicar valor técnico de forma clara</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-tecnico">✓</span>
+                <span>Construir autoridade reconhecida</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-tecnico">✓</span>
+                <span>Receber propostas 2-3x mais valorizadas</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-tecnico">✓</span>
+                <span>Transição: Executor → Consultor/Líder</span>
+              </li>
+            </ul>
+          </div>
+
+          <a href="trilhas/tecnico.html" class="block w-full text-center px-6 py-3 bg-tecnico text-white rounded-lg font-semibold hover:opacity-90 transition-all">
+            Começar Trilha Técnico →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-operacional to-comunicador">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <h2 class="text-4xl font-bold mb-6">Pronto Para Começar?</h2>
+      <p class="text-xl mb-8">
+        Faça o quiz e descubra qual trilha vai transformar sua carreira
+      </p>
+      <a href="#quiz" class="inline-block px-10 py-5 bg-white text-operacional rounded-lg font-bold text-xl hover:bg-yellow-300 hover:text-neutral-900 transition-all shadow-2xl">
+        🚀 Descobrir Minha Trilha Agora
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Coluna 1 -->
+        <div>
+          <h3 class="text-xl font-bold text-white mb-4">FETD</h3>
+          <p class="text-sm">
+            Formação em Engenharia de Intenção - Domine IA, Redes e Automação para transformar sua carreira.
+          </p>
+        </div>
+
+        <!-- Coluna 2 -->
+        <div>
+          <h4 class="font-semibold text-white mb-4">Trilhas</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="trilhas/operacional.html" class="hover:text-white transition-colors">Operacional Produtivo</a></li>
+            <li><a href="trilhas/comunicador.html" class="hover:text-white transition-colors">Comunicador Estratégico</a></li>
+            <li><a href="trilhas/talento.html" class="hover:text-white transition-colors">Talento Emergente</a></li>
+            <li><a href="trilhas/tecnico.html" class="hover:text-white transition-colors">Técnico Comunicador</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3 -->
+        <div>
+          <h4 class="font-semibold text-white mb-4">Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#sobre" class="hover:text-white transition-colors">Sobre</a></li>
+            <li><a href="#quiz" class="hover:text-white transition-colors">Fazer Quiz</a></li>
+            <li><a href="#trilhas" class="hover:text-white transition-colors">Todas as Trilhas</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-neutral-800 mt-8 pt-8 text-center text-sm">
+        <p>&copy; 2025 FETD - Formação em Engenharia de Intenção. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>

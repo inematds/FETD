@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1: A Virada | Trilha Operacional | FETD</title>
+  <meta name="description" content="Entenda por que agora é diferente e como a automação pode transformar sua carreira">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'operacional': '#3B82F6',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+</head>
+
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-operacional to-blue-600 bg-clip-text text-transparent">
+            🎓 FETD
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-operacional transition-colors">Início</a>
+          <a href="../../trilhas/operacional.html" class="text-neutral-700 dark:text-neutral-300 hover:text-operacional transition-colors">Trilha Operacional</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../../index.html" class="text-operacional hover:text-blue-700">Início</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <a href="../../trilhas/operacional.html" class="text-operacional hover:text-blue-700">Trilha Operacional</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Módulo 1</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Módulo -->
+  <section class="bg-gradient-to-r from-operacional to-blue-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">Módulo 1 de 10</span>
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">⏱️ 30 minutos</span>
+      </div>
+
+      <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">
+        A Virada - Por Que Agora é Diferente
+      </h1>
+
+      <p class="text-xl text-white/90 mb-6 max-w-3xl">
+        Entenda a revolução em curso, os 3 mitos que te impedem de começar, e como pessoas comuns estão transformando suas carreiras com automação.
+      </p>
+
+      <div class="flex items-center gap-4">
+        <span class="text-white/80">📚 Teoria</span>
+        <span class="text-white/80">•</span>
+        <span class="text-white/80">💭 Reflexão</span>
+        <span class="text-white/80">•</span>
+        <span class="text-white/80">🛠️ Prática</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo Principal -->
+  <section class="py-16 bg-white dark:bg-neutral-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Download Button -->
+      <div class="flex justify-end mb-8">
+        <a href="../../downloads/operacional/modulo-01.md" download class="px-6 py-3 bg-operacional text-white rounded-lg font-semibold hover:opacity-90 inline-flex items-center gap-2">
+          <span>📥</span>
+          <span>Download MD</span>
+        </a>
+      </div>
+
+      <!-- Objetivo -->
+      <div class="bg-operacional/10 dark:bg-operacional/20 border-l-4 border-operacional p-6 rounded-lg mb-12">
+        <h3 class="text-xl font-bold text-operacional mb-2">🎯 Objetivo deste Módulo</h3>
+        <p class="text-neutral-700 dark:text-neutral-300">
+          Despertar sua consciência sobre a revolução em curso, eliminar crenças limitantes sobre automação, e preparar você mentalmente para a transformação que vem pela frente.
+        </p>
+      </div>
+
+      <!-- Seção 1 -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">1. O Que Mudou nos Últimos 2 Anos</h2>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+          Vivemos um momento histórico único. Pela primeira vez na história, <strong>tecnologia avançada está acessível para pessoas comuns</strong>, não apenas para grandes empresas ou especialistas técnicos.
+        </p>
+
+        <div class="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl mb-6">
+          <h4 class="font-bold text-lg mb-4">Antes de 2023:</h4>
+          <ul class="space-y-3 text-neutral-700 dark:text-neutral-300">
+            <li class="flex items-start gap-3">
+              <span class="text-red-500 text-xl">❌</span>
+              <span>Automação exigia programação complexa</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-500 text-xl">❌</span>
+              <span>IA era restrita a laboratórios e grandes empresas</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-500 text-xl">❌</span>
+              <span>Ferramentas caras e complicadas</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-500 text-xl">❌</span>
+              <span>Você precisava de uma equipe técnica</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-operacional/10 dark:bg-operacional/20 p-6 rounded-xl mb-6">
+          <h4 class="font-bold text-lg mb-4">Agora (2025):</h4>
+          <ul class="space-y-3 text-neutral-700 dark:text-neutral-300">
+            <li class="flex items-start gap-3">
+              <span class="text-green-500 text-xl">✅</span>
+              <span>Ferramentas no-code: Zapier, Make, n8n (clica e conecta)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-green-500 text-xl">✅</span>
+              <span>IA acessível: ChatGPT, Claude, Gemini (conversa normal)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-green-500 text-xl">✅</span>
+              <span>Versões gratuitas poderosas</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-green-500 text-xl">✅</span>
+              <span>Você mesmo pode fazer tudo</span>
+            </li>
+          </ul>
+        </div>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300">
+          Essa mudança é tão significativa quanto foi a chegada da internet nos anos 90. <strong>Quem entrar agora sai na frente</strong>. Quem ignorar, fica para trás.
+        </p>
+      </div>
+
+      <!-- Seção 2 -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">2. Os 3 Mitos Que Te Impedem de Começar</h2>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+          Antes de seguir adiante, vamos destruir 3 crenças falsas que podem estar te segurando:
+        </p>
+
+        <!-- Mito 1 -->
+        <div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-6 rounded-lg mb-6">
+          <h3 class="text-xl font-bold text-red-700 dark:text-red-400 mb-3">
+            ❌ MITO 1: "Eu preciso de uma agência/empresa/equipe"
+          </h3>
+          <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+            <strong>FALSO.</strong> Com as ferramentas de hoje, uma pessoa comum pode criar automações que antes exigiam uma equipe de 5 desenvolvedores.
+          </p>
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+            <p class="text-sm italic">
+              <strong>Exemplo real:</strong> Maria, analista administrativa, criou sozinha um sistema que organizou 3.000 emails, gera relatórios automáticos e economiza 12 horas/semana. Investimento: R$ 0,00.
+            </p>
+          </div>
+        </div>
+
+        <!-- Mito 2 -->
+        <div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-6 rounded-lg mb-6">
+          <h3 class="text-xl font-bold text-red-700 dark:text-red-400 mb-3">
+            ❌ MITO 2: "Eu preciso de muito dinheiro"
+          </h3>
+          <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+            <strong>FALSO.</strong> As melhores ferramentas têm versões gratuitas poderosas. ChatGPT grátis, Zapier free (100 tarefas/mês), Google Sheets gratuito.
+          </p>
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+            <p class="text-sm italic">
+              <strong>Exemplo real:</strong> Pedro automatizou 80% do trabalho usando apenas ferramentas gratuitas. Depois de 6 meses economizando tempo, investiu R$ 50/mês em versões pagas para escalar ainda mais.
+            </p>
+          </div>
+        </div>
+
+        <!-- Mito 3 -->
+        <div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-6 rounded-lg mb-6">
+          <h3 class="text-xl font-bold text-red-700 dark:text-red-400 mb-3">
+            ❌ MITO 3: "Eu preciso de audiência/seguidores"
+          </h3>
+          <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+            <strong>FALSO.</strong> Você não está criando conteúdo para vender. Está criando sistemas para <em>você mesmo</em> usar e melhorar sua própria produtividade.
+          </p>
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+            <p class="text-sm italic">
+              <strong>Exemplo real:</strong> Ana não tem Instagram, não posta nada. Mas criou automações incríveis que mostraram para o chefe. Resultado: promoção e 30% de aumento.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-6 rounded-lg">
+          <p class="text-lg font-bold text-green-700 dark:text-green-400 mb-2">
+            ✅ A VERDADE:
+          </p>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Você só precisa de: <strong>vontade de aprender + 30 minutos/dia + um computador com internet</strong>. Nada mais.
+          </p>
+        </div>
+      </div>
+
+      <!-- Seção 3 -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">3. Como Pessoas Comuns Estão Transformando Carreiras</h2>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+          Não estamos falando de CEOs, programadores ou influencers. Estamos falando de <strong>pessoas exatamente como você</strong>:
+        </p>
+
+        <!-- Case 1 -->
+        <div class="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl mb-6 border-2 border-operacional/30">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="text-4xl">👩‍💼</div>
+            <div>
+              <h4 class="text-xl font-bold mb-2">Júlia, 32 anos - Assistente Administrativo</h4>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-3">Financeira de empresa médio porte</p>
+            </div>
+          </div>
+          <div class="space-y-2 text-neutral-700 dark:text-neutral-300">
+            <p><strong>Antes:</strong> 8-10 horas/dia em planilhas, emails, relatórios manuais. Sobrecarga constante.</p>
+            <p><strong>Depois de 2 meses:</strong> Automatizou coleta de dados, geração de relatórios, organização de emails.</p>
+            <p class="text-operacional font-bold">Resultado: 15 horas/semana economizadas + promoção para coordenadora.</p>
+          </div>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl mb-6 border-2 border-operacional/30">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="text-4xl">👨‍💻</div>
+            <div>
+              <h4 class="text-xl font-bold mb-2">Carlos, 45 anos - Analista de RH</h4>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-3">Não tinha conhecimento técnico nenhum</p>
+            </div>
+          </div>
+          <div class="space-y-2 text-neutral-700 dark:text-neutral-300">
+            <p><strong>Antes:</strong> Triagem manual de 200+ currículos por vaga. Processo demorava semanas.</p>
+            <p><strong>Depois de 1 mês:</strong> Sistema com IA que faz triagem inicial, agenda entrevistas automaticamente.</p>
+            <p class="text-operacional font-bold">Resultado: 20 horas/semana economizadas + virou referência na empresa.</p>
+          </div>
+        </div>
+
+        <!-- Case 3 -->
+        <div class="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl mb-6 border-2 border-operacional/30">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="text-4xl">👩‍🔬</div>
+            <div>
+              <h4 class="text-xl font-bold mb-2">Marina, 28 anos - Coordenadora de Projetos</h4>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-3">Trabalhava até tarde todo dia</p>
+            </div>
+          </div>
+          <div class="space-y-2 text-neutral-700 dark:text-neutral-300">
+            <p><strong>Antes:</strong> Atualizava 15 planilhas manualmente, enviava 50+ emails por dia, criava relatórios do zero.</p>
+            <p><strong>Depois de 6 semanas:</strong> Dashboard automático, emails com IA, relatórios gerados sozinhos.</p>
+            <p class="text-operacional font-bold">Resultado: Sai às 17h todo dia + 40% aumento salarial.</p>
+          </div>
+        </div>
+
+        <div class="bg-operacional/10 dark:bg-operacional/20 p-6 rounded-xl">
+          <p class="text-lg font-bold mb-3">💡 O Que Todos Têm em Comum:</p>
+          <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+            <li>✓ Começaram do zero (sem conhecimento técnico)</li>
+            <li>✓ Usaram ferramentas gratuitas</li>
+            <li>✓ Viram resultados na primeira semana</li>
+            <li>✓ Transformaram carreira em 2-3 meses</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Seção 4 -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">4. Seu Ponto de Partida</h2>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+          Não importa onde você está hoje. O que importa é <strong>para onde você quer ir</strong>.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+          <div class="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl">
+            <h4 class="font-bold text-lg mb-4 text-red-600 dark:text-red-400">🔴 Caminho Tradicional (O que NÃO fazer)</h4>
+            <ul class="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+              <li>→ Continuar fazendo tudo manualmente</li>
+              <li>→ "Sempre foi assim"</li>
+              <li>→ Trabalhar cada vez mais horas</li>
+              <li>→ Sobrecarga e burnout</li>
+              <li>→ Estagnação na carreira</li>
+              <li>→ Ver outros passando na frente</li>
+            </ul>
+          </div>
+
+          <div class="bg-operacional/10 dark:bg-operacional/20 p-6 rounded-xl border-2 border-operacional">
+            <h4 class="font-bold text-lg mb-4 text-operacional">🟢 Novo Caminho (O que você vai fazer)</h4>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li>→ Identificar o que pode ser automatizado</li>
+              <li>→ Começar com 1 tarefa simples</li>
+              <li>→ Ver resultado na primeira semana</li>
+              <li>→ Expandir gradualmente</li>
+              <li>→ Recuperar tempo e qualidade de vida</li>
+              <li>→ Ser reconhecido e promovido</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+          Este curso não é teórico. <strong>A partir do próximo módulo, você vai colocar a mão na massa</strong>. Cada módulo termina com você tendo criado algo funcional.
+        </p>
+
+        <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-6 rounded-lg">
+          <p class="font-bold mb-2">⚠️ Importante:</p>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Não pule os exercícios. Eles não são opcionais. <strong>Fazer é a única forma de aprender</strong>. Assistir/ler sem praticar = zero resultado.
+          </p>
+        </div>
+      </div>
+
+      <!-- Exercícios de Questionamento -->
+      <div class="mb-16">
+        <div class="bg-purple-50 dark:bg-purple-900/20 border-2 border-purple-500 rounded-2xl p-8">
+          <h2 class="text-3xl font-bold mb-6 text-purple-700 dark:text-purple-400">
+            💭 Exercícios de Reflexão
+          </h2>
+
+          <p class="text-neutral-700 dark:text-neutral-300 mb-6">
+            Antes de seguir, pare e responda honestamente estas perguntas. <strong>Anote suas respostas</strong> (papel, Notion, Evernote, onde preferir).
+          </p>
+
+          <div class="space-y-6">
+
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl">
+              <h4 class="font-bold text-lg mb-3">Pergunta 1:</h4>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                Liste <strong>10 tarefas</strong> que você faz toda semana que são sempre iguais (ou muito parecidas).
+              </p>
+              <div class="bg-neutral-50 dark:bg-neutral-900 p-4 rounded">
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                  <em>Exemplos: enviar relatório toda segunda, organizar emails, preencher planilhas, criar documentos padrão, etc.</em>
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl">
+              <h4 class="font-bold text-lg mb-3">Pergunta 2:</h4>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                Das 10 tarefas listadas, <strong>qual te consome mais tempo?</strong>
+              </p>
+              <div class="bg-neutral-50 dark:bg-neutral-900 p-4 rounded">
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                  <em>Dica: Não escolha a mais difícil. Escolha a que mais rouba seu tempo toda semana.</em>
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl">
+              <h4 class="font-bold text-lg mb-3">Pergunta 3:</h4>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                Se você tivesse <strong>10 horas extras por semana</strong>, o que você faria?
+              </p>
+              <div class="bg-neutral-50 dark:bg-neutral-900 p-4 rounded">
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                  <em>Pense: aprenderia algo novo? Passaria mais tempo com família? Trabalharia em projetos estratégicos? Teria hobbies?</em>
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mt-6 bg-purple-100 dark:bg-purple-900/40 p-4 rounded-lg">
+            <p class="text-sm font-semibold">
+              💡 Guarde essas respostas. Vamos voltar nelas no Módulo 10 para ver o quanto você evoluiu.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercícios Práticos -->
+      <div class="mb-16">
+        <div class="bg-green-50 dark:bg-green-900/20 border-2 border-green-500 rounded-2xl p-8">
+          <h2 class="text-3xl font-bold mb-6 text-green-700 dark:text-green-400">
+            🛠️ Exercício Prático
+          </h2>
+
+          <p class="text-neutral-700 dark:text-neutral-300 mb-6">
+            Agora vamos para ação real. Esse exercício vai te dar <strong>clareza total</strong> sobre onde você está gastando seu tempo.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl mb-6">
+            <h4 class="font-bold text-xl mb-4">📋 Tarefa: Documentar 1 Dia Completo</h4>
+
+            <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+              Durante 1 dia de trabalho (amanhã ou depois de amanhã), anote <strong>cada tarefa</strong> que você faz e <strong>quanto tempo</strong> levou.
+            </p>
+
+            <div class="bg-neutral-50 dark:bg-neutral-900 p-4 rounded-lg mb-4">
+              <p class="font-semibold mb-2">Como fazer:</p>
+              <ol class="list-decimal list-inside space-y-2 text-sm">
+                <li>Use uma planilha simples ou até papel</li>
+                <li>Anote hora de início e fim de cada tarefa</li>
+                <li>Seja específico: não escreva "trabalhei com emails", escreva "organizei 50 emails por projeto"</li>
+                <li>Marque quais são repetitivas (você faz toda semana/mês)</li>
+              </ol>
+            </div>
+
+            <div class="bg-operacional/10 dark:bg-operacional/20 p-4 rounded-lg">
+              <p class="font-semibold mb-2">Exemplo de registro:</p>
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-neutral-300 dark:border-neutral-600">
+                    <th class="text-left py-2">Horário</th>
+                    <th class="text-left py-2">Tarefa</th>
+                    <th class="text-left py-2">Tempo</th>
+                    <th class="text-left py-2">Repetitiva?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                    <td class="py-2">09:00-09:45</td>
+                    <td>Organizar emails da semana</td>
+                    <td>45 min</td>
+                    <td>✓ SIM</td>
+                  </tr>
+                  <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                    <td class="py-2">09:45-11:30</td>
+                    <td>Atualizar planilha de vendas</td>
+                    <td>1h 45min</td>
+                    <td>✓ SIM</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2">11:30-12:00</td>
+                    <td>Reunião com time (criativa)</td>
+                    <td>30 min</td>
+                    <td>✗ NÃO</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl">
+            <h4 class="font-bold text-lg mb-3">🎯 Depois de Documentar:</h4>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Identifique as <strong>3 tarefas mais chatas e repetitivas</strong> do seu dia.
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              Essas serão suas candidatas para automação nos próximos módulos!
+            </p>
+          </div>
+
+          <div class="mt-6 bg-green-100 dark:bg-green-900/40 p-4 rounded-lg">
+            <p class="text-sm font-semibold">
+              ✅ Entregável: Documento "Meu Diagnóstico Atual" com: 10 tarefas repetitivas + 1 dia mapeado + 3 tarefas prioritárias para automatizar
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conclusão -->
+      <div class="mb-16">
+        <div class="bg-gradient-to-r from-operacional/20 to-blue-500/20 dark:from-operacional/30 dark:to-blue-500/30 p-8 rounded-2xl">
+          <h2 class="text-3xl font-bold mb-6">🎉 Parabéns por Completar o Módulo 1!</h2>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+            Você deu o primeiro passo mais importante: <strong>entendeu que a mudança é possível</strong>.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl mb-6">
+            <h4 class="font-bold mb-3">✅ O que você conquistou neste módulo:</h4>
+            <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Entendeu a revolução tecnológica em curso</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Destruiu os 3 mitos que te impediam de começar</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Viu exemplos reais de pessoas comuns transformando carreiras</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Mapeou suas tarefas repetitivas</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Identificou as 3 principais para automatizar</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-operacional/20 dark:bg-operacional/30 p-4 rounded-lg">
+            <p class="font-semibold text-operacional mb-2">➡️ Próximo Módulo:</p>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              <strong>Golden Ratio - A Fórmula 60/30/10</strong><br>
+              Você vai aprender o framework que guiará todas as suas automações: 60% automação, 30% IA, 10% humano.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navegação -->
+      <div class="bg-gradient-to-r from-operacional to-blue-600 text-white rounded-2xl p-8">
+        <div class="flex justify-between items-center">
+          <a href="../../trilhas/operacional.html" class="px-6 py-3 bg-white/20 hover:bg-white/30 rounded-lg font-semibold transition-all">
+            ← Voltar à Trilha
+          </a>
+          <div class="text-center">
+            <p class="text-sm opacity-80 mb-1">Próximo Módulo</p>
+            <p class="font-bold">Módulo 2: Golden Ratio</p>
+          </div>
+          <button class="px-6 py-3 bg-white text-operacional rounded-lg font-semibold hover:bg-yellow-300 hover:text-neutral-900 transition-all opacity-50 cursor-not-allowed" disabled>
+            Módulo 2 → (Em breve)
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center text-sm">
+        <p>&copy; 2025 FETD - Formação em Engenharia de Intenção</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../../js/app.js"></script>
+
+</body>
+</html>
