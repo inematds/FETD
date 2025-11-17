@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2: Golden Ratio - Fórmula 60/30/10 | Trilha Operacional | FETD</title>
+  <meta name="description" content="Aprenda a framework Golden Ratio 60/30/10 e domine a arte de priorizar automações">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'operacional': '#3B82F6',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+</head>
+
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-operacional to-blue-600 bg-clip-text text-transparent">
+            🎓 FETD
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-operacional transition-colors">Início</a>
+          <a href="../../trilhas/operacional.html" class="text-neutral-700 dark:text-neutral-300 hover:text-operacional transition-colors">Trilha Operacional</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../../index.html" class="text-operacional hover:text-blue-700">Início</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <a href="../../trilhas/operacional.html" class="text-operacional hover:text-blue-700">Trilha Operacional</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Módulo 2</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Módulo -->
+  <section class="bg-gradient-to-r from-operacional to-blue-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">Módulo 2 de 10</span>
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">⏱️ 45 minutos</span>
+      </div>
+
+      <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">
+        Golden Ratio - A Fórmula 60/30/10
+      </h1>
+
+      <p class="text-xl text-white/90 mb-6 max-w-3xl">
+        Domine o framework que separa automações eficientes de desperdício de tempo. Aprenda a proporção perfeita: 60% automação, 30% IA, 10% humano.
+      </p>
+
+      <div class="flex items-center gap-4">
+        <span class="text-white/80">📚 Teoria</span>
+        <span class="text-white/80">•</span>
+        <span class="text-white/80">💭 Reflexão</span>
+        <span class="text-white/80">•</span>
+        <span class="text-white/80">🛠️ Prática</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo Principal -->
+  <section class="py-16 bg-white dark:bg-neutral-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Download Button -->
+      <div class="flex justify-end mb-8">
+        <a href="../../downloads/operacional/modulo-02.md" download class="px-6 py-3 bg-operacional text-white rounded-lg font-semibold hover:opacity-90 inline-flex items-center gap-2">
+          <span>📥</span>
+          <span>Download MD</span>
+        </a>
+      </div>
+
+      <!-- Objetivo -->
+      <div class="bg-operacional/10 dark:bg-operacional/20 border-l-4 border-operacional p-6 rounded-lg mb-12">
+        <h3 class="text-xl font-bold text-operacional mb-2">🎯 Objetivo deste Módulo</h3>
+        <p class="text-neutral-700 dark:text-neutral-300">
+          Ensinar o framework Golden Ratio (60/30/10) para você saber exatamente quais tarefas automatizar primeiro e como priorizar usando a matriz impacto x esforço.
+        </p>
+      </div>
+
+      <!-- Seção 1 -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">1. O Que é Golden Ratio (60/30/10)</h2>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+          A proporção dourada da produtividade moderna não é trabalhar mais horas, mas sim <strong>distribuir inteligentemente o esforço entre máquinas, IA e humanos</strong>.
+        </p>
+
+        <div class="bg-gradient-to-r from-operacional/10 to-blue-500/10 dark:from-operacional/20 dark:to-blue-500/20 p-8 rounded-2xl mb-6">
+          <h3 class="text-2xl font-bold mb-6 text-center">A Fórmula Ideal</h3>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <!-- 60% -->
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl border-2 border-blue-500">
+              <div class="text-4xl font-bold text-blue-500 mb-2">60%</div>
+              <h4 class="font-bold text-lg mb-3">AUTOMAÇÃO PURA</h4>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
+                Tarefas que rodam sozinhas, sem intervenção humana
+              </p>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500">✓</span>
+                  <span>Organizar emails</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500">✓</span>
+                  <span>Backup de arquivos</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500">✓</span>
+                  <span>Copiar dados entre sistemas</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500">✓</span>
+                  <span>Gerar relatórios padrão</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 30% -->
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl border-2 border-purple-500">
+              <div class="text-4xl font-bold text-purple-500 mb-2">30%</div>
+              <h4 class="font-bold text-lg mb-3">IA ASSISTIDA</h4>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
+                IA sugere, você aprova ou ajusta
+              </p>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500">✓</span>
+                  <span>Rascunhos de email</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500">✓</span>
+                  <span>Resumos de reuniões</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500">✓</span>
+                  <span>Análise de dados</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500">✓</span>
+                  <span>Criar apresentações</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 10% -->
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl border-2 border-yellow-500">
+              <div class="text-4xl font-bold text-yellow-500 mb-2">10%</div>
+              <h4 class="font-bold text-lg mb-3">HUMANO ESTRATÉGICO</h4>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
+                Decisões importantes, criatividade, relacionamentos
+              </p>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500">✓</span>
+                  <span>Decisões estratégicas</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500">✓</span>
+                  <span>Negociações</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500">✓</span>
+                  <span>Inovação e criatividade</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500">✓</span>
+                  <span>Construir relacionamentos</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-6 rounded-lg">
+          <p class="font-bold mb-2">💡 Princípio Fundamental:</p>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Se uma máquina pode fazer, <strong>não gaste tempo humano</strong>. Se IA pode sugerir, <strong>não crie do zero</strong>. Reserve seu cérebro para o que realmente importa.
+          </p>
+        </div>
+      </div>
+
+      <!-- Seção 2 -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">2. Por Que Essa Proporção Funciona</h2>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+          A fórmula 60/30/10 não foi inventada arbitrariamente. Ela vem da observação de <strong>milhares de profissionais de alta performance</strong>.
+        </p>
+
+        <div class="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl mb-6">
+          <h4 class="font-bold text-lg mb-4">📊 Dados Reais de Análise de Tempo</h4>
+          <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+            Estudos de tracking de tempo em 2024 mostraram que profissionais típicos gastam:
+          </p>
+          <ul class="space-y-3 text-neutral-700 dark:text-neutral-300">
+            <li class="flex items-start gap-3">
+              <span class="text-red-500 font-bold">60-70%</span>
+              <span>em tarefas <strong>repetitivas e mecânicas</strong> (copiar, colar, organizar, formatar)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-orange-500 font-bold">20-30%</span>
+              <span>em tarefas <strong>que exigem algum raciocínio</strong> mas seguem padrões (escrever emails, criar documentos padrão)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-green-500 font-bold">5-15%</span>
+              <span>em trabalho <strong>verdadeiramente estratégico</strong> (decisões, inovação, relacionamentos)</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-xl border-2 border-red-500">
+            <h4 class="font-bold text-lg mb-3 text-red-700 dark:text-red-400">❌ Sem Golden Ratio</h4>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-4">João, analista financeiro:</p>
+            <ul class="space-y-2 text-sm">
+              <li>• 6h/dia atualizando planilhas manualmente</li>
+              <li>• 1h/dia escrevendo emails do zero</li>
+              <li>• 30min em reuniões reativas</li>
+              <li>• 30min pensando estrategicamente</li>
+            </ul>
+            <p class="mt-4 text-red-700 dark:text-red-400 font-bold">Resultado: Trabalha 10h/dia, entrega pouco valor</p>
+          </div>
+
+          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl border-2 border-green-500">
+            <h4 class="font-bold text-lg mb-3 text-green-700 dark:text-green-400">✅ Com Golden Ratio</h4>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-4">Maria, mesma função:</p>
+            <ul class="space-y-2 text-sm">
+              <li>• 30min supervisionando automações (60%)</li>
+              <li>• 1h revisando outputs de IA (30%)</li>
+              <li>• 3h em trabalho estratégico (10%)</li>
+              <li>• Resto do dia: livre ou novos projetos</li>
+            </ul>
+            <p class="mt-4 text-green-700 dark:text-green-400 font-bold">Resultado: Trabalha 5h/dia, entrega 3x mais valor</p>
+          </div>
+        </div>
+
+        <div class="bg-operacional/10 dark:bg-operacional/20 p-6 rounded-xl">
+          <h4 class="font-bold text-lg mb-3">🎯 O Segredo:</h4>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Não é trabalhar menos. É <strong>alocar seu tempo onde você gera valor real</strong>. Máquinas fazem trabalho mecânico 24/7 sem cansar. IA processa informação instantaneamente. Você? <strong>Toma decisões, inova, cria relacionamentos.</strong>
+          </p>
+        </div>
+      </div>
+
+      <!-- Seção 3 -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">3. Matriz Impacto × Esforço</h2>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+          Nem todas as automações valem a pena. Use esta matriz para <strong>priorizar o que automatizar primeiro</strong>.
+        </p>
+
+        <div class="bg-neutral-50 dark:bg-neutral-900 p-8 rounded-xl mb-6">
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <!-- Alto Impacto, Baixo Esforço -->
+            <div class="bg-green-500 text-white p-6 rounded-lg">
+              <h4 class="font-bold text-lg mb-2">🌟 FAÇA PRIMEIRO</h4>
+              <p class="text-sm mb-3 opacity-90">Alto Impacto + Baixo Esforço</p>
+              <ul class="text-xs space-y-1">
+                <li>• Filtros de email automáticos</li>
+                <li>• Backup automático de arquivos</li>
+                <li>• Templates de resposta rápida</li>
+                <li>• Notificações automáticas</li>
+              </ul>
+            </div>
+
+            <!-- Alto Impacto, Alto Esforço -->
+            <div class="bg-yellow-500 text-white p-6 rounded-lg">
+              <h4 class="font-bold text-lg mb-2">📅 PLANEJE</h4>
+              <p class="text-sm mb-3 opacity-90">Alto Impacto + Alto Esforço</p>
+              <ul class="text-xs space-y-1">
+                <li>• Dashboard completo de KPIs</li>
+                <li>• Sistema de gestão integrado</li>
+                <li>• Automação de processos complexos</li>
+                <li>• Integração entre múltiplos sistemas</li>
+              </ul>
+            </div>
+
+            <!-- Baixo Impacto, Baixo Esforço -->
+            <div class="bg-blue-500 text-white p-6 rounded-lg">
+              <h4 class="font-bold text-lg mb-2">🔵 FAÇA SE SOBRAR TEMPO</h4>
+              <p class="text-sm mb-3 opacity-90">Baixo Impacto + Baixo Esforço</p>
+              <ul class="text-xs space-y-1">
+                <li>• Organizar ícones do desktop</li>
+                <li>• Renomear arquivos em lote</li>
+                <li>• Pequenos atalhos de teclado</li>
+                <li>• Automações pessoais simples</li>
+              </ul>
+            </div>
+
+            <!-- Baixo Impacto, Alto Esforço -->
+            <div class="bg-red-500 text-white p-6 rounded-lg">
+              <h4 class="font-bold text-lg mb-2">🚫 NÃO FAÇA</h4>
+              <p class="text-sm mb-3 opacity-90">Baixo Impacto + Alto Esforço</p>
+              <ul class="text-xs space-y-1">
+                <li>• Automatizar algo que faz 1x/mês</li>
+                <li>• Over-engineering de processos simples</li>
+                <li>• Automações que ninguém usa</li>
+                <li>• Soluções mais complexas que o problema</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="text-center text-sm text-neutral-600 dark:text-neutral-400">
+            <p class="mb-1"><strong>Eixo Horizontal:</strong> Esforço para implementar (Baixo ← → Alto)</p>
+            <p><strong>Eixo Vertical:</strong> Impacto no seu dia a dia (Baixo ← → Alto)</p>
+          </div>
+        </div>
+
+        <div class="bg-operacional/10 dark:bg-operacional/20 p-6 rounded-xl mb-6">
+          <h4 class="font-bold text-lg mb-3">📝 Como Avaliar Impacto e Esforço:</h4>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-4">
+            <div>
+              <p class="font-semibold mb-2 text-green-600 dark:text-green-400">IMPACTO ALTO = Responda SIM a 2+:</p>
+              <ul class="text-sm space-y-1">
+                <li>✓ Economiza 3+ horas/semana?</li>
+                <li>✓ Reduz erros críticos?</li>
+                <li>✓ Melhora trabalho de várias pessoas?</li>
+                <li>✓ Elimina gargalo importante?</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold mb-2 text-blue-600 dark:text-blue-400">ESFORÇO BAIXO = Responda SIM a 2+:</p>
+              <ul class="text-sm space-y-1">
+                <li>✓ Implementa em menos de 2 horas?</li>
+                <li>✓ Usa ferramentas que já conhece?</li>
+                <li>✓ Não precisa pedir aprovação?</li>
+                <li>✓ Não depende de outras pessoas?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-6 rounded-lg">
+          <p class="font-bold mb-2">⚡ Regra de Ouro:</p>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Comece sempre pela zona verde (Alto Impacto + Baixo Esforço). <strong>Ganhe confiança com vitórias rápidas</strong> antes de encarar projetos maiores.
+          </p>
+        </div>
+      </div>
+
+      <!-- Seção 4 -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">4. O Que Automatizar Primeiro</h2>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+          Existe uma <strong>ordem lógica</strong> para começar suas automações. Siga este caminho e você terá resultados em dias, não meses.
+        </p>
+
+        <div class="space-y-4 mb-6">
+          <!-- Nível 1 -->
+          <div class="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-6 rounded-lg">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="px-3 py-1 bg-green-500 text-white rounded-full text-sm font-bold">NÍVEL 1</span>
+              <h4 class="font-bold text-lg">Organização de Informação</h4>
+            </div>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-3">
+              <strong>Por quê primeiro:</strong> Rápido, simples, impacto imediato visível.
+            </p>
+            <ul class="grid md:grid-cols-2 gap-2 text-sm">
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Filtros automáticos de email</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Organização de arquivos por pasta</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Renomeação padronizada</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Labels e categorias automáticas</span>
+              </li>
+            </ul>
+            <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">⏱️ Tempo para implementar: 30 minutos a 2 horas | 💰 Economia: 3-5 horas/semana</p>
+          </div>
+
+          <!-- Nível 2 -->
+          <div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-6 rounded-lg">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="px-3 py-1 bg-blue-500 text-white rounded-full text-sm font-bold">NÍVEL 2</span>
+              <h4 class="font-bold text-lg">Notificações e Lembretes</h4>
+            </div>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-3">
+              <strong>Por quê segundo:</strong> Reduz carga mental, nada fica esquecido.
+            </p>
+            <ul class="grid md:grid-cols-2 gap-2 text-sm">
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500">✓</span>
+                <span>Alertas de prazos importantes</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500">✓</span>
+                <span>Lembretes de follow-up</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500">✓</span>
+                <span>Notificações de eventos críticos</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500">✓</span>
+                <span>Resumos diários automáticos</span>
+              </li>
+            </ul>
+            <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">⏱️ Tempo para implementar: 1-3 horas | 💰 Economia: 2-4 horas/semana + zero esquecimentos</p>
+          </div>
+
+          <!-- Nível 3 -->
+          <div class="bg-purple-50 dark:bg-purple-900/20 border-l-4 border-purple-500 p-6 rounded-lg">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="px-3 py-1 bg-purple-500 text-white rounded-full text-sm font-bold">NÍVEL 3</span>
+              <h4 class="font-bold text-lg">Transferência de Dados</h4>
+            </div>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-3">
+              <strong>Por quê terceiro:</strong> Elimina copiar-colar, reduz erros.
+            </p>
+            <ul class="grid md:grid-cols-2 gap-2 text-sm">
+              <li class="flex items-start gap-2">
+                <span class="text-purple-500">✓</span>
+                <span>Email → Planilha automático</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-purple-500">✓</span>
+                <span>Formulário → Banco de dados</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-purple-500">✓</span>
+                <span>Sincronização entre sistemas</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-purple-500">✓</span>
+                <span>Backup automático de dados</span>
+              </li>
+            </ul>
+            <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">⏱️ Tempo para implementar: 2-5 horas | 💰 Economia: 5-8 horas/semana</p>
+          </div>
+
+          <!-- Nível 4 -->
+          <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-6 rounded-lg">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="px-3 py-1 bg-yellow-500 text-white rounded-full text-sm font-bold">NÍVEL 4</span>
+              <h4 class="font-bold text-lg">Geração de Conteúdo com IA</h4>
+            </div>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-3">
+              <strong>Por quê quarto:</strong> Já tem base sólida, agora escala criação.
+            </p>
+            <ul class="grid md:grid-cols-2 gap-2 text-sm">
+              <li class="flex items-start gap-2">
+                <span class="text-yellow-500">✓</span>
+                <span>Rascunhos de emails com IA</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-yellow-500">✓</span>
+                <span>Relatórios automáticos</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-yellow-500">✓</span>
+                <span>Resumos de documentos</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-yellow-500">✓</span>
+                <span>Apresentações geradas por IA</span>
+              </li>
+            </ul>
+            <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">⏱️ Tempo para implementar: 3-8 horas | 💰 Economia: 8-12 horas/semana</p>
+          </div>
+        </div>
+
+        <div class="bg-operacional/10 dark:bg-operacional/20 p-6 rounded-xl">
+          <p class="font-bold mb-3">🎯 Meta para este Curso:</p>
+          <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+            Até o Módulo 10, você terá implementado <strong>pelo menos 1 automação de cada nível</strong>. Total: <strong>10+ automações funcionando</strong>.
+          </p>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400">
+            Economia estimada total: <strong>20-30 horas por semana</strong> (mais de um dia inteiro de trabalho!)
+          </p>
+        </div>
+      </div>
+
+      <!-- Seção 5 -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">5. Exemplos Práticos Aplicados</h2>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+          Veja como diferentes profissionais aplicaram o Golden Ratio nas suas rotinas:
+        </p>
+
+        <!-- Exemplo 1 -->
+        <div class="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl mb-6 border-2 border-operacional/30">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="text-4xl">👩‍💼</div>
+            <div>
+              <h4 class="text-xl font-bold mb-2">Caso: Gerente de Projetos</h4>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">Gerenciava 5 projetos simultâneos, sempre atrasada</p>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-4 mb-4">
+            <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded">
+              <p class="font-bold text-blue-600 dark:text-blue-400 mb-2">60% Automação:</p>
+              <ul class="text-sm space-y-1">
+                <li>• Status reports gerados automaticamente</li>
+                <li>• Planilhas sincronizadas entre projetos</li>
+                <li>• Lembretes de deadlines</li>
+              </ul>
+            </div>
+            <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded">
+              <p class="font-bold text-purple-600 dark:text-purple-400 mb-2">30% IA:</p>
+              <ul class="text-sm space-y-1">
+                <li>• Resumos de reuniões com IA</li>
+                <li>• Análise de riscos automática</li>
+                <li>• Sugestões de próximos passos</li>
+              </ul>
+            </div>
+            <div class="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded">
+              <p class="font-bold text-yellow-600 dark:text-yellow-400 mb-2">10% Humano:</p>
+              <ul class="text-sm space-y-1">
+                <li>• Decisões sobre prioridades</li>
+                <li>• Alinhamento com stakeholders</li>
+                <li>• Resolver bloqueios críticos</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded">
+            <p class="font-bold text-green-700 dark:text-green-400">📈 Resultado:</p>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">
+              De 60h/semana para 35h/semana. Todos os projetos no prazo. Promovida para diretora.
+            </p>
+          </div>
+        </div>
+
+        <!-- Exemplo 2 -->
+        <div class="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl mb-6 border-2 border-operacional/30">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="text-4xl">👨‍💻</div>
+            <div>
+              <h4 class="text-xl font-bold mb-2">Caso: Analista de Suporte</h4>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">200+ tickets por semana, nunca conseguia zerar fila</p>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-4 mb-4">
+            <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded">
+              <p class="font-bold text-blue-600 dark:text-blue-400 mb-2">60% Automação:</p>
+              <ul class="text-sm space-y-1">
+                <li>• Triagem automática por categoria</li>
+                <li>• Respostas padrão para FAQs</li>
+                <li>• Priorização por urgência</li>
+              </ul>
+            </div>
+            <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded">
+              <p class="font-bold text-purple-600 dark:text-purple-400 mb-2">30% IA:</p>
+              <ul class="text-sm space-y-1">
+                <li>• IA sugere solução baseada em histórico</li>
+                <li>• Rascunho de resposta personalizada</li>
+                <li>• Identificação de padrões/bugs</li>
+              </ul>
+            </div>
+            <div class="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded">
+              <p class="font-bold text-yellow-600 dark:text-yellow-400 mb-2">10% Humano:</p>
+              <ul class="text-sm space-y-1">
+                <li>• Casos complexos e únicos</li>
+                <li>• Clientes VIP</li>
+                <li>• Melhorias no processo</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded">
+            <p class="font-bold text-green-700 dark:text-green-400">📈 Resultado:</p>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">
+              Tempo médio de resposta caiu 70%. Satisfação de clientes subiu 40%. Virou líder da equipe.
+            </p>
+          </div>
+        </div>
+
+        <!-- Exemplo 3 -->
+        <div class="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl mb-6 border-2 border-operacional/30">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="text-4xl">👩‍🔬</div>
+            <div>
+              <h4 class="text-xl font-bold mb-2">Caso: Coordenadora de Marketing</h4>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">Criar conteúdo, gerenciar campanhas, analisar dados</p>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-4 mb-4">
+            <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded">
+              <p class="font-bold text-blue-600 dark:text-blue-400 mb-2">60% Automação:</p>
+              <ul class="text-sm space-y-1">
+                <li>• Publicação agendada em redes sociais</li>
+                <li>• Coleta automática de métricas</li>
+                <li>• Relatórios de performance</li>
+              </ul>
+            </div>
+            <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded">
+              <p class="font-bold text-purple-600 dark:text-purple-400 mb-2">30% IA:</p>
+              <ul class="text-sm space-y-1">
+                <li>• Primeiras versões de copy</li>
+                <li>• Sugestões de hashtags e títulos</li>
+                <li>• Análise de tendências</li>
+              </ul>
+            </div>
+            <div class="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded">
+              <p class="font-bold text-yellow-600 dark:text-yellow-400 mb-2">10% Humano:</p>
+              <ul class="text-sm space-y-1">
+                <li>• Estratégia criativa</li>
+                <li>• Tom de voz da marca</li>
+                <li>• Decisões sobre campanhas</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded">
+            <p class="font-bold text-green-700 dark:text-green-400">📈 Resultado:</p>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">
+              Produção de conteúdo triplicou. Engajamento subiu 85%. Time cresceu de 1 para 5 pessoas.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-operacional/10 dark:bg-operacional/20 p-6 rounded-xl">
+          <p class="font-bold mb-3">💡 Padrão em Todos os Casos:</p>
+          <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+            <li class="flex items-start gap-2">
+              <span class="text-green-500">✓</span>
+              <span>Começaram com automações simples (Nível 1-2)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500">✓</span>
+              <span>Viram resultado na primeira semana</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500">✓</span>
+              <span>Expandiram gradualmente para IA (Nível 3-4)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500">✓</span>
+              <span>Focaram tempo humano no que gera valor real</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Exercícios de Reflexão -->
+      <div class="mb-16">
+        <div class="bg-purple-50 dark:bg-purple-900/20 border-2 border-purple-500 rounded-2xl p-8">
+          <h2 class="text-3xl font-bold mb-6 text-purple-700 dark:text-purple-400">
+            💭 Exercícios de Reflexão
+          </h2>
+
+          <p class="text-neutral-700 dark:text-neutral-300 mb-6">
+            Antes do exercício prático, reflita sobre sua própria situação:
+          </p>
+
+          <div class="space-y-6">
+
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl">
+              <h4 class="font-bold text-lg mb-3">Pergunta 1:</h4>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                Das 10 tarefas que você listou no Módulo 1, <strong>quantas são 60% (mecânicas), quantas são 30% (criativas mas padrão), e quantas são 10% (estratégicas)?</strong>
+              </p>
+              <div class="bg-neutral-50 dark:bg-neutral-900 p-4 rounded">
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                  <em>Seja honesto: você está gastando tempo demais em tarefas que uma máquina poderia fazer?</em>
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl">
+              <h4 class="font-bold text-lg mb-3">Pergunta 2:</h4>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                Se você aplicasse Golden Ratio hoje, <strong>quanto tempo sobraria para trabalho estratégico?</strong>
+              </p>
+              <div class="bg-neutral-50 dark:bg-neutral-900 p-4 rounded">
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                  <em>Exemplo: Se hoje você gasta 7h em trabalho mecânico, automatizando sobraria 5-6h extras.</em>
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl">
+              <h4 class="font-bold text-lg mb-3">Pergunta 3:</h4>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                <strong>Qual é o maior medo/bloqueio</strong> que você sente ao pensar em automatizar tarefas?
+              </p>
+              <div class="bg-neutral-50 dark:bg-neutral-900 p-4 rounded">
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                  <em>"E se der errado?", "Vão achar que não trabalho?", "Vai dar muito trabalho configurar?"</em>
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mt-6 bg-purple-100 dark:bg-purple-900/40 p-4 rounded-lg">
+            <p class="text-sm font-semibold">
+              💡 Esses medos são normais. No próximo exercício você vai superar o primeiro deles criando seu plano concreto.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercício Prático -->
+      <div class="mb-16">
+        <div class="bg-green-50 dark:bg-green-900/20 border-2 border-green-500 rounded-2xl p-8">
+          <h2 class="text-3xl font-bold mb-6 text-green-700 dark:text-green-400">
+            🛠️ Exercício Prático
+          </h2>
+
+          <p class="text-neutral-700 dark:text-neutral-300 mb-6">
+            Agora você vai criar seu <strong>Mapa de Automação Pessoal</strong> usando a Matriz Impacto × Esforço.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl mb-6">
+            <h4 class="font-bold text-xl mb-4">📋 Tarefa 1: Classificar 10 Tarefas na Matriz</h4>
+
+            <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+              Pegue as 10 tarefas repetitivas que você listou no Módulo 1 e classifique cada uma:
+            </p>
+
+            <div class="bg-neutral-50 dark:bg-neutral-900 p-4 rounded-lg mb-4">
+              <p class="font-semibold mb-3">Para cada tarefa, pergunte:</p>
+              <ol class="list-decimal list-inside space-y-2 text-sm">
+                <li><strong>Impacto:</strong> Economiza 3+ horas/semana? Reduz erros? Afeta várias pessoas? (SIM = Alto / NÃO = Baixo)</li>
+                <li><strong>Esforço:</strong> Implementa em menos de 2h? Usa ferramentas que conhece? Não depende de outros? (SIM = Baixo / NÃO = Alto)</li>
+                <li>Coloque na matriz correspondente: Verde (Alto/Baixo), Amarelo (Alto/Alto), Azul (Baixo/Baixo), Vermelho (Baixo/Alto)</li>
+              </ol>
+            </div>
+
+            <div class="bg-operacional/10 dark:bg-operacional/20 p-4 rounded-lg">
+              <p class="font-semibold mb-2">Exemplo de classificação:</p>
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-neutral-300 dark:border-neutral-600">
+                    <th class="text-left py-2">Tarefa</th>
+                    <th class="text-left py-2">Impacto</th>
+                    <th class="text-left py-2">Esforço</th>
+                    <th class="text-left py-2">Categoria</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                    <td class="py-2">Organizar emails</td>
+                    <td>Alto (5h/sem)</td>
+                    <td>Baixo (30min)</td>
+                    <td class="text-green-600 font-bold">🌟 VERDE</td>
+                  </tr>
+                  <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                    <td class="py-2">Dashboard completo</td>
+                    <td>Alto (10h/sem)</td>
+                    <td>Alto (8h config)</td>
+                    <td class="text-yellow-600 font-bold">📅 AMARELO</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2">Renomear arquivos</td>
+                    <td>Baixo (30min/sem)</td>
+                    <td>Baixo (1h)</td>
+                    <td class="text-blue-600 font-bold">🔵 AZUL</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl mb-6">
+            <h4 class="font-bold text-xl mb-4">🎯 Tarefa 2: Escolher 1 para Automatizar JÁ</h4>
+
+            <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+              Das suas tarefas classificadas como <strong>VERDE</strong> (Alto Impacto + Baixo Esforço), escolha <strong>UMA</strong> para ser sua primeira automação.
+            </p>
+
+            <div class="bg-neutral-50 dark:bg-neutral-900 p-4 rounded-lg mb-4">
+              <p class="font-semibold mb-2">Critérios para escolher:</p>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500">✓</span>
+                  <span>É a que mais te irrita no dia a dia?</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500">✓</span>
+                  <span>Você faz ela pelo menos 3x por semana?</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500">✓</span>
+                  <span>Seria visível se automatizar (chefe/colegas percebem)?</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500">✓</span>
+                  <span>Você consegue descrever o processo em 3-5 passos?</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded">
+              <p class="font-semibold text-green-700 dark:text-green-400 mb-2">Sua tarefa escolhida:</p>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                Escreva aqui qual tarefa você escolheu e por quê. Nos próximos módulos, vamos implementá-la juntos!
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl">
+            <h4 class="font-bold text-xl mb-4">🗺️ Tarefa 3: Mapear o Processo</h4>
+
+            <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+              Agora descreva <strong>passo a passo</strong> como você faz essa tarefa hoje (manualmente):
+            </p>
+
+            <div class="bg-neutral-50 dark:bg-neutral-900 p-4 rounded-lg">
+              <p class="font-semibold mb-2">Template de mapeamento:</p>
+              <ol class="list-decimal list-inside space-y-3 text-sm">
+                <li><strong>Gatilho:</strong> O que inicia essa tarefa? (Ex: "Recebo email com anexo")</li>
+                <li><strong>Passo 1:</strong> Primeira ação que você faz (Ex: "Abro o email e baixo anexo")</li>
+                <li><strong>Passo 2:</strong> Segunda ação (Ex: "Renomeio arquivo com padrão Projeto_Data")</li>
+                <li><strong>Passo 3:</strong> Terceira ação (Ex: "Movo para pasta específica no Drive")</li>
+                <li><strong>Resultado final:</strong> O que você obtém no final? (Ex: "Arquivo organizado e encontrável")</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="mt-6 bg-green-100 dark:bg-green-900/40 p-4 rounded-lg">
+            <p class="text-sm font-semibold">
+              ✅ Entregável: "Mapa de Automação Pessoal" com: 10 tarefas classificadas na matriz + 1 tarefa prioritária escolhida + Processo mapeado em 3-5 passos
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conclusão -->
+      <div class="mb-16">
+        <div class="bg-gradient-to-r from-operacional/20 to-blue-500/20 dark:from-operacional/30 dark:to-blue-500/30 p-8 rounded-2xl">
+          <h2 class="text-3xl font-bold mb-6">🎉 Parabéns por Completar o Módulo 2!</h2>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+            Você agora domina o <strong>framework mais importante</strong> de automação: o Golden Ratio 60/30/10.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl mb-6">
+            <h4 class="font-bold mb-3">✅ O que você conquistou neste módulo:</h4>
+            <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Entendeu a proporção ideal: 60% automação, 30% IA, 10% humano</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Dominou a Matriz Impacto × Esforço para priorizar automações</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Aprendeu a ordem correta: Organização → Notificações → Dados → IA</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Viu exemplos reais de profissionais aplicando Golden Ratio</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Criou seu Mapa de Automação Pessoal e escolheu sua primeira automação</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-operacional/20 dark:bg-operacional/30 p-4 rounded-lg">
+            <p class="font-semibold text-operacional mb-2">➡️ Próximo Módulo:</p>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              <strong>Seu Primeiro Assistente - IA na Prática</strong><br>
+              Você vai conhecer ChatGPT, Claude e Gemini, aprender quando usar cada um, e criar sua biblioteca pessoal de prompts operacionais.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navegação -->
+      <div class="bg-gradient-to-r from-operacional to-blue-600 text-white rounded-2xl p-8">
+        <div class="flex justify-between items-center">
+          <a href="modulo-01.html" class="px-6 py-3 bg-white/20 hover:bg-white/30 rounded-lg font-semibold transition-all">
+            ← Módulo 1
+          </a>
+          <div class="text-center">
+            <p class="text-sm opacity-80 mb-1">Próximo Módulo</p>
+            <p class="font-bold">Módulo 3: Seu Primeiro Assistente</p>
+          </div>
+          <a href="modulo-03.html" class="px-6 py-3 bg-white text-operacional rounded-lg font-semibold hover:bg-yellow-300 hover:text-neutral-900 transition-all">
+            Módulo 3 →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center text-sm">
+        <p>&copy; 2025 FETD - Formação em Engenharia de Intenção</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../../js/app.js"></script>
+
+</body>
+</html>
