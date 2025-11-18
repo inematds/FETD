@@ -1,164 +1,1398 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 5: Automação de Emails e Comunicação | Trilha Operacional | FETD</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: { 'operacional': '#3B82F6' },
-          fontFamily: { sans: ['Inter', 'sans-serif'] }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MÓDULO 5: Automação de Emails e Comunicação</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
         }
-      }
-    }
-  </script>
-  <style>
-    * { transition: background-color 200ms ease-in-out; }
-    body { font-family: 'Inter', sans-serif; }
-  </style>
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 20px;
+        }
+        h4 {
+            color: #555;
+        }
+        code {
+            background-color: #ecf0f1;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #c7254e;
+        }
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code {
+            background-color: transparent;
+            color: #ecf0f1;
+            padding: 0;
+        }
+        blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            background-color: #ecf0f1;
+            padding: 10px 20px;
+            border-radius: 0 5px 5px 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        ul, ol {
+            padding-left: 30px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: #2c3e50;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        hr {
+            border: none;
+            border-top: 2px solid #ecf0f1;
+            margin: 30px 0;
+        }
+    </style>
 </head>
-<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+<body>
+    <div class="container">
+        <h1>MÓDULO 5: Automação de Emails e Comunicação</h1>
+<p><strong>Objetivo:</strong> Economizar 5-8 horas por semana automatizando emails</p>
+<hr />
+<h2>1. O Problema do Email (e Como Ele Está Destruindo Sua Produtividade)</h2>
+<h3>A Estatística Que Vai Te Chocar</h3>
+<p>Você sabia que <strong>28% do seu dia de trabalho</strong> é gasto apenas com emails? Isso mesmo. Se você trabalha 8 horas por dia, são <strong>2 horas e 15 minutos</strong> só lendo, respondendo e organizando emails.</p>
+<p>Vamos fazer as contas:
+- <strong>Por dia:</strong> 2h15min em emails
+- <strong>Por semana:</strong> 11h15min
+- <strong>Por mês:</strong> ~45 horas (mais de uma semana inteira!)
+- <strong>Por ano:</strong> ~540 horas (22 dias corridos!)</p>
+<p>Imagine o que você poderia fazer com <strong>22 dias extras</strong> por ano. Um mês inteiro de férias? Aquele projeto que nunca sai do papel? Mais tempo com a família?</p>
+<h3>O Custo Oculto da Desorganização</h3>
+<p>Mas o problema não é só o tempo. É o que os emails fazem com sua cabeça:</p>
+<p><strong>Interrupções constantes:</strong> A cada email que chega, seu cérebro precisa de 23 minutos para voltar ao foco total. Se você recebe 50 emails por dia e checa 10 vezes, são <strong>19 horas</strong> de produtividade perdida por semana.</p>
+<p><strong>Ansiedade da caixa cheia:</strong> Aquela sensação de "tenho 247 emails não lidos" gera um estresse crônico que você nem percebe mais.</p>
+<p><strong>Decisões repetitivas:</strong> "Onde arquivar isso? Preciso responder? É urgente?" — você toma essas micro-decisões centenas de vezes por dia, esgotando sua energia mental.</p>
+<h3>O Que Vamos Mudar HOJE</h3>
+<p>Neste módulo, você vai aprender a:</p>
+<ol>
+<li><strong>Organizar emails automaticamente</strong> — sem você mover um dedo</li>
+<li><strong>Responder 10x mais rápido</strong> — com templates e IA</li>
+<li><strong>Transformar emails em ações</strong> — direto no seu sistema de tarefas</li>
+<li><strong>Chegar ao Inbox Zero</strong> — e manter todo dia</li>
+</ol>
+<p><strong>Meta realista:</strong> Reduzir de 2h15min para 30-45min por dia. São <strong>7-8 horas economizadas por semana</strong>.</p>
+<hr />
+<h2>2. Organização Automática com Filtros (Seu Primeiro Superpoder)</h2>
+<h3>A Regra de Ouro</h3>
+<p><strong>Você nunca mais deveria mover um email manualmente para uma pasta.</strong></p>
+<p>Se você se pegou fazendo "arrastar email → pasta" mais de 3 vezes, precisa criar um filtro AGORA.</p>
+<h3>Gmail: Filtros e Labels Automatizados</h3>
+<h4>Tutorial Completo Passo a Passo</h4>
+<p><strong>Passo 1: Criar seu primeiro filtro</strong></p>
+<ol>
+<li>Abra o Gmail</li>
+<li>Na caixa de pesquisa, clique na setinha à direita (ícone de filtro)</li>
+<li>Preencha os critérios (exemplo: "De: noreply@sistema.com")</li>
+<li>Clique em "Criar filtro"</li>
+<li>Marque as ações desejadas</li>
+<li>Clique em "Criar filtro"</li>
+</ol>
+<p><strong>Passo 2: Ações disponíveis</strong></p>
+<ul>
+<li>☑ Pular caixa de entrada (arquivar)</li>
+<li>☑ Marcar como lida</li>
+<li>☑ Aplicar marcador/etiqueta</li>
+<li>☑ Encaminhar para outro email</li>
+<li>☑ Excluir</li>
+<li>☑ Marcar como importante / Nunca marcar como importante</li>
+<li>☑ Categorizar como (Principal/Social/Promoções/etc)</li>
+</ul>
+<p><strong>Passo 3: Aplicar a emails existentes</strong></p>
+<p>Ao criar o filtro, marque "Aplicar filtro também a X conversas correspondentes" para organizar tudo retroativamente.</p>
+<h3>Outlook: Regras Avançadas</h3>
+<h4>Tutorial Completo</h4>
+<p><strong>Passo 1: Acessar Regras</strong></p>
+<ol>
+<li>Outlook Desktop: Arquivo → Gerenciar Regras e Alertas</li>
+<li>Outlook Web: Configurações (engrenagem) → Ver todas as configurações → Email → Regras</li>
+</ol>
+<p><strong>Passo 2: Criar Nova Regra</strong></p>
+<ol>
+<li>Clique em "Nova Regra"</li>
+<li>Escolha "Aplicar regra às mensagens recebidas"</li>
+<li>Defina condições (remetente, assunto, palavras, etc.)</li>
+<li>Defina ações (mover, categorizar, encaminhar, etc.)</li>
+<li>Defina exceções (se necessário)</li>
+<li>Nomeie a regra</li>
+<li>Ative e salve</li>
+</ol>
+<p><strong>Passo 3: Regras Avançadas</strong></p>
+<ul>
+<li>Combinar múltiplas condições (E/OU)</li>
+<li>Ações encadeadas (mover + marcar + notificar)</li>
+<li>Exceções inteligentes</li>
+<li>Executar scripts personalizados (avançado)</li>
+</ul>
+<h3>10 Filtros Essenciais para Implementar HOJE</h3>
+<h4>1. Filtro "Notificações de Sistema"</h4>
+<div class="codehilite"><pre><span></span><code><span class="nl">Critério</span><span class="p">:</span><span class="w"> </span><span class="n">De</span><span class="w"> </span><span class="n">contém</span><span class="w"> </span><span class="s">&quot;noreply@&quot;</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="s">&quot;no-reply@&quot;</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="s">&quot;notification@&quot;</span>
+<span class="nl">Ação</span><span class="p">:</span><span class="w"> </span><span class="n">Pular</span><span class="w"> </span><span class="n">caixa</span><span class="p">,</span><span class="w"> </span><span class="n">aplicar</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="s">&quot;📦 Sistemas&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">marcar</span><span class="w"> </span><span class="n">como</span><span class="w"> </span><span class="n">lida</span>
+</code></pre></div>
 
-  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-operacional to-blue-600 bg-clip-text text-transparent">🎓 FETD</a>
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="../../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-operacional">Início</a>
-          <a href="../../trilhas/operacional.html" class="text-neutral-700 dark:text-neutral-300 hover:text-operacional">Trilha Operacional</a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-            </svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
+<p><strong>Por quê:</strong> Emails automáticos não precisam de atenção imediata.</p>
+<h4>2. Filtro "Newsletters e Marketing"</h4>
+<div class="codehilite"><pre><span></span><code><span class="nl">Critério</span><span class="p">:</span><span class="w"> </span><span class="n">De</span><span class="w"> </span><span class="n">contém</span><span class="w"> </span><span class="s">&quot;news@&quot;</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="s">&quot;marketing@&quot;</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="n">tem</span><span class="w"> </span><span class="n">link</span><span class="w"> </span><span class="s">&quot;unsubscribe&quot;</span>
+<span class="nl">Ação</span><span class="p">:</span><span class="w"> </span><span class="n">Pular</span><span class="w"> </span><span class="n">caixa</span><span class="p">,</span><span class="w"> </span><span class="n">aplicar</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="s">&quot;📰 Newsletters&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">marcar</span><span class="w"> </span><span class="n">como</span><span class="w"> </span><span class="n">lida</span>
+</code></pre></div>
+
+<p><strong>Por quê:</strong> Você lê quando QUISER, não quando CHEGAM.</p>
+<h4>3. Filtro "Chefe/Prioridade Máxima"</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Critério</span><span class="o">:</span><span class="w"> </span><span class="n">De</span><span class="o">:</span><span class="w"> </span><span class="n">chefe</span><span class="err">@</span><span class="n">empresa</span><span class="o">.</span><span class="na">com</span>
+<span class="n">Ação</span><span class="o">:</span><span class="w"> </span><span class="n">Marcar</span><span class="w"> </span><span class="n">como</span><span class="w"> </span><span class="n">importante</span><span class="o">,</span><span class="w"> </span><span class="n">aplicar</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="s2">&quot;🔴 URGENTE&quot;</span><span class="o">,</span><span class="w"> </span><span class="n">manter</span><span class="w"> </span><span class="n">na</span><span class="w"> </span><span class="n">caixa</span>
+</code></pre></div>
+
+<p><strong>Por quê:</strong> Nunca perder email do chefe.</p>
+<h4>4. Filtro "Equipe Interna"</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Critério</span><span class="o">:</span><span class="w"> </span><span class="n">De</span><span class="w"> </span><span class="n">contém</span><span class="w"> </span><span class="s2">&quot;@suaempresa.com&quot;</span>
+<span class="n">Ação</span><span class="o">:</span><span class="w"> </span><span class="n">Aplicar</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="s2">&quot;👥 Equipe&quot;</span><span class="o">,</span><span class="w"> </span><span class="n">categorizar</span><span class="w"> </span><span class="n">como</span><span class="w"> </span><span class="n">Principal</span>
+</code></pre></div>
+
+<p><strong>Por quê:</strong> Separar interno de externo rapidamente.</p>
+<h4>5. Filtro "Clientes VIP"</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Critério</span><span class="o">:</span><span class="w"> </span><span class="n">De</span><span class="o">:</span><span class="w"> </span><span class="o">(</span><span class="n">lista</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">emails</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">clientes</span><span class="w"> </span><span class="n">importantes</span><span class="o">)</span>
+<span class="n">Ação</span><span class="o">:</span><span class="w"> </span><span class="n">Aplicar</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="s2">&quot;⭐ Clientes VIP&quot;</span><span class="o">,</span><span class="w"> </span><span class="n">estrelar</span><span class="o">,</span><span class="w"> </span><span class="n">notificar</span>
+</code></pre></div>
+
+<p><strong>Por quê:</strong> Atendimento premium para quem importa.</p>
+<h4>6. Filtro "Anexos Importantes"</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Critério</span><span class="o">:</span><span class="w"> </span><span class="n">Tem</span><span class="w"> </span><span class="n">anexo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">(</span><span class="n">assunto</span><span class="w"> </span><span class="n">contém</span><span class="w"> </span><span class="s2">&quot;contrato&quot;</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="s2">&quot;proposta&quot;</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="s2">&quot;fatura&quot;</span><span class="o">)</span>
+<span class="n">Ação</span><span class="o">:</span><span class="w"> </span><span class="n">Aplicar</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="s2">&quot;📎 Anexos Importantes&quot;</span><span class="o">,</span><span class="w"> </span><span class="n">estrelar</span>
+</code></pre></div>
+
+<p><strong>Por quê:</strong> Nunca perder documentos críticos.</p>
+<h4>7. Filtro "Redes Sociais"</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Critério</span><span class="o">:</span><span class="w"> </span><span class="n">De</span><span class="w"> </span><span class="n">contém</span><span class="w"> </span><span class="s2">&quot;@linkedin.com&quot;</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="s2">&quot;@facebook.com&quot;</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="s2">&quot;@twitter.com&quot;</span>
+<span class="n">Ação</span><span class="o">:</span><span class="w"> </span><span class="n">Pular</span><span class="w"> </span><span class="n">caixa</span><span class="o">,</span><span class="w"> </span><span class="n">aplicar</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="s2">&quot;👍 Social&quot;</span><span class="o">,</span><span class="w"> </span><span class="n">marcar</span><span class="w"> </span><span class="n">como</span><span class="w"> </span><span class="n">lida</span>
+</code></pre></div>
+
+<p><strong>Por quê:</strong> Zero distração com notificações sociais.</p>
+<h4>8. Filtro "Cobranças e Financeiro"</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Critério</span><span class="o">:</span><span class="w"> </span><span class="n">Assunto</span><span class="w"> </span><span class="n">contém</span><span class="w"> </span><span class="s2">&quot;fatura&quot;</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="s2">&quot;cobrança&quot;</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="s2">&quot;pagamento&quot;</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="s2">&quot;vencimento&quot;</span>
+<span class="n">Ação</span><span class="o">:</span><span class="w"> </span><span class="n">Aplicar</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="s2">&quot;💰 Financeiro&quot;</span><span class="o">,</span><span class="w"> </span><span class="n">manter</span><span class="w"> </span><span class="n">na</span><span class="w"> </span><span class="n">caixa</span>
+</code></pre></div>
+
+<p><strong>Por quê:</strong> Nunca esquecer um pagamento.</p>
+<h4>9. Filtro "Reuniões e Eventos"</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Critério</span><span class="o">:</span><span class="w"> </span><span class="n">De</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;calendar-notification@google.com&quot;</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="n">assunto</span><span class="w"> </span><span class="n">contém</span><span class="w"> </span><span class="s2">&quot;convite&quot;</span>
+<span class="n">Ação</span><span class="o">:</span><span class="w"> </span><span class="n">Aplicar</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="s2">&quot;📅 Agenda&quot;</span><span class="o">,</span><span class="w"> </span><span class="n">marcar</span><span class="w"> </span><span class="n">como</span><span class="w"> </span><span class="n">lida</span><span class="w"> </span><span class="n">se</span><span class="w"> </span><span class="n">já</span><span class="w"> </span><span class="n">aceitou</span>
+</code></pre></div>
+
+<p><strong>Por quê:</strong> Calendário cuida disso, não precisa ficar no email.</p>
+<h4>10. Filtro "Para Revisar Depois"</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Critério</span><span class="o">:</span><span class="w"> </span><span class="n">Assunto</span><span class="w"> </span><span class="n">contém</span><span class="w"> </span><span class="s2">&quot;relatório&quot;</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="s2">&quot;análise&quot;</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="s2">&quot;review&quot;</span>
+<span class="n">Ação</span><span class="o">:</span><span class="w"> </span><span class="n">Aplicar</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="s2">&quot;🔍 Revisar&quot;</span><span class="o">,</span><span class="w"> </span><span class="n">pular</span><span class="w"> </span><span class="n">caixa</span>
+</code></pre></div>
+
+<p><strong>Por quê:</strong> Leituras longas merecem um momento dedicado.</p>
+<h3>Exemplo Prático: Inbox Zero Automatizado</h3>
+<p><strong>Antes (caos):</strong>
+- Caixa de entrada: 247 emails
+- Tempo para processar: 1-2 horas
+- Ansiedade: 📈📈📈</p>
+<p><strong>Depois (zen):</strong></p>
+<div class="codehilite"><pre><span></span><code>📥 Caixa de Entrada: 8 emails (só o que precisa de ação HOJE)
+
+📦 Sistemas: 45 emails (não precisa nem abrir)
+📰 Newsletters: 32 emails (ler no sábado de manhã)
+👥 Equipe: 12 emails (já respondidos automaticamente)
+⭐ Clientes VIP: 3 emails (prioridade máxima)
+📎 Anexos Importantes: 5 emails (salvos no Drive)
+💰 Financeiro: 2 emails (agendados para pagar)
+</code></pre></div>
+
+<p><strong>Tempo para processar:</strong> 10-15 minutos
+<strong>Ansiedade:</strong> ✅ Sob controle</p>
+<hr />
+<h2>3. Respostas Rápidas e Templates (Nunca Mais Escreva o Mesmo Email)</h2>
+<h3>Por Que Templates Funcionam</h3>
+<p><strong>Verdade dura:</strong> 80% dos seus emails são variações dos mesmos 10 tipos de mensagem.</p>
+<p>Se você se pegou escrevendo "Obrigado pelo email. Segue em anexo..." pela 47ª vez este mês, você precisa de templates.</p>
+<h3>Respostas Prontas do Gmail</h3>
+<h4>Como Configurar (3 minutos)</h4>
+<p><strong>Passo 1: Ativar Respostas Prontas</strong></p>
+<ol>
+<li>Gmail → Configurações (engrenagem) → Ver todas as configurações</li>
+<li>Aba "Avançado"</li>
+<li>Procure "Respostas prontas (modelos)"</li>
+<li>Selecione "Ativar"</li>
+<li>Salve alterações</li>
+</ol>
+<p><strong>Passo 2: Criar Sua Primeira Resposta Pronta</strong></p>
+<ol>
+<li>Clique em "Escrever"</li>
+<li>Digite o template completo (veja exemplos abaixo)</li>
+<li>Clique nos três pontinhos (parte inferior da janela)</li>
+<li>"Respostas prontas" → "Criar nova resposta pronta"</li>
+<li>Dê um nome claro (ex: "Acuso recebimento + Em análise")</li>
+<li>Pronto!</li>
+</ol>
+<p><strong>Passo 3: Usar o Template</strong></p>
+<ol>
+<li>Ao responder um email, clique nos três pontinhos</li>
+<li>"Respostas prontas"</li>
+<li>Escolha o template</li>
+<li>Personalize se necessário</li>
+<li>Envie</li>
+</ol>
+<p><strong>Tempo economizado:</strong> De 3-5 minutos para 15 segundos por email.</p>
+<h3>Respostas Prontas do Outlook</h3>
+<h4>Como Configurar</h4>
+<p><strong>Opção 1: Passos Rápidos</strong></p>
+<ol>
+<li>Outlook → Página Inicial → Passos Rápidos</li>
+<li>"Criar Novo"</li>
+<li>Nome: "Resposta Padrão - Recebido"</li>
+<li>Ações: "Responder" + "Inserir texto"</li>
+<li>Cole o template</li>
+<li>Atribua um atalho (ex: Ctrl+Shift+1)</li>
+<li>Salve</li>
+</ol>
+<p><strong>Opção 2: Modelos de Email</strong></p>
+<ol>
+<li>Crie o email template completo</li>
+<li>Arquivo → Salvar Como</li>
+<li>Tipo: "Modelo do Outlook (*.oft)"</li>
+<li>Salve em local acessível</li>
+<li>Para usar: Página Inicial → Novos Itens → Mais Itens → Escolher Formulário</li>
+</ol>
+<h3>15 Templates de Emails Operacionais</h3>
+<h4>1. Acuso de Recebimento</h4>
+<div class="codehilite"><pre><span></span><code><span class="nl">Assunto</span><span class="p">:</span><span class="w"> </span><span class="n">Re</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">assunto</span><span class="w"> </span><span class="n">original</span><span class="p">]</span>
+
+<span class="n">Olá</span><span class="w"> </span><span class="p">[</span><span class="n">NOME</span><span class="p">],</span>
+
+<span class="n">Recebi</span><span class="w"> </span><span class="n">seu</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">já</span><span class="w"> </span><span class="n">estou</span><span class="w"> </span><span class="n">analisando</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">solicitação</span><span class="p">.</span>
+
+<span class="n">Retorno</span><span class="w"> </span><span class="n">com</span><span class="w"> </span><span class="n">mais</span><span class="w"> </span><span class="n">detalhes</span><span class="w"> </span><span class="n">até</span><span class="w"> </span><span class="p">[</span><span class="n">DIA</span><span class="o">/</span><span class="n">HORÁRIO</span><span class="p">].</span>
+
+<span class="n">Qualquer</span><span class="w"> </span><span class="n">dúvida</span><span class="p">,</span><span class="w"> </span><span class="n">estou</span><span class="w"> </span><span class="n">à</span><span class="w"> </span><span class="n">disposição</span><span class="p">.</span>
+
+<span class="n">Abraço</span><span class="p">,</span>
+<span class="p">[</span><span class="n">SEU</span><span class="w"> </span><span class="n">NOME</span><span class="p">]</span>
+</code></pre></div>
+
+<p><strong>Quando usar:</strong> Cliente/fornecedor envia algo que você precisa analisar.</p>
+<h4>2. Solicitação de Informações</h4>
+<div class="codehilite"><pre><span></span><code><span class="nl">Assunto</span><span class="p">:</span><span class="w"> </span><span class="n">Informações</span><span class="w"> </span><span class="n">necessárias</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">[</span><span class="n">ASSUNTO</span><span class="p">]</span>
+
+<span class="n">Olá</span><span class="w"> </span><span class="p">[</span><span class="n">NOME</span><span class="p">],</span>
+
+<span class="n">Para</span><span class="w"> </span><span class="n">darmos</span><span class="w"> </span><span class="n">andamento</span><span class="w"> </span><span class="n">ao</span><span class="w"> </span><span class="p">[</span><span class="n">PROCESSO</span><span class="o">/</span><span class="n">PROJETO</span><span class="p">],</span><span class="w"> </span><span class="n">preciso</span><span class="w"> </span><span class="n">das</span><span class="w"> </span><span class="n">seguintes</span><span class="w"> </span><span class="n">informações</span><span class="o">:</span>
+
+<span class="mf">1.</span><span class="w"> </span><span class="p">[</span><span class="n">INFORMAÇÃO</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span>
+<span class="mf">2.</span><span class="w"> </span><span class="p">[</span><span class="n">INFORMAÇÃO</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span>
+<span class="mf">3.</span><span class="w"> </span><span class="p">[</span><span class="n">INFORMAÇÃO</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span>
+
+<span class="n">Consegue</span><span class="w"> </span><span class="n">me</span><span class="w"> </span><span class="n">enviar</span><span class="w"> </span><span class="n">até</span><span class="w"> </span><span class="p">[</span><span class="n">DATA</span><span class="p">]</span><span class="o">?</span>
+
+<span class="n">Obrigado</span><span class="o">!</span>
+
+<span class="p">[</span><span class="n">SEU</span><span class="w"> </span><span class="n">NOME</span><span class="p">]</span>
+</code></pre></div>
+
+<p><strong>Quando usar:</strong> Precisa de algo de alguém.</p>
+<h4>3. Cobrança Educada (1ª vez)</h4>
+<div class="codehilite"><pre><span></span><code><span class="nl">Assunto</span><span class="p">:</span><span class="w"> </span><span class="n">Acompanhamento</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">[</span><span class="n">ASSUNTO</span><span class="p">]</span>
+
+<span class="n">Olá</span><span class="w"> </span><span class="p">[</span><span class="n">NOME</span><span class="p">],</span>
+
+<span class="n">Tudo</span><span class="w"> </span><span class="n">bem</span><span class="o">?</span>
+
+<span class="n">Estou</span><span class="w"> </span><span class="n">acompanhando</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">solicitação</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">enviei</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="p">[</span><span class="n">DATA</span><span class="p">]</span><span class="w"> </span><span class="n">sobre</span><span class="w"> </span><span class="p">[</span><span class="n">ASSUNTO</span><span class="p">].</span>
+
+<span class="n">Conseguiu</span><span class="w"> </span><span class="n">ter</span><span class="w"> </span><span class="n">um</span><span class="w"> </span><span class="n">tempinho</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">analisar</span><span class="o">?</span>
+
+<span class="n">Qualquer</span><span class="w"> </span><span class="n">atualização</span><span class="w"> </span><span class="n">é</span><span class="w"> </span><span class="n">bem</span><span class="o">-</span><span class="n">vinda</span><span class="o">!</span>
+
+<span class="n">Abraço</span><span class="p">,</span>
+<span class="p">[</span><span class="n">SEU</span><span class="w"> </span><span class="n">NOME</span><span class="p">]</span>
+</code></pre></div>
+
+<p><strong>Quando usar:</strong> 3-5 dias após envio sem resposta.</p>
+<h4>4. Cobrança Educada (2ª vez - mais firme)</h4>
+<div class="codehilite"><pre><span></span><code><span class="nl">Assunto</span><span class="p">:</span><span class="w"> </span><span class="n">URGENTE</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">[</span><span class="n">ASSUNTO</span><span class="p">]</span>
+
+<span class="n">Olá</span><span class="w"> </span><span class="p">[</span><span class="n">NOME</span><span class="p">],</span>
+
+<span class="n">Já</span><span class="w"> </span><span class="n">tentei</span><span class="w"> </span><span class="n">contato</span><span class="w"> </span><span class="n">anterior</span><span class="w"> </span><span class="n">sem</span><span class="w"> </span><span class="n">retorno</span><span class="p">.</span>
+
+<span class="n">Preciso</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="p">[</span><span class="n">INFORMAÇÃO</span><span class="o">/</span><span class="n">AÇÃO</span><span class="p">]</span><span class="w"> </span><span class="n">até</span><span class="w"> </span><span class="p">[</span><span class="n">DATA</span><span class="w"> </span><span class="n">LIMITE</span><span class="p">]</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">não</span><span class="w"> </span><span class="n">comprometermos</span><span class="w"> </span><span class="p">[</span><span class="n">CONSEQUÊNCIA</span><span class="p">].</span>
+
+<span class="n">Pode</span><span class="w"> </span><span class="n">me</span><span class="w"> </span><span class="n">confirmar</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">recebimento</span><span class="w"> </span><span class="n">deste</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">prazo</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">retorno</span><span class="o">?</span>
+
+<span class="n">Obrigado</span><span class="w"> </span><span class="n">pela</span><span class="w"> </span><span class="n">atenção</span><span class="p">.</span>
+
+<span class="p">[</span><span class="n">SEU</span><span class="w"> </span><span class="n">NOME</span><span class="p">]</span>
+</code></pre></div>
+
+<p><strong>Quando usar:</strong> Após 2-3 cobranças sem resposta.</p>
+<h4>5. Agradecimento Simples</h4>
+<div class="codehilite"><pre><span></span><code><span class="nl">Assunto</span><span class="p">:</span><span class="w"> </span><span class="n">Obrigado</span><span class="o">!</span>
+
+<span class="n">Olá</span><span class="w"> </span><span class="p">[</span><span class="n">NOME</span><span class="p">],</span>
+
+<span class="n">Só</span><span class="w"> </span><span class="n">passando</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">agradecer</span><span class="w"> </span><span class="n">por</span><span class="w"> </span><span class="p">[</span><span class="n">AÇÃO</span><span class="o">/</span><span class="n">AJUDA</span><span class="p">].</span>
+
+<span class="n">Fez</span><span class="w"> </span><span class="n">muita</span><span class="w"> </span><span class="n">diferença</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="p">[</span><span class="n">RESULTADO</span><span class="o">/</span><span class="n">PROJETO</span><span class="p">]</span><span class="o">!</span>
+
+<span class="n">Conte</span><span class="w"> </span><span class="n">comigo</span><span class="w"> </span><span class="n">quando</span><span class="w"> </span><span class="n">precisar</span><span class="p">.</span>
+
+<span class="n">Abraço</span><span class="p">,</span>
+<span class="p">[</span><span class="n">SEU</span><span class="w"> </span><span class="n">NOME</span><span class="p">]</span>
+</code></pre></div>
+
+<p><strong>Quando usar:</strong> Alguém te ajudou (e você quer fortalecer o relacionamento).</p>
+<h4>6. Agradecimento com Anexo</h4>
+<div class="codehilite"><pre><span></span><code><span class="nl">Assunto</span><span class="p">:</span><span class="w"> </span><span class="n">Obrigado</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">segue</span><span class="w"> </span><span class="p">[</span><span class="n">DOCUMENTO</span><span class="p">]</span>
+
+<span class="n">Olá</span><span class="w"> </span><span class="p">[</span><span class="n">NOME</span><span class="p">],</span>
+
+<span class="n">Obrigado</span><span class="w"> </span><span class="n">pelo</span><span class="w"> </span><span class="n">email</span><span class="o">!</span>
+
+<span class="n">Segue</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="n">anexo</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="p">[</span><span class="n">DOCUMENTO</span><span class="p">]</span><span class="w"> </span><span class="n">solicitado</span><span class="p">.</span>
+
+<span class="n">Qualquer</span><span class="w"> </span><span class="n">dúvida</span><span class="p">,</span><span class="w"> </span><span class="n">estou</span><span class="w"> </span><span class="n">à</span><span class="w"> </span><span class="n">disposição</span><span class="p">.</span>
+
+<span class="n">Abraço</span><span class="p">,</span>
+<span class="p">[</span><span class="n">SEU</span><span class="w"> </span><span class="n">NOME</span><span class="p">]</span>
+</code></pre></div>
+
+<p><strong>Quando usar:</strong> Resposta simples com arquivo.</p>
+<h4>7. Convite para Reunião</h4>
+<div class="codehilite"><pre><span></span><code><span class="nl">Assunto</span><span class="p">:</span><span class="w"> </span><span class="n">Convite</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Reunião</span><span class="w"> </span><span class="n">sobre</span><span class="w"> </span><span class="p">[</span><span class="n">ASSUNTO</span><span class="p">]</span>
+
+<span class="n">Olá</span><span class="w"> </span><span class="p">[</span><span class="n">NOME</span><span class="p">],</span>
+
+<span class="n">Gostaria</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">agendar</span><span class="w"> </span><span class="n">uma</span><span class="w"> </span><span class="n">reunião</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">conversarmos</span><span class="w"> </span><span class="n">sobre</span><span class="w"> </span><span class="p">[</span><span class="n">ASSUNTO</span><span class="p">].</span>
+
+<span class="n">Quando</span><span class="w"> </span><span class="n">você</span><span class="w"> </span><span class="n">teria</span><span class="w"> </span><span class="n">disponibilidade</span><span class="o">?</span><span class="w"> </span><span class="n">Sugiro</span><span class="o">:</span>
+<span class="o">-</span><span class="w"> </span><span class="p">[</span><span class="n">OPÇÃO</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="w"> </span><span class="n">Data</span><span class="o">/</span><span class="n">Hora</span><span class="p">]</span>
+<span class="o">-</span><span class="w"> </span><span class="p">[</span><span class="n">OPÇÃO</span><span class="w"> </span><span class="mi">2</span><span class="o">:</span><span class="w"> </span><span class="n">Data</span><span class="o">/</span><span class="n">Hora</span><span class="p">]</span>
+<span class="o">-</span><span class="w"> </span><span class="p">[</span><span class="n">OPÇÃO</span><span class="w"> </span><span class="mi">3</span><span class="o">:</span><span class="w"> </span><span class="n">Data</span><span class="o">/</span><span class="n">Hora</span><span class="p">]</span>
+
+<span class="n">Duração</span><span class="w"> </span><span class="n">estimada</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">TEMPO</span><span class="p">]</span>
+<span class="nl">Formato</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">Presencial</span><span class="o">/</span><span class="n">Online</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Link</span><span class="p">]</span>
+
+<span class="n">Me</span><span class="w"> </span><span class="n">confirma</span><span class="o">?</span>
+
+<span class="n">Abraço</span><span class="p">,</span>
+<span class="p">[</span><span class="n">SEU</span><span class="w"> </span><span class="n">NOME</span><span class="p">]</span>
+</code></pre></div>
+
+<p><strong>Quando usar:</strong> Agendar reunião sem complicação.</p>
+<h4>8. Confirmação de Reunião</h4>
+<div class="codehilite"><pre><span></span><code><span class="nl">Assunto</span><span class="p">:</span><span class="w"> </span><span class="err">✅</span><span class="w"> </span><span class="n">Reunião</span><span class="w"> </span><span class="n">confirmada</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">[</span><span class="n">DATA</span><span class="o">/</span><span class="n">HORA</span><span class="p">]</span>
+
+<span class="n">Olá</span><span class="w"> </span><span class="p">[</span><span class="n">NOME</span><span class="p">],</span>
+
+<span class="n">Confirmando</span><span class="w"> </span><span class="n">nossa</span><span class="w"> </span><span class="n">reunião</span><span class="o">:</span>
+
+<span class="err">📅</span><span class="w"> </span><span class="n">Data</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">DATA</span><span class="p">]</span>
+<span class="err">🕐</span><span class="w"> </span><span class="n">Horário</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">HORÁRIO</span><span class="p">]</span>
+<span class="err">📍</span><span class="w"> </span><span class="n">Local</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">LOCAL</span><span class="o">/</span><span class="n">LINK</span><span class="p">]</span>
+<span class="err">⏱</span><span class="w"> </span><span class="n">Duração</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">TEMPO</span><span class="p">]</span>
+
+<span class="nl">Pauta</span><span class="p">:</span>
+<span class="mf">1.</span><span class="w"> </span><span class="p">[</span><span class="n">ITEM</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span>
+<span class="mf">2.</span><span class="w"> </span><span class="p">[</span><span class="n">ITEM</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span>
+<span class="mf">3.</span><span class="w"> </span><span class="p">[</span><span class="n">ITEM</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span>
+
+<span class="n">Nos</span><span class="w"> </span><span class="n">vemos</span><span class="w"> </span><span class="n">lá</span><span class="o">!</span>
+
+<span class="p">[</span><span class="n">SEU</span><span class="w"> </span><span class="n">NOME</span><span class="p">]</span>
+</code></pre></div>
+
+<p><strong>Quando usar:</strong> Após agendar, para evitar "furos".</p>
+<h4>9. Follow-up Pós-Reunião</h4>
+<div class="codehilite"><pre><span></span><code><span class="nl">Assunto</span><span class="p">:</span><span class="w"> </span><span class="n">Resumo</span><span class="w"> </span><span class="n">da</span><span class="w"> </span><span class="n">reunião</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">[</span><span class="n">DATA</span><span class="p">]</span>
+
+<span class="n">Olá</span><span class="w"> </span><span class="p">[</span><span class="n">NOME</span><span class="p">(</span><span class="n">S</span><span class="p">)],</span>
+
+<span class="n">Obrigado</span><span class="w"> </span><span class="n">pela</span><span class="w"> </span><span class="n">reunião</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">hoje</span><span class="o">!</span>
+
+<span class="n">Resumo</span><span class="w"> </span><span class="n">dos</span><span class="w"> </span><span class="n">pontos</span><span class="w"> </span><span class="n">discutidos</span><span class="o">:</span>
+<span class="err">✅</span><span class="w"> </span><span class="p">[</span><span class="n">DECISÃO</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span>
+<span class="err">✅</span><span class="w"> </span><span class="p">[</span><span class="n">DECISÃO</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span>
+<span class="err">⏳</span><span class="w"> </span><span class="p">[</span><span class="n">PENDÊNCIA</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Responsável</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">NOME</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Prazo</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">DATA</span><span class="p">]</span>
+<span class="err">⏳</span><span class="w"> </span><span class="p">[</span><span class="n">PENDÊNCIA</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Responsável</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">NOME</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Prazo</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">DATA</span><span class="p">]</span>
+
+<span class="n">Próximos</span><span class="w"> </span><span class="n">passos</span><span class="o">:</span>
+<span class="mf">1.</span><span class="w"> </span><span class="p">[</span><span class="n">AÇÃO</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span>
+<span class="mf">2.</span><span class="w"> </span><span class="p">[</span><span class="n">AÇÃO</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">Algo</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">acrescentar</span><span class="o">?</span>
+
+<span class="n">Abraço</span><span class="p">,</span>
+<span class="p">[</span><span class="n">SEU</span><span class="w"> </span><span class="n">NOME</span><span class="p">]</span>
+</code></pre></div>
+
+<p><strong>Quando usar:</strong> Logo após reunião importante (alinhamento é tudo).</p>
+<h4>10. Feedback Positivo</h4>
+<div class="codehilite"><pre><span></span><code><span class="nl">Assunto</span><span class="p">:</span><span class="w"> </span><span class="n">Parabéns</span><span class="w"> </span><span class="n">pelo</span><span class="w"> </span><span class="p">[</span><span class="n">RESULTADO</span><span class="p">]</span><span class="o">!</span>
+
+<span class="n">Olá</span><span class="w"> </span><span class="p">[</span><span class="n">NOME</span><span class="p">],</span>
+
+<span class="n">Quero</span><span class="w"> </span><span class="n">te</span><span class="w"> </span><span class="n">parabenizar</span><span class="w"> </span><span class="n">pelo</span><span class="w"> </span><span class="n">excelente</span><span class="w"> </span><span class="n">trabalho</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="p">[</span><span class="n">PROJETO</span><span class="o">/</span><span class="n">TAREFA</span><span class="p">].</span>
+
+<span class="n">Especialmente</span><span class="w"> </span><span class="n">gostei</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="p">[</span><span class="n">DETALHE</span><span class="w"> </span><span class="n">ESPECÍFICO</span><span class="p">].</span>
+
+<span class="n">Continue</span><span class="w"> </span><span class="n">assim</span><span class="o">!</span>
+
+<span class="p">[</span><span class="n">SEU</span><span class="w"> </span><span class="n">NOME</span><span class="p">]</span>
+</code></pre></div>
+
+<p><strong>Quando usar:</strong> Reforçar comportamento positivo da equipe.</p>
+<h4>11. Feedback de Melhoria</h4>
+<div class="codehilite"><pre><span></span><code><span class="nl">Assunto</span><span class="p">:</span><span class="w"> </span><span class="n">Feedback</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">[</span><span class="n">ASSUNTO</span><span class="p">]</span>
+
+<span class="n">Olá</span><span class="w"> </span><span class="p">[</span><span class="n">NOME</span><span class="p">],</span>
+
+<span class="n">Gostaria</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">conversar</span><span class="w"> </span><span class="n">sobre</span><span class="w"> </span><span class="p">[</span><span class="n">SITUAÇÃO</span><span class="o">/</span><span class="n">PROJETO</span><span class="p">].</span>
+
+<span class="n">Percebi</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="p">[</span><span class="n">OBSERVAÇÃO</span><span class="w"> </span><span class="n">OBJETIVA</span><span class="p">],</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">resultou</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="p">[</span><span class="n">CONSEQUÊNCIA</span><span class="p">].</span>
+
+<span class="n">Podemos</span><span class="w"> </span><span class="n">alinhar</span><span class="w"> </span><span class="n">uma</span><span class="w"> </span><span class="n">forma</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="p">[</span><span class="n">SOLUÇÃO</span><span class="o">/</span><span class="n">MELHORIA</span><span class="p">]</span><span class="o">?</span>
+
+<span class="n">Estou</span><span class="w"> </span><span class="n">disponível</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">te</span><span class="w"> </span><span class="n">ajudar</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">precisar</span><span class="p">.</span>
+
+<span class="n">Abraço</span><span class="p">,</span>
+<span class="p">[</span><span class="n">SEU</span><span class="w"> </span><span class="n">NOME</span><span class="p">]</span>
+</code></pre></div>
+
+<p><strong>Quando usar:</strong> Corrigir rumo sem desmotivar.</p>
+<h4>12. "Não Tenho Essa Informação"</h4>
+<div class="codehilite"><pre><span></span><code><span class="nl">Assunto</span><span class="p">:</span><span class="w"> </span><span class="n">Re</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">assunto</span><span class="p">]</span>
+
+<span class="n">Olá</span><span class="w"> </span><span class="p">[</span><span class="n">NOME</span><span class="p">],</span>
+
+<span class="n">Obrigado</span><span class="w"> </span><span class="n">pela</span><span class="w"> </span><span class="n">pergunta</span><span class="o">!</span>
+
+<span class="n">Não</span><span class="w"> </span><span class="n">tenho</span><span class="w"> </span><span class="n">essa</span><span class="w"> </span><span class="n">informação</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">momento</span><span class="p">,</span><span class="w"> </span><span class="n">mas</span><span class="w"> </span><span class="n">vou</span><span class="w"> </span><span class="n">verificar</span><span class="w"> </span><span class="n">com</span><span class="w"> </span><span class="p">[</span><span class="n">PESSOA</span><span class="o">/</span><span class="n">ÁREA</span><span class="p">]</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">retorno</span><span class="w"> </span><span class="n">até</span><span class="w"> </span><span class="p">[</span><span class="n">DATA</span><span class="o">/</span><span class="n">HORÁRIO</span><span class="p">].</span>
+
+<span class="n">Abraço</span><span class="p">,</span>
+<span class="p">[</span><span class="n">SEU</span><span class="w"> </span><span class="n">NOME</span><span class="p">]</span>
+</code></pre></div>
+
+<p><strong>Quando usar:</strong> Não deixar no vácuo quando não sabe a resposta.</p>
+<h4>13. Delegação Clara</h4>
+<div class="codehilite"><pre><span></span><code><span class="nl">Assunto</span><span class="p">:</span><span class="w"> </span><span class="n">Ação</span><span class="w"> </span><span class="n">necessária</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">[</span><span class="n">TAREFA</span><span class="p">]</span>
+
+<span class="n">Olá</span><span class="w"> </span><span class="p">[</span><span class="n">NOME</span><span class="p">],</span>
+
+<span class="n">Preciso</span><span class="w"> </span><span class="n">da</span><span class="w"> </span><span class="n">sua</span><span class="w"> </span><span class="n">ajuda</span><span class="w"> </span><span class="n">com</span><span class="w"> </span><span class="p">[</span><span class="n">TAREFA</span><span class="p">].</span>
+
+<span class="n">O</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">fazer</span><span class="o">:</span>
+<span class="mf">1.</span><span class="w"> </span><span class="p">[</span><span class="n">PASSO</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span>
+<span class="mf">2.</span><span class="w"> </span><span class="p">[</span><span class="n">PASSO</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span>
+<span class="mf">3.</span><span class="w"> </span><span class="p">[</span><span class="n">PASSO</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span>
+
+<span class="nl">Prazo</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">DATA</span><span class="p">]</span>
+<span class="n">Resultado</span><span class="w"> </span><span class="n">esperado</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">DESCRIÇÃO</span><span class="p">]</span>
+
+<span class="n">Pode</span><span class="w"> </span><span class="n">assumir</span><span class="w"> </span><span class="n">essa</span><span class="w"> </span><span class="n">demanda</span><span class="o">?</span>
+
+<span class="n">Qualquer</span><span class="w"> </span><span class="n">dúvida</span><span class="p">,</span><span class="w"> </span><span class="n">me</span><span class="w"> </span><span class="n">chama</span><span class="p">.</span>
+
+<span class="n">Abraço</span><span class="p">,</span>
+<span class="p">[</span><span class="n">SEU</span><span class="w"> </span><span class="n">NOME</span><span class="p">]</span>
+</code></pre></div>
+
+<p><strong>Quando usar:</strong> Delegar com clareza (evita retrabalho).</p>
+<h4>14. "Desculpa, Não Posso"</h4>
+<div class="codehilite"><pre><span></span><code><span class="nl">Assunto</span><span class="p">:</span><span class="w"> </span><span class="n">Re</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">assunto</span><span class="p">]</span>
+
+<span class="n">Olá</span><span class="w"> </span><span class="p">[</span><span class="n">NOME</span><span class="p">],</span>
+
+<span class="n">Agradeço</span><span class="w"> </span><span class="n">muito</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">convite</span><span class="o">/</span><span class="n">solicitação</span><span class="o">!</span>
+
+<span class="n">Infelizmente</span><span class="w"> </span><span class="n">não</span><span class="w"> </span><span class="n">vou</span><span class="w"> </span><span class="n">conseguir</span><span class="w"> </span><span class="n">porque</span><span class="w"> </span><span class="p">[</span><span class="n">RAZÃO</span><span class="w"> </span><span class="n">BREVE</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">HONESTA</span><span class="p">].</span>
+
+<span class="n">Posso</span><span class="w"> </span><span class="n">te</span><span class="w"> </span><span class="n">ajudar</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">outra</span><span class="w"> </span><span class="n">forma</span><span class="o">:</span>
+<span class="o">-</span><span class="w"> </span><span class="p">[</span><span class="n">ALTERNATIVA</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span>
+<span class="o">-</span><span class="w"> </span><span class="p">[</span><span class="n">ALTERNATIVA</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">Obrigado</span><span class="w"> </span><span class="n">pela</span><span class="w"> </span><span class="n">compreensão</span><span class="o">!</span>
+
+<span class="p">[</span><span class="n">SEU</span><span class="w"> </span><span class="n">NOME</span><span class="p">]</span>
+</code></pre></div>
+
+<p><strong>Quando usar:</strong> Dizer não com educação e propor alternativas.</p>
+<h4>15. Encerramento de Demanda</h4>
+<div class="codehilite"><pre><span></span><code><span class="nl">Assunto</span><span class="p">:</span><span class="w"> </span><span class="err">✅</span><span class="w"> </span><span class="p">[</span><span class="n">ASSUNTO</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Concluído</span>
+
+<span class="n">Olá</span><span class="w"> </span><span class="p">[</span><span class="n">NOME</span><span class="p">],</span>
+
+<span class="n">Informo</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="p">[</span><span class="n">TAREFA</span><span class="o">/</span><span class="n">PROJETO</span><span class="p">]</span><span class="w"> </span><span class="n">foi</span><span class="w"> </span><span class="n">concluído</span><span class="p">.</span>
+
+<span class="nl">Resultado</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">RESUMO</span><span class="w"> </span><span class="n">BREVE</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="n">LINK</span><span class="p">]</span>
+
+<span class="n">Alguma</span><span class="w"> </span><span class="n">dúvida</span><span class="w"> </span><span class="n">ou</span><span class="w"> </span><span class="n">ajuste</span><span class="w"> </span><span class="n">necessário</span><span class="o">?</span>
+
+<span class="n">Caso</span><span class="w"> </span><span class="n">contrário</span><span class="p">,</span><span class="w"> </span><span class="n">podemos</span><span class="w"> </span><span class="n">considerar</span><span class="w"> </span><span class="n">finalizado</span><span class="p">.</span>
+
+<span class="n">Abraço</span><span class="p">,</span>
+<span class="p">[</span><span class="n">SEU</span><span class="w"> </span><span class="n">NOME</span><span class="p">]</span>
+</code></pre></div>
+
+<p><strong>Quando usar:</strong> Fechar loops abertos (satisfação garantida).</p>
+<h3>Variáveis Dinâmicas para Personalizar</h3>
+<p>Use marcadores como <code>[NOME]</code>, <code>[DATA]</code>, <code>[ASSUNTO]</code> nos templates e substitua antes de enviar.</p>
+<p><strong>Dica ninja:</strong> No Gmail, use o atalho <code>Ctrl+F</code> (buscar) e digite <code>[</code> para encontrar todos os campos a preencher rapidamente.</p>
+<h3>Como Criar Sua Biblioteca de Respostas</h3>
+<p><strong>Passo 1: Durante 1 semana, anote:</strong>
+- Emails que você envia repetidamente
+- Situações recorrentes
+- Frases que você copia e cola</p>
+<p><strong>Passo 2: Agrupe por categoria:</strong>
+- Relacionamento com clientes
+- Comunicação interna
+- Fornecedores
+- Cobranças
+- Agradecimentos</p>
+<p><strong>Passo 3: Crie os templates</strong>
+- Um por situação
+- Nome claro e objetivo
+- Mantenha campos editáveis</p>
+<p><strong>Passo 4: Revise mensalmente</strong>
+- Quais você usa mais?
+- Quais nunca usa? (delete!)
+- Precisa de novos?</p>
+<hr />
+<h2>4. IA para Redigir Emails (Seu Ghostwriter Particular)</h2>
+<h3>Como o ChatGPT Pode Escrever Emails Profissionais por Você</h3>
+<p><strong>A mágica:</strong> Você descreve PARA QUEM, SOBRE O QUÊ e O QUE QUER ALCANÇAR. A IA escreve o email completo.</p>
+<h3>Estrutura de Prompt Perfeito</h3>
+<div class="codehilite"><pre><span></span><code><span class="nl">Contexto</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">quem</span><span class="w"> </span><span class="n">você</span><span class="w"> </span><span class="n">é</span><span class="p">,</span><span class="w"> </span><span class="n">quem</span><span class="w"> </span><span class="n">é</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">destinatário</span><span class="p">]</span>
+<span class="nl">Objetivo</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">o</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">você</span><span class="w"> </span><span class="n">quer</span><span class="w"> </span><span class="n">com</span><span class="w"> </span><span class="n">esse</span><span class="w"> </span><span class="n">email</span><span class="p">]</span>
+<span class="nl">Tom</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">formal</span><span class="o">/</span><span class="n">informal</span><span class="o">/</span><span class="n">amigável</span><span class="o">/</span><span class="n">sério</span><span class="p">]</span>
+<span class="nl">Tamanho</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">curto</span><span class="o">/</span><span class="n">médio</span><span class="o">/</span><span class="n">longo</span><span class="p">]</span>
+<span class="n">Informações</span><span class="w"> </span><span class="n">importantes</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">dados</span><span class="w"> </span><span class="n">específicos</span><span class="p">]</span>
+</code></pre></div>
+
+<h3>10 Prompts para Diferentes Tipos de Email</h3>
+<h4>1. Resposta a Cliente (Problema Técnico)</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Contexto</span><span class="o">:</span><span class="w"> </span><span class="n">Sou</span><span class="w"> </span><span class="n">gerente</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">suporte</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">cliente</span><span class="w"> </span><span class="n">João</span><span class="w"> </span><span class="n">da</span><span class="w"> </span><span class="n">Silva</span><span class="w"> </span><span class="n">relatou</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">sistema</span><span class="w"> </span><span class="n">está</span><span class="w"> </span><span class="n">lento</span><span class="w"> </span><span class="n">desde</span><span class="w"> </span><span class="n">ontem</span><span class="o">.</span>
+
+<span class="n">Objetivo</span><span class="o">:</span><span class="w"> </span><span class="n">Acusar</span><span class="w"> </span><span class="n">recebimento</span><span class="o">,</span><span class="w"> </span><span class="n">tranquilizar</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">informar</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">equipe</span><span class="w"> </span><span class="n">técnica</span><span class="w"> </span><span class="n">já</span><span class="w"> </span><span class="n">está</span><span class="w"> </span><span class="n">investigando</span><span class="o">.</span><span class="w"> </span><span class="n">Previsão</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">resolução</span><span class="o">:</span><span class="w"> </span><span class="n">até</span><span class="w"> </span><span class="n">amanhã</span><span class="w"> </span><span class="err">à</span><span class="n">s</span><span class="w"> </span><span class="mi">18</span><span class="n">h</span><span class="o">.</span>
+
+<span class="n">Tom</span><span class="o">:</span><span class="w"> </span><span class="n">Profissional</span><span class="o">,</span><span class="w"> </span><span class="n">empático</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">confiante</span><span class="o">.</span>
+
+<span class="n">Tamanho</span><span class="o">:</span><span class="w"> </span><span class="n">Médio</span><span class="w"> </span><span class="o">(</span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="w"> </span><span class="n">parágrafos</span><span class="o">).</span>
+
+<span class="n">Informações</span><span class="w"> </span><span class="n">importantes</span><span class="o">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Problema</span><span class="w"> </span><span class="n">identificado</span><span class="o">:</span><span class="w"> </span><span class="n">sobrecarga</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">servidor</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Já</span><span class="w"> </span><span class="n">temos</span><span class="w"> </span><span class="n">um</span><span class="w"> </span><span class="n">plano</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">ação</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Ofereci</span><span class="w"> </span><span class="n">contato</span><span class="w"> </span><span class="n">direto</span><span class="w"> </span><span class="n">se</span><span class="w"> </span><span class="n">piorar</span>
+
+<span class="n">Escreva</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">email</span><span class="o">.</span>
+</code></pre></div>
+
+<p><strong>Resultado esperado:</strong> Email profissional que acalma o cliente e passa confiança.</p>
+<h4>2. Solicitação Interna (Pedindo Informação)</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Contexto</span><span class="o">:</span><span class="w"> </span><span class="n">Sou</span><span class="w"> </span><span class="n">analista</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">marketing</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">preciso</span><span class="w"> </span><span class="n">dos</span><span class="w"> </span><span class="n">números</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">vendas</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">outubro</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">departamento</span><span class="w"> </span><span class="n">comercial</span><span class="w"> </span><span class="o">(</span><span class="n">gerente</span><span class="o">:</span><span class="w"> </span><span class="n">Carlos</span><span class="o">).</span>
+
+<span class="n">Objetivo</span><span class="o">:</span><span class="w"> </span><span class="n">Solicitar</span><span class="w"> </span><span class="n">relatório</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">vendas</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">outubro</span><span class="w"> </span><span class="n">com</span><span class="w"> </span><span class="n">breakdown</span><span class="w"> </span><span class="n">por</span><span class="w"> </span><span class="n">produto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">região</span><span class="o">.</span>
+
+<span class="n">Tom</span><span class="o">:</span><span class="w"> </span><span class="n">Cordial</span><span class="o">,</span><span class="w"> </span><span class="n">mas</span><span class="w"> </span><span class="n">direto</span><span class="o">.</span>
+
+<span class="n">Tamanho</span><span class="o">:</span><span class="w"> </span><span class="n">Curto</span><span class="w"> </span><span class="o">(</span><span class="mi">1</span><span class="w"> </span><span class="n">parágrafo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lista</span><span class="o">).</span>
+
+<span class="n">Informações</span><span class="w"> </span><span class="n">importantes</span><span class="o">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Preciso</span><span class="w"> </span><span class="n">até</span><span class="w"> </span><span class="n">sexta</span><span class="o">-</span><span class="n">feira</span><span class="w"> </span><span class="o">(</span><span class="mi">20</span><span class="o">/</span><span class="mi">10</span><span class="o">)</span>
+<span class="o">-</span><span class="w"> </span><span class="err">É</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">apresentação</span><span class="w"> </span><span class="n">da</span><span class="w"> </span><span class="n">diretoria</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Formato</span><span class="o">:</span><span class="w"> </span><span class="n">Excel</span><span class="w"> </span><span class="n">ou</span><span class="w"> </span><span class="n">Google</span><span class="w"> </span><span class="n">Sheets</span>
+
+<span class="n">Escreva</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">email</span><span class="o">.</span>
+</code></pre></div>
+
+<h4>3. Cobrança Educada (1º Follow-up)</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Contexto</span><span class="o">:</span><span class="w"> </span><span class="n">Sou</span><span class="w"> </span><span class="n">gerente</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">projetos</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">enviei</span><span class="w"> </span><span class="n">uma</span><span class="w"> </span><span class="n">solicitação</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">aprovação</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">orçamento</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">diretora</span><span class="w"> </span><span class="n">Ana</span><span class="w"> </span><span class="n">há</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="n">dias</span><span class="w"> </span><span class="err">ú</span><span class="n">teis</span><span class="o">.</span><span class="w"> </span><span class="n">Ainda</span><span class="w"> </span><span class="n">não</span><span class="w"> </span><span class="n">recebi</span><span class="w"> </span><span class="n">resposta</span><span class="o">.</span>
+
+<span class="n">Objetivo</span><span class="o">:</span><span class="w"> </span><span class="n">Fazer</span><span class="w"> </span><span class="n">follow</span><span class="o">-</span><span class="n">up</span><span class="w"> </span><span class="n">educado</span><span class="w"> </span><span class="n">lembrando</span><span class="w"> </span><span class="n">da</span><span class="w"> </span><span class="n">solicitação</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">reforçando</span><span class="w"> </span><span class="n">prazo</span><span class="o">.</span>
+
+<span class="n">Tom</span><span class="o">:</span><span class="w"> </span><span class="n">Respeitoso</span><span class="o">,</span><span class="w"> </span><span class="n">mas</span><span class="w"> </span><span class="n">assertivo</span><span class="o">.</span>
+
+<span class="n">Tamanho</span><span class="o">:</span><span class="w"> </span><span class="n">Curto</span><span class="o">.</span>
+
+<span class="n">Informações</span><span class="w"> </span><span class="n">importantes</span><span class="o">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Proposta</span><span class="w"> </span><span class="n">enviada</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="mi">05</span><span class="o">/</span><span class="mi">11</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Preciso</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">aprovação</span><span class="w"> </span><span class="n">até</span><span class="w"> </span><span class="mi">15</span><span class="o">/</span><span class="mi">11</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">não</span><span class="w"> </span><span class="n">atrasar</span><span class="w"> </span><span class="n">fornecedor</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Valor</span><span class="o">:</span><span class="w"> </span><span class="n">R$</span><span class="w"> </span><span class="mf">25.000</span>
+
+<span class="n">Escreva</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">email</span><span class="o">.</span>
+</code></pre></div>
+
+<h4>4. Agradecimento (Após Ajuda)</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Contexto</span><span class="o">:</span><span class="w"> </span><span class="n">Sou</span><span class="w"> </span><span class="n">coordenador</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">TI</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">colega</span><span class="w"> </span><span class="n">Roberto</span><span class="w"> </span><span class="o">(</span><span class="n">outro</span><span class="w"> </span><span class="n">departamento</span><span class="o">)</span><span class="w"> </span><span class="n">me</span><span class="w"> </span><span class="n">ajudou</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">resolver</span><span class="w"> </span><span class="n">urgência</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="err">ú</span><span class="n">ltima</span><span class="w"> </span><span class="n">hora</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">servidor</span><span class="o">.</span>
+
+<span class="n">Objetivo</span><span class="o">:</span><span class="w"> </span><span class="n">Agradecer</span><span class="w"> </span><span class="n">genuinamente</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">reforçar</span><span class="w"> </span><span class="n">parceria</span><span class="o">.</span>
+
+<span class="n">Tom</span><span class="o">:</span><span class="w"> </span><span class="n">Caloroso</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">sincero</span><span class="o">.</span>
+
+<span class="n">Tamanho</span><span class="o">:</span><span class="w"> </span><span class="n">Curto</span><span class="o">.</span>
+
+<span class="n">Informações</span><span class="w"> </span><span class="n">importantes</span><span class="o">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Ele</span><span class="w"> </span><span class="n">ficou</span><span class="w"> </span><span class="n">até</span><span class="w"> </span><span class="n">mais</span><span class="w"> </span><span class="n">tarde</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">ajudar</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Resolveu</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">horas</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">levaria</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">dias</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Quero</span><span class="w"> </span><span class="n">oferecer</span><span class="w"> </span><span class="n">ajuda</span><span class="w"> </span><span class="n">futura</span>
+
+<span class="n">Escreva</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">email</span><span class="o">.</span>
+</code></pre></div>
+
+<h4>5. Follow-up Pós-Reunião</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Contexto</span><span class="o">:</span><span class="w"> </span><span class="n">Sou</span><span class="w"> </span><span class="n">líder</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">equipe</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">tivemos</span><span class="w"> </span><span class="n">reunião</span><span class="w"> </span><span class="n">hoje</span><span class="w"> </span><span class="n">com</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">desenvolvimento</span><span class="w"> </span><span class="o">(</span><span class="mi">5</span><span class="w"> </span><span class="n">pessoas</span><span class="o">)</span><span class="w"> </span><span class="n">sobre</span><span class="w"> </span><span class="n">novo</span><span class="w"> </span><span class="n">sistema</span><span class="o">.</span>
+
+<span class="n">Objetivo</span><span class="o">:</span><span class="w"> </span><span class="n">Resumir</span><span class="w"> </span><span class="n">decisões</span><span class="o">,</span><span class="w"> </span><span class="n">pendências</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">próximos</span><span class="w"> </span><span class="n">passos</span><span class="o">.</span>
+
+<span class="n">Tom</span><span class="o">:</span><span class="w"> </span><span class="n">Objetivo</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">organizacional</span><span class="o">.</span>
+
+<span class="n">Tamanho</span><span class="o">:</span><span class="w"> </span><span class="n">Médio</span><span class="o">.</span>
+
+<span class="n">Informações</span><span class="w"> </span><span class="n">importantes</span><span class="o">:</span>
+<span class="n">Decisões</span><span class="o">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Vamos</span><span class="w"> </span><span class="n">usar</span><span class="w"> </span><span class="n">framework</span><span class="w"> </span><span class="n">React</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Prazo</span><span class="w"> </span><span class="kd">final</span><span class="o">:</span><span class="w"> </span><span class="mi">30</span><span class="o">/</span><span class="mi">12</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Budget</span><span class="w"> </span><span class="n">aprovado</span><span class="o">:</span><span class="w"> </span><span class="n">R$</span><span class="w"> </span><span class="mi">50</span><span class="n">k</span>
+
+<span class="n">Pendências</span><span class="o">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Maria</span><span class="o">:</span><span class="w"> </span><span class="n">definir</span><span class="w"> </span><span class="n">UX</span><span class="w"> </span><span class="n">até</span><span class="w"> </span><span class="mi">25</span><span class="o">/</span><span class="mi">11</span>
+<span class="o">-</span><span class="w"> </span><span class="n">João</span><span class="o">:</span><span class="w"> </span><span class="n">levantar</span><span class="w"> </span><span class="n">requisitos</span><span class="w"> </span><span class="n">técnicos</span><span class="w"> </span><span class="n">até</span><span class="w"> </span><span class="mi">28</span><span class="o">/</span><span class="mi">11</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Eu</span><span class="o">:</span><span class="w"> </span><span class="n">aprovar</span><span class="w"> </span><span class="n">fornecedor</span><span class="w"> </span><span class="n">até</span><span class="w"> </span><span class="mi">20</span><span class="o">/</span><span class="mi">11</span>
+
+<span class="n">Próxima</span><span class="w"> </span><span class="n">reunião</span><span class="o">:</span><span class="w"> </span><span class="mi">02</span><span class="o">/</span><span class="mi">12</span><span class="o">,</span><span class="w"> </span><span class="mi">14</span><span class="n">h</span>
+
+<span class="n">Escreva</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">email</span><span class="o">.</span>
+</code></pre></div>
+
+<h4>6. Feedback Construtivo</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Contexto</span><span class="o">:</span><span class="w"> </span><span class="n">Sou</span><span class="w"> </span><span class="n">gerente</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">meu</span><span class="w"> </span><span class="n">subordinado</span><span class="w"> </span><span class="n">Pedro</span><span class="w"> </span><span class="n">entregou</span><span class="w"> </span><span class="n">relatório</span><span class="w"> </span><span class="n">com</span><span class="w"> </span><span class="n">vários</span><span class="w"> </span><span class="n">erros</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">dados</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">fora</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">prazo</span><span class="o">.</span>
+
+<span class="n">Objetivo</span><span class="o">:</span><span class="w"> </span><span class="n">Dar</span><span class="w"> </span><span class="n">feedback</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">melhoria</span><span class="w"> </span><span class="n">sem</span><span class="w"> </span><span class="n">desmotivar</span><span class="o">,</span><span class="w"> </span><span class="n">focar</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">comportamento</span><span class="w"> </span><span class="o">(</span><span class="n">não</span><span class="w"> </span><span class="n">na</span><span class="w"> </span><span class="n">pessoa</span><span class="o">)</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">oferecer</span><span class="w"> </span><span class="n">ajuda</span><span class="o">.</span>
+
+<span class="n">Tom</span><span class="o">:</span><span class="w"> </span><span class="n">Firme</span><span class="w"> </span><span class="n">mas</span><span class="w"> </span><span class="n">empático</span><span class="o">.</span>
+
+<span class="n">Tamanho</span><span class="o">:</span><span class="w"> </span><span class="n">Médio</span><span class="o">.</span>
+
+<span class="n">Informações</span><span class="w"> </span><span class="n">importantes</span><span class="o">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Relatório</span><span class="w"> </span><span class="n">tinha</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="n">erros</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">cálculo</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Entregue</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">dias</span><span class="w"> </span><span class="n">após</span><span class="w"> </span><span class="n">prazo</span>
+<span class="o">-</span><span class="w"> </span><span class="err">É</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">segunda</span><span class="w"> </span><span class="n">vez</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">acontece</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Quero</span><span class="w"> </span><span class="n">oferecer</span><span class="w"> </span><span class="n">revisão</span><span class="w"> </span><span class="n">conjunta</span><span class="w"> </span><span class="n">antes</span><span class="w"> </span><span class="n">da</span><span class="w"> </span><span class="n">entrega</span><span class="w"> </span><span class="kd">final</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Reconhecer</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">ele</span><span class="w"> </span><span class="n">tem</span><span class="w"> </span><span class="n">tido</span><span class="w"> </span><span class="n">muitas</span><span class="w"> </span><span class="n">demandas</span>
+
+<span class="n">Escreva</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">email</span><span class="o">.</span>
+</code></pre></div>
+
+<h4>7. Convite para Reunião (Externa - Potencial Cliente)</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Contexto</span><span class="o">:</span><span class="w"> </span><span class="n">Sou</span><span class="w"> </span><span class="n">gerente</span><span class="w"> </span><span class="n">comercial</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">conheci</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">Maria</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="n">evento</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">networking</span><span class="o">.</span><span class="w"> </span><span class="n">Ela</span><span class="w"> </span><span class="n">demonstrou</span><span class="w"> </span><span class="n">interesse</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="n">nossas</span><span class="w"> </span><span class="n">soluções</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">software</span><span class="o">.</span>
+
+<span class="n">Objetivo</span><span class="o">:</span><span class="w"> </span><span class="n">Agendar</span><span class="w"> </span><span class="n">reunião</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">apresentar</span><span class="w"> </span><span class="n">produto</span><span class="w"> </span><span class="o">(</span><span class="mi">30</span><span class="o">-</span><span class="mi">45</span><span class="n">min</span><span class="o">).</span>
+
+<span class="n">Tom</span><span class="o">:</span><span class="w"> </span><span class="n">Profissional</span><span class="w"> </span><span class="n">mas</span><span class="w"> </span><span class="n">amigável</span><span class="o">.</span>
+
+<span class="n">Tamanho</span><span class="o">:</span><span class="w"> </span><span class="n">Curto</span><span class="o">.</span>
+
+<span class="n">Informações</span><span class="w"> </span><span class="n">importantes</span><span class="o">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Foi</span><span class="w"> </span><span class="err">ó</span><span class="n">timo</span><span class="w"> </span><span class="n">conversar</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">evento</span><span class="w"> </span><span class="n">da</span><span class="w"> </span><span class="n">ACME</span><span class="w"> </span><span class="n">na</span><span class="w"> </span><span class="n">semana</span><span class="w"> </span><span class="n">passada</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Oferecer</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="n">opções</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">horário</span><span class="w"> </span><span class="o">(</span><span class="mi">18</span><span class="sr">/11 - 10h, 20/11 - 14h, 22/</span><span class="mi">11</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">16</span><span class="n">h</span><span class="o">)</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Reunião</span><span class="w"> </span><span class="n">pode</span><span class="w"> </span><span class="n">ser</span><span class="w"> </span><span class="n">online</span><span class="w"> </span><span class="o">(</span><span class="n">Google</span><span class="w"> </span><span class="n">Meet</span><span class="o">)</span><span class="w"> </span><span class="n">ou</span><span class="w"> </span><span class="n">presencial</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="n">nosso</span><span class="w"> </span><span class="n">escritório</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Mencionar</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">posso</span><span class="w"> </span><span class="n">adaptar</span><span class="w"> </span><span class="n">apresentação</span><span class="w"> </span><span class="n">ao</span><span class="w"> </span><span class="n">setor</span><span class="w"> </span><span class="n">dela</span><span class="w"> </span><span class="o">(</span><span class="n">varejo</span><span class="o">)</span>
+
+<span class="n">Escreva</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">email</span><span class="o">.</span>
+</code></pre></div>
+
+<h4>8. Comunicado de Mudança (Equipe)</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Contexto</span><span class="o">:</span><span class="w"> </span><span class="n">Sou</span><span class="w"> </span><span class="n">gerente</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">RH</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">haverá</span><span class="w"> </span><span class="n">mudança</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">horário</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">funcionamento</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">escritório</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">partir</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="mi">01</span><span class="o">/</span><span class="mi">12</span><span class="o">.</span>
+
+<span class="n">Objetivo</span><span class="o">:</span><span class="w"> </span><span class="n">Comunicar</span><span class="w"> </span><span class="n">mudança</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">forma</span><span class="w"> </span><span class="n">clara</span><span class="o">,</span><span class="w"> </span><span class="n">explicar</span><span class="w"> </span><span class="n">motivo</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">dar</span><span class="w"> </span><span class="n">espaço</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">dúvidas</span><span class="o">.</span>
+
+<span class="n">Tom</span><span class="o">:</span><span class="w"> </span><span class="n">Oficial</span><span class="w"> </span><span class="n">mas</span><span class="w"> </span><span class="n">acessível</span><span class="o">.</span>
+
+<span class="n">Tamanho</span><span class="o">:</span><span class="w"> </span><span class="n">Médio</span><span class="o">.</span>
+
+<span class="n">Informações</span><span class="w"> </span><span class="n">importantes</span><span class="o">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Horário</span><span class="w"> </span><span class="n">atual</span><span class="o">:</span><span class="w"> </span><span class="mi">8</span><span class="n">h</span><span class="o">-</span><span class="mi">17</span><span class="n">h</span><span class="w"> </span><span class="o">(</span><span class="n">seg</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">sex</span><span class="o">)</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Novo</span><span class="w"> </span><span class="n">horário</span><span class="o">:</span><span class="w"> </span><span class="mi">9</span><span class="n">h</span><span class="o">-</span><span class="mi">18</span><span class="n">h</span><span class="w"> </span><span class="o">(</span><span class="n">seg</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">sex</span><span class="o">)</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Motivo</span><span class="o">:</span><span class="w"> </span><span class="n">otimização</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">custos</span><span class="w"> </span><span class="n">operacionais</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">preferência</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="mi">70</span><span class="o">%</span><span class="w"> </span><span class="n">da</span><span class="w"> </span><span class="n">equipe</span><span class="w"> </span><span class="o">(</span><span class="n">pesquisa</span><span class="w"> </span><span class="n">interna</span><span class="o">)</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Exceções</span><span class="w"> </span><span class="n">podem</span><span class="w"> </span><span class="n">ser</span><span class="w"> </span><span class="n">negociadas</span><span class="w"> </span><span class="n">caso</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">caso</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Dúvidas</span><span class="w"> </span><span class="n">podem</span><span class="w"> </span><span class="n">ser</span><span class="w"> </span><span class="n">enviadas</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">rh</span><span class="err">@</span><span class="n">empresa</span><span class="o">.</span><span class="na">com</span>
+
+<span class="n">Escreva</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">toda</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">equipe</span><span class="o">.</span>
+</code></pre></div>
+
+<h4>9. Negociação de Prazo</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Contexto</span><span class="o">:</span><span class="w"> </span><span class="n">Sou</span><span class="w"> </span><span class="n">desenvolvedor</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">recebi</span><span class="w"> </span><span class="n">demanda</span><span class="w"> </span><span class="n">complexa</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">foi</span><span class="w"> </span><span class="n">estimada</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">dias</span><span class="o">,</span><span class="w"> </span><span class="n">mas</span><span class="w"> </span><span class="n">só</span><span class="w"> </span><span class="n">tenho</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="n">dias</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">prazo</span><span class="o">.</span>
+
+<span class="n">Objetivo</span><span class="o">:</span><span class="w"> </span><span class="n">Negociar</span><span class="w"> </span><span class="n">extensão</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">prazo</span><span class="w"> </span><span class="n">ou</span><span class="w"> </span><span class="n">redução</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">escopo</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">forma</span><span class="w"> </span><span class="n">profissional</span><span class="o">.</span>
+
+<span class="n">Tom</span><span class="o">:</span><span class="w"> </span><span class="n">Assertivo</span><span class="w"> </span><span class="n">mas</span><span class="w"> </span><span class="n">colaborativo</span><span class="o">.</span>
+
+<span class="n">Tamanho</span><span class="o">:</span><span class="w"> </span><span class="n">Médio</span><span class="o">.</span>
+
+<span class="n">Informações</span><span class="w"> </span><span class="n">importantes</span><span class="o">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Reconheço</span><span class="w"> </span><span class="n">urgência</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">projeto</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Estimativa</span><span class="w"> </span><span class="n">realista</span><span class="o">:</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">dias</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">escopo</span><span class="w"> </span><span class="n">completo</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Alternativas</span><span class="o">:</span>
+<span class="w">  </span><span class="mi">1</span><span class="o">.</span><span class="w"> </span><span class="n">Entregar</span><span class="w"> </span><span class="n">versão</span><span class="w"> </span><span class="n">beta</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="n">dias</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">versão</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="o">+</span><span class="mi">5</span><span class="w"> </span><span class="n">dias</span>
+<span class="w">  </span><span class="mi">2</span><span class="o">.</span><span class="w"> </span><span class="n">Reduzir</span><span class="w"> </span><span class="n">escopo</span><span class="o">:</span><span class="w"> </span><span class="n">focar</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="n">funcionalidades</span><span class="w"> </span><span class="n">críticas</span><span class="w"> </span><span class="n">agora</span><span class="o">,</span><span class="w"> </span><span class="n">resto</span><span class="w"> </span><span class="n">depois</span>
+<span class="w">  </span><span class="mi">3</span><span class="o">.</span><span class="w"> </span><span class="n">Alocar</span><span class="w"> </span><span class="n">mais</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">desenvolvedor</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">cumprir</span><span class="w"> </span><span class="n">prazo</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Quero</span><span class="w"> </span><span class="n">propor</span><span class="w"> </span><span class="n">reunião</span><span class="w"> </span><span class="n">rápida</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">alinhar</span>
+
+<span class="n">Escreva</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">meu</span><span class="w"> </span><span class="n">gestor</span><span class="o">.</span>
+</code></pre></div>
+
+<h4>10. Apresentação Pessoal (Novo na Empresa)</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Contexto</span><span class="o">:</span><span class="w"> </span><span class="n">Sou</span><span class="w"> </span><span class="n">novo</span><span class="w"> </span><span class="n">analista</span><span class="w"> </span><span class="n">financeiro</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">começou</span><span class="w"> </span><span class="n">hoje</span><span class="w"> </span><span class="n">na</span><span class="w"> </span><span class="n">empresa</span><span class="w"> </span><span class="o">(</span><span class="mi">50</span><span class="w"> </span><span class="n">funcionários</span><span class="o">).</span>
+
+<span class="n">Objetivo</span><span class="o">:</span><span class="w"> </span><span class="n">Me</span><span class="w"> </span><span class="n">apresentar</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">toda</span><span class="w"> </span><span class="n">equipe</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">forma</span><span class="w"> </span><span class="n">simpática</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">profissional</span><span class="o">.</span>
+
+<span class="n">Tom</span><span class="o">:</span><span class="w"> </span><span class="n">Caloroso</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">humilde</span><span class="o">.</span>
+
+<span class="n">Tamanho</span><span class="o">:</span><span class="w"> </span><span class="n">Curto</span><span class="o">.</span>
+
+<span class="n">Informações</span><span class="w"> </span><span class="n">importantes</span><span class="o">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Nome</span><span class="o">:</span><span class="w"> </span><span class="n">Rafael</span><span class="w"> </span><span class="n">Costa</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Cargo</span><span class="o">:</span><span class="w"> </span><span class="n">Analista</span><span class="w"> </span><span class="n">Financeiro</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Experiência</span><span class="o">:</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="n">anos</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="n">controladoria</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Vim</span><span class="w"> </span><span class="n">da</span><span class="w"> </span><span class="n">empresa</span><span class="w"> </span><span class="n">XYZ</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Empolgado</span><span class="w"> </span><span class="n">com</span><span class="w"> </span><span class="n">os</span><span class="w"> </span><span class="n">projetos</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Estou</span><span class="w"> </span><span class="err">à</span><span class="w"> </span><span class="n">disposição</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">colaborar</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Pode</span><span class="w"> </span><span class="n">me</span><span class="w"> </span><span class="n">chamar</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">um</span><span class="w"> </span><span class="n">café</span>
+
+<span class="n">Escreva</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">apresentação</span><span class="o">.</span>
+</code></pre></div>
+
+<h3>Como Adaptar Tom e Formalidade</h3>
+<p><strong>Prompt adicional para ajustar tom:</strong></p>
+<div class="codehilite"><pre><span></span><code>O email acima está muito [formal/informal].
+Reescreva mantendo o conteúdo mas tornando-o mais [amigável/sério/direto/empático].
+</code></pre></div>
+
+<p><strong>Exemplo:</strong>
+- "Muito formal" → "Reescreva de forma mais amigável, como se fosse para um colega"
+- "Muito informal" → "Reescreva de forma mais corporativa para enviar à diretoria"</p>
+<h3>Truque Profissional: Múltiplas Versões</h3>
+<div class="codehilite"><pre><span></span><code>Gere 3 versões deste email:
+1. Versão curta e direta (máximo 3 linhas)
+2. Versão padrão (2 parágrafos)
+3. Versão detalhada e formal
+</code></pre></div>
+
+<p><strong>Escolha a que mais se encaixa no contexto.</strong></p>
+<h3>IMPORTANTE: Sempre Revise</h3>
+<p><strong>A IA é ótima, mas você é responsável pelo email.</strong></p>
+<p>Checklist antes de enviar:
+- ✅ Informações estão corretas?
+- ✅ Tom está adequado para o destinatário?
+- ✅ Não ficou genérico demais?
+- ✅ Personalizei com detalhes específicos?
+- ✅ Revisei gramática e pontuação?</p>
+<hr />
+<h2>5. Automação Avançada com Zapier/Make</h2>
+<h3>O Que É Possível</h3>
+<p><strong>Cenário:</strong> Email chega → Ação automática acontece.</p>
+<p>Exemplos do mundo real:
+- Cliente envia pedido por email → Cria tarefa no Trello + Notifica equipe no Slack
+- Anexo em email → Salva no Google Drive automaticamente
+- Email de lead → Adiciona no CRM + Agenda follow-up
+- Email importante → Notificação no celular</p>
+<h3>Email → CRM Automático</h3>
+<h4>Ferramentas necessárias:</h4>
+<ul>
+<li>Gmail/Outlook</li>
+<li>CRM (Pipedrive, HubSpot, RD Station, etc.)</li>
+<li>Zapier ou Make (versão free funciona)</li>
+</ul>
+<h4>Setup Passo a Passo (Zapier)</h4>
+<p><strong>Passo 1: Criar conta no Zapier</strong>
+- zapier.com
+- Plano gratuito: 100 tarefas/mês (suficiente para testar)</p>
+<p><strong>Passo 2: Criar novo Zap</strong>
+1. Clique em "Create Zap"
+2. Nome: "Email de Lead → CRM"</p>
+<p><strong>Passo 3: Configurar Trigger (Gatilho)</strong>
+1. App: Gmail
+2. Evento: "New Email Matching Search"
+3. Conecte sua conta Gmail
+4. Search String: <code>from:(contato@site.com) OR subject:(orçamento) OR subject:(interesse)</code>
+5. Teste e confirme que está pegando emails certos</p>
+<p><strong>Passo 4: Configurar Action (Ação)</strong>
+1. App: seu CRM (ex: Pipedrive)
+2. Evento: "Create Deal" ou "Create Contact"
+3. Conecte sua conta do CRM
+4. Mapeie campos:
+   - Nome: extrair do "From Name"
+   - Email: extrair do "From Email"
+   - Mensagem: "Body Plain" (texto do email)
+   - Origem: "Email Inbound"
+   - Responsável: seu nome
+5. Teste e confirme</p>
+<p><strong>Passo 5: Ativar</strong>
+- Clique em "Turn on Zap"
+- Pronto! Agora todo email de lead vai automaticamente para o CRM.</p>
+<h4>Tempo economizado: 5-10 minutos por lead (manual) → 0 minutos (automático)</h4>
+<h3>Email → Tarefa no Trello/Asana</h3>
+<h4>Setup Passo a Passo</h4>
+<p><strong>Passo 1: Trigger</strong>
+- App: Gmail
+- Evento: "New Starred Email" (você estrela emails que viram tarefas)</p>
+<p><strong>Passo 2: Action</strong>
+- App: Trello
+- Evento: "Create Card"
+- Board: "Tarefas Operacionais"
+- List: "A Fazer"
+- Card Name: Assunto do email
+- Description: Corpo do email + Link do email
+- Due Date: (você pode deixar em branco ou definir regra)
+- Members: você</p>
+<p><strong>Resultado:</strong> Estrela email → Vira tarefa automática no Trello.</p>
+<h3>Anexo → Google Drive Automático</h3>
+<h4>Setup Passo a Passo</h4>
+<p><strong>Passo 1: Trigger</strong>
+- App: Gmail
+- Evento: "New Attachment"
+- Search: <code>has:attachment from:cliente@empresa.com</code> (ou critério específico)</p>
+<p><strong>Passo 2: Filter (Opcional)</strong>
+- Adicione filtro: "Only continue if... Attachment Name contains .pdf"
+- Evita salvar anexos irrelevantes</p>
+<p><strong>Passo 3: Action</strong>
+- App: Google Drive
+- Evento: "Upload File"
+- Drive: "My Drive"
+- Folder: /Clientes/[Nome Cliente] (crie pasta antes ou use Zapier para criar)
+- File: "Attachment" (do step anterior)
+- File Name: <code>{{date}} - {{subject}} - {{attachment_name}}</code></p>
+<p><strong>Resultado:</strong> Cliente envia contrato por email → Salva automaticamente no Drive com nome organizado.</p>
+<h3>Email Importante → Notificação Slack</h3>
+<h4>Setup Passo a Passo</h4>
+<p><strong>Passo 1: Trigger</strong>
+- App: Gmail
+- Evento: "New Email Matching Search"
+- Search: <code>from:chefe@empresa.com OR subject:URGENTE</code></p>
+<p><strong>Passo 2: Action</strong>
+- App: Slack
+- Evento: "Send Channel Message"
+- Channel: #geral ou DM para você
+- Message:</p>
+<div class="codehilite"><pre><span></span><code><span class="x">🚨 EMAIL IMPORTANTE RECEBIDO</span>
+
+<span class="x">De: </span><span class="cp">{{</span><span class="nv">from_name</span><span class="cp">}}</span><span class="x"> (</span><span class="cp">{{</span><span class="nv">from_email</span><span class="cp">}}</span><span class="x">)</span>
+<span class="x">Assunto: </span><span class="cp">{{</span><span class="nv">subject</span><span class="cp">}}</span>
+
+<span class="x">Prévia: </span><span class="cp">{{</span><span class="nv">body_plain</span><span class="o">[</span><span class="m">0</span><span class="o">:</span><span class="m">200</span><span class="o">]</span><span class="cp">}}</span><span class="x">...</span>
+
+<span class="x">🔗 Ver email: </span><span class="cp">{{</span><span class="nv">link</span><span class="cp">}}</span>
+</code></pre></div>
+
+<p><strong>Resultado:</strong> Email urgente → Notificação imediata no Slack (mesmo se não estiver no email).</p>
+<h3>Automação Bônus: Resposta Automática Inteligente</h3>
+<p><strong>Cenário:</strong> Cliente envia email com palavra-chave → Recebe resposta automática personalizada.</p>
+<p><strong>Setup:</strong>
+1. Trigger: Gmail - "New Email Matching Search"
+2. Search: <code>subject:(suporte) OR subject:(problema)</code>
+3. Action: Gmail - "Send Email"
+4. To: <code>{{from_email}}</code>
+5. Subject: <code>Re: {{subject}}</code>
+6. Body:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Olá</span><span class="w"> </span><span class="p">{{</span><span class="n">from_name</span><span class="p">}},</span>
+
+<span class="n">Recebemos</span><span class="w"> </span><span class="n">sua</span><span class="w"> </span><span class="n">solicitação</span><span class="o">!</span>
+
+<span class="n">Nosso</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">suporte</span><span class="w"> </span><span class="n">já</span><span class="w"> </span><span class="n">foi</span><span class="w"> </span><span class="n">notificado</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">retornará</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="n">até</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="n">horas</span><span class="w"> </span><span class="n">úteis</span><span class="p">.</span>
+
+<span class="n">Número</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">ticket</span><span class="o">:</span><span class="w"> </span><span class="err">#</span><span class="p">{{</span><span class="n">zap_meta_id</span><span class="p">}}</span>
+
+<span class="n">Atenciosamente</span><span class="p">,</span>
+<span class="n">Equipe</span><span class="w"> </span><span class="p">[</span><span class="n">SUA</span><span class="w"> </span><span class="n">EMPRESA</span><span class="p">]</span>
+</code></pre></div>
+
+<p><strong>Cuidado:</strong> Use com moderação para não virar spam.</p>
+<hr />
+<h2>6. Agendamento Inteligente (Envie Emails no Momento Certo)</h2>
+<h3>Por Que Agendar?</h3>
+<p><strong>Razões profissionais:</strong>
+- Email enviado 22h → "Esse cara trabalha demais/não tem limites"
+- Email enviado 6h → Aparece no topo da caixa quando destinatário chegar
+- Email enviado sexta 18h → Esquecido até segunda</p>
+<p><strong>Razões pessoais:</strong>
+- Escrever quando você está inspirado
+- Enviar quando destinatário está receptivo</p>
+<h3>Melhor Horário para Enviar Emails (Dados Reais)</h3>
+<p><strong>B2B (corporativo):</strong>
+- 🥇 Terça a Quinta, 10h-11h (taxa de abertura: 25%)
+- 🥈 Terça a Quinta, 14h-15h (taxa de abertura: 22%)
+- 🥉 Sexta, 9h-10h (taxa de abertura: 18%)</p>
+<p><strong>Pior horário:</strong>
+- ❌ Segunda cedo (caixa cheia de fim de semana)
+- ❌ Sexta tarde (cabeça no final de semana)
+- ❌ Fora do horário comercial (parece invasivo)</p>
+<h3>Gmail: Agendamento Nativo</h3>
+<p><strong>Como usar:</strong></p>
+<ol>
+<li>Escreva email normalmente</li>
+<li>Em vez de "Enviar", clique na setinha ao lado</li>
+<li>Selecione "Agendar envio"</li>
+<li>Escolha horário:</li>
+<li>Amanhã de manhã (8h)</li>
+<li>Amanhã à tarde (13h)</li>
+<li>Segunda-feira de manhã (8h)</li>
+<li>Escolher data e hora</li>
+</ol>
+<p><strong>Ver emails agendados:</strong>
+- Menu lateral → "Agendados"
+- Pode cancelar ou editar antes do envio</p>
+<h3>Outlook: Agendamento Nativo</h3>
+<p><strong>Como usar:</strong></p>
+<ol>
+<li>Escreva email</li>
+<li>Opções → "Atrasar Entrega"</li>
+<li>Marque "Não entregar antes de"</li>
+<li>Selecione data e hora</li>
+<li>Enviar normalmente (ficará na "Caixa de Saída" até o horário)</li>
+</ol>
+<p><strong>Atenção:</strong> No Outlook, seu computador PRECISA estar ligado e online no horário agendado (diferente do Gmail).</p>
+<h3>Ferramentas Avançadas</h3>
+<h4>Boomerang (Gmail e Outlook)</h4>
+<p><strong>Recursos extras:</strong>
+- Sugestões de melhor horário (IA analisa histórico de respostas)
+- "Respondme": faz follow-up automático se não responderem
+- Pausa caixa de entrada (só mostra emails em horários definidos)</p>
+<p><strong>Preço:</strong> Gratuito (10 emails/mês) | Pago ($4.99/mês)</p>
+<h4>Mailbutler (Outlook, Gmail, Apple Mail)</h4>
+<p><strong>Recursos:</strong>
+- Rastreamento de abertura
+- Agendamento inteligente
+- Notas privadas em emails
+- Templates avançados</p>
+<p><strong>Preço:</strong> Gratuito (limitado) | Pago ($9.95/mês)</p>
+<h4>Mixmax (Gmail)</h4>
+<p><strong>Recursos:</strong>
+- Agendamento
+- Sequências de follow-up automático
+- Enquetes e calendário no email
+- Tracking de abertura e cliques</p>
+<p><strong>Preço:</strong> Gratuito (básico) | Pago ($12/mês)</p>
+<h3>Follow-up Automático se Não Responderem</h3>
+<h4>Setup com Boomerang:</h4>
+<ol>
+<li>Escreva email</li>
+<li>Antes de enviar, clique em "Boomerang"</li>
+<li>Marque "Also send me a reminder if no one replies"</li>
+<li>Escolha prazo: "em 3 dias" (ou o que fizer sentido)</li>
+<li>Envie</li>
+</ol>
+<p><strong>Resultado:</strong> Se não receberr resposta em 3 dias, email volta para sua caixa de entrada com flag de "sem resposta".</p>
+<h4>Setup com Zapier (avançado):</h4>
+<p><strong>Trigger:</strong> Gmail - "New Sent Email" (com label específica "Aguardando Resposta")
+<strong>Action 1:</strong> Delay (3 days)
+<strong>Action 2:</strong> Gmail - "Find Email" (procura se houve resposta)
+<strong>Filter:</strong> Only continue if "No reply found"
+<strong>Action 3:</strong> Gmail - "Send Email" (auto follow-up)</p>
+<p><strong>Mais complexo, mas 100% automático.</strong></p>
+<hr />
+<h2>7. Exercícios Práticos (Faça AGORA, Não Depois!)</h2>
+<h3>Exercício 1: Criar 5 Filtros HOJE (30 minutos)</h3>
+<p><strong>Obrigatórios:</strong></p>
+<ol>
+<li><strong>Filtro "Newsletters"</strong></li>
+<li>Critério: mensagens com link "unsubscribe"</li>
+<li>
+<p>Ação: pular caixa, label "Newsletters", marcar como lida</p>
+</li>
+<li>
+<p><strong>Filtro "Notificações de Sistema"</strong></p>
+</li>
+<li>Critério: <code>from:(noreply@ OR no-reply@)</code></li>
+<li>
+<p>Ação: pular caixa, label "Sistemas", marcar como lida</p>
+</li>
+<li>
+<p><strong>Filtro "Equipe Interna"</strong></p>
+</li>
+<li>Critério: <code>from:@suaempresa.com</code> (troque pelo domínio real)</li>
+<li>
+<p>Ação: label "Equipe"</p>
+</li>
+<li>
+<p><strong>Filtro "Anexos Importantes"</strong></p>
+</li>
+<li>Critério: tem anexo + <code>subject:(contrato OR proposta OR fatura)</code></li>
+<li>
+<p>Ação: label "Anexos Importantes", estrelar</p>
+</li>
+<li>
+<p><strong>Filtro Personalizado (sua escolha)</strong></p>
+</li>
+<li>Pense: qual tipo de email entope sua caixa?</li>
+<li>Crie filtro específico para ele</li>
+</ol>
+<p><strong>Checklist:</strong>
+- [ ] 5 filtros criados
+- [ ] Aplicados a emails existentes
+- [ ] Testados com emails novos</p>
+<h3>Exercício 2: Configurar 3 Templates (20 minutos)</h3>
+<p><strong>Obrigatórios:</strong></p>
+<ol>
+<li><strong>Template "Acuso Recebimento"</strong></li>
+<li>Use modelo da seção 3</li>
+<li>
+<p>Adapte para seu contexto</p>
+</li>
+<li>
+<p><strong>Template "Solicitação de Informações"</strong></p>
+</li>
+<li>Use modelo da seção 3</li>
+<li>
+<p>Deixe campos [VARIÁVEIS] para preencher</p>
+</li>
+<li>
+<p><strong>Template da Sua Escolha</strong></p>
+</li>
+<li>Qual email você envia toda semana?</li>
+<li>Crie template para ele</li>
+</ol>
+<p><strong>Checklist:</strong>
+- [ ] 3 templates criados no Gmail/Outlook
+- [ ] Testados enviando para você mesmo
+- [ ] Nomes claros e fáceis de achar</p>
+<h3>Exercício 3: Testar 1 Automação (40 minutos)</h3>
+<p><strong>Escolha UMA para implementar HOJE:</strong></p>
+<p><strong>Opção A (Iniciante):</strong> Email Importante → Tarefa
+- Crie Zap: Gmail (email com estrela) → Trello (criar card)
+- Teste: estrele um email e veja aparecer no Trello</p>
+<p><strong>Opção B (Intermediário):</strong> Anexo → Google Drive
+- Crie Zap: Gmail (novo anexo de remetente específico) → Google Drive
+- Teste: peça para alguém te enviar PDF</p>
+<p><strong>Opção C (Avançado):</strong> Email de Lead → CRM + Slack
+- Crie Zap com 2 ações: adicionar no CRM + notificar Slack
+- Teste com email simulado</p>
+<p><strong>Checklist:</strong>
+- [ ] Automação criada e ativada
+- [ ] Testada com email real
+- [ ] Funcionou corretamente</p>
+<h3>Desafio Bônus: Inbox Zero em 7 Dias</h3>
+<p><strong>Dia 1:</strong> Crie 5 filtros (este exercício)
+<strong>Dia 2:</strong> Aplique filtros aos emails existentes (pode arquivar tudo que foi auto-organizado)
+<strong>Dia 3:</strong> Processe 50 emails mais antigos (responda, delegue ou delete)
+<strong>Dia 4:</strong> Processe mais 50 emails
+<strong>Dia 5:</strong> Processe mais 50 emails
+<strong>Dia 6:</strong> Limpe o restante
+<strong>Dia 7:</strong> Só emails que precisam de ação HOJE ficam na caixa</p>
+<p><strong>Regra de Ouro:</strong> Nunca mais deixar email "para depois" na caixa de entrada.
+- Se leva &lt;2min: responda agora
+- Se leva &gt;2min: vira tarefa (Trello/Asana/etc)
+- Se não precisa de ação: arquive</p>
+<hr />
+<h2>8. Estratégias Avançadas de Gestão de Email</h2>
+<h3>A Técnica do "Batch Processing" (Processamento em Lote)</h3>
+<p><strong>Problema:</strong> Checar email a cada 5 minutos destrói produtividade.</p>
+<p><strong>Solução:</strong> Defina horários fixos para processar emails.</p>
+<p><strong>Estratégia 3-1-1:</strong>
+- <strong>3 blocos por dia:</strong> 9h, 14h, 17h
+- <strong>1 hora máxima</strong> por bloco (na prática, 20-30min se bem organizado)
+- <strong>1 regra:</strong> Fora desses horários, email FECHADO</p>
+<p><strong>Como implementar:</strong></p>
+<ol>
+<li><strong>Desative notificações:</strong></li>
+<li>Gmail: Configurações → Geral → Notificações no desktop: Desativadas</li>
+<li>
+<p>Outlook: Arquivo → Opções → Email → desmarca notificações</p>
+</li>
+<li>
+<p><strong>Bloqueie tempo na agenda:</strong></p>
+</li>
+<li>Crie eventos recorrentes: "Processar Emails" às 9h, 14h, 17h</li>
+<li>
+<p>30 minutos cada</p>
+</li>
+<li>
+<p><strong>Use timer:</strong></p>
+</li>
+<li>Limite-se a 30min</li>
+<li>
+<p>Técnica Pomodoro: 25min foco + 5min pausa</p>
+</li>
+<li>
+<p><strong>Processe sistematicamente:</strong></p>
+</li>
+<li>Ordem: Caixa de entrada → do mais antigo para o mais novo</li>
+<li>Cada email: Decidir (responder/delegar/arquivar/deletar) em &lt;1 minuto</li>
+<li>Se precisa de &gt;2min para processar → vira tarefa separada</li>
+</ol>
+<p><strong>Resultado:</strong> Menos interrupções + maior foco + emails respondidos mais rápido.</p>
+<h3>Sistema "Inbox Zero" Definitivo</h3>
+<p><strong>Conceito:</strong> Caixa de entrada é como caixa de correio física. Você não deixa cartas empilhando lá, você PROCESSA e guarda em lugar apropriado.</p>
+<p><strong>As 5 Ações Possíveis:</strong></p>
+<ol>
+<li><strong>Delete:</strong> Não é útil? Delete imediatamente.</li>
+<li><strong>Delegate:</strong> Não é sua responsabilidade? Encaminhe para pessoa certa.</li>
+<li><strong>Respond:</strong> Leva &lt;2min? Responda AGORA.</li>
+<li><strong>Defer:</strong> Leva &gt;2min? Vira tarefa (adicione no Trello/Asana/etc) e arquive email.</li>
+<li><strong>Archive:</strong> Não precisa de ação mas pode precisar depois? Arquive (não delete).</li>
+</ol>
+<p><strong>Fluxograma de decisão:</strong></p>
+<div class="codehilite"><pre><span></span><code>Email chegou →
+├─ É spam/inútil? → DELETE
+├─ É para outra pessoa? → DELEGATE (encaminhe)
+├─ Precisa responder?
+│  ├─ Leva &lt;2min? → RESPOND (responda e arquive)
+│  └─ Leva &gt;2min? → DEFER (vira tarefa, arquive email)
+└─ Só informativo? → ARCHIVE
+</code></pre></div>
+
+<p><strong>Meta:</strong> Terminar cada sessão de processamento com caixa VAZIA.</p>
+<h3>Labels vs. Pastas: A Melhor Estratégia</h3>
+<p><strong>Gmail = Labels (etiquetas)</strong>
+- Um email pode ter múltiplas labels
+- Mais flexível</p>
+<p><strong>Outlook = Pastas</strong>
+- Email fica em apenas uma pasta
+- Mais rígido</p>
+<p><strong>Estratégia recomendada para Gmail:</strong></p>
+<p><strong>Labels de Ação:</strong>
+- 🔴 @Urgente (precisa responder hoje)
+- 🟡 @Esta_Semana (responder em até 5 dias)
+- 🟢 @Aguardando_Resposta (você respondeu, esperando retorno)
+- 📋 @Ler_Depois (artigos, newsletters longas)</p>
+<p><strong>Labels de Categoria:</strong>
+- 👥 Clientes
+- 💼 Projetos
+- 📊 Relatórios
+- 💰 Financeiro</p>
+<p><strong>Como funciona:</strong></p>
+<p>Email de cliente sobre projeto urgente:
+- Labels: <code>👥 Clientes</code> + <code>💼 Projetos</code> + <code>🔴 @Urgente</code>
+- Aparece em 3 lugares diferentes
+- Fácil de encontrar</p>
+<p><strong>Criar labels com atalho de teclado:</strong></p>
+<ol>
+<li>Gmail Labs → "Caixa de entrada customizada" → Ativar</li>
+<li>Configure seções por label (ex: seção 1 = @Urgente)</li>
+<li>Atalho <code>gl</code> + nome da label</li>
+</ol>
+<h3>Assinaturas de Email Profissionais (Que Realmente Funcionam)</h3>
+<p><strong>Anatomia de uma assinatura perfeita:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="k">[Nome Completo]</span>
+<span class="k">[Cargo] | [Nome da Empresa]</span>
+<span class="k">[Telefone com WhatsApp] | [Email]</span>
+<span class="k">[LinkedIn (opcional)]</span>
+
+<span class="k">[Call-to-Action - opcional]</span>
+<span class="na">Exemplo</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;📅 Agende uma reunião: [link Calendly]&quot;</span>
+
+<span class="k">[Disclaimer legal - se necessário]</span>
+</code></pre></div>
+
+<p><strong>Exemplo prático:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="n">João</span><span class="w"> </span><span class="n">Silva</span>
+<span class="n">Gerente</span><span class="w"> </span><span class="n">Comercial</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ACME</span><span class="w"> </span><span class="n">Solutions</span>
+<span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="mi">98765</span><span class="o">-</span><span class="mi">4321</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">joao</span><span class="nv">@acme</span><span class="p">.</span><span class="n">com</span>
+<span class="n">linkedin</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="ow">in</span><span class="o">/</span><span class="n">joaosilva</span>
+
+<span class="err">📅</span><span class="w"> </span><span class="n">Agende</span><span class="w"> </span><span class="mi">15</span><span class="nf">min</span><span class="w"> </span><span class="nl">comigo</span><span class="p">:</span><span class="w"> </span><span class="n">calendly</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">joaosilva</span>
+
+<span class="n">Este</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">seus</span><span class="w"> </span><span class="n">anexos</span><span class="w"> </span><span class="n">podem</span><span class="w"> </span><span class="n">conter</span><span class="w"> </span><span class="n">informações</span><span class="w"> </span><span class="n">confidenciais</span><span class="p">.</span>
+</code></pre></div>
+
+<p><strong>Configurar no Gmail:</strong></p>
+<ol>
+<li>Configurações → Geral → Assinatura</li>
+<li>Cole o texto</li>
+<li>Formate (negrito, cores, links)</li>
+<li><strong>Dica:</strong> Adicione imagem pequena (logo) - máximo 100x100px</li>
+</ol>
+<p><strong>Configurar no Outlook:</strong></p>
+<ol>
+<li>Arquivo → Opções → Email → Assinaturas</li>
+<li>Criar nova</li>
+<li>Formate</li>
+<li>Escolha quando usar (emails novos e/ou respostas)</li>
+</ol>
+<p><strong>Erros a evitar:</strong></p>
+<p>❌ Assinatura muito longa (&gt;5 linhas)
+❌ Imagens pesadas (&gt;50KB)
+❌ Citações motivacionais (não é profissional)
+❌ Cores berrantes
+❌ Múltiplos links de redes sociais</p>
+<p>✅ Simples, limpa, objetiva
+✅ Informações de contato essenciais
+✅ Branding sutil (logo pequeno)
+✅ Um CTA claro (se faz sentido)</p>
+<h3>Etiqueta de Email Profissional</h3>
+<p><strong>Linha de assunto:</strong>
+- Clara e específica: ✅ "Proposta Projeto XYZ - Prazo 20/11"
+- Genérica: ❌ "Informações"
+- Use: "RE:" (resposta) e "ENC:" (encaminhamento) adequadamente</p>
+<p><strong>Saudação:</strong>
+- Primeira vez: "Prezado(a) [Nome]," ou "Olá [Nome],"
+- Já tem relação: "Oi [Nome]," ou "[Nome],"
+- Evite: "Caro" (antiquado), "Querido" (íntimo demais)</p>
+<p><strong>Corpo do email:</strong>
+- Primeiro parágrafo: contexto rápido
+- Meio: informação principal (use tópicos se &gt;3 itens)
+- Último parágrafo: próximos passos ou call-to-action
+- Máximo 3-4 parágrafos curtos</p>
+<p><strong>Despedida:</strong>
+- Profissional: "Atenciosamente," | "Abraço," | "Até breve,"
+- Evite: "Beijos" (pessoal demais), "Att." (preguiçoso)</p>
+<p><strong>Timing:</strong>
+- Urgente: ligue em vez de email
+- Não urgente: email é perfeito
+- Horário: evite enviar 22h-6h (use agendamento)</p>
+<p><strong>Exemplo de email bem estruturado:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="n">Assunto</span><span class="o">:</span><span class="w"> </span><span class="n">Reunião</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">Alinhamento</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Projeto</span><span class="w"> </span><span class="n">Alpha</span>
+
+<span class="n">Olá</span><span class="w"> </span><span class="n">Maria</span><span class="o">,</span>
+
+<span class="n">Espero</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">esteja</span><span class="w"> </span><span class="n">bem</span><span class="o">!</span>
+
+<span class="n">Gostaria</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">agendar</span><span class="w"> </span><span class="n">reunião</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">alinharmos</span><span class="w"> </span><span class="n">próximos</span><span class="w"> </span><span class="n">passos</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">Projeto</span><span class="w"> </span><span class="n">Alpha</span><span class="o">.</span>
+
+<span class="n">Tópicos</span><span class="w"> </span><span class="n">propostos</span><span class="o">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Revisão</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">cronograma</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Definição</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">responsáveis</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Budget</span><span class="w"> </span><span class="n">aprovado</span>
+
+<span class="n">Você</span><span class="w"> </span><span class="n">teria</span><span class="w"> </span><span class="n">disponibilidade</span><span class="w"> </span><span class="n">na</span><span class="w"> </span><span class="n">próxima</span><span class="w"> </span><span class="n">semana</span><span class="o">?</span><span class="w"> </span><span class="n">Sugiro</span><span class="o">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Terça</span><span class="o">,</span><span class="w"> </span><span class="mi">14</span><span class="o">/</span><span class="mi">11</span><span class="o">,</span><span class="w"> </span><span class="mi">14</span><span class="n">h</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Quarta</span><span class="o">,</span><span class="w"> </span><span class="mi">15</span><span class="o">/</span><span class="mi">11</span><span class="o">,</span><span class="w"> </span><span class="mi">10</span><span class="n">h</span>
+
+<span class="n">A</span><span class="w"> </span><span class="n">reunião</span><span class="w"> </span><span class="n">seria</span><span class="w"> </span><span class="n">online</span><span class="w"> </span><span class="o">(</span><span class="mi">30</span><span class="o">-</span><span class="mi">40</span><span class="n">min</span><span class="o">).</span>
+
+<span class="n">Me</span><span class="w"> </span><span class="n">confirma</span><span class="o">?</span>
+
+<span class="n">Abraço</span><span class="o">,</span>
+<span class="n">João</span>
+</code></pre></div>
+
+<p><strong>Versus email ruim:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="n">Assunto</span><span class="o">:</span><span class="w"> </span><span class="n">Reunião</span>
+
+<span class="n">Oi</span><span class="o">,</span>
+
+<span class="n">Precisamos</span><span class="w"> </span><span class="n">conversar</span><span class="w"> </span><span class="n">sobre</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">projeto</span><span class="o">.</span>
+
+<span class="n">Quando</span><span class="w"> </span><span class="n">vc</span><span class="w"> </span><span class="n">pode</span><span class="o">?</span>
+
+<span class="n">Att</span><span class="o">.</span>
+</code></pre></div>
+
+<p>❌ Assunto genérico
+❌ Falta contexto
+❌ Não oferece opções
+❌ "Att." é preguiçoso</p>
+<h3>Troubleshooting: Problemas Comuns e Soluções</h3>
+<p><strong>Problema 1: "Emails importantes se perdem"</strong></p>
+<p><strong>Solução:</strong>
+- Crie filtro para emails de pessoas-chave (chefe, clientes VIP)
+- Marque como importante automaticamente
+- Configure notificação só para esses emails</p>
+<p><strong>Problema 2: "Recebo 200+ emails por dia, não consigo processar"</strong></p>
+<p><strong>Solução:</strong>
+- 80% são provavelmente newsletters/notificações → Crie filtros para auto-arquivar
+- Cancele inscrição agressivamente (use "Unsubscribe")
+- Considere email secundário para cadastros menos importantes</p>
+<p><strong>Problema 3: "Pessoas reclamam que não respondo"</strong></p>
+<p><strong>Solução:</strong>
+- Configure resposta automática de ausência quando estiver indisponível
+- Use "Resposta pronta" de confirmação: "Recebi seu email, retorno em até X horas úteis"
+- Ao final do dia, revise emails não respondidos (label "@Responder")</p>
+<p><strong>Problema 4: "Email do trabalho invade vida pessoal"</strong></p>
+<p><strong>Solução:</strong>
+- Remova email corporativo do celular (ou configure horário de sincronização: 8h-18h)
+- Defina expectativa com equipe: "Não respondo emails após 19h, exceto emergências (ligue)"
+- Use resposta automática fora do horário: "Retorno amanhã no horário comercial"</p>
+<hr />
+<h2>RESUMO DO MÓDULO: O Que Você Aprendeu</h2>
+<p>✅ <strong>O problema do email:</strong> 28% do dia desperdiçado
+✅ <strong>Filtros automatizados:</strong> 10 filtros essenciais prontos
+✅ <strong>Templates:</strong> 15 emails prontos para copiar
+✅ <strong>IA para emails:</strong> 10 prompts para ChatGPT redigir por você
+✅ <strong>Automações:</strong> Email → CRM, Tarefa, Drive, Slack
+✅ <strong>Agendamento:</strong> Enviar no momento certo
+✅ <strong>Exercícios:</strong> 3 tarefas práticas para implementar HOJE</p>
+<hr />
+<h2>RESULTADO ESPERADO</h2>
+<p><strong>Antes:</strong>
+- ⏱ 2h15min/dia em emails
+- 😰 Caixa sempre cheia
+- 😫 Reescrevendo mesmos emails</p>
+<p><strong>Depois:</strong>
+- ⏱ 30-45min/dia em emails
+- 😌 Inbox Zero todo dia
+- 🚀 Respostas em 15 segundos</p>
+<p><strong>Economia:</strong> <strong>7-8 horas por semana = 1 DIA inteiro de trabalho!</strong></p>
+<hr />
+<h2>PRÓXIMO PASSO</h2>
+<p>No <strong>Módulo 6</strong>, você vai aprender a criar <strong>planilhas inteligentes com IA</strong> que se atualizam sozinhas e tomam decisões por você.</p>
+<p>Imagine ter um dashboard que mostra exatamente o que precisa fazer hoje, sem você mover um dedo.</p>
+<p><strong>Nos vemos lá!</strong></p>
+<hr />
+<p><strong>© 2025 FETD - Formação em Engenharia de Intenção</strong></p>
     </div>
-  </nav>
-
-  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <nav class="flex text-sm">
-        <a href="../../index.html" class="text-operacional hover:text-blue-700">Início</a>
-        <span class="mx-2 text-neutral-400">/</span>
-        <a href="../../trilhas/operacional.html" class="text-operacional hover:text-blue-700">Trilha Operacional</a>
-        <span class="mx-2 text-neutral-400">/</span>
-        <span class="text-neutral-600 dark:text-neutral-400">Módulo 5</span>
-      </nav>
-    </div>
-  </div>
-
-  <section class="bg-gradient-to-r from-operacional to-blue-600 py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
-      <div class="flex items-center gap-3 mb-4">
-        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">Módulo 5 de 10</span>
-        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">⏱️ 1h 30min</span>
-      </div>
-      <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">Automação de Emails e Comunicação</h1>
-      <p class="text-xl text-white/90 mb-6 max-w-3xl">Criar um sistema completo de gestão de emails que funciona sozinho</p>
-    </div>
-  </section>
-
-  <section class="py-16 bg-white dark:bg-neutral-800">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <div class="flex justify-end mb-8">
-        <a href="../../downloads/operacional/modulo-05.md" download class="px-6 py-3 bg-operacional text-white rounded-lg font-semibold hover:opacity-90 inline-flex items-center gap-2">
-          <span>📥 Download MD</span>
-        </a>
-      </div>
-
-      <div class="bg-operacional/10 dark:bg-operacional/20 border-l-4 border-operacional p-6 rounded-lg mb-12">
-        <h3 class="text-xl font-bold text-operacional mb-2">🎯 Objetivo deste Módulo</h3>
-        <p class="text-neutral-700 dark:text-neutral-300">Criar um sistema completo de gestão de emails que funciona sozinho</p>
-      </div>
-
-      
-<div class="mb-16">
-  <h2 class="text-3xl font-bold mb-6">Conteúdo em Desenvolvimento</h2>
-  <div class="bg-operacional/10 dark:bg-operacional/20 p-8 rounded-xl">
-    <p class="text-lg mb-4">
-      Este módulo está sendo desenvolvido com conteúdo rico e detalhado.
-    </p>
-    <p class="text-neutral-700 dark:text-neutral-300 mb-4">
-      <strong>Objetivo:</strong> Criar um sistema completo de gestão de emails que funciona sozinho
-    </p>
-    <p class="text-neutral-700 dark:text-neutral-300">
-      <strong>Entregável:</strong> Sistema de Email Zero
-    </p>
-  </div>
-</div>
-
-
-      <div class="mb-16">
-        <div class="bg-gradient-to-r from-operacional/20 to-blue-500/20 p-8 rounded-2xl">
-          <h2 class="text-3xl font-bold mb-6">🎉 Parabéns por Completar o Módulo 5!</h2>
-          <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl mb-6">
-            <h4 class="font-bold mb-3">✅ Entregável deste módulo:</h4>
-            <p class="text-neutral-700 dark:text-neutral-300">Sistema de Email Zero</p>
-          </div>
-        </div>
-      </div>      <!-- Seção de Progresso -->
-      <div class="mb-8 bg-white dark:bg-neutral-800 rounded-2xl p-8 border-2 border-operacional/30">
-        <div class="text-center mb-6">
-          <h3 class="text-2xl font-bold mb-2">Você completou este módulo?</h3>
-          <p class="text-neutral-600 dark:text-neutral-400">
-            Marque como concluído para acompanhar seu progresso na trilha
-          </p>
-        </div>
-
-        <div class="flex flex-col items-center gap-4">
-          <button
-            id="btn-concluir-modulo"
-            data-trilha="operacional"
-            data-modulo="5"
-            class="px-10 py-4 bg-operacional text-white rounded-lg font-bold text-lg hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl">
-            ✓ Marcar como Concluído
-          </button>
-
-          <div id="progresso-info" class="text-center">
-            <!-- Será preenchido pelo JavaScript -->
-          </div>
-        </div>
-
-        <div class="mt-6 pt-6 border-t border-neutral-200 dark:border-neutral-700">
-          <div class="flex items-center justify-center gap-2 text-sm text-neutral-600 dark:text-neutral-400">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
-            </svg>
-            <span>Seu progresso é salvo no navegador e persiste entre sessões</span>
-          </div>
-        </div>
-      </div>
-
-
-
-      <div class="bg-gradient-to-r from-operacional to-blue-600 text-white rounded-2xl p-8">
-        <div class="flex justify-between items-center flex-wrap gap-4">
-          <a href="modulo-04.html" class="px-6 py-3 bg-white/20 hover:bg-white/30 rounded-lg font-semibold transition-all">
-            ← Módulo 4
-          </a>
-          <a href="modulo-06.html" class="px-6 py-3 bg-white text-operacional rounded-lg font-semibold hover:bg-yellow-300 transition-all">Módulo 6 →</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
-      <p>&copy; 2025 FETD - Formação em Engenharia de Intenção</p>
-    </div>
-  </footer>
-
-  <script src="../../js/app.js"></script>
 </body>
 </html>
