@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Módulo 1: O Mercado que Te Espera | FETD</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tailwindcss-cdn@3.4.1/tailwindcss.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <script>
@@ -61,59 +61,168 @@
     </div>
   </div>
 
-  <section class="py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <div class="mb-12">
-        <div class="flex items-center gap-4 mb-4">
-          <span class="px-4 py-2 bg-talento/20 text-talento rounded-full text-sm font-semibold">Módulo 1</span>
-          <span class="text-neutral-600 dark:text-neutral-400">⏱️ 30min</span>
-          <a href="../../downloads/talento/modulo-01.md" download class="ml-auto px-4 py-2 bg-neutral-100 dark:bg-neutral-800 rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors text-sm font-semibold">
-            📥 Download MD
-          </a>
-        </div>
-
-        <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">O Mercado que Te Espera</h1>
-        <p class="text-xl text-neutral-600 dark:text-neutral-400"><strong>Objetivo:</strong> Entender oportunidades para quem está começando</p>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-talento to-amber-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">🟡 Módulo 1 de 10</span>
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">⏱️ 30min</span>
       </div>
+      <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">O Mercado que Te Espera</h1>
+      <p class="text-xl opacity-90 mb-6"><strong>Objetivo:</strong> Entender as oportunidades reais para quem está começando em 2025</p>
+      <a href="../../downloads/talento/modulo-01.md" download class="inline-flex items-center px-6 py-3 bg-white text-talento rounded-lg font-semibold hover:bg-neutral-100 transition-all">
+        📥 Download Conteúdo (.md)
+      </a>
+    </div>
+  </section>
 
-      <div class="prose dark:prose-invert max-w-none">
-        <div class="bg-talento/10 dark:bg-talento/20 p-6 rounded-xl mb-8">
-          <h2 class="text-2xl font-bold mb-4">📚 Conteúdo do Módulo</h2>
-          <p class="text-lg">Mercado em transformação, habilidades mais procuradas 2025, mitos sobre "falta de experiência"</p>
-          <p class="mt-4 text-sm text-neutral-600 dark:text-neutral-400"><em>Este módulo contém teoria, exemplos práticos e exercícios hands-on para você aplicar imediatamente.</em></p>
-        </div>
+  <!-- Main Content -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="bg-green-100 dark:bg-green-900/40 p-6 rounded-xl">
-          <h3 class="text-xl font-bold mb-3">✅ Entregável</h3>
-          <p>Ao final deste módulo você terá criado/aprendido sobre: Mercado em transformação, habilidades mais procuradas 2025, mitos sobre "falta de experiência"...</p>
-        </div>
-      </div>
+      <!-- Grid Cards -->
+      <div class="grid md:grid-cols-2 gap-8 mb-16">
 
-      <div class="mb-8 mt-16 bg-white dark:bg-neutral-800 rounded-2xl p-8 border-2 border-talento/30">
-        <div class="text-center mb-6">
-          <h3 class="text-2xl font-bold mb-2">Você completou este módulo?</h3>
-          <p class="text-neutral-600 dark:text-neutral-400">Marque como concluído para acompanhar seu progresso</p>
-        </div>
-        <div class="flex flex-col items-center gap-4">
-          <button id="btn-concluir-modulo" data-trilha="talento" data-modulo="1" class="px-10 py-4 bg-talento text-white rounded-lg font-bold text-lg hover:opacity-90 transition-all shadow-lg">
-            ✓ Marcar como Concluído
-          </button>
-          <div id="progresso-info" class="text-center"></div>
-        </div>
-      </div>
-
-      <div class="bg-gradient-to-r from-talento to-green-600 text-white rounded-2xl p-8">
-        <div class="flex justify-between items-center">
-          <a href="../../trilhas/talento.html" class="px-6 py-3 bg-white/20 hover:bg-white/30 rounded-lg font-semibold transition-all">
-            ← Voltar à Trilha
-          </a>
-          <div class="text-center">
-            <p class="text-sm opacity-80 mb-1">Próximo Módulo</p>
-            <p class="font-bold">Módulo 2</p>
+        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
+          <div class="text-4xl mb-4">🚀</div>
+          <h3 class="text-2xl font-bold mb-4">A Grande Transformação</h3>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+            O mercado de trabalho passou por uma <strong>revolução silenciosa</strong> nos últimos 3 anos. O que antes exigia 10 anos de experiência, hoje pode ser alcançado em 6 meses com as ferramentas certas.
+          </p>
+          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl">
+            <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">
+              💡 Empresas estão mais interessadas em <strong>capacidade de aprender e se adaptar</strong> do que em anos de experiência tradicional.
+            </p>
           </div>
-          <a href="modulo-02.html" class="px-6 py-3 bg-white text-talento rounded-lg font-semibold hover:bg-yellow-300 hover:text-neutral-900 transition-all">
-            Módulo 2 →
+        </div>
+
+        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
+          <div class="text-4xl mb-4">🎯</div>
+          <h3 class="text-2xl font-bold mb-4">Habilidades Mais Procuradas</h3>
+          <ul class="space-y-3 text-neutral-700 dark:text-neutral-300">
+            <li class="flex items-start gap-2">
+              <span class="text-talento text-xl">▸</span>
+              <span><strong>Prompt Engineering:</strong> Saber trabalhar com IA generativa (ChatGPT, Claude, etc.)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-talento text-xl">▸</span>
+              <span><strong>Automação No-Code:</strong> Make, Zapier, n8n para criar fluxos sem programar</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-talento text-xl">▸</span>
+              <span><strong>Análise de Dados:</strong> Transformar números em decisões com IA</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-talento text-xl">▸</span>
+              <span><strong>Adaptabilidade:</strong> Aprender ferramentas novas rapidamente</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
+          <div class="text-4xl mb-4">💼</div>
+          <h3 class="text-2xl font-bold mb-4">Oportunidades Reais</h3>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+            Veja onde estão as vagas e quanto pagam em 2025:
+          </p>
+          <div class="space-y-3">
+            <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+              <p class="font-bold text-green-700 dark:text-green-300">Analista de Automação Jr.</p>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">R$ 3.500 - 6.000 | Remoto</p>
+            </div>
+            <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+              <p class="font-bold text-blue-700 dark:text-blue-300">Especialista em Prompt IA</p>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">R$ 4.000 - 8.000 | Híbrido</p>
+            </div>
+            <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+              <p class="font-bold text-purple-700 dark:text-purple-300">Assistente de Dados com IA</p>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">R$ 3.000 - 5.500 | Remoto</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
+          <div class="text-4xl mb-4">❌</div>
+          <h3 class="text-2xl font-bold mb-4">Mitos que Te Impedem</h3>
+          <div class="space-y-4 text-neutral-700 dark:text-neutral-300">
+            <div>
+              <p class="font-bold text-red-600 dark:text-red-400 mb-1">❌ "Preciso de faculdade"</p>
+              <p class="text-sm">✅ <strong>Realidade:</strong> 68% das vagas de entrada aceitam certificações técnicas</p>
+            </div>
+            <div>
+              <p class="font-bold text-red-600 dark:text-red-400 mb-1">❌ "Preciso de 2 anos de experiência"</p>
+              <p class="text-sm">✅ <strong>Realidade:</strong> Portfólio com 3-5 projetos reais vale mais</p>
+            </div>
+            <div>
+              <p class="font-bold text-red-600 dark:text-red-400 mb-1">❌ "Só grandes empresas contratam"</p>
+              <p class="text-sm">✅ <strong>Realidade:</strong> Startups e PMEs contratam mais e são mais flexíveis</p>
+            </div>
+            <div>
+              <p class="font-bold text-red-600 dark:text-red-400 mb-1">❌ "Tecnologia é só para quem sabe programar"</p>
+              <p class="text-sm">✅ <strong>Realidade:</strong> Ferramentas no-code eliminaram essa barreira</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Warning Box -->
+      <div class="bg-amber-50 dark:bg-amber-900/20 p-8 rounded-2xl border-2 border-amber-400 mb-16">
+        <div class="flex items-start gap-4">
+          <div class="text-4xl">⚠️</div>
+          <div>
+            <h3 class="text-2xl font-bold mb-3 text-amber-800 dark:text-amber-200">A Janela de Oportunidade Está Aberta AGORA</h3>
+            <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+              Estamos em um momento único: empresas precisam de pessoas que <strong>saibam usar IA</strong>, mas ainda existem <strong>poucos profissionais qualificados</strong>. Nos próximos 2-3 anos, essa vantagem competitiva vai diminuir.
+            </p>
+            <p class="font-bold text-amber-800 dark:text-amber-200">
+              Quem se preparar HOJE terá uma vantagem de 12-24 meses sobre a concorrência.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Studies -->
+      <h2 class="text-3xl font-bold mb-8">📊 Casos Reais de Sucesso</h2>
+      <div class="grid md:grid-cols-3 gap-6 mb-16">
+        <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl border border-neutral-200 dark:border-neutral-700">
+          <p class="text-sm text-neutral-500 mb-2">Fernanda, 24 anos</p>
+          <p class="font-bold text-lg mb-3">De atendente a Especialista em IA</p>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-3">
+            Começou como atendente de telemarketing. Aprendeu prompt engineering e automação. Hoje coordena IA em startup.
+          </p>
+          <p class="text-talento font-bold">Salário: R$ 2.100 → R$ 7.500</p>
+        </div>
+        <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl border border-neutral-200 dark:border-neutral-700">
+          <p class="text-sm text-neutral-500 mb-2">Ricardo, 29 anos</p>
+          <p class="font-bold text-lg mb-3">De estoquista a Analista de Dados</p>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-3">
+            Trabalhava em estoque. Fez curso de análise com Python e IA. Hoje analisa dados para e-commerce.
+          </p>
+          <p class="text-talento font-bold">Salário: R$ 1.800 → R$ 6.200</p>
+        </div>
+        <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl border border-neutral-200 dark:border-neutral-700">
+          <p class="text-sm text-neutral-500 mb-2">Ana, 22 anos</p>
+          <p class="font-bold text-lg mb-3">De estagiária a Automação Pleno</p>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-3">
+            Estagiária administrativa. Aprendeu Make e n8n. Hoje automatiza processos em multinacional.
+          </p>
+          <p class="text-talento font-bold">Salário: R$ 1.200 → R$ 8.000</p>
+        </div>
+      </div>
+
+      <!-- Next Steps -->
+      <div class="bg-gradient-to-r from-talento to-amber-600 p-8 rounded-2xl text-white">
+        <h2 class="text-3xl font-bold mb-4">🎯 Próximos Passos</h2>
+        <p class="text-lg mb-6 opacity-90">
+          Agora que você entende o mercado, nos próximos módulos você vai aprender exatamente como se posicionar para aproveitar essas oportunidades.
+        </p>
+        <div class="flex gap-4">
+          <a href="modulo-02.html" class="px-6 py-3 bg-white text-talento rounded-lg font-semibold hover:bg-neutral-100 transition-all">
+            Módulo 2: Construindo Seu Perfil →
+          </a>
+          <a href="../../trilhas/talento.html" class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 transition-all">
+            ← Voltar para Trilha
           </a>
         </div>
       </div>
@@ -121,12 +230,35 @@
     </div>
   </section>
 
-  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center text-sm"><p>&copy; 2025 FETD - Formação em Engenharia de Intenção</p></div>
+  <footer class="bg-white dark:bg-neutral-800 border-t border-neutral-200 dark:border-neutral-700 py-8 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-600 dark:text-neutral-400">
+      <p>© 2025 FETD - Formação em Engenharia de Intenção</p>
     </div>
   </footer>
 
-  <script src="../../js/app.js"></script>
+  <script>
+    document.documentElement.classList.remove('preload');
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      lightIcon.classList.remove('hidden');
+    } else {
+      darkIcon.classList.remove('hidden');
+    }
+    themeToggleBtn.addEventListener('click', function() {
+      darkIcon.classList.toggle('hidden');
+      lightIcon.classList.toggle('hidden');
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
+
 </body>
 </html>
