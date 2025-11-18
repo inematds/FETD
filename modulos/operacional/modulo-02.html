@@ -932,6 +932,39 @@
         </div>
       </div>
 
+      <!-- Seção de Progresso -->
+      <div class="mb-8 bg-white dark:bg-neutral-800 rounded-2xl p-8 border-2 border-operacional/30">
+        <div class="text-center mb-6">
+          <h3 class="text-2xl font-bold mb-2">Você completou este módulo?</h3>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Marque como concluído para acompanhar seu progresso na trilha
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center gap-4">
+          <button
+            id="btn-concluir-modulo"
+            data-trilha="operacional"
+            data-modulo="2"
+            class="px-10 py-4 bg-operacional text-white rounded-lg font-bold text-lg hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl">
+            ✓ Marcar como Concluído
+          </button>
+
+          <div id="progresso-info" class="text-center">
+            <!-- Será preenchido pelo JavaScript -->
+          </div>
+        </div>
+
+        <div class="mt-6 pt-6 border-t border-neutral-200 dark:border-neutral-700">
+          <div class="flex items-center justify-center gap-2 text-sm text-neutral-600 dark:text-neutral-400">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Seu progresso é salvo no navegador e persiste entre sessões</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Navegação -->
       <div class="bg-gradient-to-r from-operacional to-blue-600 text-white rounded-2xl p-8">
         <div class="flex justify-between items-center">

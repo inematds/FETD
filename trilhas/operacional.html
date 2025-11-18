@@ -89,6 +89,11 @@
   <section class="bg-gradient-to-r from-operacional to-blue-600 py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
 
+      <!-- Barra de Progresso -->
+      <div id="barra-progresso-trilha" data-trilha="operacional" class="mb-8">
+        <!-- Será preenchido pelo JavaScript -->
+      </div>
+
       <div class="flex items-center gap-4 mb-6">
         <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
           🔵 Trilha 1
@@ -270,7 +275,7 @@
       <div class="space-y-6 max-w-4xl mx-auto">
 
         <!-- Módulo 1 -->
-        <div class="bg-gradient-to-r from-operacional/10 to-operacional/5 dark:from-operacional/20 dark:to-operacional/10 p-8 rounded-2xl border-2 border-operacional hover:shadow-xl transition-all">
+        <div class="bg-gradient-to-r from-operacional/10 to-operacional/5 dark:from-operacional/20 dark:to-operacional/10 p-8 rounded-2xl border-2 border-operacional hover:shadow-xl transition-all" data-modulo="1">
           <div class="flex items-start gap-6">
             <div class="flex-shrink-0">
               <div class="w-16 h-16 bg-operacional text-white rounded-xl flex items-center justify-center text-2xl font-bold">
@@ -278,7 +283,7 @@
               </div>
             </div>
             <div class="flex-1">
-              <span class="inline-block px-3 py-1 bg-operacional/20 text-operacional rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
+              <span class="badge-status inline-block px-3 py-1 bg-operacional/20 text-operacional rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
               <h3 class="text-2xl font-bold mb-2">A Virada - Por Que Agora é Diferente</h3>
               <p class="text-neutral-600 dark:text-neutral-400 mb-4">
                 Entenda a revolução em curso, os 3 mitos (agência, dinheiro, audiência), e como pessoas comuns estão transformando carreiras com automação.
@@ -296,7 +301,7 @@
         </div>
 
         <!-- Módulo 2 -->
-        <div class="bg-gradient-to-r from-operacional/10 to-operacional/5 dark:from-operacional/20 dark:to-operacional/10 p-8 rounded-2xl border-2 border-operacional hover:shadow-xl transition-all">
+        <div class="bg-gradient-to-r from-operacional/10 to-operacional/5 dark:from-operacional/20 dark:to-operacional/10 p-8 rounded-2xl border-2 border-operacional hover:shadow-xl transition-all" data-modulo="2">
           <div class="flex items-start gap-6">
             <div class="flex-shrink-0">
               <div class="w-16 h-16 bg-operacional text-white rounded-xl flex items-center justify-center text-2xl font-bold">
@@ -304,7 +309,7 @@
               </div>
             </div>
             <div class="flex-1">
-              <span class="inline-block px-3 py-1 bg-operacional/20 text-operacional rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
+              <span class="badge-status inline-block px-3 py-1 bg-operacional/20 text-operacional rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
               <h3 class="text-2xl font-bold mb-2">Golden Ratio - A Fórmula 60/30/10</h3>
               <p class="text-neutral-600 dark:text-neutral-400 mb-4">
                 O framework que funciona: 60% automação, 30% IA, 10% humano. Matriz impacto × esforço e o que automatizar primeiro.
@@ -322,7 +327,7 @@
         </div>
 
         <!-- Módulo 3 -->
-        <div class="bg-gradient-to-r from-operacional/10 to-operacional/5 dark:from-operacional/20 dark:to-operacional/10 p-8 rounded-2xl border-2 border-operacional hover:shadow-xl transition-all">
+        <div class="bg-gradient-to-r from-operacional/10 to-operacional/5 dark:from-operacional/20 dark:to-operacional/10 p-8 rounded-2xl border-2 border-operacional hover:shadow-xl transition-all" data-modulo="3">
           <div class="flex items-start gap-6">
             <div class="flex-shrink-0">
               <div class="w-16 h-16 bg-operacional text-white rounded-xl flex items-center justify-center text-2xl font-bold">
@@ -330,7 +335,7 @@
               </div>
             </div>
             <div class="flex-1">
-              <span class="inline-block px-3 py-1 bg-operacional/20 text-operacional rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
+              <span class="badge-status inline-block px-3 py-1 bg-operacional/20 text-operacional rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
               <h3 class="text-2xl font-bold mb-2">Seu Primeiro Assistente - IA na Prática</h3>
               <p class="text-neutral-600 dark:text-neutral-400 mb-4">
                 ChatGPT, Claude, Gemini: quando usar cada um. Framework LRP e templates de prompts operacionais.
@@ -348,7 +353,7 @@
         </div>
 
         <!-- Módulo 4 -->
-        <div class="bg-gradient-to-r from-operacional/10 to-operacional/5 dark:from-operacional/20 dark:to-operacional/10 p-8 rounded-2xl border-2 border-operacional hover:shadow-xl transition-all">
+        <div class="bg-gradient-to-r from-operacional/10 to-operacional/5 dark:from-operacional/20 dark:to-operacional/10 p-8 rounded-2xl border-2 border-operacional hover:shadow-xl transition-all" data-modulo="4">
           <div class="flex items-start gap-6">
             <div class="flex-shrink-0">
               <div class="w-16 h-16 bg-operacional text-white rounded-xl flex items-center justify-center text-2xl font-bold">
@@ -356,7 +361,7 @@
               </div>
             </div>
             <div class="flex-1">
-              <span class="inline-block px-3 py-1 bg-operacional/20 text-operacional rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
+              <span class="badge-status inline-block px-3 py-1 bg-operacional/20 text-operacional rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
               <h3 class="text-2xl font-bold mb-2">Ferramentas No-Code - Zapier e Make</h3>
               <p class="text-neutral-600 dark:text-neutral-400 mb-4">
                 Criar automações sem código. Conectar ferramentas e criar fluxos que funcionam 24/7 sem programação.
@@ -374,7 +379,7 @@
         </div>
 
         <!-- Módulo 5 -->
-        <div class="bg-gradient-to-r from-operacional/10 to-operacional/5 dark:from-operacional/20 dark:to-operacional/10 p-8 rounded-2xl border-2 border-operacional hover:shadow-xl transition-all">
+        <div class="bg-gradient-to-r from-operacional/10 to-operacional/5 dark:from-operacional/20 dark:to-operacional/10 p-8 rounded-2xl border-2 border-operacional hover:shadow-xl transition-all" data-modulo="5">
           <div class="flex items-start gap-6">
             <div class="flex-shrink-0">
               <div class="w-16 h-16 bg-operacional text-white rounded-xl flex items-center justify-center text-2xl font-bold">
@@ -382,7 +387,7 @@
               </div>
             </div>
             <div class="flex-1">
-              <span class="inline-block px-3 py-1 bg-operacional/20 text-operacional rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
+              <span class="badge-status inline-block px-3 py-1 bg-operacional/20 text-operacional rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
               <h3 class="text-2xl font-bold mb-2">Automação de Emails e Comunicação</h3>
               <p class="text-neutral-600 dark:text-neutral-400 mb-4">
                 Organizar, filtrar e responder emails automaticamente. Economizar 5-8 horas por semana só com emails.
@@ -400,7 +405,7 @@
         </div>
 
         <!-- Módulo 6 -->
-        <div class="bg-gradient-to-r from-operacional/10 to-operacional/5 dark:from-operacional/20 dark:to-operacional/10 p-8 rounded-2xl border-2 border-operacional hover:shadow-xl transition-all">
+        <div class="bg-gradient-to-r from-operacional/10 to-operacional/5 dark:from-operacional/20 dark:to-operacional/10 p-8 rounded-2xl border-2 border-operacional hover:shadow-xl transition-all" data-modulo="6">
           <div class="flex items-start gap-6">
             <div class="flex-shrink-0">
               <div class="w-16 h-16 bg-operacional text-white rounded-xl flex items-center justify-center text-2xl font-bold">
@@ -408,7 +413,7 @@
               </div>
             </div>
             <div class="flex-1">
-              <span class="inline-block px-3 py-1 bg-operacional/20 text-operacional rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
+              <span class="badge-status inline-block px-3 py-1 bg-operacional/20 text-operacional rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
               <h3 class="text-2xl font-bold mb-2">Planilhas Inteligentes com IA</h3>
               <p class="text-neutral-600 dark:text-neutral-400 mb-4">
                 Google Sheets com superpoderes. Fórmulas inteligentes, análises automáticas e dashboards que se atualizam sozinhos.
@@ -426,7 +431,7 @@
         </div>
 
         <!-- Módulo 7 -->
-        <div class="bg-gradient-to-r from-operacional/10 to-operacional/5 dark:from-operacional/20 dark:to-operacional/10 p-8 rounded-2xl border-2 border-operacional hover:shadow-xl transition-all">
+        <div class="bg-gradient-to-r from-operacional/10 to-operacional/5 dark:from-operacional/20 dark:to-operacional/10 p-8 rounded-2xl border-2 border-operacional hover:shadow-xl transition-all" data-modulo="7">
           <div class="flex items-start gap-6">
             <div class="flex-shrink-0">
               <div class="w-16 h-16 bg-operacional text-white rounded-xl flex items-center justify-center text-2xl font-bold">
@@ -434,7 +439,7 @@
               </div>
             </div>
             <div class="flex-1">
-              <span class="inline-block px-3 py-1 bg-operacional/20 text-operacional rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
+              <span class="badge-status inline-block px-3 py-1 bg-operacional/20 text-operacional rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
               <h3 class="text-2xl font-bold mb-2">Documentação e Arquivos Automáticos</h3>
               <p class="text-neutral-600 dark:text-neutral-400 mb-4">
                 Gerar documentos, relatórios e apresentações automaticamente. Templates inteligentes que se preenchem sozinhos.
@@ -452,7 +457,7 @@
         </div>
 
         <!-- Módulo 8 -->
-        <div class="bg-gradient-to-r from-operacional/10 to-operacional/5 dark:from-operacional/20 dark:to-operacional/10 p-8 rounded-2xl border-2 border-operacional hover:shadow-xl transition-all">
+        <div class="bg-gradient-to-r from-operacional/10 to-operacional/5 dark:from-operacional/20 dark:to-operacional/10 p-8 rounded-2xl border-2 border-operacional hover:shadow-xl transition-all" data-modulo="8">
           <div class="flex items-start gap-6">
             <div class="flex-shrink-0">
               <div class="w-16 h-16 bg-operacional text-white rounded-xl flex items-center justify-center text-2xl font-bold">
@@ -460,7 +465,7 @@
               </div>
             </div>
             <div class="flex-1">
-              <span class="inline-block px-3 py-1 bg-operacional/20 text-operacional rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
+              <span class="badge-status inline-block px-3 py-1 bg-operacional/20 text-operacional rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
               <h3 class="text-2xl font-bold mb-2">Reuniões e Agenda Automatizados</h3>
               <p class="text-neutral-600 dark:text-neutral-400 mb-4">
                 Agendamento inteligente, transcrições automáticas, e ações pós-reunião sem esforço manual.
@@ -478,7 +483,7 @@
         </div>
 
         <!-- Módulo 9 -->
-        <div class="bg-gradient-to-r from-operacional/10 to-operacional/5 dark:from-operacional/20 dark:to-operacional/10 p-8 rounded-2xl border-2 border-operacional hover:shadow-xl transition-all">
+        <div class="bg-gradient-to-r from-operacional/10 to-operacional/5 dark:from-operacional/20 dark:to-operacional/10 p-8 rounded-2xl border-2 border-operacional hover:shadow-xl transition-all" data-modulo="9">
           <div class="flex items-start gap-6">
             <div class="flex-shrink-0">
               <div class="w-16 h-16 bg-operacional text-white rounded-xl flex items-center justify-center text-2xl font-bold">
@@ -486,7 +491,7 @@
               </div>
             </div>
             <div class="flex-1">
-              <span class="inline-block px-3 py-1 bg-operacional/20 text-operacional rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
+              <span class="badge-status inline-block px-3 py-1 bg-operacional/20 text-operacional rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
               <h3 class="text-2xl font-bold mb-2">Framework 4R's - Entregar Resultados</h3>
               <p class="text-neutral-600 dark:text-neutral-400 mb-4">
                 Comunicar resultados para gestão. Framework 4R's: Result, Roadmap, Risk, Review. Transformar tempo economizado em reconhecimento.

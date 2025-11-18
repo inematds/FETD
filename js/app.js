@@ -386,6 +386,222 @@ function restartQuiz() {
 renderQuestion();
 
 // ============================================
+// Sistema de Progresso com LocalStorage
+// ============================================
+
+// Salvar módulo como concluído
+function marcarModuloConcluido(trilha, modulo) {
+  let progresso = JSON.parse(localStorage.getItem('fetd_progresso') || '{}');
+
+  if (!progresso[trilha]) {
+    progresso[trilha] = [];
+  }
+
+  if (!progresso[trilha].includes(modulo)) {
+    progresso[trilha].push(modulo);
+  }
+
+  localStorage.setItem('fetd_progresso', JSON.stringify(progresso));
+
+  // Atualizar UI
+  atualizarUIProgresso(trilha, modulo);
+
+  // Mostrar mensagem de sucesso
+  mostrarMensagemSucesso(trilha, modulo);
+}
+
+// Verificar se módulo está concluído
+function moduloConcluido(trilha, modulo) {
+  let progresso = JSON.parse(localStorage.getItem('fetd_progresso') || '{}');
+  return progresso[trilha]?.includes(modulo) || false;
+}
+
+// Calcular % de conclusão de uma trilha
+function calcularProgresso(trilha) {
+  let progresso = JSON.parse(localStorage.getItem('fetd_progresso') || '{}');
+  let concluidos = progresso[trilha]?.length || 0;
+  return {
+    concluidos: concluidos,
+    total: 10,
+    percentual: Math.round((concluidos / 10) * 100)
+  };
+}
+
+// Obter próximo módulo não concluído
+function proximoModulo(trilha) {
+  let progresso = JSON.parse(localStorage.getItem('fetd_progresso') || '{}');
+  let concluidos = progresso[trilha] || [];
+
+  for (let i = 1; i <= 10; i++) {
+    if (!concluidos.includes(i)) {
+      return i;
+    }
+  }
+
+  return null; // Todos concluídos
+}
+
+// Atualizar UI após marcar módulo como concluído
+function atualizarUIProgresso(trilha, modulo) {
+  // Atualizar botão de conclusão
+  const btnConcluir = document.getElementById('btn-concluir-modulo');
+  if (btnConcluir) {
+    btnConcluir.innerHTML = '✓ Módulo Concluído!';
+    btnConcluir.classList.remove('bg-operacional', 'hover:bg-blue-700');
+    btnConcluir.classList.add('bg-green-600', 'cursor-not-allowed');
+    btnConcluir.disabled = true;
+  }
+
+  // Atualizar info de progresso
+  const progressoInfo = document.getElementById('progresso-info');
+  if (progressoInfo) {
+    const prog = calcularProgresso(trilha);
+    progressoInfo.innerHTML = `
+      <div class="text-sm text-neutral-600 dark:text-neutral-400">
+        Progresso na trilha: <strong class="text-operacional">${prog.percentual}%</strong> (${prog.concluidos}/${prog.total} módulos)
+      </div>
+    `;
+  }
+}
+
+// Mostrar mensagem de sucesso ao concluir módulo
+function mostrarMensagemSucesso(trilha, modulo) {
+  const prog = calcularProgresso(trilha);
+  const proximo = proximoModulo(trilha);
+
+  // Criar overlay de sucesso
+  const overlay = document.createElement('div');
+  overlay.className = 'fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4';
+  overlay.innerHTML = `
+    <div class="bg-white dark:bg-neutral-800 rounded-2xl p-8 max-w-md w-full text-center animate-scale-in">
+      <div class="text-6xl mb-4">🎉</div>
+      <h3 class="text-2xl font-bold mb-2">Parabéns!</h3>
+      <p class="text-neutral-600 dark:text-neutral-400 mb-6">
+        Você concluiu o <strong>Módulo ${modulo}</strong>!<br>
+        Progresso: <strong class="text-operacional">${prog.percentual}%</strong> (${prog.concluidos}/${prog.total})
+      </p>
+      ${proximo ? `
+        <a href="modulo-${String(proximo).padStart(2, '0')}.html" class="inline-block px-8 py-3 bg-operacional text-white rounded-lg font-semibold hover:bg-blue-700 transition-all mb-3">
+          Ir para Módulo ${proximo} →
+        </a>
+        <br>
+      ` : `
+        <div class="text-green-600 font-bold text-lg mb-3">
+          ✓ Trilha 100% Completa!
+        </div>
+      `}
+      <button onclick="this.parentElement.parentElement.remove()" class="px-6 py-2 bg-neutral-200 dark:bg-neutral-700 rounded-lg font-semibold hover:bg-neutral-300 dark:hover:bg-neutral-600 transition-all">
+        Fechar
+      </button>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  // Fechar ao clicar no overlay
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      overlay.remove();
+    }
+  });
+}
+
+// Inicializar UI de progresso ao carregar página de módulo
+function inicializarProgressoModulo() {
+  const btnConcluir = document.getElementById('btn-concluir-modulo');
+  if (!btnConcluir) return;
+
+  const trilha = btnConcluir.dataset.trilha;
+  const modulo = parseInt(btnConcluir.dataset.modulo);
+
+  // Verificar se já está concluído
+  if (moduloConcluido(trilha, modulo)) {
+    btnConcluir.innerHTML = '✓ Módulo Concluído!';
+    btnConcluir.classList.remove('bg-operacional', 'hover:bg-blue-700');
+    btnConcluir.classList.add('bg-green-600', 'cursor-not-allowed');
+    btnConcluir.disabled = true;
+  }
+
+  // Atualizar info de progresso
+  const progressoInfo = document.getElementById('progresso-info');
+  if (progressoInfo) {
+    const prog = calcularProgresso(trilha);
+    progressoInfo.innerHTML = `
+      <div class="text-sm text-neutral-600 dark:text-neutral-400">
+        Progresso na trilha: <strong class="text-operacional">${prog.percentual}%</strong> (${prog.concluidos}/${prog.total} módulos)
+      </div>
+    `;
+  }
+
+  // Adicionar evento de clique
+  btnConcluir.addEventListener('click', () => {
+    if (!btnConcluir.disabled) {
+      marcarModuloConcluido(trilha, modulo);
+    }
+  });
+}
+
+// Inicializar barra de progresso na landing page
+function inicializarBarraProgresso() {
+  const barraProgresso = document.getElementById('barra-progresso-trilha');
+  if (!barraProgresso) return;
+
+  const trilha = barraProgresso.dataset.trilha;
+  const prog = calcularProgresso(trilha);
+
+  barraProgresso.innerHTML = `
+    <div class="mb-6">
+      <div class="flex justify-between items-center mb-2">
+        <span class="text-sm font-semibold text-neutral-700 dark:text-neutral-300">Seu Progresso</span>
+        <span class="text-sm font-bold text-operacional">${prog.percentual}%</span>
+      </div>
+      <div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-3 overflow-hidden">
+        <div class="bg-gradient-to-r from-operacional to-blue-600 h-full transition-all duration-500" style="width: ${prog.percentual}%"></div>
+      </div>
+      <div class="mt-2 text-xs text-neutral-600 dark:text-neutral-400">
+        ${prog.concluidos} de ${prog.total} módulos concluídos
+      </div>
+    </div>
+  `;
+}
+
+// Marcar módulos concluídos visualmente na landing page
+function marcarModulosConcluidosLanding() {
+  const trilha = 'operacional'; // Por enquanto só temos essa trilha
+  const progresso = JSON.parse(localStorage.getItem('fetd_progresso') || '{}');
+  const concluidos = progresso[trilha] || [];
+
+  concluidos.forEach(modulo => {
+    const card = document.querySelector(`[data-modulo="${modulo}"]`);
+    if (card) {
+      // Adicionar badge de concluído
+      const badge = card.querySelector('.badge-status');
+      if (badge) {
+        badge.textContent = 'CONCLUÍDO';
+        badge.classList.remove('bg-operacional/20', 'text-operacional');
+        badge.classList.add('bg-green-600/20', 'text-green-600');
+      }
+
+      // Adicionar ícone de check
+      const titulo = card.querySelector('h3');
+      if (titulo && !titulo.querySelector('.check-icon')) {
+        const check = document.createElement('span');
+        check.className = 'check-icon text-green-600 ml-2';
+        check.textContent = '✓';
+        titulo.appendChild(check);
+      }
+    }
+  });
+}
+
+// Inicializar quando página carregar
+document.addEventListener('DOMContentLoaded', () => {
+  inicializarProgressoModulo();
+  inicializarBarraProgresso();
+  marcarModulosConcluidosLanding();
+});
+
+// ============================================
 // Smooth Scroll for Anchor Links
 // ============================================
 
