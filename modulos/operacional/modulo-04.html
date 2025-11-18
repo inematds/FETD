@@ -81,151 +81,526 @@
         <p class="text-neutral-700 dark:text-neutral-300">Criar sua primeira automação sem código usando Zapier ou Make</p>
       </div>
 
-      
+<div class="prose max-w-none">
+
+<!-- Introdução -->
 <div class="mb-16">
-  <h2 class="text-3xl font-bold mb-6">1. O Que São Ferramentas No-Code</h2>
-  
-<p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
-  Ferramentas <strong>no-code</strong> são plataformas que permitem criar automações e integrações complexas <strong>sem escrever uma única linha de código</strong>. Você conecta aplicativos através de uma interface visual, clicando e arrastando.
-</p>
+  <h2 class="text-3xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">1. Introdução - A Revolução No-Code</h2>
 
-<div class="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl mb-6">
-  <h4 class="font-bold text-lg mb-4">Como funcionam:</h4>
-  <ol class="space-y-3 text-neutral-700 dark:text-neutral-300 list-decimal list-inside">
-    <li><strong>Trigger (Gatilho):</strong> Algo acontece (ex: novo email chega)</li>
-    <li><strong>Action (Ação):</strong> Sistema faz algo automaticamente (ex: salva anexo no Drive)</li>
-    <li><strong>Conectores:</strong> Ligam diferentes aplicativos</li>
-  </ol>
-</div>
-
-<p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
-  É como montar um quebra-cabeça: você escolhe as peças (aplicativos) e conecta elas de forma lógica. O sistema faz o resto automaticamente, 24/7.
-</p>
-
-<div class="bg-operacional/10 dark:bg-operacional/20 p-6 rounded-xl">
-  <p class="text-lg font-bold mb-3">💡 Exemplo Prático:</p>
-  <p class="text-neutral-700 dark:text-neutral-300">
-    <strong>Trigger:</strong> Email recebido com anexo<br>
-    <strong>Action 1:</strong> Salvar anexo no Google Drive<br>
-    <strong>Action 2:</strong> Enviar notificação no Slack<br>
-    <strong>Resultado:</strong> Você nunca mais perde um anexo importante!
+  <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+    Imagine voltar 5 anos no tempo. Se você quisesse automatizar alguma tarefa no trabalho, teria duas opções: contratar um programador caro ou aprender a programar você mesmo (o que levaria meses). A maioria das pessoas operacionais simplesmente aceitava fazer tarefas repetitivas manualmente, todos os dias, para sempre.
   </p>
-</div>
 
-</div>
+  <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+    Mas nos últimos 2 anos, algo revolucionário aconteceu: a explosão das ferramentas no-code.
+  </p>
 
-<div class="mb-16">
-  <h2 class="text-3xl font-bold mb-6">2. Zapier vs Make: Qual Usar?</h2>
-  
-<p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
-  Existem várias ferramentas no-code. As duas mais populares são <strong>Zapier</strong> e <strong>Make</strong> (antigo Integromat). Vamos entender as diferenças:
-</p>
+  <h3 class="text-2xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">Por que você NÃO precisa programar</h3>
 
-<div class="grid md:grid-cols-2 gap-6 mb-6">
-  <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl border-2 border-operacional/30">
-    <h4 class="text-xl font-bold mb-4 text-operacional">⚡ Zapier</h4>
-    <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-4">Mais simples e popular</p>
-    <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-      <li class="flex items-start gap-2">
-        <span class="text-green-500">✓</span>
-        <span>Interface muito simples</span>
-      </li>
-      <li class="flex items-start gap-2">
-        <span class="text-green-500">✓</span>
-        <span>Conecta 6.000+ aplicativos</span>
-      </li>
-      <li class="flex items-start gap-2">
-        <span class="text-green-500">✓</span>
-        <span>Plano grátis: 100 tarefas/mês</span>
-      </li>
-      <li class="flex items-start gap-2">
-        <span class="text-green-500">✓</span>
-        <span>Perfeito para iniciantes</span>
-      </li>
-      <li class="flex items-start gap-2">
-        <span class="text-red-500">✗</span>
-        <span>Menos flexível</span>
-      </li>
-    </ul>
+  <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+    A revolução no-code democratizou a automação. Antes, automação era coisa de programador. Agora, é coisa de qualquer pessoa que saiba usar um computador. Se você consegue usar o Gmail, consegue criar uma automação no Zapier. É sério.
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-xl border-2 border-red-300 dark:border-red-700">
+      <h4 class="text-xl font-bold mb-3 text-red-700 dark:text-red-300">ANTES (Código)</h4>
+      <pre class="bg-neutral-900 text-green-400 p-4 rounded text-xs overflow-x-auto"><code>const nodemailer = require('nodemailer');
+const { google } = require('googleapis');
+const gmail = google.gmail('v1');
+
+async function checkEmails() {
+  const auth = await authenticate();
+  const response = await gmail.users.messages.list({
+    userId: 'me',
+    q: 'subject:[LEAD]'
+  });
+  // ... mais 50 linhas de código
+}</code></pre>
+      <p class="text-sm mt-3 text-neutral-600 dark:text-neutral-400">Complexo, assustador, impossível para quem não é programador.</p>
+    </div>
+
+    <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl border-2 border-green-300 dark:border-green-700">
+      <h4 class="text-xl font-bold mb-3 text-green-700 dark:text-green-300">AGORA (No-Code)</h4>
+      <ol class="space-y-2 text-neutral-700 dark:text-neutral-300">
+        <li>1. Escolhe "Gmail" na tela</li>
+        <li>2. Seleciona "Novo email com [LEAD] no assunto"</li>
+        <li>3. Escolhe "Google Sheets"</li>
+        <li>4. Mapeia "email vai para linha nova"</li>
+        <li>5. Ativa</li>
+      </ol>
+      <p class="text-sm mt-3 font-bold text-green-700 dark:text-green-300">Pronto. 2 minutos. Zero código. Funciona 24/7.</p>
+    </div>
   </div>
 
-  <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-xl border-2 border-purple-500/30">
-    <h4 class="text-xl font-bold mb-4 text-purple-600">🔧 Make</h4>
-    <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-4">Mais poderoso e visual</p>
-    <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-      <li class="flex items-start gap-2">
-        <span class="text-green-500">✓</span>
-        <span>Interface visual avançada</span>
-      </li>
-      <li class="flex items-start gap-2">
-        <span class="text-green-500">✓</span>
-        <span>Conecta 1.500+ aplicativos</span>
-      </li>
-      <li class="flex items-start gap-2">
-        <span class="text-green-500">✓</span>
-        <span>Plano grátis: 1.000 operações/mês</span>
-      </li>
-      <li class="flex items-start gap-2">
-        <span class="text-green-500">✓</span>
-        <span>Muito mais flexível</span>
-      </li>
-      <li class="flex items-start gap-2">
-        <span class="text-red-500">✗</span>
-        <span>Curva de aprendizado maior</span>
-      </li>
-    </ul>
+  <h3 class="text-2xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">Casos reais de pessoas comuns</h3>
+
+  <div class="grid md:grid-cols-3 gap-6 mb-6">
+    <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl">
+      <h4 class="font-bold text-lg mb-2 text-operacional">Ana, assistente administrativo</h4>
+      <p class="text-sm text-neutral-700 dark:text-neutral-300">
+        Gastava 2 horas por dia copiando dados de emails para planilhas. Criou uma automação no Zapier que faz isso automaticamente.
+        <strong class="text-operacional">Resultado: 40 horas economizadas por mês.</strong>
+      </p>
+    </div>
+
+    <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-xl">
+      <h4 class="font-bold text-lg mb-2 text-purple-600">Carlos, suporte ao cliente</h4>
+      <p class="text-sm text-neutral-700 dark:text-neutral-300">
+        Recebia dezenas de anexos por email e tinha que salvar cada um manualmente no Drive. Criou uma automação que detecta anexos e salva automaticamente.
+        <strong class="text-purple-600">Nunca mais perdeu um documento importante.</strong>
+      </p>
+    </div>
+
+    <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl">
+      <h4 class="font-bold text-lg mb-2 text-green-600">Mariana, coordenadora de eventos</h4>
+      <p class="text-sm text-neutral-700 dark:text-neutral-300">
+        Copiava dados de formulários para 3 lugares diferentes. Criou uma automação que faz tudo de uma vez.
+        <strong class="text-green-600">Zero erros de digitação e 90% menos trabalho manual.</strong>
+      </p>
+    </div>
+  </div>
+
+  <div class="bg-gradient-to-r from-operacional/20 to-blue-500/20 p-6 rounded-xl">
+    <p class="text-lg font-bold text-neutral-900 dark:text-neutral-100 mb-3">A mudança de mentalidade</p>
+    <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+      O segredo está em mudar como você pensa sobre tarefas repetitivas. <strong>Antes:</strong> "é chato, mas é rápido, vou fazer na mão". <strong>Agora:</strong> "faço isso todo dia... será que dá pra automatizar?"
+    </p>
+    <p class="text-neutral-700 dark:text-neutral-300">
+      A resposta, na maioria das vezes, é <strong class="text-operacional text-xl">SIM</strong>.
+    </p>
   </div>
 </div>
 
-<div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-6 rounded-lg">
-  <p class="font-bold mb-2">💡 Nossa Recomendação:</p>
-  <p class="text-neutral-700 dark:text-neutral-300">
-    <strong>Comece com Zapier</strong> (mais simples). Depois de dominar, experimente Make para automações mais complexas. Muitas pessoas usam os dois!
-  </p>
+<!-- Entendendo o Básico -->
+<div class="mb-16">
+  <h2 class="text-3xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">2. Entendendo o Básico - Como Funciona</h2>
+
+  <div class="bg-operacional/10 dark:bg-operacional/20 p-8 rounded-xl mb-6 text-center">
+    <p class="text-3xl font-bold mb-2 text-operacional">QUANDO [isso acontecer] → FAÇA [aquilo]</p>
+    <p class="text-xl text-neutral-700 dark:text-neutral-300">TRIGGER (gatilho) → ACTION (ação)</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-xl border-l-4 border-yellow-500">
+      <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+        <span class="text-3xl">🔔</span>
+        <span class="text-neutral-900 dark:text-neutral-100">TRIGGER (Gatilho)</span>
+      </h3>
+      <p class="text-neutral-700 dark:text-neutral-300 mb-4">O evento que <strong>inicia</strong> a automação:</p>
+      <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+        <li>• Email recebido (Gmail, Outlook)</li>
+        <li>• Planilha atualizada (Google Sheets)</li>
+        <li>• Formulário preenchido (Google Forms)</li>
+        <li>• Arquivo adicionado (Drive, Dropbox)</li>
+        <li>• Horário específico (todo dia às 9h)</li>
+        <li>• Rede social (nova menção, seguidor)</li>
+      </ul>
+    </div>
+
+    <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl border-l-4 border-green-500">
+      <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+        <span class="text-3xl">⚙️</span>
+        <span class="text-neutral-900 dark:text-neutral-100">ACTION (Ação)</span>
+      </h3>
+      <p class="text-neutral-700 dark:text-neutral-300 mb-4">O que acontece <strong>automaticamente</strong>:</p>
+      <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+        <li>• Enviar email</li>
+        <li>• Atualizar planilha</li>
+        <li>• Salvar arquivo</li>
+        <li>• Enviar notificação (Slack, Teams)</li>
+        <li>• Criar tarefa (Trello, Asana)</li>
+        <li>• Registrar em banco de dados</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-xl border-l-4 border-purple-500">
+      <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+        <span class="text-3xl">🔍</span>
+        <span class="text-neutral-900 dark:text-neutral-100">FILTER (Filtro)</span>
+      </h3>
+      <p class="text-neutral-700 dark:text-neutral-300 mb-3"><strong>Quando</strong> executar ou não:</p>
+      <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Exemplo: Só executar se assunto contém "[LEAD]"</p>
+      <p class="text-xs text-neutral-600 dark:text-neutral-400">Transforma automações genéricas em inteligentes!</p>
+    </div>
+
+    <div class="bg-orange-50 dark:bg-orange-900/20 p-6 rounded-xl border-l-4 border-orange-500">
+      <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+        <span class="text-3xl">⏱️</span>
+        <span class="text-neutral-900 dark:text-neutral-100">DELAY (Tempo)</span>
+      </h3>
+      <p class="text-neutral-700 dark:text-neutral-300 mb-3">Controlar <strong>intervalos</strong>:</p>
+      <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Exemplo: Enviar email de boas-vindas, aguardar 3 dias, enviar follow-up</p>
+      <p class="text-xs text-neutral-600 dark:text-neutral-400">Perfeito para sequências automáticas!</p>
+    </div>
+  </div>
+
+  <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-6 rounded-xl">
+    <h4 class="font-bold text-lg mb-3 text-neutral-900 dark:text-neutral-100">💡 Exemplo Completo: Contrato Automático</h4>
+    <div class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+      <p><strong>TRIGGER:</strong> Email recebido</p>
+      <p><strong>FILTER 1:</strong> Assunto contém "contrato"</p>
+      <p><strong>FILTER 2:</strong> Email tem anexo PDF</p>
+      <p><strong>ACTION 1:</strong> Salvar PDF no Google Drive → Pasta "Contratos 2025"</p>
+      <p><strong>ACTION 2:</strong> Enviar mensagem no Slack → "Novo contrato de [remetente]!"</p>
+      <p class="mt-4 font-bold text-operacional">RESULTADO: Zero trabalho manual. Tudo organizado. Equipe sempre informada.</p>
+    </div>
+  </div>
 </div>
 
+<!-- Zapier vs Make -->
+<div class="mb-16">
+  <h2 class="text-3xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">3. Zapier vs Make - Qual Escolher?</h2>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl border-2 border-operacional/30">
+      <h4 class="text-2xl font-bold mb-4 text-operacional flex items-center gap-2">
+        <span>⚡</span> Zapier
+      </h4>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-4 font-semibold">O mais popular e simples</p>
+
+      <div class="mb-4">
+        <p class="font-bold text-sm mb-2 text-neutral-900 dark:text-neutral-100">Versão grátis:</p>
+        <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+          <li>• 100 tarefas/mês</li>
+          <li>• Zaps de 2 passos (1 trigger + 1 action)</li>
+          <li>• Atualização a cada 15min</li>
+        </ul>
+      </div>
+
+      <div class="mb-4">
+        <p class="font-bold text-sm mb-2 text-green-600 dark:text-green-400">Prós:</p>
+        <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 flex-shrink-0">✓</span>
+            <span>Interface extremamente simples</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 flex-shrink-0">✓</span>
+            <span>6.000+ aplicativos conectados</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 flex-shrink-0">✓</span>
+            <span>Documentação abundante</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 flex-shrink-0">✓</span>
+            <span>Templates prontos</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mb-4">
+        <p class="font-bold text-sm mb-2 text-red-600 dark:text-red-400">Contras:</p>
+        <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+          <li class="flex items-start gap-2">
+            <span class="text-red-500 flex-shrink-0">✗</span>
+            <span>Plano grátis limitado (100 tarefas/mês)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-red-500 flex-shrink-0">✗</span>
+            <span>Caro para escalar ($19.99+/mês)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-red-500 flex-shrink-0">✗</span>
+            <span>Apenas 2 passos no plano grátis</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+        <p class="font-bold text-sm mb-2 text-neutral-900 dark:text-neutral-100">Melhor para:</p>
+        <p class="text-sm text-neutral-700 dark:text-neutral-300">Iniciantes absolutos, automações simples, quem valoriza simplicidade</p>
+      </div>
+    </div>
+
+    <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-xl border-2 border-purple-500/30">
+      <h4 class="text-2xl font-bold mb-4 text-purple-600 flex items-center gap-2">
+        <span>🔧</span> Make
+      </h4>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-4 font-semibold">Mais poderoso e visual</p>
+
+      <div class="mb-4">
+        <p class="font-bold text-sm mb-2 text-neutral-900 dark:text-neutral-100">Versão grátis:</p>
+        <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+          <li>• 1.000 operações/mês</li>
+          <li>• Cenários ilimitados</li>
+          <li>• Múltiplos passos (sem limite!)</li>
+        </ul>
+      </div>
+
+      <div class="mb-4">
+        <p class="font-bold text-sm mb-2 text-green-600 dark:text-green-400">Prós:</p>
+        <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 flex-shrink-0">✓</span>
+            <span>Interface visual poderosa</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 flex-shrink-0">✓</span>
+            <span>10x mais operações grátis</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 flex-shrink-0">✓</span>
+            <span>Lógica condicional avançada</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 flex-shrink-0">✓</span>
+            <span>Melhor custo-benefício</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mb-4">
+        <p class="font-bold text-sm mb-2 text-red-600 dark:text-red-400">Contras:</p>
+        <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+          <li class="flex items-start gap-2">
+            <span class="text-red-500 flex-shrink-0">✗</span>
+            <span>Curva de aprendizado maior</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-red-500 flex-shrink-0">✗</span>
+            <span>Menos apps (1.500+)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-red-500 flex-shrink-0">✗</span>
+            <span>Menos templates prontos</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+        <p class="font-bold text-sm mb-2 text-neutral-900 dark:text-neutral-100">Melhor para:</p>
+        <p class="text-sm text-neutral-700 dark:text-neutral-300">Automações complexas, quem quer economizar a longo prazo, múltiplos passos</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border-l-4 border-yellow-500 p-6 rounded-lg mb-6">
+    <p class="font-bold text-lg mb-3 text-neutral-900 dark:text-neutral-100">💡 Nossa Recomendação - O Caminho Ideal:</p>
+    <div class="space-y-3 text-neutral-700 dark:text-neutral-300">
+      <p><strong class="text-operacional">FASE 1 (você está aqui!):</strong> Use Zapier. Crie suas primeiras 3-5 automações. Aprenda os conceitos básicos.</p>
+      <p><strong class="text-purple-600">FASE 2 (1-3 meses depois):</strong> Experimente Make. Recrie suas automações do Zapier. Veja o quanto pode fazer a mais.</p>
+      <p><strong class="text-green-600">FASE 3 (6+ meses):</strong> Use Make como principal. Reserve Zapier apenas para apps específicos.</p>
+      <p class="text-sm italic">Muitas pessoas usam os dois simultaneamente! Use a ferramenta certa para o trabalho certo.</p>
+    </div>
+  </div>
+
+  <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl border-2 border-blue-300 dark:border-blue-700">
+    <h4 class="font-bold mb-2 text-neutral-900 dark:text-neutral-100">📌 Para este módulo:</h4>
+    <p class="text-neutral-700 dark:text-neutral-300">Vamos usar <strong class="text-operacional">ZAPIER</strong> porque é mais amigável para iniciantes. Mas tudo que você aprender aqui se aplica ao Make também. Os conceitos são os mesmos!</p>
+  </div>
+</div>
+
+<!-- Automações Práticas -->
+<div class="mb-16">
+  <h2 class="text-3xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">4. Sua Primeira Automação: Email → Planilha</h2>
+
+  <div class="bg-gradient-to-r from-green-500/10 to-blue-500/10 p-8 rounded-xl mb-6 border-2 border-green-300 dark:border-green-700">
+    <h3 class="text-2xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">CENÁRIO:</h3>
+    <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+      Todo email que chegar com a palavra <strong class="text-operacional">[LEAD]</strong> no assunto vai automaticamente para uma planilha do Google Sheets, registrando quem enviou, quando enviou e o conteúdo.
+    </p>
+    <p class="text-sm text-neutral-600 dark:text-neutral-400">
+      <strong>Tempo estimado:</strong> 15-20 minutos | <strong>Dificuldade:</strong> Fácil
+    </p>
+  </div>
+
+  <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-6 rounded-lg mb-6">
+    <h4 class="font-bold mb-3 text-neutral-900 dark:text-neutral-100">📚 Tutorial Passo a Passo Completo</h4>
+    <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+      O tutorial detalhado com TODOS os passos, screenshots explicativos, troubleshooting e validação está disponível no arquivo MD para download.
+    </p>
+    <p class="text-sm text-neutral-600 dark:text-neutral-400">
+      <strong>O que você vai aprender:</strong> Criar conta no Zapier, configurar triggers do Gmail, mapear dados para Google Sheets, testar e ativar sua primeira automação real.
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-4 mb-6">
+    <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg border-2 border-operacional/20">
+      <h5 class="font-bold mb-2 text-operacional">PARTE 1-2</h5>
+      <p class="text-sm text-neutral-700 dark:text-neutral-300">Setup inicial + Criar primeiro Zap</p>
+    </div>
+    <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg border-2 border-operacional/20">
+      <h5 class="font-bold mb-2 text-operacional">PARTE 3-4</h5>
+      <p class="text-sm text-neutral-700 dark:text-neutral-300">Configurar Trigger (Gmail) + Action (Sheets)</p>
+    </div>
+    <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg border-2 border-operacional/20">
+      <h5 class="font-bold mb-2 text-operacional">PARTE 5-7</h5>
+      <p class="text-sm text-neutral-700 dark:text-neutral-300">Testar + Ativar + Validação real</p>
+    </div>
+  </div>
 </div>
 
 <div class="mb-16">
-  <h2 class="text-3xl font-bold mb-6">3. Conceitos Essenciais: Triggers e Actions</h2>
-  
-<p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
-  Toda automação no-code funciona com a mesma lógica: <strong>SE isso acontecer (Trigger), ENTÃO faça aquilo (Action)</strong>.
-</p>
+  <h2 class="text-3xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">5. Automação 2: Anexos → Drive</h2>
 
-<div class="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl mb-6">
-  <h4 class="font-bold text-lg mb-4">🔔 Triggers (Gatilhos)</h4>
-  <p class="text-neutral-700 dark:text-neutral-300 mb-3">
-    São eventos que <strong>iniciam</strong> uma automação:
-  </p>
-  <ul class="space-y-2 text-sm">
-    <li>• Novo email recebido</li>
-    <li>• Nova linha em planilha</li>
-    <li>• Formulário preenchido</li>
-    <li>• Arquivo adicionado em pasta</li>
-    <li>• Novo evento no calendário</li>
-    <li>• Horário específico (todo dia às 9h)</li>
-  </ul>
+  <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-xl mb-6">
+    <h3 class="text-xl font-bold mb-3 text-purple-600">Cenário:</h3>
+    <p class="text-neutral-700 dark:text-neutral-300">
+      Documentos importantes por email são salvos automaticamente em pasta específica do Google Drive. Nunca mais perca anexos!
+    </p>
+  </div>
+
+  <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl border-2 border-purple-300 dark:border-purple-700">
+    <h4 class="font-bold mb-3 text-neutral-900 dark:text-neutral-100">Fluxo da Automação:</h4>
+    <div class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+      <p><strong>TRIGGER:</strong> Gmail - Novo email com anexo</p>
+      <p><strong>FILTER:</strong> Apenas de remetentes específicos (recomendado)</p>
+      <p><strong>ACTION:</strong> Google Drive - Upload do anexo na pasta correta</p>
+    </div>
+  </div>
 </div>
 
-<div class="bg-operacional/10 dark:bg-operacional/20 p-6 rounded-xl mb-6">
-  <h4 class="font-bold text-lg mb-4">⚙️ Actions (Ações)</h4>
-  <p class="text-neutral-700 dark:text-neutral-300 mb-3">
-    São tarefas que o sistema <strong>executa automaticamente</strong>:
-  </p>
-  <ul class="space-y-2 text-sm">
-    <li>• Enviar email</li>
-    <li>• Criar/atualizar planilha</li>
-    <li>• Salvar arquivo</li>
-    <li>• Postar em redes sociais</li>
-    <li>• Enviar notificação</li>
-    <li>• Criar tarefa/evento</li>
-  </ul>
+<div class="mb-16">
+  <h2 class="text-3xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">6. Automação 3: Formulário → Slack</h2>
+
+  <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl mb-6">
+    <h3 class="text-xl font-bold mb-3 text-green-600">Cenário:</h3>
+    <p class="text-neutral-700 dark:text-neutral-300">
+      Equipe é notificada instantaneamente no Slack quando formulário de contato é preenchido. Resposta 10x mais rápida!
+    </p>
+  </div>
+
+  <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl border-2 border-green-300 dark:border-green-700">
+    <h4 class="font-bold mb-3 text-neutral-900 dark:text-neutral-100">Fluxo da Automação:</h4>
+    <div class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+      <p><strong>TRIGGER:</strong> Google Forms - Nova resposta</p>
+      <p><strong>ACTION:</strong> Slack - Enviar mensagem formatada em canal</p>
+      <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-3">Tutorial completo com exemplos de mensagens personalizadas disponível no arquivo MD.</p>
+    </div>
+  </div>
 </div>
 
-<p class="text-lg text-neutral-700 dark:text-neutral-300">
-  O poder está em <strong>combinar</strong> triggers e actions de aplicativos diferentes, criando fluxos que funcionam sozinhos!
-</p>
+<div class="mb-16">
+  <h2 class="text-3xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">7. Ideias de Automações Operacionais</h2>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
+    <div class="bg-gradient-to-br from-blue-500/20 to-blue-600/20 p-4 rounded-lg text-center">
+      <div class="text-3xl mb-2">✅</div>
+      <h5 class="font-bold text-sm mb-1 text-neutral-900 dark:text-neutral-100">Email → Planilha</h5>
+      <p class="text-xs text-neutral-600 dark:text-neutral-400">Você já fez!</p>
+    </div>
+    <div class="bg-gradient-to-br from-purple-500/20 to-purple-600/20 p-4 rounded-lg text-center">
+      <div class="text-3xl mb-2">✅</div>
+      <h5 class="font-bold text-sm mb-1 text-neutral-900 dark:text-neutral-100">Anexos → Drive</h5>
+      <p class="text-xs text-neutral-600 dark:text-neutral-400">Você já fez!</p>
+    </div>
+    <div class="bg-gradient-to-br from-green-500/20 to-green-600/20 p-4 rounded-lg text-center">
+      <div class="text-3xl mb-2">✅</div>
+      <h5 class="font-bold text-sm mb-1 text-neutral-900 dark:text-neutral-100">Form → Slack</h5>
+      <p class="text-xs text-neutral-600 dark:text-neutral-400">Você já fez!</p>
+    </div>
+    <div class="bg-gradient-to-br from-orange-500/20 to-orange-600/20 p-4 rounded-lg text-center">
+      <div class="text-3xl mb-2">🎯</div>
+      <h5 class="font-bold text-sm mb-1 text-neutral-900 dark:text-neutral-100">Redes → CRM</h5>
+      <p class="text-xs text-neutral-600 dark:text-neutral-400">Próxima!</p>
+    </div>
+    <div class="bg-gradient-to-br from-pink-500/20 to-pink-600/20 p-4 rounded-lg text-center">
+      <div class="text-3xl mb-2">📅</div>
+      <h5 class="font-bold text-sm mb-1 text-neutral-900 dark:text-neutral-100">Reunião → Prep</h5>
+      <p class="text-xs text-neutral-600 dark:text-neutral-400">Próxima!</p>
+    </div>
+  </div>
+
+  <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-6 rounded-lg">
+    <h4 class="font-bold mb-3 text-neutral-900 dark:text-neutral-100">📋 Mais 5 ideias completas + como escolher o que automatizar:</h4>
+    <p class="text-neutral-700 dark:text-neutral-300">
+      O arquivo MD contém lista detalhada de 10 automações práticas para perfil operacional, com descrição de triggers, actions, casos de uso reais e tempo economizado.
+    </p>
+  </div>
+</div>
+
+<div class="mb-16">
+  <h2 class="text-3xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">Exercícios de Reflexão + Exercício Prático</h2>
+
+  <div class="grid md:grid-cols-3 gap-6 mb-6">
+    <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl">
+      <h4 class="font-bold mb-3 text-operacional">💭 Reflexão 1</h4>
+      <p class="text-sm text-neutral-700 dark:text-neutral-300">
+        Das suas 10 tarefas repetitivas (Módulo 1), quais 3 podem ser automatizadas com Zapier/Make?
+      </p>
+    </div>
+    <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-xl">
+      <h4 class="font-bold mb-3 text-purple-600">💭 Reflexão 2</h4>
+      <p class="text-sm text-neutral-700 dark:text-neutral-300">
+        Que ferramentas você já usa que poderiam se conectar? (Gmail + Sheets? Forms + Slack?)
+      </p>
+    </div>
+    <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl">
+      <h4 class="font-bold mb-3 text-green-600">💭 Reflexão 3</h4>
+      <p class="text-sm text-neutral-700 dark:text-neutral-300">
+        Quanto tempo você economizaria se essas 3 automações funcionassem 24/7?
+      </p>
+    </div>
+  </div>
+
+  <div class="bg-gradient-to-r from-operacional/20 to-blue-500/20 p-8 rounded-2xl">
+    <h3 class="text-2xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">🛠️ Exercício Prático: Criar suas 3 primeiras automações</h3>
+    <div class="space-y-4">
+      <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+        <h5 class="font-bold mb-2 text-operacional">Automação Obrigatória 1: Email → Planilha</h5>
+        <p class="text-sm text-neutral-700 dark:text-neutral-300">Seguir tutorial completo acima. Testar e validar.</p>
+      </div>
+      <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+        <h5 class="font-bold mb-2 text-purple-600">Automação Escolha 2: Anexos → Drive OU Form → Slack OU Outra</h5>
+        <p class="text-sm text-neutral-700 dark:text-neutral-300">Escolha uma das opções ou da lista de ideias.</p>
+      </div>
+      <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+        <h5 class="font-bold mb-2 text-green-600">Automação Escolha 3: Crie algo ÚNICO para seu trabalho</h5>
+        <p class="text-sm text-neutral-700 dark:text-neutral-300">Resolva UM problema específico do SEU dia a dia.</p>
+      </div>
+    </div>
+    <div class="mt-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
+      <p class="text-sm font-bold text-neutral-900 dark:text-neutral-100 mb-2">📥 Entregável:</p>
+      <p class="text-sm text-neutral-700 dark:text-neutral-300">
+        Criar documento "MINHAS 3 PRIMEIRAS AUTOMAÇÕES NO-CODE" com descrição, triggers, actions, tempo economizado e screenshots.
+      </p>
+      <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-3">Template completo disponível no arquivo MD para download.</p>
+    </div>
+  </div>
+</div>
+
+<div class="mb-16">
+  <h2 class="text-3xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">Conclusão e Próximo Módulo</h2>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl">
+      <h4 class="font-bold mb-3 text-green-600">✅ Você conquistou:</h4>
+      <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+        <li>• Entendeu a revolução no-code</li>
+        <li>• Aprendeu Trigger, Action, Filter, Delay</li>
+        <li>• Comparou Zapier vs Make</li>
+        <li>• Criou 3 automações REAIS</li>
+        <li>• Identificou 10+ ideias de automações</li>
+      </ul>
+    </div>
+
+    <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl">
+      <h4 class="font-bold mb-3 text-operacional">📈 Impacto Real:</h4>
+      <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+        Se suas 3 automações economizam 30min/dia cada:
+      </p>
+      <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+        <li>• <strong>Economia diária:</strong> 1h30min</li>
+        <li>• <strong>Economia mensal:</strong> 30 horas</li>
+        <li>• <strong>Economia anual:</strong> 360 horas = 45 dias úteis!</li>
+      </ul>
+      <p class="text-sm font-bold text-operacional mt-3">ROI absurdo. E você levou apenas 1h30min para aprender!</p>
+    </div>
+  </div>
+
+  <div class="bg-gradient-to-r from-operacional to-blue-600 text-white p-8 rounded-2xl">
+    <h3 class="text-2xl font-bold mb-4">Próximo Módulo: Automação de Emails e Comunicação</h3>
+    <p class="mb-4">
+      Você vai criar sistemas de email que respondem leads automaticamente, fazem follow-ups no momento certo e organizam tudo sem você tocar.
+    </p>
+    <p class="text-sm opacity-90">
+      É como ter um assistente pessoal 24/7. Se você achou poderoso automatizar tarefas, espere até automatizar toda sua comunicação!
+    </p>
+  </div>
+</div>
 
 </div>
 
