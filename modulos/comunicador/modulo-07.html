@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 7: WhatsApp e Redes Sociais Automáticos | FETD</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'operacional': '#3B82F6',
+            'comunicador': '#10B981',
+            'talento': '#F59E0B',
+            'tecnico': '#F97316',
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { transition: background-color 200ms, border-color 200ms, color 200ms; }
+    .preload * { transition: none !important; }
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-comunicador to-operacional bg-clip-text text-transparent">🎓 FETD</a>
+        <div class="flex items-center space-x-8">
+          <a href="../../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-comunicador transition-colors">Início</a>
+          <a href="../../trilhas/comunicador.html" class="text-neutral-700 dark:text-neutral-300 hover:text-comunicador transition-colors">Trilha</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm">
+        <a href="../../index.html" class="text-comunicador hover:underline">Início</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <a href="../../trilhas/comunicador.html" class="text-comunicador hover:underline">Trilha Comunicador Estratégico</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Módulo 7</span>
+      </nav>
+    </div>
+  </div>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="mb-12">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="px-4 py-2 bg-comunicador/20 text-comunicador rounded-full text-sm font-semibold">Módulo 7</span>
+          <span class="text-neutral-600 dark:text-neutral-400">⏱️ 1h</span>
+          <a href="../../downloads/comunicador/modulo-07.md" download class="ml-auto px-4 py-2 bg-neutral-100 dark:bg-neutral-800 rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors text-sm font-semibold">
+            📥 Download MD
+          </a>
+        </div>
+
+        <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">WhatsApp e Redes Sociais Automáticos</h1>
+        <p class="text-xl text-neutral-600 dark:text-neutral-400"><strong>Objetivo:</strong> Automatizar presença em canais de comunicação</p>
+      </div>
+
+      <div class="prose dark:prose-invert max-w-none">
+        <div class="bg-comunicador/10 dark:bg-comunicador/20 p-6 rounded-xl mb-8">
+          <h2 class="text-2xl font-bold mb-4">📚 Conteúdo do Módulo</h2>
+          <p class="text-lg">Respostas automáticas inteligentes, triagem de mensagens, integração multi-canal</p>
+          <p class="mt-4 text-sm text-neutral-600 dark:text-neutral-400"><em>Este módulo contém teoria, exemplos práticos e exercícios hands-on para você aplicar imediatamente.</em></p>
+        </div>
+
+        <div class="bg-green-100 dark:bg-green-900/40 p-6 rounded-xl">
+          <h3 class="text-xl font-bold mb-3">✅ Entregável</h3>
+          <p>Ao final deste módulo você terá criado/aprendido sobre: Respostas automáticas inteligentes, triagem de mensagens, integração multi-canal...</p>
+        </div>
+      </div>
+
+      <div class="mb-8 mt-16 bg-white dark:bg-neutral-800 rounded-2xl p-8 border-2 border-comunicador/30">
+        <div class="text-center mb-6">
+          <h3 class="text-2xl font-bold mb-2">Você completou este módulo?</h3>
+          <p class="text-neutral-600 dark:text-neutral-400">Marque como concluído para acompanhar seu progresso</p>
+        </div>
+        <div class="flex flex-col items-center gap-4">
+          <button id="btn-concluir-modulo" data-trilha="comunicador" data-modulo="7" class="px-10 py-4 bg-comunicador text-white rounded-lg font-bold text-lg hover:opacity-90 transition-all shadow-lg">
+            ✓ Marcar como Concluído
+          </button>
+          <div id="progresso-info" class="text-center"></div>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-comunicador to-green-600 text-white rounded-2xl p-8">
+        <div class="flex justify-between items-center">
+          <a href="modulo-06.html" class="px-6 py-3 bg-white/20 hover:bg-white/30 rounded-lg font-semibold transition-all">
+            ← Módulo 6
+          </a>
+          <div class="text-center">
+            <p class="text-sm opacity-80 mb-1">Próximo Módulo</p>
+            <p class="font-bold">Módulo 8</p>
+          </div>
+          <a href="modulo-08.html" class="px-6 py-3 bg-white text-comunicador rounded-lg font-semibold hover:bg-yellow-300 hover:text-neutral-900 transition-all">
+            Módulo 8 →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center text-sm"><p>&copy; 2025 FETD - Formação em Engenharia de Intenção</p></div>
+    </div>
+  </footer>
+
+  <script src="../../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilha Técnico Comunicador | FETD</title>
+  <meta name="description" content="Comunique valor, construa autoridade e receba propostas 2-3x mais valorizadas">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'operacional': '#3B82F6',
+            'comunicador': '#10B981',
+            'talento': '#F59E0B',
+            'tecnico': '#F97316',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out; }
+    .preload * { transition: none !important; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+  </style>
+</head>
+
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-tecnico to-operacional bg-clip-text text-transparent">
+            🎓 FETD
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-tecnico transition-colors">Início</a>
+          <a href="../index.html#trilhas" class="text-neutral-700 dark:text-neutral-300 hover:text-tecnico transition-colors">Trilhas</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600 transition-colors">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../index.html" class="text-tecnico hover:text-tecnico-700 transition-colors">Início</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Trilha Técnico Comunicador</span>
+      </nav>
+    </div>
+  </div>
+
+  <section class="bg-gradient-to-r from-tecnico to-green-600 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+
+      <div id="barra-progresso-trilha" data-trilha="tecnico" class="mb-8"></div>
+
+      <div class="flex items-center gap-4 mb-6">
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">🟠 Trilha</span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">10 Módulos</span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">10-12 Semanas</span>
+      </div>
+
+      <h1 class="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">🟠 Técnico Comunicador</h1>
+      <p class="text-3xl font-bold text-yellow-300 mb-6">"Transforme Conhecimento Técnico em Autoridade"</p>
+      <p class="text-xl text-white/90 mb-8 max-w-3xl">Comunique valor, construa autoridade e receba propostas 2-3x mais valorizadas</p>
+
+      <div class="grid md:grid-cols-4 gap-6 mb-12">
+        <div class="bg-white/10 backdrop-blur p-6 rounded-xl">
+          <div class="text-4xl font-bold">Autoridade reconhecida</div>
+          <div class="text-sm text-white/80">Primeira Meta</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-xl">
+          <div class="text-4xl font-bold">Propostas 2-3x maiores</div>
+          <div class="text-sm text-white/80">Segunda Meta</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-xl">
+          <div class="text-4xl font-bold">Executor → Consultor</div>
+          <div class="text-sm text-white/80">Terceira Meta</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-xl">
+          <div class="text-4xl font-bold">Network qualificado</div>
+          <div class="text-sm text-white/80">Resultado Final</div>
+        </div>
+      </div>
+
+      <a href="../modulos/tecnico/modulo-01.html" class="inline-block px-10 py-5 bg-white text-tecnico rounded-lg font-bold text-xl hover:bg-yellow-300 hover:text-neutral-900 transition-all shadow-2xl">
+        🚀 Começar Módulo 1
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20 bg-neutral-50 dark:bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">Os 10 Módulos da Trilha</h2>
+        <p class="text-xl text-neutral-600 dark:text-neutral-400">Progressão lógica do básico ao avançado</p>
+      </div>
+
+      <div class="space-y-6 max-w-4xl mx-auto">
+
+        <div class="bg-gradient-to-r from-tecnico/10 to-tecnico/5 dark:from-tecnico/20 dark:to-tecnico/10 p-8 rounded-2xl border-2 border-tecnico hover:shadow-xl transition-all" data-modulo="1">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-tecnico text-white rounded-xl flex items-center justify-center text-2xl font-bold">1</div>
+            </div>
+            <div class="flex-1">
+              <span class="badge-status inline-block px-3 py-1 bg-tecnico/20 text-tecnico rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
+              <h3 class="text-2xl font-bold mb-2">O Problema da Invisibilidade Técnica</h3>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-4">Paradoxo do técnico invisível, casos de transformação, custo da falta de comunicação</p>
+              <div class="flex items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
+                <span>⏱️ 30min</span>
+                <span>📝 Exercícios práticos</span>
+                <span>📥 Download MD</span>
+              </div>
+              <a href="../modulos/tecnico/modulo-01.html" class="inline-block mt-4 px-6 py-3 bg-tecnico text-white rounded-lg font-semibold hover:opacity-90 transition-all">
+                Começar Módulo 1 →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-tecnico/10 to-tecnico/5 dark:from-tecnico/20 dark:to-tecnico/10 p-8 rounded-2xl border-2 border-tecnico hover:shadow-xl transition-all" data-modulo="2">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-tecnico text-white rounded-xl flex items-center justify-center text-2xl font-bold">2</div>
+            </div>
+            <div class="flex-1">
+              <span class="badge-status inline-block px-3 py-1 bg-tecnico/20 text-tecnico rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
+              <h3 class="text-2xl font-bold mb-2">Golden Triangle - Expertise + Comunicação + Distribuição</h3>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-4">Triângulo ECD, matriz impacto vs. esforço para conteúdo, estratégia de posicionamento</p>
+              <div class="flex items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
+                <span>⏱️ 45min</span>
+                <span>📝 Exercícios práticos</span>
+                <span>📥 Download MD</span>
+              </div>
+              <a href="../modulos/tecnico/modulo-02.html" class="inline-block mt-4 px-6 py-3 bg-tecnico text-white rounded-lg font-semibold hover:opacity-90 transition-all">
+                Começar Módulo 2 →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-tecnico/10 to-tecnico/5 dark:from-tecnico/20 dark:to-tecnico/10 p-8 rounded-2xl border-2 border-tecnico hover:shadow-xl transition-all" data-modulo="3">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-tecnico text-white rounded-xl flex items-center justify-center text-2xl font-bold">3</div>
+            </div>
+            <div class="flex-1">
+              <span class="badge-status inline-block px-3 py-1 bg-tecnico/20 text-tecnico rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
+              <h3 class="text-2xl font-bold mb-2">IA Como Ghostwriter Técnico</h3>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-4">Prompts para artigos técnicos, simplificar complexidade, voz técnica + acessível</p>
+              <div class="flex items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
+                <span>⏱️ 1h</span>
+                <span>📝 Exercícios práticos</span>
+                <span>📥 Download MD</span>
+              </div>
+              <a href="../modulos/tecnico/modulo-03.html" class="inline-block mt-4 px-6 py-3 bg-tecnico text-white rounded-lg font-semibold hover:opacity-90 transition-all">
+                Começar Módulo 3 →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-tecnico/10 to-tecnico/5 dark:from-tecnico/20 dark:to-tecnico/10 p-8 rounded-2xl border-2 border-tecnico hover:shadow-xl transition-all" data-modulo="4">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-tecnico text-white rounded-xl flex items-center justify-center text-2xl font-bold">4</div>
+            </div>
+            <div class="flex-1">
+              <span class="badge-status inline-block px-3 py-1 bg-tecnico/20 text-tecnico rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
+              <h3 class="text-2xl font-bold mb-2">Presença Técnica Automatizada</h3>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-4">LinkedIn + Medium + GitHub, calendário editorial automático, reutilização de conteúdo</p>
+              <div class="flex items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
+                <span>⏱️ 1h 30min</span>
+                <span>📝 Exercícios práticos</span>
+                <span>📥 Download MD</span>
+              </div>
+              <a href="../modulos/tecnico/modulo-04.html" class="inline-block mt-4 px-6 py-3 bg-tecnico text-white rounded-lg font-semibold hover:opacity-90 transition-all">
+                Começar Módulo 4 →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-tecnico/10 to-tecnico/5 dark:from-tecnico/20 dark:to-tecnico/10 p-8 rounded-2xl border-2 border-tecnico hover:shadow-xl transition-all" data-modulo="5">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-tecnico text-white rounded-xl flex items-center justify-center text-2xl font-bold">5</div>
+            </div>
+            <div class="flex-1">
+              <span class="badge-status inline-block px-3 py-1 bg-tecnico/20 text-tecnico rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
+              <h3 class="text-2xl font-bold mb-2">Newsletter e Lista de Email Técnica</h3>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-4">Setup de newsletter gratuita, automação de envios, crescimento orgânico</p>
+              <div class="flex items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
+                <span>⏱️ 1h 15min</span>
+                <span>📝 Exercícios práticos</span>
+                <span>📥 Download MD</span>
+              </div>
+              <a href="../modulos/tecnico/modulo-05.html" class="inline-block mt-4 px-6 py-3 bg-tecnico text-white rounded-lg font-semibold hover:opacity-90 transition-all">
+                Começar Módulo 5 →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-tecnico/10 to-tecnico/5 dark:from-tecnico/20 dark:to-tecnico/10 p-8 rounded-2xl border-2 border-tecnico hover:shadow-xl transition-all" data-modulo="6">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-tecnico text-white rounded-xl flex items-center justify-center text-2xl font-bold">6</div>
+            </div>
+            <div class="flex-1">
+              <span class="badge-status inline-block px-3 py-1 bg-tecnico/20 text-tecnico rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
+              <h3 class="text-2xl font-bold mb-2">Palestras e Workshops Escaláveis</h3>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-4">Estrutura de talks técnicos, slides automatizados com IA, gravação e distribuição</p>
+              <div class="flex items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
+                <span>⏱️ 1h 30min</span>
+                <span>📝 Exercícios práticos</span>
+                <span>📥 Download MD</span>
+              </div>
+              <a href="../modulos/tecnico/modulo-06.html" class="inline-block mt-4 px-6 py-3 bg-tecnico text-white rounded-lg font-semibold hover:opacity-90 transition-all">
+                Começar Módulo 6 →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-tecnico/10 to-tecnico/5 dark:from-tecnico/20 dark:to-tecnico/10 p-8 rounded-2xl border-2 border-tecnico hover:shadow-xl transition-all" data-modulo="7">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-tecnico text-white rounded-xl flex items-center justify-center text-2xl font-bold">7</div>
+            </div>
+            <div class="flex-1">
+              <span class="badge-status inline-block px-3 py-1 bg-tecnico/20 text-tecnico rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
+              <h3 class="text-2xl font-bold mb-2">Network Estratégico Automatizado</h3>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-4">Outreach inteligente, follow-up automático, CRM para network, warm introductions</p>
+              <div class="flex items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
+                <span>⏱️ 1h</span>
+                <span>📝 Exercícios práticos</span>
+                <span>📥 Download MD</span>
+              </div>
+              <a href="../modulos/tecnico/modulo-07.html" class="inline-block mt-4 px-6 py-3 bg-tecnico text-white rounded-lg font-semibold hover:opacity-90 transition-all">
+                Começar Módulo 7 →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-tecnico/10 to-tecnico/5 dark:from-tecnico/20 dark:to-tecnico/10 p-8 rounded-2xl border-2 border-tecnico hover:shadow-xl transition-all" data-modulo="8">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-tecnico text-white rounded-xl flex items-center justify-center text-2xl font-bold">8</div>
+            </div>
+            <div class="flex-1">
+              <span class="badge-status inline-block px-3 py-1 bg-tecnico/20 text-tecnico rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
+              <h3 class="text-2xl font-bold mb-2">Propostas de Alto Valor</h3>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-4">Value-based pricing, proposta consultiva vs. técnica, templates de escopo/orçamento</p>
+              <div class="flex items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
+                <span>⏱️ 1h</span>
+                <span>📝 Exercícios práticos</span>
+                <span>📥 Download MD</span>
+              </div>
+              <a href="../modulos/tecnico/modulo-08.html" class="inline-block mt-4 px-6 py-3 bg-tecnico text-white rounded-lg font-semibold hover:opacity-90 transition-all">
+                Começar Módulo 8 →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-tecnico/10 to-tecnico/5 dark:from-tecnico/20 dark:to-tecnico/10 p-8 rounded-2xl border-2 border-tecnico hover:shadow-xl transition-all" data-modulo="9">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-tecnico text-white rounded-xl flex items-center justify-center text-2xl font-bold">9</div>
+            </div>
+            <div class="flex-1">
+              <span class="badge-status inline-block px-3 py-1 bg-tecnico/20 text-tecnico rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
+              <h3 class="text-2xl font-bold mb-2">Framework TSV - Technical Storytelling Value</h3>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-4">Traduzir complexidade, métricas de negócio, narrativa técnica persuasiva</p>
+              <div class="flex items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
+                <span>⏱️ 1h</span>
+                <span>📝 Exercícios práticos</span>
+                <span>📥 Download MD</span>
+              </div>
+              <a href="../modulos/tecnico/modulo-09.html" class="inline-block mt-4 px-6 py-3 bg-tecnico text-white rounded-lg font-semibold hover:opacity-90 transition-all">
+                Começar Módulo 9 →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-tecnico/10 to-tecnico/5 dark:from-tecnico/20 dark:to-tecnico/10 p-8 rounded-2xl border-2 border-tecnico hover:shadow-xl transition-all" data-modulo="10">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-tecnico text-white rounded-xl flex items-center justify-center text-2xl font-bold">10</div>
+            </div>
+            <div class="flex-1">
+              <span class="badge-status inline-block px-3 py-1 bg-tecnico/20 text-tecnico rounded-full text-xs font-semibold mb-2">DISPONÍVEL</span>
+              <h3 class="text-2xl font-bold mb-2">Máquina de Autoridade Completa</h3>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-4">PROJETO FINAL: Conteúdo + Newsletter + Network + Propostas funcionando automaticamente</p>
+              <div class="flex items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
+                <span>⏱️ 2h</span>
+                <span>📝 Exercícios práticos</span>
+                <span>📥 Download MD</span>
+              </div>
+              <a href="../modulos/tecnico/modulo-10.html" class="inline-block mt-4 px-6 py-3 bg-tecnico text-white rounded-lg font-semibold hover:opacity-90 transition-all">
+                Começar Módulo 10 →
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gradient-to-r from-tecnico to-green-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <h2 class="text-4xl font-bold mb-6">Pronto Para Transformar Sua Carreira?</h2>
+      <p class="text-xl mb-8">Comece agora e veja resultados na primeira semana</p>
+      <a href="../modulos/tecnico/modulo-01.html" class="inline-block px-10 py-5 bg-white text-tecnico rounded-lg font-bold text-xl hover:bg-yellow-300 hover:text-neutral-900 transition-all shadow-2xl">
+        🚀 Começar Módulo 1 Agora
+      </a>
+      <p class="mt-6 text-sm text-white/80">100% online • 100% prático • 100% gratuito</p>
+    </div>
+  </section>
+
+  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center text-sm">
+        <p>&copy; 2025 FETD - Formação em Engenharia de Intenção</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>
