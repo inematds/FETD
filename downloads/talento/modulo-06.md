@@ -1,22 +1,78 @@
-# Módulo 6: Projetos 2, 3 e 4 - Batch Building
+# Módulo 06: Google Workspace Avançado
 
 **Trilha:** Talento Emergente
-**Duração:** 3h
-**Objetivo:** Criar 3 projetos complementares rapidamente
+**Duração:** 45 minutos
+**Objetivo:** Dominar Sheets, Docs e Drive profissionalmente
 
 ---
 
-## 📚 Conteúdo do Módulo
+## Introdução
 
-HANDS-ON: Dashboard automático, chatbot simples, scraper de dados (batch project building)
+Google Workspace não é só email. É suite completa de produtividade que empresas pagam por funcionário.
 
-Este módulo contém teoria, exemplos práticos e exercícios hands-on para você aplicar imediatamente.
+## Conteúdo Principal
 
----
+### 1. Google Sheets + IA
 
-## ✅ Entregável
+**Fórmulas essenciais:**
+- QUERY: SQL-like queries
+- IMPORTRANGE: conectar planilhas
+- ARRAYFORMULA: fórmulas em massa
+- FILTER: filtros dinâmicos
 
-Ao final deste módulo você terá criado/aprendido sobre: HANDS-ON: Dashboard automático, chatbot simples, scraper de dados (batch project building)
+**Com ChatGPT:**
+```
+Upload planilha → "Crie dashboard com:
+- KPIs principais
+- Gráficos evolução
+- Alertas automáticos
+- Formatação condicional"
+```
+
+### 2. Google Docs Colaborativo
+
+**Templates profissionais:**
+- Propostas comerciais
+- Relatórios
+- Contratos
+- Apresentações
+
+**Automação:**
+- Doc template + Make
+- Preenche automaticamente
+- Converte PDF
+- Envia por email
+
+### 3. Google Drive Organizado
+
+**Estrutura:**
+```
+📁 Drive
+├── 📁 Clientes
+│   ├── Cliente A
+│   └── Cliente B
+├── 📁 Projetos
+├── 📁 Templates
+└── 📁 Pessoal
+```
+
+**Permissões corretas:**
+- Viewer: apenas visualizar
+- Commenter: comentários
+- Editor: editar
+
+### 4. Integrações Make
+
+- Form → Sheets → Doc → Email
+- Drive → Backup automático
+- Sheets → Dashboard atualizado
+
+## Exercício
+
+Crie sistema completo:
+1. Planilha controle projetos
+2. Template proposta
+3. Estrutura Drive organizada
 
 ---
 

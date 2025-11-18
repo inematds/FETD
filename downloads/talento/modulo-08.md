@@ -1,22 +1,79 @@
-# Módulo 8: Projetos 5-10 - Portfolio Sprint
+# Módulo 08: Canva e Design Básico
 
 **Trilha:** Talento Emergente
-**Duração:** 4h
-**Objetivo:** Completar portfólio com variedade de projetos
+**Duração:** 45 minutos
+**Objetivo:** Criar materiais visuais profissionais sem ser designer
 
 ---
 
-## 📚 Conteúdo do Módulo
+## Introdução
 
-HANDS-ON: API integration, data viz, automation tool, web scraper, productivity app, mini-SaaS
+Visual vende. Canva democratizou design. Você não precisa ser designer para criar conteúdo profissional.
 
-Este módulo contém teoria, exemplos práticos e exercícios hands-on para você aplicar imediatamente.
+## Conteúdo Principal
 
----
+### 1. Canva Básico
 
-## ✅ Entregável
+**Templates gratuitos:**
+- Apresentações
+- Posts redes sociais
+- Infográficos
+- Currículos
+- Logos simples
 
-Ao final deste módulo você terá criado/aprendido sobre: HANDS-ON: API integration, data viz, automation tool, web scraper, productivity app, mini-SaaS
+**Dimensões importantes:**
+- LinkedIn: 1200x627
+- Instagram: 1080x1080
+- Story: 1080x1920
+- Banner: 1584x396
+
+### 2. Princípios de Design
+
+**Regra 1: Menos é mais**
+- Máximo 2 fontes
+- 3 cores principais
+- Espaço em branco = bom
+
+**Regra 2: Hierarquia visual**
+- Título: maior, bold
+- Subtítulo: médio
+- Corpo: menor
+
+**Regra 3: Contraste**
+- Texto escuro em fundo claro
+- Ou vice-versa
+- Nunca cinza em cinza
+
+### 3. Biblioteca de Assets
+
+**Gratuitos:**
+- Unsplash: fotos
+- Flaticon: ícones
+- Google Fonts: tipografia
+- Coolors: paletas cores
+
+### 4. Posts LinkedIn
+
+**Estrutura:**
+```
+Slide 1: Gancho (pergunta/número)
+Slides 2-5: Conteúdo (1 ideia/slide)
+Slide 6: CTA (siga, salve, comente)
+```
+
+**Template salvar:**
+- Brand colors
+- Fontes padrão
+- Layout consistente
+
+## Exercício
+
+Crie 5 posts LinkedIn:
+1. Carrossel 6 slides
+2. Post simples com visual
+3. Infográfico
+4. Case study
+5. Lista/checklist
 
 ---
 
