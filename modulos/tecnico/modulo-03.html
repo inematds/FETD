@@ -3,21 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 3: IA Como Ghostwriter Técnico | FETD</title>
+  <title>Módulo 3: ChatGPT Personalizado com RAG - Seu Assistente Técnico que Sabe Tudo do Seu Domínio | Trilha Técnico Comunicador | FETD</title>
+  <meta name="description" content="Criar chatbots personalizados que conhecem profundamente sua área técnica usando RAG (Retrieval-Augmented Generation)">
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/tailwindcss-cdn@3.4.1/tailwindcss.js"></script>
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            'operacional': '#3B82F6',
-            'comunicador': '#10B981',
-            'talento': '#F59E0B',
             'tecnico': '#F97316',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
           },
         }
       }
@@ -25,108 +32,1646 @@
   </script>
 
   <style>
-    * { transition: background-color 200ms, border-color 200ms, color 200ms; }
-    .preload * { transition: none !important; }
-    body { font-family: 'Inter', sans-serif; }
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
   </style>
 </head>
 
 <body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
 
-  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-neutral-800/95 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-700 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-tecnico to-operacional bg-clip-text text-transparent">🎓 FETD</a>
-        <div class="flex items-center space-x-8">
-          <a href="../../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-tecnico transition-colors">Início</a>
-          <a href="../../trilhas/tecnico.html" class="text-neutral-700 dark:text-neutral-300 hover:text-tecnico transition-colors">Trilha</a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        <div class="flex items-center">
+          <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-tecnico to-orange-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+            🎓 FETD
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-tecnico transition-colors font-medium">Início</a>
+          <a href="../../trilhas/tecnico.html" class="text-neutral-700 dark:text-neutral-300 hover:text-tecnico transition-colors font-medium">Trilha Técnico Comunicador</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-tecnico/10 transition-colors">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
           </button>
         </div>
       </div>
     </div>
   </nav>
 
+  <!-- Breadcrumb -->
   <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <nav class="flex text-sm">
-        <a href="../../index.html" class="text-tecnico hover:underline">Início</a>
+      <nav class="flex text-sm font-medium" aria-label="Breadcrumb">
+        <a href="../../index.html" class="text-tecnico hover:opacity-80 transition-opacity">Início</a>
         <span class="mx-2 text-neutral-400">/</span>
-        <a href="../../trilhas/tecnico.html" class="text-tecnico hover:underline">Trilha Técnico Comunicador</a>
+        <a href="../../trilhas/tecnico.html" class="text-tecnico hover:opacity-80 transition-opacity">Trilha Técnico Comunicador</a>
         <span class="mx-2 text-neutral-400">/</span>
         <span class="text-neutral-600 dark:text-neutral-400">Módulo 3</span>
       </nav>
     </div>
   </div>
 
-  <section class="py-20">
+  <!-- Hero Módulo -->
+  <section class="bg-gradient-to-br from-tecnico via-tecnico to-orange-600 py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white relative z-10">
+
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <span class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-bold shadow-lg">Módulo 3 de 10</span>
+        <span class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-bold shadow-lg flex items-center gap-2">
+          <span>⏱️</span>
+          <span>90 minutos</span>
+        </span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+        Módulo 3: ChatGPT Personalizado com RAG - Seu Assistente Técnico que Sabe Tudo do Seu Domínio
+      </h1>
+
+      <p class="text-xl md:text-2xl text-white/95 mb-8 max-w-3xl font-medium leading-relaxed">
+        Criar chatbots personalizados que conhecem profundamente sua área técnica usando RAG (Retrieval-Augmented Generation)
+      </p>
+
+      <div class="flex flex-wrap items-center gap-4 text-white/90">
+        <span class="flex items-center gap-2 font-medium"><span class="text-xl">📚</span> Teoria</span>
+        <span class="text-white/60">•</span>
+        <span class="flex items-center gap-2 font-medium"><span class="text-xl">💭</span> Reflexão</span>
+        <span class="text-white/60">•</span>
+        <span class="flex items-center gap-2 font-medium"><span class="text-xl">🛠️</span> Prática</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo Principal -->
+  <section class="py-16 bg-white dark:bg-neutral-800">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div class="mb-12">
-        <div class="flex items-center gap-4 mb-4">
-          <span class="px-4 py-2 bg-tecnico/20 text-tecnico rounded-full text-sm font-semibold">Módulo 3</span>
-          <span class="text-neutral-600 dark:text-neutral-400">⏱️ 1h</span>
-          <a href="../../downloads/tecnico/modulo-03.md" download class="ml-auto px-4 py-2 bg-neutral-100 dark:bg-neutral-800 rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors text-sm font-semibold">
-            📥 Download MD
-          </a>
-        </div>
-
-        <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">IA Como Ghostwriter Técnico</h1>
-        <p class="text-xl text-neutral-600 dark:text-neutral-400"><strong>Objetivo:</strong> Transformar conhecimento em conteúdo de valor</p>
+      <!-- Download Button -->
+      <div class="flex justify-end mb-8">
+        <a href="../../downloads/tecnico/modulo-03.md" download class="px-6 py-3 bg-gradient-to-r from-tecnico to-orange-600 text-white rounded-lg font-bold hover:opacity-90 inline-flex items-center gap-2 shadow-lg hover:shadow-xl transition-all">
+          <span class="text-xl">📥</span>
+          <span>Download MD</span>
+        </a>
       </div>
 
-      <div class="prose dark:prose-invert max-w-none">
-        <div class="bg-tecnico/10 dark:bg-tecnico/20 p-6 rounded-xl mb-8">
-          <h2 class="text-2xl font-bold mb-4">📚 Conteúdo do Módulo</h2>
-          <p class="text-lg">Prompts para artigos técnicos, simplificar complexidade, voz técnica + acessível</p>
-          <p class="mt-4 text-sm text-neutral-600 dark:text-neutral-400"><em>Este módulo contém teoria, exemplos práticos e exercícios hands-on para você aplicar imediatamente.</em></p>
-        </div>
 
-        <div class="bg-green-100 dark:bg-green-900/40 p-6 rounded-xl">
-          <h3 class="text-xl font-bold mb-3">✅ Entregável</h3>
-          <p>Ao final deste módulo você terá criado/aprendido sobre: Prompts para artigos técnicos, simplificar complexidade, voz técnica + acessível...</p>
-        </div>
+      <!-- Objetivo do Módulo -->
+      <div class="bg-tecnico/10 dark:bg-tecnico/20 border-l-4 border-tecnico p-6 rounded-lg mb-12 shadow-lg">
+        <h3 class="text-xl font-bold text-tecnico mb-2 flex items-center gap-2">
+          <span class="text-2xl">🎯</span>
+          <span>Objetivo deste Módulo</span>
+        </h3>
+        <p class="text-neutral-700 dark:text-neutral-300 text-lg">
+          Criar chatbots personalizados que conhecem profundamente sua área técnica usando RAG (Retrieval-Augmented Generation)
+        </p>
       </div>
 
-      <div class="mb-8 mt-16 bg-white dark:bg-neutral-800 rounded-2xl p-8 border-2 border-tecnico/30">
-        <div class="text-center mb-6">
-          <h3 class="text-2xl font-bold mb-2">Você completou este módulo?</h3>
-          <p class="text-neutral-600 dark:text-neutral-400">Marque como concluído para acompanhar seu progresso</p>
-        </div>
-        <div class="flex flex-col items-center gap-4">
-          <button id="btn-concluir-modulo" data-trilha="tecnico" data-modulo="3" class="px-10 py-4 bg-tecnico text-white rounded-lg font-bold text-lg hover:opacity-90 transition-all shadow-lg">
-            ✓ Marcar como Concluído
-          </button>
-          <div id="progresso-info" class="text-center"></div>
-        </div>
-      </div>
 
-      <div class="bg-gradient-to-r from-tecnico to-green-600 text-white rounded-2xl p-8">
-        <div class="flex justify-between items-center">
-          <a href="modulo-02.html" class="px-6 py-3 bg-white/20 hover:bg-white/30 rounded-lg font-semibold transition-all">
-            ← Módulo 2
-          </a>
-          <div class="text-center">
-            <p class="text-sm opacity-80 mb-1">Próximo Módulo</p>
-            <p class="font-bold">Módulo 4</p>
+
+      <!-- Seção: O Que Você Vai Aprender -->
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-tecnico/20 bg-gradient-to-r from-tecnico/10 to-transparent -mx-4 px-4 py-4 rounded-lg">🎯 O Que Você Vai Aprender</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Ao final deste módulo, você será capaz de:</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ Entender como RAG funciona e por que é revolucionário
+✅ Criar chatbots personalizados com conhecimento específico do seu domínio
+✅ Implementar sistemas de perguntas e respostas sobre documentação técnica
+✅ Construir assistentes que ajudam pessoas com problemas reais da sua área
+✅ Integrar conhecimento técnico (docs, código, tickets) em IA conversacional</p>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Resultado prático:</span> <span class="text-neutral-700 dark:text-neutral-300">Chatbot funcionando que responde perguntas sobre SUA área técnica com precisão.</span></p>
           </div>
-          <a href="modulo-04.html" class="px-6 py-3 bg-white text-tecnico rounded-lg font-semibold hover:bg-yellow-300 hover:text-neutral-900 transition-all">
-            Módulo 4 →
-          </a>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 🔥 Por Que RAG Muda o Jogo -->
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-tecnico/20 bg-gradient-to-r from-tecnico/10 to-transparent -mx-4 px-4 py-4 rounded-lg">🔥 Por Que RAG Muda o Jogo</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">O Problema com ChatGPT Normal</h3>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Cenário real:</span> <span class="text-neutral-700 dark:text-neutral-300">Alguém pergunta no Slack:</span></p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">> "Como faço deploy da nossa API em staging?"</p>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Opções tradicionais:</span> <span class="text-neutral-700 dark:text-neutral-300">- ❌ Você responde manualmente (15 min)
+- ❌ Procura na wiki desatualizada (20 min de frustração)
+- ❌ Pede pra alguém mais velho explicar (interrompe 2 pessoas)
+- ❌ Usa ChatGPT genérico que inventa comandos errados</span></p>
+          </div>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Com RAG:</span> <span class="text-neutral-700 dark:text-neutral-300">- ✅ Chatbot responde em 10 segundos
+- ✅ Baseado na SUA documentação real
+- ✅ Com comandos corretos do SEU ambiente
+- ✅ Links para docs relevantes
+- ✅ Você economizou 15 minutos + ajudou permanentemente</span></p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">O Que é RAG (sem enrolação)</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">RAG = Retrieval-Augmented Generation</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Tradução prática:
+1. <strong class="font-bold">Retrieval:</strong> Busca informação relevante nos SEUS documentos
+2. <strong class="font-bold">Augmented:</strong> Injeta essa informação no prompt
+3. <strong class="font-bold">Generation:</strong> ChatGPT responde baseado no SEU conteúdo</p>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Analogia:</span> <span class="text-neutral-700 dark:text-neutral-300">- <strong class="font-bold">ChatGPT normal:</strong> Estudante respondendo de memória (às vezes inventa)
+- <strong class="font-bold">ChatGPT com RAG:</strong> Estudante com seus livros abertos fazendo consulta ao vivo</span></p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">Por Que Funciona Melhor</h3>
+
+
+          <div class="overflow-x-auto mb-8 shadow-lg rounded-lg">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="bg-gradient-to-r from-tecnico to-tecnico/80 text-white">
+                  <th class="px-6 py-4 text-left font-bold">Aspecto</th>
+                  <th class="px-6 py-4 text-left font-bold">ChatGPT Normal</th>
+                  <th class="px-6 py-4 text-left font-bold">ChatGPT com RAG</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white dark:bg-neutral-800">
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-tecnico/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">---------</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">----------------</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">-----------------</td>
+                </tr>
+                <tr class="bg-neutral-50 dark:bg-neutral-900 hover:bg-tecnico/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Conhecimento</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Genérico até 2023</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">SEU domínio, atualizado</td>
+                </tr>
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-tecnico/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Precisão</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Inventa quando não sabe</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Cita fontes reais</td>
+                </tr>
+                <tr class="bg-neutral-50 dark:bg-neutral-900 hover:bg-tecnico/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Contexto</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Limitado (8k-32k tokens)</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Acessa toda sua base</td>
+                </tr>
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-tecnico/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Atualização</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Fixo no tempo</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Atualiza com novos docs</td>
+                </tr>
+                <tr class="bg-neutral-50 dark:bg-neutral-900 hover:bg-tecnico/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Confiabilidade</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">70-80%</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">90-95% (se docs bons)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 🛠️ Como RAG Funciona (Arquitetura Simples) -->
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-tecnico/20 bg-gradient-to-r from-tecnico/10 to-transparent -mx-4 px-4 py-4 rounded-lg">🛠️ Como RAG Funciona (Arquitetura Simples)</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">Fluxo Passo a Passo</h3>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>┌─────────────────────────────────────────────────────────┐
+│ 1. PREPARAÇÃO (fazer 1x)                                │
+├─────────────────────────────────────────────────────────┤
+│                                                           │
+│  Seus Documentos (docs, wikis, READMEs)                 │
+│           ↓                                              │
+│  Chunking (quebra em pedaços)                           │
+│           ↓                                              │
+│  Embeddings (transforma em vetores)                     │
+│           ↓                                              │
+│  Vector Database (Pinecone, Chroma, FAISS)              │
+│                                                           │
+└─────────────────────────────────────────────────────────┘</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">┌─────────────────────────────────────────────────────────┐
+│ 2. QUANDO ALGUÉM PERGUNTA (tempo real)                  │
+├─────────────────────────────────────────────────────────┤
+│                                                           │
+│  Pergunta do usuário                                     │
+│           ↓                                              │
+│  Embedding da pergunta                                   │
+│           ↓                                              │
+│  Busca vetorial (acha docs relevantes)                  │
+│           ↓                                              │
+│  Top 3-5 trechos mais relevantes                        │
+│           ↓                                              │
+│  Monta prompt: contexto + pergunta                      │
+│           ↓                                              │
+│  ChatGPT responde baseado no contexto                   │
+│           ↓                                              │
+│  Resposta + fontes citadas                              │
+│                                                           │
+└─────────────────────────────────────────────────────────┘
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">Conceitos-Chave</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">1. Embeddings (Vetores Semânticos)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Transforma texto em números que capturam significado:</p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code># Texto original
+"Como fazer deploy em staging?"</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Vira vetor (exemplo simplificado)
+[0.23, -0.45, 0.78, ..., 0.12]  # 1536 dimensões</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Textos similares têm vetores próximos
+"Deploy para ambiente de testes" → vetor parecido ✅
+"Como fazer café?" → vetor distante ❌
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">2. Vector Database</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Banco de dados especializado em buscar vetores similares:</p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code># Busca semântica (não precisa palavras exatas)
+pergunta = "subir API pra homologação"</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Acha documentos sobre:
+# - "deploy em staging"  ✅
+# - "publicar em ambiente de teste"  ✅
+# - "CI/CD pipeline"  ✅
+#
+# Mesmo sem usar palavras exatas!
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">3. Chunking (Quebrar Documentos)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Divide docs grandes em pedaços úteis:</p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code># Doc original: 10 páginas sobre deploy</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Chunks (pedaços de 500-1000 caracteres)
+Chunk 1: "Para fazer deploy em staging..."
+Chunk 2: "Configuração do ambiente..."
+Chunk 3: "Comandos necessários..."
+...</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Por que?
+# ChatGPT só vê 3-5 chunks mais relevantes
+# Não precisa ler 10 páginas inteiras
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Projeto Prático: Chatbot de Documentação Técnica -->
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-tecnico/20 bg-gradient-to-r from-tecnico/10 to-transparent -mx-4 px-4 py-4 rounded-lg">🚀 Projeto Prático: Chatbot de Documentação Técnica</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Vamos criar um chatbot que responde perguntas sobre SUA documentação técnica.</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">Opção 1: LangChain + OpenAI (Mais Completo)</h3>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Stack:</span> <span class="text-neutral-700 dark:text-neutral-300">- LangChain (framework RAG)
+- OpenAI API (embeddings + chat)
+- Chroma (vector database local)
+- Streamlit (interface)</span></p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Passo 1: Setup</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code># Instalar dependências
+pip install langchain openai chromadb tiktoken streamlit</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Criar estrutura
+mkdir meu-chatbot-rag
+cd meu-chatbot-rag
+mkdir docs  # Coloque seus documentos aqui
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Passo 2: Indexar Documentos</strong> (<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">indexar.py</code>)</p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>from langchain.document_loaders import DirectoryLoader, TextLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.vectorstores import Chroma
+import os</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Configurar API key
+os.environ["OPENAI_API_KEY"] = "sua-api-key-aqui"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># 1. Carregar documentos
+print("📂 Carregando documentos...")
+loader = DirectoryLoader('docs/', glob="<em class="italic">*/</em>.md", loader_cls=TextLoader)
+documents = loader.load()
+print(f"✅ {len(documents)} documentos carregados")</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># 2. Quebrar em chunks
+print("✂️ Quebrando em chunks...")
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=1000,  # Tamanho do pedaço
+    chunk_overlap=200,  # Sobreposição (contexto)
+    separators=["\n\n", "\n", " ", ""]
+)
+chunks = text_splitter.split_documents(documents)
+print(f"✅ {len(chunks)} chunks criados")</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># 3. Criar embeddings e salvar
+print("🧠 Criando embeddings...")
+embeddings = OpenAIEmbeddings()
+vectorstore = Chroma.from_documents(
+    documents=chunks,
+    embedding=embeddings,
+    persist_directory="./chroma_db"  # Salva localmente
+)
+vectorstore.persist()
+print("✅ Base de conhecimento criada!")
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Passo 3: Interface Streamlit</strong> (<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">app.py</code>)</p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>import streamlit as st
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.vectorstores import Chroma
+from langchain.chat_models import ChatOpenAI
+from langchain.chains import RetrievalQA
+import os</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Configuração
+os.environ["OPENAI_API_KEY"] = "sua-api-key-aqui"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">st.title("🤖 Assistente de Documentação Técnica")
+st.caption("Pergunte qualquer coisa sobre nossa stack!")</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Carregar base de conhecimento
+@st.cache_resource
+def load_qa_chain():
+    embeddings = OpenAIEmbeddings()
+    vectorstore = Chroma(
+        persist_directory="./chroma_db",
+        embedding_function=embeddings
+    )</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">llm = ChatOpenAI(
+        model_name="gpt-4",
+        temperature=0  # Respostas mais precisas
+    )</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">qa_chain = RetrievalQA.from_chain_type(
+        llm=llm,
+        chain_type="stuff",  # Tipo de chain
+        retriever=vectorstore.as_retriever(
+            search_kwargs={"k": 3}  # Top 3 chunks
+        ),
+        return_source_documents=True  # Retorna fontes
+    )</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">return qa_chain</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">qa_chain = load_qa_chain()</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Interface de chat
+pergunta = st.text_input("Faça sua pergunta:")</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">if pergunta:
+    with st.spinner("🔍 Buscando na documentação..."):
+        result = qa_chain({"query": pergunta})</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Mostrar resposta
+        st.markdown("### 💡 Resposta")
+        st.write(result["result"])</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Mostrar fontes
+        st.markdown("### 📚 Fontes")
+        for i, doc in enumerate(result["source_documents"], 1):
+            with st.expander(f"Fonte {i}: {doc.metadata.get('source', 'Documento')}"):
+                st.text(doc.page_content)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Sidebar com exemplos
+st.sidebar.title("Exemplos de perguntas")
+st.sidebar.markdown("""
+- Como fazer deploy em staging?
+- Qual é o processo de code review?
+- Como rodar os testes localmente?
+- Onde fica a documentação da API?
+- Como configurar ambiente de dev?
+""")
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Passo 4: Rodar</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code># 1. Colocar seus docs .md na pasta docs/
+# 2. Indexar (fazer 1x ou quando docs mudarem)
+python indexar.py</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># 3. Rodar chatbot
+streamlit run app.py
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">Opção 2: OpenAI Assistants API (Mais Fácil)</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">OpenAI agora tem RAG embutido! Não precisa gerenciar vector database.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Código completo:</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>import openai
+import streamlit as st</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">client = openai.OpenAI(api_key="sua-api-key")</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># 1. Criar assistente (fazer 1x)
+def criar_assistente():
+    # Upload arquivos
+    file1 = client.files.create(
+        file=open("docs/deploy.md", "rb"),
+        purpose="assistants"
+    )
+    file2 = client.files.create(
+        file=open("docs/api-docs.md", "rb"),
+        purpose="assistants"
+    )</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Criar assistente com file search (RAG)
+    assistant = client.beta.assistants.create(
+        name="Assistente Técnico",
+        instructions="""Você é um assistente técnico especializado.
+        Responda baseado nos documentos fornecidos.
+        Sempre cite as fontes.""",
+        model="gpt-4-turbo",
+        tools=[{"type": "file_search"}],
+        tool_resources={
+            "file_search": {
+                "vector_stores": [{
+                    "file_ids": [file1.id, file2.id]
+                }]
+            }
+        }
+    )</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">return assistant.id</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># 2. Interface Streamlit
+st.title("🤖 Assistente com RAG (OpenAI)")</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Inicializar
+if "assistant_id" not in st.session_state:
+    st.session_state.assistant_id = "asst_xxxxx"  # Seu ID aqui
+if "thread_id" not in st.session_state:
+    thread = client.beta.threads.create()
+    st.session_state.thread_id = thread.id</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Chat
+pergunta = st.text_input("Sua pergunta:")</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">if pergunta:
+    # Enviar mensagem
+    client.beta.threads.messages.create(
+        thread_id=st.session_state.thread_id,
+        role="user",
+        content=pergunta
+    )</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Rodar assistente
+    with st.spinner("Pensando..."):
+        run = client.beta.threads.runs.create_and_poll(
+            thread_id=st.session_state.thread_id,
+            assistant_id=st.session_state.assistant_id
+        )</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Pegar resposta
+    messages = client.beta.threads.messages.list(
+        thread_id=st.session_state.thread_id
+    )</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">resposta = messages.data[0].content[0].text.value
+    st.markdown(f"<strong class="font-bold">Resposta:</strong> {resposta}")
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Vantagens:</span> <span class="text-neutral-700 dark:text-neutral-300">- ✅ Não precisa gerenciar vector database
+- ✅ OpenAI cuida de tudo (chunking, embeddings, busca)
+- ✅ Código mais simples
+- ✅ Escala automaticamente</span></p>
+          </div>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Desvantagens:</span> <span class="text-neutral-700 dark:text-neutral-300">- ❌ Mais caro (paga por storage de arquivos)
+- ❌ Menos controle sobre chunking
+- ❌ Depende 100% da OpenAI</span></p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Casos de Uso Reais -->
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-tecnico/20 bg-gradient-to-r from-tecnico/10 to-transparent -mx-4 px-4 py-4 rounded-lg">🎯 Casos de Uso Reais</h2>
+
+
+        <div class="bg-tecnico/10 dark:bg-tecnico/20 border-2 border-tecnico/30 p-6 rounded-xl mb-8 shadow-lg hover:shadow-xl transition-all">
+          <h3 class="text-xl font-bold text-tecnico mb-4 flex items-center gap-2">
+            <span class="text-2xl">💼</span>
+            <span>Caso 1: Assistente de Onboarding</span>
+          </h3>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Problema:</span> <span class="text-neutral-700 dark:text-neutral-300">Novos devs fazem as mesmas perguntas</span></p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Solução RAG:</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code># Documentos indexados:
+# - README.md
+# - CONTRIBUTING.md
+# - ARCHITECTURE.md
+# - Onboarding wiki
+# - FAQs do Slack (exportados)</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Chatbot responde:
+# "Como rodar o projeto local?"
+# "Qual é o fluxo de PR?"
+# "Onde fica a staging?"
+# "Preciso de acesso a quê?"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Resultado:</span> <span class="text-neutral-700 dark:text-neutral-300">- ⏱️ Dev júnior demora 3 dias → 1 dia pra ser produtivo
+- 🕐 Você economiza 5h de onboarding manual
+- 📈 Satisfação de novos devs sobe 40%</span></p>
+          </div>
+
+        </div>
+
+        <div class="bg-tecnico/10 dark:bg-tecnico/20 border-2 border-tecnico/30 p-6 rounded-xl mb-8 shadow-lg hover:shadow-xl transition-all">
+          <h3 class="text-xl font-bold text-tecnico mb-4 flex items-center gap-2">
+            <span class="text-2xl">💼</span>
+            <span>Caso 2: Bot de Troubleshooting</span>
+          </h3>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Problema:</span> <span class="text-neutral-700 dark:text-neutral-300">Suporte pergunta "como resolver erro X" toda semana</span></p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Solução RAG:</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code># Base de conhecimento:
+# - Post-mortems de incidentes
+# - Runbooks
+# - Issues do GitHub resolvidos
+# - Logs de troubleshooting</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Bot ajuda com:
+# "API retornando 502, o que fazer?"
+# "Build falhou com erro XYZ"
+# "Como fazer rollback de deploy?"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Resultado:</span> <span class="text-neutral-700 dark:text-neutral-300">- 🚀 70% dos problemas resolvidos sem escalar
+- ⏱️ MTTR (Mean Time To Resolution) cai 50%
+- 😊 Time de suporte feliz</span></p>
+          </div>
+
+        </div>
+
+        <div class="bg-tecnico/10 dark:bg-tecnico/20 border-2 border-tecnico/30 p-6 rounded-xl mb-8 shadow-lg hover:shadow-xl transition-all">
+          <h3 class="text-xl font-bold text-tecnico mb-4 flex items-center gap-2">
+            <span class="text-2xl">💼</span>
+            <span>Caso 3: Chatbot de API Docs</span>
+          </h3>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Problema:</span> <span class="text-neutral-700 dark:text-neutral-300">Documentação de API complexa, difícil de navegar</span></p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Solução RAG:</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code># Indexa:
+# - OpenAPI/Swagger spec
+# - Exemplos de código
+# - Changelog
+# - Guias de autenticação</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Desenvolvedor pergunta naturalmente:
+# "Como autenticar na API?"
+# "Exemplo de request pra criar usuário"
+# "Rate limits da API de payments?"
+# "O que mudou na v2?"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Resultado:</span> <span class="text-neutral-700 dark:text-neutral-300">- 📉 Tickets de suporte sobre API: -60%
+- ⚡ Time to first successful API call: -70%
+- 💰 Adoção da API aumenta</span></p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 🧰 Ferramentas e Alternativas -->
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-tecnico/20 bg-gradient-to-r from-tecnico/10 to-transparent -mx-4 px-4 py-4 rounded-lg">🧰 Ferramentas e Alternativas</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">Vector Databases</h3>
+
+
+          <div class="overflow-x-auto mb-8 shadow-lg rounded-lg">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="bg-gradient-to-r from-tecnico to-tecnico/80 text-white">
+                  <th class="px-6 py-4 text-left font-bold">Ferramenta</th>
+                  <th class="px-6 py-4 text-left font-bold">Quando usar</th>
+                  <th class="px-6 py-4 text-left font-bold">Custo</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white dark:bg-neutral-800">
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-tecnico/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">------------</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">-------------</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">-------</td>
+                </tr>
+                <tr class="bg-neutral-50 dark:bg-neutral-900 hover:bg-tecnico/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Chroma</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Projetos pequenos, local</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Grátis</td>
+                </tr>
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-tecnico/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Pinecone</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Produção, escala</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">$70/mês</td>
+                </tr>
+                <tr class="bg-neutral-50 dark:bg-neutral-900 hover:bg-tecnico/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Weaviate</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Self-hosted, controle total</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Grátis (infra sua)</td>
+                </tr>
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-tecnico/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">FAISS</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Pesquisa rápida, offline</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Grátis</td>
+                </tr>
+                <tr class="bg-neutral-50 dark:bg-neutral-900 hover:bg-tecnico/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Qdrant</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Open source, produção</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Grátis ou pago</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">Frameworks RAG</h3>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">LangChain:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>python
+# Mais completo, muitos integrações
+from langchain.chains import RetrievalQA
+qa = RetrievalQA.from_chain_type(...)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
+          </div>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">LlamaIndex:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>python
+# Especializado em RAG, mais simples
+from llama_index import VectorStoreIndex
+index = VectorStoreIndex.from_documents(docs)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
+          </div>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Haystack:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>python
+# Focado em NLP pipelines
+from haystack.nodes import DensePassageRetriever
+retriever = DensePassageRetriever(...)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">Soluções No-Code</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">1. ChatBase</strong> (chatbase.co)
+- Upload docs → chatbot pronto
+- Embeddable widget
+- $19/mês</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">2. CustomGPT</strong> (customgpt.ai)
+- RAG sem código
+- Integrações prontas
+- $89/mês</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">3. Dante AI</strong> (dante-ai.com)
+- Treinamento rápido
+- Multi-plataforma
+- $30/mês</p>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Quando usar no-code:</span> <span class="text-neutral-700 dark:text-neutral-300">- ✅ Validar ideia rápido
+- ✅ Não tem time de dev
+- ✅ Volume baixo de perguntas</span></p>
+          </div>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Quando fazer custom:</span> <span class="text-neutral-700 dark:text-neutral-300">- ✅ Integração com sistemas internos
+- ✅ Controle total sobre dados
+- ✅ Alto volume (mais barato)</span></p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Otimizando Seu RAG -->
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-tecnico/20 bg-gradient-to-r from-tecnico/10 to-transparent -mx-4 px-4 py-4 rounded-lg">📊 Otimizando Seu RAG</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">1. Melhorar Qualidade das Respostas</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Chunking inteligente:</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code># ❌ Ruim: quebra no meio de seção
+RecursiveCharacterTextSplitter(chunk_size=500)</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># ✅ Bom: respeita estrutura markdown
+from langchain.text_splitter import MarkdownHeaderTextSplitter</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">splitter = MarkdownHeaderTextSplitter(
+    headers_to_split_on=[
+        ("#", "Header 1"),
+        ("##", "Header 2"),
+        ("###", "Header 3"),
+    ]
+)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Metadados úteis:</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code># Adicionar metadados aos chunks
+for i, chunk in enumerate(chunks):
+    chunk.metadata = {
+        "source": "deploy.md",
+        "section": "Staging",
+        "last_updated": "2025-01-15",
+        "author": "DevOps Team"
+    }</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Usar em filtros
+vectorstore.similarity_search(
+    "como fazer deploy",
+    filter={"section": "Staging"}  # Busca só em Staging
+)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Prompt engineering:</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code># Template de prompt otimizado
+template = """Use os seguintes documentos para responder a pergunta.
+Se não souber, diga "não encontrei essa informação".
+NÃO invente informações.</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Contexto:
+{context}</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Pergunta: {question}</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Resposta (em português, cite fontes):"""
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">2. Reduzir Custos</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Embeddings mais baratos:</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code># OpenAI embeddings: $0.0001/1K tokens
+embeddings = OpenAIEmbeddings()</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Alternativa grátis (roda local):
+from langchain.embeddings import HuggingFaceEmbeddings
+embeddings = HuggingFaceEmbeddings(
+    model_name="sentence-transformers/all-MiniLM-L6-v2"
+)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Caching agressivo:</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code># Cachear respostas comuns
+import hashlib
+import json</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">cache = {}</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">def ask_with_cache(question):
+    key = hashlib.md5(question.encode()).hexdigest()</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">if key in cache:
+        return cache[key]  # Hit!</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">answer = qa_chain(question)
+    cache[key] = answer
+    return answer
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Modelo mais barato para retrieval:</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code># Use GPT-4 só quando necessário
+from langchain.chat_models import ChatOpenAI</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Retrieval + ranqueamento: GPT-3.5 (mais barato)
+cheap_llm = ChatOpenAI(model="gpt-3.5-turbo")</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Resposta final: GPT-4 (melhor qualidade)
+good_llm = ChatOpenAI(model="gpt-4")
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">3. Melhorar Performance</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Hybrid search (keyword + semantic):</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>from langchain.retrievers import BM25Retriever, EnsembleRetriever</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Busca semântica
+semantic_retriever = vectorstore.as_retriever()</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Busca por palavras-chave
+bm25_retriever = BM25Retriever.from_documents(documents)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># Combina os dois!
+ensemble_retriever = EnsembleRetriever(
+    retrievers=[semantic_retriever, bm25_retriever],
+    weights=[0.5, 0.5]  # 50% cada
+)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Reranking:</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code># Busca 10 docs, rerankeia com modelo melhor, usa top 3
+from langchain.retrievers import ContextualCompressionRetriever
+from langchain.retrievers.document_compressors import CohereRerank</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">compressor = CohereRerank()
+compression_retriever = ContextualCompressionRetriever(
+    base_compressor=compressor,
+    base_retriever=vectorstore.as_retriever(search_kwargs={"k": 10})
+)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Checklist de Implementação -->
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-tecnico/20 bg-gradient-to-r from-tecnico/10 to-transparent -mx-4 px-4 py-4 rounded-lg">✅ Checklist de Implementação</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">Fase 1: Setup Básico (1-2h)</h3>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Escolher stack (LangChain vs OpenAI Assistants vs no-code)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Configurar ambiente (instalar libs, API keys)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Coletar documentos (READMEs, wikis, docs)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Organizar docs em pasta estruturada</span></li>
+          </ul>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">Fase 2: Indexação (30min-1h)</h3>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Implementar chunking (tamanho adequado)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Adicionar metadados relevantes</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Criar embeddings e indexar</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Testar busca vetorial manualmente</span></li>
+          </ul>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">Fase 3: Chatbot (1-2h)</h3>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Criar interface (Streamlit, web, Slack bot)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Implementar chain de QA</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Adicionar prompt customizado</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Testar com perguntas reais</span></li>
+          </ul>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">Fase 4: Refinamento (1-2h)</h3>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Coletar feedback de usuários</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Ajustar chunking se necessário</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Melhorar prompt com exemplos</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Adicionar cache para perguntas comuns</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Implementar analytics (quais perguntas, taxa de sucesso)</span></li>
+          </ul>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">Fase 5: Produção (variável)</h3>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Deploy (Streamlit Cloud, Vercel, Docker)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Configurar atualização automática de docs</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Monitoramento de custos</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Sistema de feedback dos usuários</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">[ ] Documentar para o time usar</span></li>
+          </ul>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Exercício Prático -->
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-tecnico/20 bg-gradient-to-r from-tecnico/10 to-transparent -mx-4 px-4 py-4 rounded-lg">🎓 Exercício Prático</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">Desafio: Chatbot da Sua Área</h3>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Objetivo:</span> <span class="text-neutral-700 dark:text-neutral-300">Criar chatbot que responde perguntas sobre SUA área técnica.</span></p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Passo a passo:</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside marker:text-tecnico marker:font-bold">
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2"><strong class="font-bold">Escolha o domínio</strong> (30 min)</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Sua stack atual (ex: "Deploy de aplicações Node.js")</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Troubleshooting comum (ex: "Resolver erros de banco de dados")</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Onboarding (ex: "Setup de ambiente de dev")</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside marker:text-tecnico marker:font-bold">
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2"><strong class="font-bold">Colete documentos</strong> (30 min)</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- READMEs de projetos</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Documentação interna</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Runbooks</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Post-mortems</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- FAQs do Slack</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- <strong class="font-bold">Meta: 5-10 documentos</strong> (não precisa ser perfeito)</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside marker:text-tecnico marker:font-bold">
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2"><strong class="font-bold">Implemente versão básica</strong> (1-2h)</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Use Opção 1 (LangChain) OU Opção 2 (OpenAI Assistants)</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Indexe seus docs</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Crie interface Streamlit simples</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Teste com 5 perguntas reais</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside marker:text-tecnico marker:font-bold">
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2"><strong class="font-bold">Refine</strong> (30 min-1h)</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Ajuste prompts baseado nos resultados</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Adicione metadados se necessário</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Melhore chunking se respostas incompletas</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside marker:text-tecnico marker:font-bold">
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2"><strong class="font-bold">Compartilhe</strong> (15 min)</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Mande link do Streamlit para 3 colegas</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Peça feedback honesto</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Itere baseado no feedback</li>
+          </ol>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Critérios de sucesso:</span> <span class="text-neutral-700 dark:text-neutral-300">- ✅ Responde 8/10 perguntas corretamente
+- ✅ Cita fontes relevantes
+- ✅ Tempo de resposta < 10 segundos
+- ✅ Pelo menos 1 colega diz "isso é útil!"</span></p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Métricas de Sucesso -->
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-tecnico/20 bg-gradient-to-r from-tecnico/10 to-transparent -mx-4 px-4 py-4 rounded-lg">📈 Métricas de Sucesso</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Como saber se seu RAG está funcionando?</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">Métricas Técnicas</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">1. Precisão da Busca</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>python
+# Porcentagem de perguntas que retornam docs relevantes
+# Meta: > 85%</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">def avaliar_retrieval(perguntas_teste):
+    acertos = 0
+    for q in perguntas_teste:
+        docs = vectorstore.similarity_search(q['pergunta'], k=3)
+        if q['doc_esperado'] in [d.metadata['source'] for d in docs]:
+            acertos += 1
+    return acertos / len(perguntas_teste)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">2. Qualidade da Resposta</strong>
+- Usuário dá 👍/👎 após resposta
+- Meta: > 80% de 👍</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">3. Latência</strong>
+- Tempo de resposta end-to-end
+- Meta: < 5 segundos</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">Métricas de Negócio</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">1. Redução de Perguntas Repetidas</strong>
+- Antes vs Depois de ter chatbot
+- Meta: -50% em canais de suporte</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">2. Time to Answer</strong>
+- Quanto tempo demora pra pessoa obter resposta
+- Antes: 2h (espera humano) → Depois: 10s (chatbot)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">3. Satisfação (CSAT)</strong>
+- Survey rápido: "O chatbot ajudou?" (1-5)
+- Meta: > 4.0</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">4. Adoção</strong>
+- % do time que usa o chatbot
+- Meta: > 60% após 1 mês</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Próximos Passos -->
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-tecnico/20 bg-gradient-to-r from-tecnico/10 to-transparent -mx-4 px-4 py-4 rounded-lg">🚀 Próximos Passos</h2>
+
+
+        <div class="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-6 rounded-lg mb-8 shadow-md hover:shadow-lg transition-shadow">
+          <h3 class="text-xl font-bold text-green-700 dark:text-green-400 mb-4 flex items-center gap-2">
+            <span class="text-2xl">✅</span>
+            <span>Nível 1: Básico Funcionando ✅</span>
+          </h3>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">Chatbot responde perguntas da sua documentação</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">Interface Streamlit simples</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">Rodando localmente</span></li>
+          </ul>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">Nível 2: Produção</h3>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">Deploy em cloud (Streamlit Cloud, Vercel)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">Integração com Slack/Teams</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">Analytics de uso</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">Sistema de feedback</span></li>
+          </ul>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">Nível 3: Avançado</h3>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">Multi-modal (aceita imagens, PDFs)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">Multi-idioma</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">Atualização automática (docs novos → reindexação)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">A/B testing de prompts</span></li>
+          </ul>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">Nível 4: Enterprise</h3>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">Multiple chatbots (um por domínio)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">Controle de acesso (chatbot só vê docs que user tem permissão)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">Audit log (quem perguntou o quê)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">Fine-tuning de modelo</span></li>
+          </ul>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Dicas de Ouro -->
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-tecnico/20 bg-gradient-to-r from-tecnico/10 to-transparent -mx-4 px-4 py-4 rounded-lg">💡 Dicas de Ouro</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">1. Comece Pequeno</h3>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-2xl flex-shrink-0">❌</span><span class="flex-1 pt-1 text-neutral-700 dark:text-neutral-300">Não tente indexar toda a empresa no dia 1</span></li>
+            <li class="flex items-start gap-3"><span class="text-2xl flex-shrink-0">✅</span><span class="flex-1 pt-1 text-neutral-700 dark:text-neutral-300">Comece com 1 domínio específico (ex: deploy)</span></li>
+            <li class="flex items-start gap-3"><span class="text-2xl flex-shrink-0">✅</span><span class="flex-1 pt-1 text-neutral-700 dark:text-neutral-300">Prove valor → Expanda</span></li>
+          </ul>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">2. Documentação Ruim = RAG Ruim</h3>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">Se seus docs são ruins, RAG vai responder ruim</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300"><strong class="font-bold">Aproveite para melhorar docs</strong> enquanto implementa RAG</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tecnico flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">Chatbot expõe buracos na documentação</span></li>
+          </ul>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">3. Prompt é 50% do Sucesso</h3>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code># ❌ Prompt genérico
+"Responda a pergunta baseado nos documentos."</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"># ✅ Prompt específico
+"""Você é especialista em DevOps na empresa X.
+Responda baseado APENAS nos documentos fornecidos.
+Se não souber, diga claramente.
+Cite comandos exatos e links quando relevante.
+Seja conciso mas completo."""
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">4. Feedback Loop é Crítico</h3>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code># Adicionar botões de feedback
+col1, col2 = st.columns(2)
+if col1.button("👍 Útil"):
+    salvar_feedback(pergunta, resposta, positivo=True)
+if col2.button("👎 Não ajudou"):
+    salvar_feedback(pergunta, resposta, positivo=False)</code></pre>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-tecnico">5. Monitore Custos</h3>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-tecnico/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code># Rastreie custos de API
+import tiktoken</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">def estimar_custo(text):
+    encoding = tiktoken.get_encoding("cl100k_base")
+    tokens = len(encoding.encode(text))
+    custo_por_mil = 0.0001  # embeddings
+    return (tokens / 1000) * custo_por_mil</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">print(f"Custo estimado: ${estimar_custo(all_docs):.4f}")
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Resumo do Módulo -->
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-tecnico/20 bg-gradient-to-r from-tecnico/10 to-transparent -mx-4 px-4 py-4 rounded-lg">🎯 Resumo do Módulo</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">O que você aprendeu:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ <strong class="font-bold">RAG = ChatGPT + Seus Documentos</strong>
+- Busca informação relevante nos seus docs
+- Injeta no prompt
+- ChatGPT responde baseado no SEU conteúdo</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ <strong class="font-bold">Arquitetura:</strong>
+- Embeddings → Vector Database → Retrieval → Generation</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ <strong class="font-bold">Implementação:</strong>
+- LangChain + Chroma (controle total)
+- OpenAI Assistants (mais fácil)
+- No-code (validação rápida)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ <strong class="font-bold">Casos de uso:</strong>
+- Onboarding de devs
+- Troubleshooting
+- Documentação de API
+- FAQs técnicos</p>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Próximo passo no Módulo 4:</span> <span class="text-neutral-700 dark:text-neutral-300">Vamos criar seu <strong class="font-bold">portfólio técnico no GitHub</strong> que mostra todos esses projetos incríveis que você está construindo!</span></p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 📚 Recursos Adicionais -->
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-tecnico/20 bg-gradient-to-r from-tecnico/10 to-transparent -mx-4 px-4 py-4 rounded-lg">📚 Recursos Adicionais</h2>
+
+        <div class="mb-6">
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Tutoriais:</span> <span class="text-neutral-700 dark:text-neutral-300">- <a href="https://python.langchain.com/docs/use_cases/question_answering/" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">LangChain RAG Tutorial</a>
+- <a href="https://platform.openai.com/docs/assistants/overview" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">OpenAI Assistants Guide</a>
+- <a href="https://www.pinecone.io/learn/retrieval-augmented-generation/" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">Pinecone RAG Guide</a></span></p>
+          </div>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Ferramentas:</span> <span class="text-neutral-700 dark:text-neutral-300">- <a href="https://smith.langchain.com/" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">LangSmith</a> - Debug RAG chains
+- <a href="https://github.com/explodinggradients/ragas" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">Ragas</a> - Avaliar qualidade RAG
+- <a href="https://www.trychroma.com/" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">Chroma</a> - Vector database</span></p>
+          </div>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Comunidades:</span> <span class="text-neutral-700 dark:text-neutral-300">- r/LangChain (Reddit)
+- LangChain Discord
+- OpenAI Developer Forum</span></p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Tempo estimado de conclusão:</span> <span class="text-neutral-700 dark:text-neutral-300">3-4 horas (incluindo exercício prático)</span></p>
+          </div>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Prerequisitos:</span> <span class="text-neutral-700 dark:text-neutral-300">Conhecimento básico de Python, familiaridade com APIs</span></p>
+          </div>
+
+
+          <div class="bg-tecnico/5 dark:bg-tecnico/10 p-4 rounded-lg mb-4 border-l-4 border-tecnico">
+            <p class="text-lg"><span class="font-bold text-tecnico text-xl">Próximo módulo:</span> <span class="text-neutral-700 dark:text-neutral-300">Módulo 4 - GitHub como Portfólio de Solucionador Técnico</span></p>
+          </div>
+
         </div>
       </div>
 
     </div>
   </section>
 
-  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center text-sm"><p>&copy; 2025 FETD - Formação em Engenharia de Intenção</p></div>
+  <!-- Footer / Navegação -->
+  <section class="py-12 bg-gradient-to-br from-neutral-100 to-neutral-50 dark:from-neutral-900 dark:to-neutral-800 border-t border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center">
+        <a href="../../trilhas/tecnico.html" class="px-6 py-3 bg-gradient-to-r from-tecnico to-orange-600 text-white rounded-lg font-bold hover:opacity-90 shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2">
+          <span>←</span>
+          <span>Voltar para Trilha</span>
+        </a>
+        <a href="modulo-04.html" class="px-6 py-3 bg-gradient-to-r from-tecnico to-orange-600 text-white rounded-lg font-bold hover:opacity-90 shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2"><span>Próximo Módulo</span><span>→</span></a>
+      </div>
     </div>
-  </footer>
+  </section>
 
-  <script src="../../js/app.js"></script>
+  <!-- Dark Mode Toggle Script -->
+  <script>
+    // Remove preload class
+    window.addEventListener('load', () => {
+      document.body.classList.remove('preload');
+    });
+
+    // Dark mode toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    // Check localStorage
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      themeToggleLightIcon.classList.remove('hidden');
+      document.documentElement.classList.add('dark');
+    } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        }
+      } else {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        }
+      }
+    });
+  </script>
+
 </body>
 </html>
