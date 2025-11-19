@@ -3,154 +3,2166 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 3: Primeiras Ferramentas de IA | FETD</title>
+  <title>Módulo 3: Primeiras Ferramentas de IA | Trilha Talento Emergente | FETD</title>
+  <meta name="description" content="Dominar ChatGPT, Claude e Gemini para trabalho profissional">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/tailwindcss-cdn@3.4.1/tailwindcss.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            'operacional': '#3B82F6',
-            'comunicador': '#10B981',
             'talento': '#F59E0B',
-            'tecnico': '#F97316',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
           },
         }
       }
     }
   </script>
+
   <style>
-    * { transition: background-color 200ms, border-color 200ms, color 200ms; }
-    .preload * { transition: none !important; }
-    body { font-family: 'Inter', sans-serif; }
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
   </style>
 </head>
+
 <body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navbar -->
   <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-talento to-operacional bg-clip-text text-transparent">🎓 FETD</a>
-        <div class="flex items-center space-x-8">
+        <div class="flex items-center">
+          <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-talento to-talento bg-clip-text text-transparent">
+            🎓 FETD
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
           <a href="../../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Início</a>
-          <a href="../../trilhas/talento.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Trilha</a>
+          <a href="../../trilhas/talento.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Trilha Talento Emergente</a>
           <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
           </button>
         </div>
       </div>
     </div>
   </nav>
 
+  <!-- Breadcrumb -->
   <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <nav class="flex text-sm">
-        <a href="../../index.html" class="text-talento hover:underline">Início</a>
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../../index.html" class="text-talento hover:opacity-80">Início</a>
         <span class="mx-2 text-neutral-400">/</span>
-        <a href="../../trilhas/talento.html" class="text-talento hover:underline">Trilha Talento Emergente</a>
+        <a href="../../trilhas/talento.html" class="text-talento hover:opacity-80">Trilha Talento Emergente</a>
         <span class="mx-2 text-neutral-400">/</span>
         <span class="text-neutral-600 dark:text-neutral-400">Módulo 3</span>
       </nav>
     </div>
   </div>
 
-  <section class="bg-gradient-to-r from-talento to-amber-600 py-16">
+  <!-- Hero Módulo -->
+  <section class="bg-gradient-to-r from-talento to-talento py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+
       <div class="flex items-center gap-3 mb-4">
-        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">🟡 Módulo 3 de 10</span>
-        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">⏱️ 45min</span>
-      </div>
-      <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">Primeiras Ferramentas de IA</h1>
-      <p class="text-xl opacity-90 mb-6"><strong>Objetivo:</strong> Dominar ChatGPT, Claude e Gemini para trabalho</p>
-      <a href="../../downloads/talento/modulo-03.md" download class="inline-flex items-center px-6 py-3 bg-white text-talento rounded-lg font-semibold hover:bg-neutral-100 transition-all">
-        📥 Download Conteúdo (.md)
-      </a>
-    </div>
-  </section>
-
-  <section class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-8 mb-16">
-
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">🤖</div>
-          <h3 class="text-2xl font-bold mb-4">Os 3 Pilares da IA</h3>
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">ChatGPT (OpenAI), Claude (Anthropic) e Gemini (Google) são as <strong>3 principais IAs</strong> do mercado. Cada uma tem pontos fortes.</p>
-          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl">
-            <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">💡 ChatGPT: versatilidade, Claude: análise profunda, Gemini: integração Google, use as 3 conforme necessidade</p>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">✍️</div>
-          <h3 class="text-2xl font-bold mb-4">Prompt Engineering Básico</h3>
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">A forma como você <strong>pergunta</strong> determina a qualidade da resposta. Aprenda a estrutura básica de prompts eficazes.</p>
-          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl">
-            <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">💡 Seja específico, dê contexto, peça formato, use exemplos, itere e refine</p>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">📊</div>
-          <h3 class="text-2xl font-bold mb-4">IA para Análise de Dados</h3>
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">Transforme planilhas Excel em insights com IA. Analise vendas, custos, métricas e tome decisões <strong>baseadas em dados</strong>.</p>
-          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl">
-            <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">💡 Upload de CSV, perguntas específicas, geração de gráficos, insights automatizados</p>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">⚡</div>
-          <h3 class="text-2xl font-bold mb-4">Automação de Tarefas</h3>
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">IA pode escrever emails, resumir textos, criar apresentações e muito mais. Economize <strong>10-15 horas por semana</strong>.</p>
-          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl">
-            <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">💡 Templates de prompts, fluxos de trabalho, integração com ferramentas, boas práticas</p>
-          </div>
-        </div>
-
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">Módulo 3 de 10</span>
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">⏱️ 60 minutos</span>
       </div>
 
-      <div class="bg-gradient-to-r from-talento to-amber-600 p-8 rounded-2xl text-white">
-        <h2 class="text-3xl font-bold mb-4">🎯 Próximos Passos</h2>
-        <p class="text-lg mb-6 opacity-90">Continue sua jornada na Trilha Talento Emergente!</p>
-        <div class="flex gap-4">
-          <a href="modulo-02.html" class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 transition-all">← Anterior</a>
-          <a href="modulo-04.html" class="px-6 py-3 bg-white text-talento rounded-lg font-semibold hover:bg-neutral-100 transition-all">Próximo →</a>
-        </div>
+      <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">
+        Módulo 3: Primeiras Ferramentas de IA
+      </h1>
+
+      <p class="text-xl text-white/90 mb-6 max-w-3xl">
+        Dominar ChatGPT, Claude e Gemini para trabalho profissional
+      </p>
+
+      <div class="flex items-center gap-4">
+        <span class="text-white/80">📚 Teoria</span>
+        <span class="text-white/80">•</span>
+        <span class="text-white/80">💭 Reflexão</span>
+        <span class="text-white/80">•</span>
+        <span class="text-white/80">🛠️ Prática</span>
       </div>
     </div>
   </section>
 
-  <footer class="bg-white dark:bg-neutral-800 border-t border-neutral-200 dark:border-neutral-700 py-8 mt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-600 dark:text-neutral-400">
-      <p>© 2025 FETD - Formação em Engenharia de Intenção</p>
-    </div>
-  </footer>
+  <!-- Conteúdo Principal -->
+  <section class="py-16 bg-white dark:bg-neutral-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
+      <!-- Download Button -->
+      <div class="flex justify-end mb-8">
+        <a href="../../downloads/talento/modulo-03.md" download class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90 inline-flex items-center gap-2">
+          <span>📥</span>
+          <span>Download MD</span>
+        </a>
+      </div>
+
+
+      <!-- Seção: Introdução: A Era da IA Generativa -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">Introdução: A Era da IA Generativa</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Há 3 anos, usar IA no trabalho era privilégio de grandes empresas com orçamentos milionários.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Hoje, você tem acesso gratuito às mesmas IAs que empresas pagam milhares de dólares por mês para usar.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">O problema? 95% das pessoas usam IA de forma superficial:
+- "Escreva um email"
+- "Resuma este texto"
+- "Crie uma lista"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Isso é como usar Ferrari para ir à padaria. Funciona, mas você está desperdiçando 90% do potencial.</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Dados reais:</span> - Profissionais que dominam IA: +40% produtividade (McKinsey, 2024)
+- Empresas contratando "AI Ops": +320% em 2024 vs 2023
+- Vagas exigindo "prompt engineering": R$ 6.000-15.000/mês
+- Freelancers com IA: cobram 2-3x mais que sem</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Neste módulo você vai aprender:
+1. ChatGPT vs Claude vs Gemini: quando usar cada um
+2. Prompt engineering: estrutura que funciona
+3. IA para análise de dados (sem código)
+4. Automação de tarefas repetitivas
+5. Casos reais de uso profissional
+6. Como monetizar essas habilidades</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 1. Os 3 Pilares da IA: ChatGPT, Claude, Gemini -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">1. Os 3 Pilares da IA: ChatGPT, Claude, Gemini</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">1.1 ChatGPT (OpenAI)</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Melhor para:</span> - ✅ Criação de conteúdo rápido
+- ✅ Brainstorming e ideação
+- ✅ Tarefas gerais do dia-a-dia
+- ✅ Plugins e integrações
+- ✅ Análise de imagens (GPT-4)
+- ✅ Análise de dados com Code Interpreter</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Pontos fortes:</span> - Interface mais conhecida e intuitiva
+- Plugins expandem funcionalidades (browsing, wolfram, etc)
+- Code Interpreter para análise de dados e visualizações
+- DALL-E integrado (geração de imagens)
+- GPT Store com aplicações especializadas
+- API robusta para automações</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Limitações:</span> - Às vezes "inventa" fatos (alucinação)
+- Contexto menor que Claude (128k tokens vs 200k)
+- Pode ser verboso demais
+- Versão gratuita (3.5) bem inferior à paga</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Quando usar:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+✅ Preciso de resposta rápida
+✅ Vou fazer várias perguntas seguidas
+✅ Quero usar plugins (web browsing, code interpreter)
+✅ Preciso analisar imagens
+✅ Criar variações de conteúdo em massa
+✅ Análise de dados com gráficos
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Planos:</span> - Grátis: GPT-3.5 (bom para testar, limitado para produção)
+- Pago ($20/mês): GPT-4 (muito melhor, vale investimento)
+- Plus: GPT-4 Turbo (mais rápido)
+- Team/Enterprise: Recursos extras + prioridade</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Dica profissional:</span> Use GPT-4 para tarefas importantes. A diferença de qualidade é brutal. Se vai cobrar cliente, use versão paga.</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Funcionalidades extras:</span> - <strong>Custom GPTs:</strong> crie assistentes especializados
+- <strong>Code Interpreter:</strong> análise de dados sem código
+- <strong>DALL-E:</strong> geração de imagens direto no chat
+- <strong>Vision:</strong> análise de imagens e documentos
+- <strong>Voice:</strong> conversação por voz
+- <strong>Memory:</strong> lembra contexto entre conversas</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">1.2 Claude (Anthropic)</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Melhor para:</span> - ✅ Análises profundas e detalhadas
+- ✅ Trabalho com textos longos (livros, contratos, relatórios)
+- ✅ Precisão factual crítica
+- ✅ Raciocínio complexo e nuanceado
+- ✅ Tarefas que exigem seguir instruções complexas
+- ✅ Análise de código e documentação técnica</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Pontos fortes:</span> - Contexto ENORME (200k tokens = ~150k palavras)
+- Mais preciso e menos "inventivo"
+- Melhor em seguir instruções complexas
+- Excelente para análise de documentos longos
+- Menor tendência a alucinar
+- Melhor em raciocínio passo-a-passo</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Limitações:</span> - Não tem plugins nativos
+- Menos conhecido no Brasil
+- Às vezes mais "conservador" nas respostas
+- Sem geração de imagens
+- Sem acesso web em tempo real</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Quando usar:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+✅ Analisando documento longo (contratos, relatórios, livros)
+✅ Preciso de precisão máxima (análise legal, financeira)
+✅ Trabalho complexo que exige raciocínio profundo
+✅ Análise de dados detalhada e meticulosa
+✅ Revisar código ou documentação técnica
+✅ Comparar múltiplos documentos
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Planos:</span> - Grátis: acesso limitado (bom para testar e uso ocasional)
+- Pago ($20/mês): Claude Pro (contexto maior, prioridade, uso ilimitado)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Dica profissional:</span> Para análise de planilhas grandes (5k+ linhas) ou documentos longos (50+ páginas), Claude > ChatGPT. O contexto maior faz diferença.</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Casos de uso premium:</span> - Análise de contratos completos
+- Revisão de código de repositórios inteiros
+- Comparação de propostas comerciais
+- Análise financeira profunda
+- Pesquisa acadêmica</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">1.3 Gemini (Google)</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Melhor para:</span> - ✅ Integração com Google Workspace
+- ✅ Busca em tempo real
+- ✅ Análise de dados do Google (Sheets, Analytics)
+- ✅ Tarefas que exigem informação atualizada
+- ✅ Multimodalidade (texto, imagem, vídeo, áudio)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Pontos fortes:</span> - Acesso direto à busca Google (informação atualizada)
+- Integra nativamente com Gmail, Drive, Docs, Sheets
+- Informações sempre atualizadas
+- Grátis (plano básico robusto)
+- Multimodal (processa vários tipos de mídia)
+- Crescimento rápido (updates frequentes)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Limitações:</span> - Menos poderoso que GPT-4 e Claude (ainda)
+- Menos controle sobre comportamento
+- Ainda em evolução (menos maduro)
+- Menos adotado profissionalmente</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Quando usar:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+✅ Preciso de informação atual/recente (notícias, preços, eventos)
+✅ Trabalho dentro do ecossistema Google
+✅ Quero buscar e resumir informações da web
+✅ Análise de Google Sheets diretamente
+✅ Preciso de custo zero (versão gratuita boa)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Dica profissional:</span> Combine Gemini (pesquisa) + Claude (análise) + ChatGPT (execução). Use cada um onde brilha.</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Integração Google Workspace:</span> - Gemini in Gmail: escreve emails
+- Gemini in Docs: redação assistida
+- Gemini in Sheets: análise de dados
+- Gemini in Slides: criação de apresentações</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">1.4 Comparação Prática: Mesma Tarefa, Resultados Diferentes</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Cenário 1: Análise de planilha de vendas (5.000 linhas)</strong>
+- 🥇 <strong>Claude:</strong> Melhor análise profunda, identifica padrões sutis, recomendações mais precisas
+- 🥈 <strong>ChatGPT:</strong> Bom com Code Interpreter, gráficos melhores, mais rápido
+- 🥉 <strong>Gemini:</strong> Limitado para datasets grandes, perde detalhes</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Cenário 2: Criar email de vendas personalizado</strong>
+- 🥇 <strong>ChatGPT:</strong> Rápido e criativo, variações em massa, tom persuasivo
+- 🥈 <strong>Claude:</strong> Bom mas mais formal, melhor para B2B
+- 🥉 <strong>Gemini:</strong> Funciona mas resultado genérico</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Cenário 3: Analisar contrato de 50 páginas</strong>
+- 🥇 <strong>Claude:</strong> Contexto enorme, precisão nos detalhes, identifica cláusulas problemáticas
+- 🥈 <strong>ChatGPT:</strong> OK mas pode perder detalhes em documentos longos
+- 🥉 <strong>Gemini:</strong> Não recomendado para análise legal profunda</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Cenário 4: Pesquisar tendências de mercado 2025</strong>
+- 🥇 <strong>Gemini:</strong> Acesso web em tempo real, dados atualizados
+- 🥈 <strong>ChatGPT:</strong> Com plugin de browsing funciona bem
+- 🥉 <strong>Claude:</strong> Dados até janeiro 2025 apenas, sem web browsing</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Cenário 5: Criar 100 variações de ad copy</strong>
+- 🥇 <strong>ChatGPT:</strong> Rápido, criativo, mantém consistência
+- 🥈 <strong>Claude:</strong> Boas variações mas mais lento
+- 🥉 <strong>Gemini:</strong> Menos criativo para volume</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Cenário 6: Análise de sentimento de 1.000 reviews</strong>
+- 🥇 <strong>Claude:</strong> Análise profunda, identifica nuances, categorização precisa
+- 🥈 <strong>ChatGPT:</strong> Bom mas pode simplificar demais
+- 🥉 <strong>Gemini:</strong> Análise superficial</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Minha recomendação:</span> Tenha conta nas 3. Use cada uma pro que faz melhor. Investimento: R$ 0-40/mês. Retorno: horas economizadas + qualidade superior.</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 2. Prompt Engineering: A Habilidade de R$ 8.000-15.000/mês -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">2. Prompt Engineering: A Habilidade de R$ 8.000-15.000/mês</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">2.1 Por Que Prompt Engineering Vale Tanto</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Duas pessoas usando a mesma IA:</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Pessoa A (iniciante):</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Prompt: "Analise estas vendas"
+Resultado: Análise genérica, superficial, pouco útil
+Tempo gasto: 30 min (incluindo correções)
+Valor para cliente: baixo
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Pessoa B (prompt engineer):</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Prompt: "Você é analista de vendas sênior com 15 anos de experiência em e-commerce.</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Analise a planilha anexa focando em:
+1. Produtos com maior queda YoY (year-over-year)
+2. Regiões com melhor performance por produto
+3. Padrões de sazonalidade por categoria
+4. Segmentos de clientes mais lucrativos (LTV/CAC)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Para cada insight:
+- Quantifique o impacto financeiro (R$)
+- Identifique causa raiz provável
+- Sugira 2-3 ações específicas e acionáveis
+- Estime ROI de cada ação</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Formato: 
+1. Tabela resumo executivo
+2. Top 3 insights críticos (com $ impacto)
+3. Recomendações priorizadas por ROI esperado
+4. Quick wins (implementação < 1 semana)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Tom: profissional, orientado a dados, acionável."</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Resultado: Análise profunda, acionável, com valor imediato
+Tempo gasto: 5 min (prompt reutilizável)
+Valor para cliente: alto (cobrar R$ 500-2.000 por essa análise)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Mesma IA. Resultado <strong>10x melhor</strong> só mudando o prompt.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Profissionais fazendo R$ 8k-15k/mês com prompt engineering:</strong>
+- AI Operations Specialist
+- Prompt Engineer
+- AI Workflow Consultant
+- No-code Automation Expert
+- Knowledge Management Specialist</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">2.2 Estrutura de Prompt Profissional: Framework CRISP</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>C - Contexto (Context)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+"Você é [papel/expertise específica com anos de experiência]
+trabalhando em [tipo de empresa/setor]"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Exemplo:
+"Você é copywriter sênior com 10 anos em B2B tech,
+especializado em SaaS para PMEs"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>R - Requisitos (Requirements)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+"Preciso que você [tarefa específica] focando em [aspectos importantes]
+para [objetivo final]"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Exemplo:
+"Preciso que você crie sequência de 5 emails de onboarding
+focando em ativação rápida (primeiro valor em 48h)
+para aumentar retenção semana 1 de 60% para 80%"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>I - Instruções (Instructions)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+"Siga este processo passo-a-passo:
+1. [Passo 1 específico]
+2. [Passo 2 específico]
+3. [Passo 3 específico]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Não pule etapas. Mostre raciocínio."</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Exemplo:
+"1. Primeiro, identifique 3 quick wins no produto
+2. Depois, crie gancho emocional para cada email
+3. Então, estruture cada email: problema→solução→ação
+4. Por fim, adicione social proof específico"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>S - Saída (Output Specification)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+"Formato: [estrutura exata desejada]
+Tom: [formal/casual/técnico/persuasivo]
+Tamanho: [máximo X palavras/parágrafos]
+Elementos obrigatórios: [lista]"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Exemplo:
+"Formato: 5 emails numerados, cada um com:
+- Subject line (máx 50 caracteres)
+- Preview text (máx 100 caracteres)
+- Corpo (máx 200 palavras)
+- 1 CTA claro
+Tom: casual-profissional, você/tu, amigável
+Elementos: pergunta inicial + social proof + urgência sutil"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>P - Prova/Validação (Proof/Validation)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+"Antes de responder, valide se:
+- [Critério de qualidade 1]
+- [Critério de qualidade 2]
+- [Critério de qualidade 3]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Se não passar validação, refaça."</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Exemplo:
+"Antes de finalizar, confirme:
+- Cada email tem objetivo único e claro
+- CTAs são específicos e mensuráveis
+- Tom é consistente em todos
+- Sem jargões técnicos excessivos
+- Subject lines testadas mentalmente"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+        </div>
+
+        <div class="bg-talento/10 dark:bg-talento/20 border-2 border-talento/30 p-6 rounded-xl mb-8">
+          <h3 class="text-xl font-bold text-talento mb-4">2.3 Exemplos Práticos Completos</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo 1: Análise de dados de churn</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>CONTEXTO:
+Você é cientista de dados especializado em e-commerce e análise de churn,
+com 12 anos de experiência em empresas de subscription.</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">REQUISITOS:
+Analise esta base de clientes que cancelaram nos últimos 90 dias (CSV anexo).
+Objetivo: reduzir churn em 30% nos próximos 60 dias.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Identifique:
+1. Principais indicadores preditivos de churn (correlação >0.6)
+2. Segmentos de maior risco (cluster analysis)
+3. Timing médio entre primeiros sinais e cancelamento
+4. Padrões de uso antes do churn vs clientes ativos
+5. Valor deixado na mesa (revenue perdido por segmento)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">INSTRUÇÕES:
+1. Primeiro, limpe e explore os dados (missing values, outliers)
+2. Depois, faça análise descritiva por segmento
+3. Então, identifique correlações e padrões temporais
+4. Crie modelo preditivo simples (regressão logística ou similar)
+5. Por fim, traduza insights em ações específicas</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">SAÍDA:
+Estruture resposta em:</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Resumo Executivo</strong> (3 bullets máximo)</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Análise Detalhada:</span> - Tabela: Top 5 indicadores de churn (feature, correlação, exemplo)
+- Gráfico: Distribuição de churn por segmento (descreva)
+- Timeline: Jornada típica até churn (dias/eventos)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Segmentos de Risco:</span> - Segmento 1: [nome], [% base], [características], [risco $]
+- Segmento 2: [nome], [% base], [características], [risco $]
+- Segmento 3: [nome], [% base], [características], [risco $]</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Clientes em Risco Imediato:</span> - Lista: 10 clientes com maior probabilidade churn (próximos 30 dias)
+- Para cada: ID, score risco, motivo provável, ação sugerida</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Recomendações Priorizadas:</span> 1. [Ação]: [descrição], [impacto estimado], [esforço], [prazo]
+2. [Ação]: [descrição], [impacto estimado], [esforço], [prazo]
+3. [Ação]: [descrição], [impacto estimado], [esforço], [prazo]</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Quick Wins</strong> (implementação < 1 semana):
+- [Lista 3-5 ações rápidas]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">VALIDAÇÃO:
+Antes de responder, confirme:
+- Dados fazem sentido estatisticamente (soma 100%, sem anomalias)
+- Correlações são causais ou apenas correlações (explicite)
+- Recomendações são acionáveis (não genéricas tipo "melhorar suporte")
+- Números batem (revenue perdido = soma dos segmentos)
+- Inclui COMO implementar cada recomendação, não só O QUE
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo 2: Criação de conteúdo LinkedIn B2B</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>CONTEXTO:
+Você é copywriter especializado em LinkedIn B2B tech,
+com portfolio de clientes que cresceram de 0 a 10k+ seguidores.
+Conhece algoritmo LinkedIn profundamente.</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">REQUISITOS:
+Crie post sobre [tema: "Como IA está mudando vendas B2B"] que:
+- Pare scroll nos primeiros 2 segundos (gancho forte)
+- Eduque sobre problema real que executivos de vendas têm
+- Posicione IA como solução prática (não hype)
+- Gere engajamento genuíno (comentários, não só likes)
+- Estabeleça autoridade sem ser arrogante</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Público: Diretores de Vendas em empresas B2B (50-500 funcionários)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">INSTRUÇÕES:
+1. Comece com dado/estatística surpreendente (fonte)
+2. Apresente problema específico (dor real)
+3. Agite consequências (custo de não resolver)
+4. Introduza solução (como IA ajuda especificamente)
+5. Dê exemplo concreto/case (números reais)
+6. CTA: pergunta que gera discussão genuína</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Estrutura:
+- Linha 1: Gancho (dado chocante)
+- Linha 2-3: Contexto rápido
+- [espaço]
+- Parágrafo 2: Problema
+- [espaço]
+- Parágrafo 3: Agitação
+- [espaço]
+- Parágrafo 4: Solução + exemplo
+- [espaço]
+- CTA: Pergunta</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">SAÍDA:
+- Máximo 150 palavras (LinkedIn favorece concisão)
+- 3-5 parágrafos curtos (2-3 linhas cada)
+- Máximo 2 emojis (profissional)
+- 1 pergunta final engajadora (não retórica)
+- 3-5 hashtags relevantes (não spam)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Formato:
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+[POST AQUI]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">---
+Hashtags: #vendas #ia #b2b [etc]
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">VALIDAÇÃO:
+Antes de finalizar, confirme:
+- Gancho prende atenção (você pararia scroll?)
+- Evita jargões técnicos excessivos (diretor entende?)
+- Tom: consultivo, não vendedor (compartilharia?)
+- Foco: problema do leitor, não em IA em si
+- Pergunta final gera discussão real (não "concorda?")
+- Dados são verificáveis (fonte existe?)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo 3: Extração de informações estruturadas</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>CONTEXTO:
+Você é assistente de SDR (Sales Development Representative)
+especializado em qualificação de leads via email.</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">REQUISITOS:
+Analise estes 50 emails de leads interessados (anexo)
+e extraia informações estruturadas para nosso CRM.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">INSTRUÇÕES:
+1. Leia cada email identificando lead info
+2. Extraia dados solicitados (se mencionados)
+3. Infira informações quando contexto permite
+4. Categorize urgência baseado em linguagem
+5. Identifique red flags (budget baixo, tire-kicker)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">SAÍDA:
+Crie tabela CSV com exatamente estas colunas:</p>
+
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Regras:
+- Email: endereço completo
+- Nome: primeiro nome apenas
+- Empresa: nome oficial (pesquise se necessário)
+- Cargo: padronize (CEO, CTO, Gerente, etc)
+- Produto_Interesse: nosso produto específico
+- Budget_Mencionado: número ou "não mencionado"
+- Prazo_Decisao: dias ou "indefinido"
+- Urgencia: Alta/Média/Baixa
+- Objecoes_Principais: max 3, separadas por ";"
+- Next_Steps: ação específica para SDR
+- Red_Flags: concerns (budget, autoridade, etc) ou "nenhum"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">VALIDAÇÃO:
+- 50 linhas (1 por email)
+- Sem células vazias (use "não mencionado")
+- Urgencia só: Alta, Média ou Baixa
+- Budget em R$ quando mencionado
+- Next_Steps acionáveis (não genéricos)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">2.4 Técnicas Avançadas de Prompting</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Few-Shot Learning (Aprender com Exemplos)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Funciona como: "Veja estes exemplos bons, agora faça igual"</p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>Crie emails de follow-up para leads frios seguindo estes exemplos de alta conversão:</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">━━━ EXEMPLO 1 (taxa abertura: 68%) ━━━
+Subject: Re: [produto] - ideia rápida</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Oi Maria,</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Vi que baixou nosso ebook sobre automação.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Uma ideia: e se você pudesse cortar 15h/semana da sua equipe só automatizando aprovações?</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Cliente similar (Empresa X) fez isso em 2 semanas.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Vale 15min de call essa semana?</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">━━━ EXEMPLO 2 (taxa resposta: 23%) ━━━
+Subject: [Empresa deles] + [Nossa empresa] = 🚀</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Pedro,</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Direto ao ponto: ajudamos 3 empresas do seu setor crescer vendas 40-60% em 90 dias.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Não é magia. É processo + tech.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Interessa ver como?</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Call sexta 10h?</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">━━━ AGORA CRIE ━━━
+Contexto: Lead baixou whitepaper sobre vendas B2B há 7 dias
+Cargo: Diretor Comercial
+Empresa: SaaS RH, 80 funcionários
+Objetivo: agendar demo</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Crie email similar aos exemplos (mesmo tom, estrutura, tamanho).
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Chain of Thought (Raciocínio Passo-a-Passo)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Força a IA a "pensar" antes de responder. Aumenta qualidade drasticamente.</p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>Tenho este problema complexo:
+[Vendas caíram 30% no trimestre, mas leads aumentaram 20%]</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">NÃO responda direto.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Primeiro, pense passo-a-passo:</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 1: Definir problema real</strong>
+- Qual métrica importa? (vendas, conversão, ticket?)
+- Problema é em qual etapa do funil?
+- Desde quando? (sazonalidade? mudança?)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 2: Levantar causas possíveis</strong>
+- Liste 5-10 causas possíveis
+- Para cada, qual probabilidade (alta/média/baixa)?</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 3: Priorizar investigação</strong>
+- Quais causas validar primeiro?
+- Que dados precisamos? (temos?)
+- Quanto tempo para validar cada?</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 4: Propor soluções</strong>
+- Para cada causa provável, que soluções existem?
+- Impacto vs esforço de cada?
+- Dependências entre soluções?</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 5: Plano de ação</strong>
+- Sequência de ações (próximos 30 dias)
+- Owner de cada ação
+- Métricas para validar solução funcionou</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Mostre SEU RACIOCÍNIO em cada passo antes da resposta final.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Depois, resuma: Top 3 causas prováveis + Top 3 ações imediatas.
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Role Playing (Assumir Personagem com Mindset)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">IA assume personagem com vieses, conhecimentos, limitações específicas.</p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>Você é CFO experiente (20 anos, passou por 2 IPOs, 1 M&A).</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Características:
+- Cético por natureza (já viu muitos pitches ruins)
+- Orientado a dados (não aceita "achismos")
+- Avesso a risco (precisa de plano B sempre)
+- Foca ROI, payback, cash flow
+- Pergunta coisas que CEO não pensa</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Analise esta proposta de investimento:
+[proposta de comprar software de automação por R$ 50k/ano]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Procure ATIVAMENTE por:
+- Riscos não mencionados na proposta
+- Suposições otimistas demais (question everything)
+- Furos no modelo financeiro (sempre tem)
+- Custos ocultos (implementação, treinamento, manutenção)
+- Alternativas mais baratas (buy vs build vs não fazer nada)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Seja DURO na análise. Empresa conta com você para evitar bad calls.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Tom: respeitoso mas direto. Faz perguntas difíceis.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Formato:
+1. Resumo da proposta (como você entendeu)
+2. Perguntas críticas (10-15 perguntas que CEO precisa responder)
+3. Riscos identificados (priorizados por impacto $)
+4. Análise financeira detalhada (ROI realista, payback, sensibilidade)
+5. Recomendação: Aprovar / Aprovar com condições / Rejeitar / Investigar mais
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. Especificação de Formato Rigorosa</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Quando precisa output EXATAMENTE numa estrutura.</p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>Resuma esta reunião de product planning seguindo EXATAMENTE este formato:</code></pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 📋 Decisões Tomadas -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">📋 Decisões Tomadas</h2>
+
+        <div class="mb-6">
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[Decisão 1 - específica e clara]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[Decisão 2]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[Decisão 3]</span></li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Próximos Passos -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">🎯 Próximos Passos</h2>
+
+        <div class="mb-6">
+
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="bg-talento/20 dark:bg-talento/30">
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Tarefa</th>
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Responsável</th>
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Prazo</th>
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Dependências</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-white dark:bg-neutral-800">
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">--------</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">-------------</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">-------</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">--------------</td>
+                </tr>
+                <tr class="bg-neutral-50 dark:bg-neutral-900">
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">...</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">@nome</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">DD/MM</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">[X, Y]</td>
+                </tr>
+                <tr class="bg-white dark:bg-neutral-800">
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">...</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">@nome</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">DD/MM</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">nenhuma</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 🚧 Bloqueios -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">🚧 Bloqueios</h2>
+
+        <div class="mb-6">
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[Bloqueio 1]: [quem precisa resolver]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[Bloqueio 2]: [quem precisa resolver]</span></li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Ideias (para retomar) -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">💡 Ideias (para retomar)</h2>
+
+        <div class="mb-6">
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[Ideia 1 - não decidida ainda]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[Ideia 2]</span></li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Métricas de Sucesso -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">📊 Métricas de Sucesso</h2>
+
+        <div class="mb-6">
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[Métrica 1]: [target]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[Métrica 2]: [target]</span></li>
+          </ul>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">REGRAS ESTRITAS:
+- NÃO adicione seções extras
+- NÃO mude formato da tabela (4 colunas exatas)
+- NÃO use emojis além dos indicados
+- NÃO escreva parágrafos (só bullets)
+- Decisões ≠ Próximos Passos (decisão = "o quê", passo = "quem faz quando")
+- Bloqueios = impedimentos, não tarefas difíceis</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Se formato não bater 100%, refaça.
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>5. Iteração e Refinamento (Prompt dentro de Prompt)</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>Vou te dar tarefa em 2 fases:</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>FASE 1: Rascunho</strong>
+Crie email de vendas para [produto X] para [público Y].
+Não se preocupe com perfeição. Faça rápido.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">[IA responde]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>FASE 2: Refinamento</strong>
+Agora você é editor crítico.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Revise o email acima melhorando:
+1. Gancho: primeiras 10 palavras prendem? Se não, refaça.
+2. Clareza: tem jargão? Simplifique.
+3. Especificidade: troque genérico por específico (números, exemplos)
+4. CTA: está CRISTALINO o que fazer? Se não, deixe óbvio.
+5. Tamanho: corte 30% (menos é mais)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Mostre:
+- Versão original
+- Versão melhorada
+- O que mudou e por quê (tabela comparativa)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 3. IA para Análise de Dados (Sem Código) -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">3. IA para Análise de Dados (Sem Código)</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">3.1 O Poder do Code Interpreter (ChatGPT)</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ChatGPT Plus/Team tem Code Interpreter que executa Python por você.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>O que você consegue fazer (SEM escrever código):</strong>
+- ✅ Analisar planilhas gigantes (CSV, Excel, até 100MB)
+- ✅ Criar gráficos profissionais (matplotlib, seaborn, plotly)
+- ✅ Limpar e processar dados (remove duplicatas, corrige erros)
+- ✅ Encontrar padrões e correlações (análise estatística)
+- ✅ Fazer previsões simples (regressão, tendências)
+- ✅ Manipular imagens (resize, crop, filter)
+- ✅ Analisar arquivos (PDFs, logs, JSONs)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Tudo em linguagem natural. Zero código.</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo prático 1: Análise de vendas</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>[Upload: vendas_2024.csv - 8.500 linhas]</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Prompt:
+"Analise estas vendas do e-commerce e faça:</p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Visão geral:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Total vendido (R$)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Número de pedidos</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Ticket médio</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Evolução mensal (gráfico linha)</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Top performers:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Top 10 produtos por receita (gráfico barras)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Top 5 categorias por volume</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Top 3 regiões por ticket médio</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Análise temporal:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Sazonalidade (qual mês melhor/pior?)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Dias da semana (quando vende mais?)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Horários (pico de vendas)</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Correlações:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Preço vs quantidade vendida (scatter plot)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Frete grátis aumenta conversão? (compare)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Desconto impacta ticket médio? (quanto?)</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Previsão:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Tendência próximos 3 meses (regressão linear)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Qual produto vai explodir? (crescimento %)</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Crie visualizações PROFISSIONAIS (títulos, labels, cores).
+Explique cada insight encontrado."</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Resultado: Em 3-5 minutos você tem:
+- 8-10 gráficos bonitos
+- Análise completa escrita
+- Insights acionáveis
+- Recomendações específicas</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Valor: Cobraria R$ 500-2.000 por essa análise.
+Custo: R$ 0,10 de compute.
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo prático 2: Segmentação de clientes (RFM)</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>[Upload: clientes.csv - 3.200 clientes]</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Prompt:
+"Faça análise RFM (Recency, Frequency, Monetary) destes clientes:</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Passos:</span> 1. Calcule para cada cliente:
+   - R: dias desde última compra
+   - F: número de compras total
+   - M: valor total gasto</p>
+          </div>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Divida em quartis (1-4, onde 4 = melhor)</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Crie segmentos:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Champions: RFM 444, 443, 434, 433</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Loyal: F=4, R=2-4</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- At Risk: RFM 244, 344 (comprava bem, sumiu)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Lost: R=1 (não compra há muito tempo)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- [outros segmentos padrão RFM]</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Para cada segmento:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Quantos clientes (% da base)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Valor médio ($)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Receita total do segmento</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Recomendação de campanha</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Visualize:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Heatmap RFM 3D</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Distribuição de clientes por segmento</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Valor $ por segmento</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Liste top 20 clientes 'At Risk' (maior risco perder)</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Output: CSV com clientes segmentados + análise + gráficos"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Resultado:
+- Segmentação profissional
+- Estratégia de marketing por segmento
+- Lista de clientes em risco
+- Gráficos para apresentar ao CEO</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Tempo: 5 minutos
+Valor: R$ 800-1.500 (analistas cobram isso)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">3.2 Claude para Análise Profunda de Dados Textuais</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Claude não executa código, mas é EXCELENTE para:
+- Análise de planilhas (lê e interpreta)
+- Dados textuais (reviews, feedbacks, NPS)
+- Comparação de datasets
+- Encontrar padrões sutis</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo: Análise de churn</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>[Upload: churn_data.csv - 5.000 clientes]</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Prompt:
+"Analise estes dados de clientes que cancelaram (churn=1) vs ativos (churn=0).</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Dataset tem:
+- user_id
+- signup_date
+- last_login
+- feature_usage (JSON com features usadas)
+- support_tickets (número)
+- plan_type
+- monthly_spend
+- churn (0/1)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Análise solicitada:</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Perfil de quem cancela:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Tempo médio como cliente antes de cancelar</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Features menos usadas por quem cancela</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Support tickets: quem abre mais cancela mais?</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Plan type: qual tem maior churn %?</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Padrões comportamentais:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Identifique 5-7 padrões distintos de churn</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Para cada padrão:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">* Descrição do perfil</li>
+            <li class="text-neutral-700 dark:text-neutral-300">* % da base de churn</li>
+            <li class="text-neutral-700 dark:text-neutral-300">* Sinais antecedentes (o que acontece antes)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">* Timing (quantos dias entre sinal e churn)</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Comparação churn vs ativos:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Tabela comparativa (médias/medianas)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Diferenças estatisticamente significantes</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Correlações mais fortes com churn</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Segmentos de risco:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Clientes ativos similares aos que cancelaram</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Liste 30 clientes em maior risco</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Score de risco (1-10) e motivo</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Recomendações:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Por padrão de churn, estratégia de retenção</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Priorize por impacto $ (quanto $ salvar)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Quick wins (ações que já podemos fazer)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Long term (mudanças produto/processo)</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Seja ESPECÍFICO. Números reais. Insights acionáveis."</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Claude vai ler 5.000 linhas e dar análise profunda em 3-4 minutos.
+Qualidade: nível analista sênior.
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">3.3 Workflows Práticos para o Dia-a-Dia</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Workflow 1: Relatório Semanal de Vendas (Automático)</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>Segunda-feira, 9h:</code></pre>
+          </div>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Exporta vendas da semana (Shopify/Hotmart/CRM → CSV)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Upload no ChatGPT Code Interpreter</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Prompt salvo:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">"Crie dashboard semanal:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Vendas: total, variação vs semana anterior (%), meta atingida?</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Conversão: funil completo, onde trava</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Ticket médio: evolução, por produto</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Top 5 produtos: vendas, margem, quantidade</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Alertas: produtos com queda >20%, categorias em alta</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Gráficos: vendas diárias, funil, top produtos</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Insights: 3 principais + 3 ações sugeridas"</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Salva gráficos (PNG)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Copia insights</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Cola no Notion/Google Docs (template pronto)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Compartilha com time</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Tempo total: 5-8 minutos
+vs Manual: 1,5-2 horas</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Economia semanal: ~2 horas
+Economia anual: ~100 horas
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Workflow 2: Análise de Concorrência (Mensal)</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>1. Lista 5 concorrentes principais
+2. Para cada, coleta:
+   - Screenshot homepage
+   - Print pricing page
+   - Copia texto "sobre", "features"
+   - Salva posts LinkedIn/IG recentes</code></pre>
+          </div>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Upload tudo no Claude (aceita muito contexto)</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Prompt:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">"Analise estes 5 concorrentes:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">[lista nomes]</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Anexei homepages, pricing, conteúdo.</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Crie matriz comparativa:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">| Aspecto | Nós | Conc1 | Conc2 | Conc3 | Conc4 | Conc5 |</li>
+            <li class="text-neutral-700 dark:text-neutral-300">|---------|-----|-------|-------|-------|-------|-------|</li>
+            <li class="text-neutral-700 dark:text-neutral-300">| Proposta valor | ... | ... | ... | ... | ... | ... |</li>
+            <li class="text-neutral-700 dark:text-neutral-300">| Público-alvo | ... | ... | ... | ... | ... | ... |</li>
+            <li class="text-neutral-700 dark:text-neutral-300">| Pricing (entry) | ... | ... | ... | ... | ... | ... |</li>
+            <li class="text-neutral-700 dark:text-neutral-300">| Features únicas | ... | ... | ... | ... | ... | ... |</li>
+            <li class="text-neutral-700 dark:text-neutral-300">| Posicionamento | ... | ... | ... | ... | ... | ... |</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Depois:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Gaps que podemos explorar (3-5)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Ameaças que precisamos endereçar (2-3)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Oportunidades de diferenciação (3-5)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Recomendações estratégicas (priorize)"</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Salva análise</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Apresenta em reunião mensal</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Tempo: 45min total
+vs consultoria: R$ 5.000-15.000
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Workflow 3: Customer Insights de NPS/Reviews (Semanal)</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>1. Exporta feedbacks semana (NPS, reviews, support tickets)
+2. Consolida tudo em 1 CSV ou TXT
+3. Upload no ChatGPT</code></pre>
+          </div>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Prompt:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">"Analise estes feedbacks de clientes:</li>
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Análise de sentimento:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Positivo: % (o que mais elogiam)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Neutro: % (comentários)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Negativo: % (principais reclamações)</li>
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Temas recorrentes:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Liste top 10 temas mencionados</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Para cada: frequência, sentimento médio, exemplos (2-3)</li>
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Problemas críticos:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Issues mencionados >5 vezes</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Priorize por: frequência × sentimento negativo</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Impacto estimado em churn</li>
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Feature requests:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Top 5 features pedidas</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Para cada: quantas menções, quem pede (perfil)</li>
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Urgente:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Clientes em risco (mencionaram cancelar/frustração alta)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Ação imediata sugerida</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Output: relatório + CSV com clientes em risco"</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Time product vê feature requests</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Success team vê clientes em risco</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Produto prioriza correções</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Tempo: 10min
+Valor: insights que salvam clientes
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Workflow 4: Preparação para Reuniões (Ad-hoc)</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>Reunião importante em 1h, precisa de dados:</code></pre>
+          </div>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Junta tudo relevante:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Notas de reuniões anteriores</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Emails trocados</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Propostas/contratos</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Dados de performance</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Upload no Claude (contexto grande)</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Prompt:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">"Reunião em 1h com [pessoa/empresa] sobre [assunto].</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Anexei contexto completo.</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Preciso:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Resumo executivo: onde estamos (3-5 bullets)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Pontos-chave discutir: 5-7 tópicos priorizados</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Possíveis objeções: 3-5 concerns deles + respostas</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Perguntas fazer: 5-8 perguntas estratégicas</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Próximos passos ideais: o que queremos sair com</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Red flags: sinais atentar</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Tom: executivo, preparado, estratégico"</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Lê resumo</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Entra na reunião confiante</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Tempo: 10min
+vs ler tudo: 45min+
+Resultado: reunião muito melhor
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 4. Automação de Tarefas com IA -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">4. Automação de Tarefas com IA</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.1 Tarefas que IA Faz Melhor/Mais Rápido que Humanos</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Resumir Conteúdo Longo</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>Use case: Leu contrato de 80 páginas em 2 minutos</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Upload: contrato_fornecedor.pdf (80 páginas)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Prompt:
+"Você é advogado corporativo especializado em contratos B2B.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Analise este contrato e resuma em 3 seções:</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Pontos Principais (bullets)</strong>
+- Objeto do contrato (o quê)
+- Prazo e renovação
+- Valores e reajustes
+- Garantias e SLAs
+- Rescisão (condições)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Riscos & Cláusulas Críticas</strong>
+Liste cláusulas que:
+- Nos expõem a risco legal/financeiro
+- Limitam nossa flexibilidade
+- Tem penalidades significativas
+- São ambíguas (precisam esclarecimento)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Para cada: página, texto exato, risco, sugestão</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Ações Necessárias</strong>
+- O que precisamos fazer antes de assinar
+- Cláusulas negociar/alterar
+- Aprovações internas necessárias
+- Documentos anexar</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Máximo 2 páginas. Objetivo: CEO decidir em 10min se assina."</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Output: Resumo executivo 2 páginas
+Tempo: 3min
+vs ler contrato: 2-3 horas
+vs advogado revisar: R$ 1.500-3.000
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Extrair Informações Estruturadas em Massa</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>Use case: Processar 200 emails de leads</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Upload: leads_emails.txt (200 emails copiados)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Prompt:
+"Você é SDR processando leads inbound.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Destes 200 emails, extraia e estruture:</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">CSV com colunas:
+- email_address
+- first_name
+- company
+- role (padronize: C-level, Director, Manager, Other)
+- product_interest (qual nosso produto mencionou)
+- budget (se mencionado, senão "N/A")
+- timeline (Urgent <30d, Soon 30-90d, Exploring >90d, N/A)
+- pain_points (max 3, separados por ";")
+- questions_asked (lista)
+- lead_score (1-10 baseado em: fit, urgência, budget)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Regras:
+- Se dado não está no email, use "N/A"
+- Infira role se não explícito (contexto do email)
+- Lead_score: 10=perfeito (fit+urgência+$), 1=ruim
+- Priorize precisão (não invente dados)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">No final:
+- Quantidade emails processados
+- Top 10 leads (score) com resumo
+- Leads com red flags"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Output: CSV pronto pro CRM + análise
+Tempo: 5-8min
+vs manual: 4-6 horas
+Erro humano: alto
+Erro IA: baixo (dados estruturados)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Gerar Variações em Massa (A/B Testing)</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>Use case: 50 variações de ad copy</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Prompt:
+"Tenho este ad copy base para Facebook:</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">━━━
+Headline: "Aumente vendas em 30 dias"
+Body: "Nossa plataforma de automação ajuda e-commerce vender mais gastando menos tempo. Teste grátis 14 dias."
+CTA: "Começar teste grátis"
+━━━</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Performance: CTR 1,2% (média mercado: 0,9%)
+Custo/clique: R$ 2,30
+Conversão landing: 8%</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Crie 50 variações para testar:</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Variações de Headline (20):</span> - Formatos: pergunta, número, urgência, benefício, social proof
+- Tamanhos: 3-8 palavras
+- Angles: tempo economizado, $ ganho, facilidade, risco zero</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Variações de Body (20):</span> - Tamanhos: 10-25 palavras
+- Estruturas: problema-solução, benefício-prova, urgência-escassez
+- Elementos: stats, testimonial, feature, outcome</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Variações de CTA (10):</span> - Tipos: ação direta, benefício, baixo comprometimento, urgência
+- Exemplos estilos diferentes</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Para cada variação:
+- Texto
+- Tipo/categoria
+- Hipótese (por que pode funcionar melhor)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Output: tabela CSV
+Colunas: variacao_id, elemento, texto, categoria, hipotese"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Output: 50 variações prontas pra testar
+Tempo: 5min
+vs brainstorm manual: 2-3 horas
+vs copywriter: R$ 500-1.500
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. Traduzir e Adaptar Culturalmente</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>Use case: Adaptar conteúdo US pro Brasil</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Prompt:
+"Tenho este blogpost de marketing em inglês (3.000 palavras).</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">NÃO quero tradução literal.
+Quero ADAPTAÇÃO pro mercado brasileiro.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Adapte:</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Idioma:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Português BR (não PT)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Tom casual-profissional (US é muito direto, suavize)</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Referências culturais:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Super Bowl → Copa do Mundo / BBB</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Thanksgiving → Black Friday / Natal</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Dólar → Real (converta valores)</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Exemplos:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Empresas: Salesforce → RD Station, Nubank, etc</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Cases: troque por brasileiros quando possível</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Dados:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Stats: procure equivalentes BR (IBGE, Sebrae, etc)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Se não achar, contextualize ("Nos EUA... No Brasil, cenário similar...")</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Leis/regulações:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- GDPR → LGPD</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- IRS → Receita Federal</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Adapte o que for necessário</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Tom:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Menos "hard sell"</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Mais storytelling</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Brasileiro gosta de relação antes de compra</li>
+          </ol>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Mantenha:</span> - Estrutura (seções, flow)
+- Mensagem principal
+- CTAs (adapte copy, não posição)
+- Tamanho similar (±10%)</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Output:
+- Texto adaptado completo
+- Notas de rodapé: principais adaptações feitas"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Resultado: Conteúdo 100% localizado
+Tempo: 10-15min
+vs tradutor+revisor+adaptador: R$ 800-2.000
+Qualidade: muitas vezes superior (IA entende contexto)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.2 Biblioteca de Prompts Profissionais (Plug-and-Play)</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Salve estes prompts. Você vai usar MUITO.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Análise Competitiva Completa</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>[Salvar como: competitive_analysis.txt]</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Você é analista de mercado especializado em [SEU_SETOR].</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Analise estes concorrentes:
+1. [CONCORRENTE_1]
+2. [CONCORRENTE_2]
+3. [CONCORRENTE_3]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">[Cole sites, pricing pages, materials]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Para cada, identifique:</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Posicionamento:</span> - Proposta de valor única (1 frase)
+- Público-alvo principal (específico)
+- Diferenciação vs mercado</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Produto:</span> - Features principais (top 5)
+- Features únicas (só eles tem)
+- Gaps visíveis (não tem mas deveria)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Pricing:</span> - Modelo (subscription, usage, etc)
+- Entry point ($ menor plano)
+- Target customer (por tier)
+- Estratégia (value, penetration, premium)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Marketing:</span> - Mensagem principal
+- Canais (onde fazem presença)
+- Content strategy (que tipo conteúdo)
+- Social proof (cases, numbers)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Pontos Fortes vs Fracos:</span> - 3 maiores forças
+- 3 maiores fraquezas</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Depois:</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Matriz Comparativa:</span> [Tabela completa comparando todos em 10-15 dimensões]</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Gaps de Mercado:</span> - 5 oportunidades que NINGUÉM está atacando</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Ameaças:</span> - 3 movimentos deles que nos preocupam</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Recomendações:</span> 1. Como nos diferenciar (3-5 estratégias específicas)
+2. Onde competir vs não competir
+3. Oportunidades rápidas (quick wins)
+4. Posicionamento ideal nosso
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Criação de Buyer Personas (Data-Driven)</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>[Salvar como: persona_builder.txt]</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Baseado nestes dados:
+- [Upload planilha de clientes]
+- [Upload transcrições calls]
+- [Upload reviews/feedbacks]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Crie 3 buyer personas completas.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Para cada persona:</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Demográfico:</span> - Nome fictício (realista)
+- Idade / Cargo / Setor
+- Tamanho empresa
+- Localização</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Profissional:</span> - Responsabilidades diárias (tópicas)
+- Objetivos profissionais (OKRs principais)
+- Como é medido/avaliado
+- Pressões que sofre (chefe, board, mercado)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Desafios:</span> - Top 3 dores diárias (específicas)
+- Por que não consegue resolver sozinho
+- Soluções tentou (que falharam)
+- Impacto de não resolver (custo $, tempo, oportunidade)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Comportamento de Compra:</span> - Como descobre soluções (canais)
+- Processo de decisão (steps, timeline)
+- Quem mais envolve (stakeholders)
+- Gatilhos de compra (o que faz buscar agora)
+- Objeções típicas (preço, time, fit, risco)
+- Critérios de decisão (prioridade 1-5)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Mensagem que Ressoa:</span> - Palavras/frases que usa (linguagem)
+- Ângulo emocional (medo, ambição, frustração)
+- Benefício #1 que procura
+- Social proof que importa (cases, números, logos)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Canais Preferidos:</span> - Onde consume conteúdo
+- Horários ativos (quando engaja)
+- Formato prefere (vídeo, texto, podcast)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Citação:</span> "[Frase real de cliente desse perfil sobre o problema]"</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Depois:</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Comparativo:</span> Tabela mostrando diferenças-chave entre as 3 personas</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Priorização:</span> Qual persona atacar primeiro (e por quê)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Content Calendar (90 dias LinkedIn)</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>[Salvar como: content_calendar_linkedin.txt]</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Você é estrategista de conteúdo LinkedIn especializado em B2B tech.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Contexto:
+- Nosso produto/serviço: [DESCREVER]
+- Público-alvo: [PERSONAS]
+- Objetivo: 500 → 5.000 seguidores em 90 dias
+- Meta secundária: 10-20 leads qualificados/mês</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Crie calendário de conteúdo LinkedIn 90 dias:</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Estrutura:</span> - 3 posts/semana (Segunda, Quarta, Sexta)
+- 9h da manhã (melhor horário BR)
+- Mix de formatos:
+  * 40% Educacional (dicas, how-tos, insights)
+  * 30% Cases/provas (resultados, testimonials, numbers)
+  * 20% Pessoal (bastidores, aprendizados, falhas)
+  * 10% Vendas (produto, demo, offer)</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Para cada post (38 posts total):</p>
+
+
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="bg-talento/20 dark:bg-talento/30">
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">#</th>
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Data</th>
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Formato</th>
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Tópico</th>
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Headline/Gancho</th>
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Estrutura (bullets)</th>
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">CTA</th>
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Hashtags</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-white dark:bg-neutral-800">
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">---</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">------</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">---------</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">--------</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">-----------------</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">---------------------</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">-----</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">----------</td>
+                </tr>
+                <tr class="bg-neutral-50 dark:bg-neutral-900">
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">1</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">03/02</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Carrossel 6 slides</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">[tópico]</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">[headline]</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">[estrutura]</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">[cta]</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">[tags]</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Formatos variar:</span> - Carrossel (6-10 slides): 40%
+- Post texto simples: 30%
+- Imagem única + texto: 20%
+- Poll/pergunta: 10%</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Tópicos abordar (distribuir ao longo dos 90d):</span> [Liste 20-30 tópicos relevantes pro público]</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Headlines variadas:</span> - Dados/stats surpreendentes
+- Perguntas provocativas
+- Confissões/admissões
+- Listas ("5 erros...", "3 formas...")
+- Contrariano ("Por que X não funciona")</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">CTAs rodar:</span> - Salve este post
+- Compartilhe se concorda
+- Me siga para mais
+- Comente sua experiência
+- Marque alguém que precisa ver
+- DM para [recurso]</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Hashtags (3-5 por post):</span> [Mix de: amplos, nicho, branded]</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Inclua:
+- Datas comemorativas (aproveitar trends)
+- Repost melhores (23º melhor → repost 60º dia)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 5. Como Monetizar IA: De Conhecimento para R$ -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">5. Como Monetizar IA: De Conhecimento para R$</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Skill + Mercado = Oportunidade</strong></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">5.1 Oportunidades Freelance (Primeiros R$ 500-5.000)</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Serviços que pode oferecer JÁ:</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Análise de Dados com IA</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Cliente envia planilha</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Você analisa com ChatGPT/Claude</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Entrega insights + gráficos</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Cobrar: R$ 300-1.500 por análise</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Criação de Conteúdo em Massa</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- 20-50 posts LinkedIn</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- 10-20 emails marketing</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Variações de ad copy</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Cobrar: R$ 500-3.000 por pacote</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Automação de Tarefas com IA</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Identificar tarefas repetitivas cliente</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Criar prompts/workflows com IA</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Treinar equipe cliente</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Cobrar: R$ 800-4.000 por projeto</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Consultoria "AI Operations"</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Auditoria: onde cliente pode usar IA</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Setup: contas, prompts, workflows</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Treinamento: equipe usar IA</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Cobrar: R$ 2.000-8.000 por empresa</li>
+          </ol>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">5.2 Posições CLT (R$ 4.000-15.000/mês)</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Cargos surgindo:</span> - AI Operations Specialist: R$ 5.000-10.000
+- Prompt Engineer: R$ 6.000-12.000
+- AI Workflow Consultant: R$ 7.000-15.000
+- Knowledge Manager (IA): R$ 5.000-9.000</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Como conseguir:</span> 1. Portfolio forte (mostre projetos)
+2. LinkedIn ativo (posts sobre IA)
+3. Network (comunidades tech)
+4. Certificações (OpenAI, Anthropic courses)</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Exercício Prático -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">Exercício Prático</h2>
+
+        <div class="mb-6">
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Duração:</span> 90-120 minutos</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Objetivo:</span> Dominar as 3 IAs na prática e criar seu primeiro projeto profissional</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Parte 1: Comparação Hands-On (30min)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Escolha 1 tarefa real sua (ou simule):
+- Analisar planilha
+- Resumir documento longo
+- Criar 10 variações de texto
+- Extrair informações de emails</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Execute a MESMA tarefa nos 3:
+1. ChatGPT
+2. Claude
+3. Gemini</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Compare:
+- Qualidade output
+- Velocidade
+- Facilidade uso
+- Qual você usaria em produção</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Documente em tabela.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Parte 2: Biblioteca de Prompts Pessoal (30min)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Identifique 5 tarefas que você faz semanalmente.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Para cada:
+1. Crie prompt usando framework CRISP
+2. Teste no ChatGPT/Claude
+3. Refine até resultado satisfatório (≥80% útil)
+4. Salve num doc "Meus Prompts"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Formato:
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+TAREFA: [nome]
+USO: [quando usar]
+IA MELHOR: [ChatGPT/Claude/Gemini]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">PROMPT:
+[prompt completo]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">EXEMPLO OUTPUT:
+[exemplo resultado]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">NOTAS:
+[ajustes, variações, dicas]
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Parte 3: Projeto Profissional Real (30-60min)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Crie 1 entrega que você poderia VENDER:</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Opções:
+A) Análise de dados completa (se tem planilha pra analisar)
+B) Content calendar 30 dias (escolha nicho)
+C) Biblioteca de prompts (escolha profissão)
+D) Competitive analysis (escolha 3 empresas)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Use IA para fazer 80% do trabalho.
+Você faz 20% (revisão, formatação, contexto).</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Resultado final: algo que cobraria R$ 300-1.000.</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Entrega final do módulo:</span> 1. Tabela comparativa 3 IAs
+2. Biblioteca pessoal (5+ prompts testados)
+3. 1 projeto profissional completo
+4. Plano: como vai monetizar isso (próximos 30d)</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Isso te coloca no top 5% de usuários de IA.</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">---</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Próximos Passos -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">Próximos Passos</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Módulo 4: Automação No-Code com Make</strong>
+- Interface do Make
+- Primeira automação (passo-a-passo)
+- Integrações poderosas
+- Casos de uso práticos
+- Integração Make + IA</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">O que você vai aprender:</span> - Automatizar tarefas repetitivas sem código
+- Conectar ferramentas (Gmail, Sheets, Slack, IA)
+- Criar workflows que economizam 10-20h/semana
+- Monetizar automações</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Ferramentas que vamos usar:</span> Make (Integromat), Zapier, n8n, integrações com ChatGPT/Claude APIs</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Nos vemos lá! 🚀</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">---</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>© 2025 FETD - Formação em Engenharia de Intenção</strong></p>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer / Navegação -->
+  <section class="py-12 bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center">
+        <a href="../../trilhas/talento.html" class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90">
+          ← Voltar para Trilha
+        </a>
+        <a href="modulo-04.html" class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90">Próximo Módulo →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dark Mode Toggle Script -->
   <script>
-    document.documentElement.classList.remove('preload');
+    // Remove preload class
+    window.addEventListener('load', () => {
+      document.body.classList.remove('preload');
+    });
+
+    // Dark mode toggle
     const themeToggleBtn = document.getElementById('theme-toggle');
-    const darkIcon = document.getElementById('theme-toggle-dark-icon');
-    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    // Check localStorage
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      themeToggleLightIcon.classList.remove('hidden');
       document.documentElement.classList.add('dark');
-      lightIcon.classList.remove('hidden');
     } else {
-      darkIcon.classList.remove('hidden');
+      themeToggleDarkIcon.classList.remove('hidden');
     }
-    themeToggleBtn.addEventListener('click', function() {
-      darkIcon.classList.toggle('hidden');
-      lightIcon.classList.toggle('hidden');
-      if (document.documentElement.classList.contains('dark')) {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('color-theme', 'light');
+
+    themeToggleBtn.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        }
       } else {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('color-theme', 'dark');
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        }
       }
     });
   </script>
+
 </body>
 </html>

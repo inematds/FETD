@@ -3,154 +3,1938 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 4: Automação No-Code com Make | FETD</title>
+  <title>Módulo 4: Automação No-Code com Make | Trilha Talento Emergente | FETD</title>
+  <meta name="description" content="Criar sua primeira automação profissional sem escrever código">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/tailwindcss-cdn@3.4.1/tailwindcss.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            'operacional': '#3B82F6',
-            'comunicador': '#10B981',
             'talento': '#F59E0B',
-            'tecnico': '#F97316',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
           },
         }
       }
     }
   </script>
+
   <style>
-    * { transition: background-color 200ms, border-color 200ms, color 200ms; }
-    .preload * { transition: none !important; }
-    body { font-family: 'Inter', sans-serif; }
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
   </style>
 </head>
+
 <body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navbar -->
   <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-talento to-operacional bg-clip-text text-transparent">🎓 FETD</a>
-        <div class="flex items-center space-x-8">
+        <div class="flex items-center">
+          <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-talento to-talento bg-clip-text text-transparent">
+            🎓 FETD
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
           <a href="../../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Início</a>
-          <a href="../../trilhas/talento.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Trilha</a>
+          <a href="../../trilhas/talento.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Trilha Talento Emergente</a>
           <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
           </button>
         </div>
       </div>
     </div>
   </nav>
 
+  <!-- Breadcrumb -->
   <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <nav class="flex text-sm">
-        <a href="../../index.html" class="text-talento hover:underline">Início</a>
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../../index.html" class="text-talento hover:opacity-80">Início</a>
         <span class="mx-2 text-neutral-400">/</span>
-        <a href="../../trilhas/talento.html" class="text-talento hover:underline">Trilha Talento Emergente</a>
+        <a href="../../trilhas/talento.html" class="text-talento hover:opacity-80">Trilha Talento Emergente</a>
         <span class="mx-2 text-neutral-400">/</span>
         <span class="text-neutral-600 dark:text-neutral-400">Módulo 4</span>
       </nav>
     </div>
   </div>
 
-  <section class="bg-gradient-to-r from-talento to-amber-600 py-16">
+  <!-- Hero Módulo -->
+  <section class="bg-gradient-to-r from-talento to-talento py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+
       <div class="flex items-center gap-3 mb-4">
-        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">🟡 Módulo 4 de 10</span>
-        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">⏱️ 45min</span>
-      </div>
-      <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">Automação No-Code com Make</h1>
-      <p class="text-xl opacity-90 mb-6"><strong>Objetivo:</strong> Criar sua primeira automação sem escrever código</p>
-      <a href="../../downloads/talento/modulo-04.md" download class="inline-flex items-center px-6 py-3 bg-white text-talento rounded-lg font-semibold hover:bg-neutral-100 transition-all">
-        📥 Download Conteúdo (.md)
-      </a>
-    </div>
-  </section>
-
-  <section class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-8 mb-16">
-
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">🔧</div>
-          <h3 class="text-2xl font-bold mb-4">O Que é No-Code</h3>
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">Ferramentas <strong>no-code</strong> permitem criar automações complexas sem programar. Make (ex-Integromat) é a mais poderosa e visual.</p>
-          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl">
-            <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">💡 Interface drag-and-drop, 1.500+ integrações, cenários visuais, lógica condicional</p>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">🎯</div>
-          <h3 class="text-2xl font-bold mb-4">Primeira Automação</h3>
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">Vamos criar um fluxo real: quando receber email com anexo, salvar no Google Drive e notificar no Slack.</p>
-          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl">
-            <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">💡 Trigger: novo email, Filter: tem anexo, Action 1: salvar Drive, Action 2: enviar Slack</p>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">📧</div>
-          <h3 class="text-2xl font-bold mb-4">Automações de Email</h3>
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">Organize emails automaticamente, envie respostas personalizadas, extraia dados e salve em planilhas.</p>
-          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl">
-            <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">💡 Filtros inteligentes, templates dinâmicos, agendamento, webhooks</p>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">💰</div>
-          <h3 class="text-2xl font-bold mb-4">Plano Grátis</h3>
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">Make oferece <strong>1.000 operações grátis/mês</strong>. Suficiente para criar 10-20 automações robustas.</p>
-          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl">
-            <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">💡 Conta gratuita, sem cartão, upgrade quando crescer, comunidade ativa</p>
-          </div>
-        </div>
-
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">Módulo 4 de 10</span>
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">⏱️ 60-75 minutos</span>
       </div>
 
-      <div class="bg-gradient-to-r from-talento to-amber-600 p-8 rounded-2xl text-white">
-        <h2 class="text-3xl font-bold mb-4">🎯 Próximos Passos</h2>
-        <p class="text-lg mb-6 opacity-90">Continue sua jornada na Trilha Talento Emergente!</p>
-        <div class="flex gap-4">
-          <a href="modulo-03.html" class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 transition-all">← Anterior</a>
-          <a href="modulo-05.html" class="px-6 py-3 bg-white text-talento rounded-lg font-semibold hover:bg-neutral-100 transition-all">Próximo →</a>
-        </div>
+      <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">
+        Módulo 4: Automação No-Code com Make
+      </h1>
+
+      <p class="text-xl text-white/90 mb-6 max-w-3xl">
+        Criar sua primeira automação profissional sem escrever código
+      </p>
+
+      <div class="flex items-center gap-4">
+        <span class="text-white/80">📚 Teoria</span>
+        <span class="text-white/80">•</span>
+        <span class="text-white/80">💭 Reflexão</span>
+        <span class="text-white/80">•</span>
+        <span class="text-white/80">🛠️ Prática</span>
       </div>
     </div>
   </section>
 
-  <footer class="bg-white dark:bg-neutral-800 border-t border-neutral-200 dark:border-neutral-700 py-8 mt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-600 dark:text-neutral-400">
-      <p>© 2025 FETD - Formação em Engenharia de Intenção</p>
-    </div>
-  </footer>
+  <!-- Conteúdo Principal -->
+  <section class="py-16 bg-white dark:bg-neutral-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
+      <!-- Download Button -->
+      <div class="flex justify-end mb-8">
+        <a href="../../downloads/talento/modulo-04.md" download class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90 inline-flex items-center gap-2">
+          <span>📥</span>
+          <span>Download MD</span>
+        </a>
+      </div>
+
+
+      <!-- Seção: Introdução: A Revolução No-Code -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">Introdução: A Revolução No-Code</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Imagine economizar 15-20 horas por semana eliminando tarefas repetitivas.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Não é futuro. É o que profissionais fazem HOJE com ferramentas no-code.</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Dados reais (2024-2025):</span> - Profissionais que usam automação no-code: +62% produtividade
+- Empresas economizam média: R$ 3.000-8.000/mês em trabalho manual
+- Make tem 1.400+ apps integrados
+- Mercado de automação no-code: crescimento 41% ao ano
+- Automação Specialist: R$ 5.000-12.000/mês no Brasil</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Make</strong> (antigo Integromat) é a ferramenta mais poderosa para automação visual. Empresas como Netflix, Tesla e Spotify usam ferramentas similares para automatizar processos internos.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Neste módulo você vai:
+1. Entender como Make funciona (conceitos fundamentais)
+2. Criar sua primeira automação (passo-a-passo completo)
+3. Aprender integrações essenciais (Gmail, Sheets, Slack, Drive, etc)
+4. Ver casos de uso que geram valor imediato
+5. Técnicas avançadas (routers, iterators, error handling)
+6. Como monetizar essa habilidade (R$ 500-10.000 por projeto)</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 1. O Que é Make e Por Que Usar -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">1. O Que é Make e Por Que Usar</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">1.1 Conceitos Básicos: Como Funciona a Mágica</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Make conecta aplicativos diferentes para automatizar processos.</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Pense assim: você já faz muitas tarefas manualmente conectando apps. Exemplo:</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Manual (você faz):</span> 1. Recebe email com anexo
+2. Abre anexo
+3. Salva no Drive
+4. Copia informações
+5. Cola no Google Sheets
+6. Notifica colega no Slack
+7. Cria tarefa no Notion</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Tempo:</span> 5-10 minutos por email
+<strong>Com 20 emails/dia:</strong> 100-200 min = 2-3 horas gastas</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Automação Make (robô faz):</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+QUANDO novo email com anexo chega
+  → ENTÃO salvar anexo no Google Drive (pasta específica)
+  → E extrair informações do email (regex ou IA)
+  → E adicionar linha no Google Sheets (com dados estruturados)
+  → E criar task no Notion (com deadline automático)
+  → E notificar time no Slack (mencionando responsável)
+  → E enviar auto-reply confirmando recebimento
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Tempo:</span> 0 minutos (roda sozinho 24/7)
+<strong>Economia:</strong> 2-3 horas/dia = 10-15 horas/semana</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Isso é automação no-code: conectar apps que você JÁ usa, sem programar.</strong></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">1.2 Anatomia de uma Automação Make</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Componentes principais:</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Trigger (Gatilho):</strong> O que inicia a automação</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Exemplos: novo email, novo formulário, hora específica, webhook</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- "QUANDO [evento acontece]"</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Actions (Ações):</strong> O que acontece depois</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Exemplos: salvar arquivo, enviar email, criar tarefa</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- "ENTÃO [faça isso]"</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Filters (Filtros):</strong> Condições para continuar</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Exemplos: só emails importantes, só valores >R$ 100</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- "SE [condição] É VERDADEIRA"</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Routers (Roteadores):</strong> Diferentes caminhos</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Exemplos: se cliente VIP → ação A, senão → ação B</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- "ESCOLHA [caminho baseado em critério]"</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Iterators (Iteradores):</strong> Repete para cada item</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Exemplos: para cada anexo, para cada linha da planilha</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- "PARA CADA [item na lista]"</li>
+          </ol>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Metáfora útil:</span> - Trigger = Alarme do despertador
+- Filter = "Só toca se for dia de semana"
+- Action = Você levanta, escova dentes, toma café
+- Router = "Se segunda, vai pra academia; se não, vai trabalhar direto"</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">1.3 Make vs Outras Ferramentas</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Make vs Zapier:</strong></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Make (Integromat):</span> - ✅ Mais poderoso e flexível (lógica complexa)
+- ✅ Interface visual superior (drag-and-drop intuitivo)
+- ✅ Plano grátis mais generoso (1.000 ops/mês)
+- ✅ Melhor para automações complexas (routers, iterators)
+- ✅ Debugging mais fácil (vê cada passo visualmente)
+- ✅ Preço melhor (custo/benefício)
+- ❌ Curva de aprendizado um pouco maior
+- ❌ Menos integrações que Zapier (mas 1.400+ é muito)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Zapier:</span> - ✅ Mais fácil para iniciantes absolutos
+- ✅ Mais integrações (6.000+)
+- ✅ Melhor documentação (mais tutoriais)
+- ✅ Interface mais simples
+- ❌ Plano grátis limitado (100 tarefas/mês)
+- ❌ Menos flexível (dificulta lógicas complexas)
+- ❌ Mais caro (planos pagos custam mais)
+- ❌ Debugging mais difícil</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Make vs n8n:</strong></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">n8n:</span> - ✅ Open source (pode hospedar você mesmo)
+- ✅ Grátis se self-hosted
+- ✅ Flexibilidade máxima
+- ❌ Requer conhecimento técnico (servidor, etc)
+- ❌ Você mantém infraestrutura
+- ❌ Não recomendado para iniciantes</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Recomendação:</span> - Aprenda <strong>Make primeiro</strong> (melhor custo-benefício, poderoso, fácil)
+- Quando dominar Make, <strong>Zapier</strong> será trivial
+- Se virar expert e precisar self-hosted, explore <strong>n8n</strong></p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">1.4 Quanto Custa (Realidade Brasileira 2025)</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Plano Gratuito (Free):</span> - 1.000 operações/mês
+- Integrações básicas
+- Suficiente para: 10-15 automações simples rodando
+- Cenários ilimitados
+- Ótimo para: aprender, testar, uso pessoal</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Exemplo uso:</span> - 5 automações rodando 1x/hora = 3.600 ops/mês (não cabe)
+- 10 automações rodando 3x/dia = 900 ops/mês (cabe!)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Plano Core ($10,59/mês = ~R$ 55):</span> - 10.000 operações/mês
+- Todas integrações
+- Webhooks ilimitados
+- Apps premium (AI, databases avançados)
+- Suficiente para: 50-100 automações rodando</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Plano Pro ($18,82/mês = ~R$ 98):</span> - 40.000 operações/mês
+- Usuários em equipe
+- Prioridade de execução
+- Para: freelancers profissionais, pequenas empresas</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Para você começando:</span> - Mês 1-2: Use <strong>grátis</strong> (aprende + testa)
+- Mês 3+: Se monetizando, upgrade para <strong>Core</strong> (~R$ 55)
+- Cliente paga esse custo indiretamente no projeto</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">ROI absurdo:</span> R$ 55/mês economiza 15h/semana = 60h/mês
+- Se sua hora vale R$ 50: economiza R$ 3.000
+- Se vale R$ 100: economiza R$ 6.000
+- ROI: 5.400% a 10.800%</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 2. Primeira Automação: Tutorial Completo Passo-a-Passo -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">2. Primeira Automação: Tutorial Completo Passo-a-Passo</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Vamos criar juntos: <strong>"Email com anexo → Salvar no Drive + Extrair dados + Notificar Slack"</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Essa automação sozinha economiza ~1h/dia para quem recebe muitos emails com documentos.</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">2.1 Setup Inicial (10 minutos)</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 1: Criar conta Make</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Acesse: https://make.com</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Clique "Get started free"</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Use email + senha OU login social (Google)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Confirme email</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Faça tutorial rápido (5min - recomendo fazer)</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 2: Familiarize-se com interface</strong></p>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Dashboard:</strong> lista seus cenários (automações)</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Create scenario:</strong> começa nova automação</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Templates:</strong> automações prontas para customizar</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Connections:</strong> apps conectados (Gmail, Drive, etc)</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Organizations:</strong> se trabalhar em equipe</span></li>
+          </ul>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 3: Criar novo cenário</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Clique "Create a new scenario"</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Você verá tela em branco com um "+"</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Essa é sua tela de trabalho (canvas)</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Interface explicada:</strong></p>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Canvas:</strong> área branca onde monta automação</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Módulos:</strong> blocos que executam ações (círculos)</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Conexões:</strong> linhas entre módulos = fluxo de dados</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Toolbar superior:</strong> salvar, testar, agendar, configurações</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Sidebar direita:</strong> configurações do módulo selecionado</span></li>
+          </ul>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">2.2 Construindo Módulo por Módulo</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>MÓDULO 1: Trigger - Gmail "Watch Emails"</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">O que faz: Monitora caixa de entrada Gmail procurando novos emails</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passos:</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Clique no "+" no canvas</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Busque "Gmail" na caixa de busca</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Clique no app Gmail</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Escolha trigger: <strong>"Watch Emails"</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">Clique "Create a connection"</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Selecione sua conta Google</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Autorize Make a acessar Gmail (leitura apenas)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Conexão criada aparece verde ✓</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Configure parâmetros:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- <strong>Folder:</strong> INBOX (caixa de entrada)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- <strong>Criteria:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">* All emails: No</li>
+            <li class="text-neutral-700 dark:text-neutral-300">* Enter criteria: Yes</li>
+            <li class="text-neutral-700 dark:text-neutral-300">* Has attachment: Yes ← IMPORTANTE (só emails com anexo)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- <strong>Maximum number of results:</strong> 10 (processa até 10 emails por rodada)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- <strong>From date:</strong> (deixe vazio = processa desde a última execução)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Clique "OK"</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Testando módulo:</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Clique "Run once" (botão no canto inferior esquerdo)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Envie email para você mesmo COM ANEXO (qualquer arquivo)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Aguarde 10-20 segundos</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Clique no módulo Gmail</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Você verá output: dados do email capturado (remetente, assunto, anexos, etc)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Se funcionou: ✓ Módulo 1 completo</li>
+          </ol>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Troubleshooting comum:</span> - Não capturou? → Verifique se email tem anexo E está no INBOX
+- Erro de conexão? → Reautorize conta Google
+- "No data"? → Envie outro email e rode novamente</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>MÓDULO 2: Action - Google Drive "Upload a File"</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">O que faz: Pega anexo do email e salva no Google Drive</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passos:</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Clique no "+" que aparece APÓS módulo Gmail (à direita)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Busque "Google Drive"</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Escolha action: <strong>"Upload a File"</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">Clique "Create a connection" (autorize Google Drive)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Configure:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- <strong>Select destination:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">* My Drive: Yes</li>
+            <li class="text-neutral-700 dark:text-neutral-300">* Selecione pasta (crie uma chamada "Anexos Make" se quiser)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">* Ou clique "New folder" pra criar</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- <strong>File name:</strong> Aqui vem a mágica - usar dados do módulo anterior</li>
+            <li class="text-neutral-700 dark:text-neutral-300">* Clique no campo</li>
+            <li class="text-neutral-700 dark:text-neutral-300">* Aparece sidebar com outputs do módulo 1</li>
+            <li class="text-neutral-700 dark:text-neutral-300">* Navegue: 1. Gmail > Attachments > 1. Name</li>
+            <li class="text-neutral-700 dark:text-neutral-300">* Ou digite: <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">{{1.attachments[].name}}</code></li>
+            <li class="text-neutral-700 dark:text-neutral-300">* Isso pega nome original do arquivo</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- <strong>File data:</strong> O conteúdo binário do arquivo</li>
+            <li class="text-neutral-700 dark:text-neutral-300">* Clique no campo</li>
+            <li class="text-neutral-700 dark:text-neutral-300">* Selecione: 1. Gmail > Attachments > 1. Data</li>
+            <li class="text-neutral-700 dark:text-neutral-300">* Ou digite: <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">{{1.attachments[].data}}</code></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- <strong>Convert:</strong> No (queremos arquivo original)</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Clique "OK"</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Entendendo mapeamento de dados:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Quando você vê <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">{{1.attachments[].name}}</code>:
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">1</code> = módulo número 1 (Gmail)
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">attachments[]</code> = array de anexos (pode ter vários)
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">name</code> = propriedade "nome do arquivo"
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">[]</code> = Make itera automaticamente por cada anexo</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Testando:</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Clique "Run once" novamente</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Make executa Módulo 1 (pega email) → Módulo 2 (salva Drive)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Abra seu Google Drive</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Verifique se arquivo apareceu na pasta escolhida</li>
+            <li class="text-neutral-700 dark:text-neutral-300">✓ Se sim, Módulo 2 completo!</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>MÓDULO 3: Action - Slack "Create a Message"</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">O que faz: Notifica equipe no Slack que arquivo foi salvo</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passos:</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Clique "+" após módulo Google Drive</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Busque "Slack"</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Escolha: <strong>"Create a Message"</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">Conecte workspace Slack:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Se não tem Slack: pule esse módulo OU crie conta grátis (5min)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Autorize Make a postar mensagens</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Configure:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- <strong>Channel:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">* Select from list: escolha canal (ex: #geral, #notificacoes)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">* Ou crie canal #automacoes-make pra testes</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- <strong>Text:</strong> Mensagem que aparece no Slack</li>
+            <li class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></li>
+            <li class="text-neutral-700 dark:text-neutral-300">📎 Novo anexo salvo no Drive!</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Arquivo: {{2.name}}</li>
+            <li class="text-neutral-700 dark:text-neutral-300">De: {{1.from.address}}</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Assunto: {{1.subject}}</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Link: {{2.webViewLink}}</li>
+            <li class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></li>
+            <li class="text-neutral-700 dark:text-neutral-300">Breakdown:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">{{2.name}}</code> = nome arquivo (módulo 2 = Drive)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">{{1.from.address}}</code> = email remetente (módulo 1)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">{{1.subject}}</code> = assunto email</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">{{2.webViewLink}}</code> = link direto pro arquivo no Drive</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- <strong>Advanced settings:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">* Username: Make Bot (ou nome que quiser)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">* Icon emoji: :robot_face: (opcional)</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Clique "OK"</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Testando tudo junto:</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Clique "Run once" (executa 3 módulos em sequência)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Envie novo email com anexo</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Aguarde 30 segundos</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Verifique:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- ✓ Email capturado</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- ✓ Arquivo no Drive</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- ✓ Mensagem no Slack</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Se tudo funcionou: parabéns! Primeira automação completa! 🎉</strong></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">2.3 Ativando Automação (Scheduling)</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Até agora, automação só roda quando você clica "Run once". Vamos fazê-la rodar automaticamente.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 1: Configurar agendamento</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Clique no relógio (⏰ ícone scheduling) no módulo Gmail</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Escolha intervalo:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- <strong>Every 15 minutes</strong> (recomendado para começar)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Every hour (se email não é urgente)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Every 5 minutes (plano pago, consome mais ops)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Escolha horário de início (agora)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Clique "OK"</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 2: Ativar cenário</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Toggle "ON" no canto superior esquerdo</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Cenário fica azul = ativo ✓</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Dê nome ao cenário: "Email anexos → Drive + Slack"</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Salve (Ctrl+S ou botão Save)</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Pronto! Automação rodando 24/7 automaticamente.</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Monitorando:</strong></p>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Dashboard mostra: quantas vezes rodou, sucessos, erros</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Clique no cenário > History pra ver execuções detalhadas</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Se erro aparecer: clique pra ver qual módulo falhou e por quê</span></li>
+          </ul>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">2.4 Refinamentos e Melhorias</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Melhoria 1: Adicionar Filtro (só emails importantes)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Entre módulo Gmail e Drive:</p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Clique na linha entre Gmail e Drive</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Aparece opção "Set up a filter"</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Clique</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Configure condição:</li>
+            <li class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></li>
+            <li class="text-neutral-700 dark:text-neutral-300">Label: Equals: IMPORTANT</li>
+            <li class="text-neutral-700 dark:text-neutral-300">OU</li>
+            <li class="text-neutral-700 dark:text-neutral-300">From: Contains: @cliente.com</li>
+            <li class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></li>
+            <li class="text-neutral-700 dark:text-neutral-300">Agora só processa emails que passam no filtro</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Melhoria 2: Organizar por remetente</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">No módulo Drive, em vez de salvar tudo numa pasta:</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">File name:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+{{1.from.name}} - {{formatDate(1.date; "YYYY-MM-DD")}} - {{1.attachments[].name}}
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Resultado: "João Silva - 2025-02-15 - contrato.pdf"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Melhoria 3: Auto-reply agradecendo</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Adicione módulo 4:</p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Gmail > Send an Email</li>
+            <li class="text-neutral-700 dark:text-neutral-300">To: <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">{{1.from.address}}</code></li>
+            <li class="text-neutral-700 dark:text-neutral-300">Subject: <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Re: {{1.subject}}</code></li>
+            <li class="text-neutral-700 dark:text-neutral-300">Content:</li>
+            <li class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></li>
+            <li class="text-neutral-700 dark:text-neutral-300">Olá {{1.from.name}}!</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Recebi seu email e anexo foi salvo automaticamente.</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Em breve retorno.</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Obrigado!</li>
+            <li class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></li>
+          </ol>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Sua automação agora:</span> - Processa emails a cada 15 min
+- Filtra só importantes
+- Salva com nome organizado
+- Notifica Slack
+- Envia confirmação automática</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Isso economiza facilmente 1-2h/dia.</strong></p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 3. Integrações Essenciais (Top 10) -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">3. Integrações Essenciais (Top 10)</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">3.1 Gmail + Google Sheets (Organização de Emails)</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Problema:</span> Emails importantes se perdem na caixa de entrada</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Solução:</span> Emails viram linhas estruturadas em planilha</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Automação:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+TRIGGER: Gmail - Watch Emails
+  Filter: Label = IMPORTANT OU From contains "@empresa.com"</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION: Google Sheets - Add a Row
+  Spreadsheet: "Controle Emails Importantes"
+  Sheet: "2025"
+  
+  Valores mapeados:
+  - Coluna A: {{1.date}}
+  - Coluna B: {{1.from.name}}
+  - Coluna C: {{1.from.address}}
+  - Coluna D: {{1.subject}}
+  - Coluna E: {{substring(1.text; 0; 200)}} (primeiros 200 chars)
+  - Coluna F: {{1.webLink}} (link direto pro email)
+  - Coluna G: Status (padrão: "Pendente")
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Valor:</span> - Dashboard de emails importantes
+- Nunca perde email crítico
+- Pode adicionar status, responsável, prazo
+- Compartilha com equipe</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Tempo setup:</span> 15min
+<strong>Economia:</strong> 30min/dia procurando emails</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">3.2 Google Forms + CRM + Email (Captura de Leads)</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Problema:</span> Lead preenche formulário, você copia manualmente pro CRM e manda email</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Solução:</span> Tudo automático em segundos</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Automação:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+TRIGGER: Google Forms - Watch Responses
+  Form: "Interesse Produto X"</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 1: Google Sheets - Add Row (backup)
+  Todos dados do formulário</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 2: HubSpot/Pipedrive/Notion - Create Contact
+  Name: {{1.nome}}
+  Email: {{1.email}}
+  Phone: {{1.telefone}}
+  Company: {{1.empresa}}
+  Interest: {{1.produto_interesse}}
+  Source: Google Forms
+  Status: New Lead</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 3: Gmail - Send Email (boas-vindas personalizado)
+  To: {{1.email}}
+  Subject: "Obrigado pelo interesse, {{1.nome}}!"
+  Body: [Template personalizado com nome, interesse, próximos passos]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 4: Slack - Send Message
+  Channel: #vendas
+  Text: "🎯 Novo lead: {{1.nome}} ({{1.empresa}}) interessado em {{1.produto_interesse}}"
+        "@vendedor, fazer follow-up!"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Valor:</span> - Lead cai no CRM automaticamente
+- Email de boas-vindas instantâneo (aumenta conversão)
+- Time de vendas notificado em tempo real
+- Zero trabalho manual</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Conversão:</span> Empresas reportam +30-50% conversão com follow-up instantâneo</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Tempo setup:</span> 30min
+<strong>Economia:</strong> 10min por lead × 50 leads/mês = 8h/mês</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">3.3 E-commerce (Shopify/Hotmart) + Logística + Email</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Problema:</span> Vendeu, agora tem que processar pedido manualmente</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Solução:</span> Da venda ao envio, tudo automático</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Automação:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+TRIGGER: Shopify - Watch Orders
+  Filter: Financial Status = Paid</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 1: Google Sheets - Add Row (controle financeiro)
+  - Pedido #
+  - Cliente
+  - Produto
+  - Valor
+  - Data
+  - Status</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 2: Calculate Shipping (API Correios ou Melhor Envio)
+  Origin: [seu CEP]
+  Destination: {{1.shipping_address.zip}}
+  Weight: {{1.total_weight}}
+  Dimensions: [produto]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 3: Gmail - Send Email (confirmação com tracking)
+  To: {{1.customer.email}}
+  Subject: "Pedido #{{1.order_number}} confirmado!"
+  Body: 
+    "Oi {{1.customer.first_name}}!
+    
+    Seu pedido foi confirmado e está sendo preparado.
+    
+    Detalhes:
+    - Produto: {{1.line_items[].title}}
+    - Valor: R$ {{formatNumber(1.total_price; 2; ","; ".")}}
+    - Previsão envio: 1-2 dias úteis
+    - Frete: R$ {{2.price}} ({{2.delivery_time}} dias)
+    
+    Em breve você recebe código de rastreio!
+    
+    Obrigado pela compra! 🎉"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 4: Trello/Notion - Create Card
+  Board: Pedidos
+  List: Separar
+  Title: "Pedido #{{1.order_number}} - {{1.customer.name}}"
+  Description: Produtos, endereço, observações
+  Due date: +1 dia
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Valor:</span> - Zero trabalho manual pós-venda
+- Cliente recebe confirmação instantânea (melhora experiência)
+- Equipe logística sabe o que separar
+- Controle financeiro automático</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Economia:</span> 15min por pedido × 100 pedidos/mês = 25 horas/mês</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">3.4 Curadoria de Conteúdo (RSS + Notion + Slack)</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Problema:</span> Acompanhar 20+ blogs para ficar atualizado no setor</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Solução:</span> Robô lê tudo, resume, organiza pra você</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Automação:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+TRIGGER: RSS - Watch RSS Feed Items
+  URL: [feeds dos blogs que segue]
+  Intervalo: 1x por dia</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 1: OpenAI - Create Completion (resumir com IA)
+  Prompt: "Resuma este artigo em 3 bullets:
+           
+           Título: {{1.title}}
+           Conteúdo: {{1.content}}
+           
+           Formato:
+           - Tema principal
+           - Insights-chave (2-3)
+           - Relevância para [seu setor]"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 2: Notion - Create Page
+  Database: Content Curation
+  Properties:
+    - Title: {{1.title}}
+    - URL: {{1.url}}
+    - Published: {{1.pubDate}}
+    - Source: {{1.feed.title}}
+    - Summary: {{2.result}}
+    - Tags: [auto-detect com IA ou manual]
+    - Status: To Read</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 3: Filter + Slack (só muito relevante)
+  Condition: Se summary contém "keyword importante" OU source = "blog VIP"
+  Then: Post no Slack #conteudo-must-read
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Valor:</span> - Acompanha 20+ fontes sem ler tudo
+- IA resume pra você (economiza 90% tempo leitura)
+- Tudo organizado no Notion
+- Time recebe só o mais relevante</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Tempo setup:</span> 45min
+<strong>Economia:</strong> 5-10h/semana de curadoria manual</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">3.5 Onboarding Automático de Clientes/Funcionários</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Automação:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+TRIGGER: Google Forms - New Response (form onboarding)</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 1: Gmail - Create account (G Suite API)
+ACTION 2: Google Drive - Create folder structure
+  /[Nome]/Documentos
+  /[Nome]/Projetos
+  /[Nome]/Recursos
+ACTION 3: Notion - Add to Employee Database
+ACTION 4: Slack - Add to workspace + Send welcome DM
+ACTION 5: Trello - Create onboarding checklist
+  - Dia 1: [tarefas]
+  - Semana 1: [tarefas]
+  - Mês 1: [tarefas]
+ACTION 6: Google Calendar - Schedule 1:1 meetings
+ACTION 7: Gmail - Send welcome email com credenciais e próximos passos
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Economia:</span> Onboarding manual (8h) → automático (15min)</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 4. Técnicas Avançadas -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">4. Técnicas Avançadas</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.1 Routers (Múltiplos Caminhos Condicionais)</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Cenário:</span> Lead preenche formulário. Ação depende do orçamento.</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Sem router (ruim):</span> Mesmo processo pra todo mundo</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Com router (inteligente):</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+TRIGGER: Google Forms - New Lead</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ROUTER (divide em 3 caminhos):</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">PATH 1 - VIP (Budget > R$ 50k):
+    Filter: {{1.orcamento}} > 50000
+    → Slack: Notifica CEO diretamente
+    → Calendar: Agenda reunião com fundador (automático)
+    → Gmail: Email personalizado de C-level
+    → CRM: Tag "Enterprise"
+    
+  PATH 2 - Médio (R$ 10k - R$ 50k):
+    Filter: {{1.orcamento}} >= 10000 AND <= 50000
+    → Slack: Notifica gerente vendas
+    → Gmail: Email template vendas consultivas
+    → CRM: Tag "Mid-market"
+    → Calendar: Convite webinar exclusivo
+    
+  PATH 3 - Self-service (< R$ 10k):
+    Filter: {{1.orcamento}} < 10000
+    → Gmail: Email automação com trial gratuito
+    → CRM: Tag "SMB"
+    → Autopilot: Sequência emails educacionais
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Por que é poderoso:</span> - Tratamento personalizado baseado em valor
+- Eficiência: C-level não perde tempo com pequeno
+- Conversão: cada segmento recebe flow ideal</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Como configurar:</span> 1. Adicione módulo "Router" após trigger
+2. Clique "+" em cada braço do router
+3. Configure filter em cada caminho
+4. Adicione ações específicas</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.2 Iterators (Loop em Arrays)</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Problema:</span> Email com 5 anexos. Quer salvar cada um em pasta diferente baseado no tipo.</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Solução:</span> Iterator processa cada anexo individualmente</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Automação:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+TRIGGER: Gmail - Watch Emails (com anexos)</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ITERATOR: Para cada anexo
+  Input: {{1.attachments[]}}
+  
+  ROUTER (dentro do iterator):
+    
+    PATH 1 - PDFs:
+      Filter: {{1.attachments[].name}} ends with ".pdf"
+      → Drive: Upload to /Contratos
+      → Notion: Log em database Contratos
+    
+    PATH 2 - Imagens:
+      Filter: {{1.attachments[].name}} matches ".jpg|.png|.jpeg"
+      → Drive: Upload to /Imagens
+      → Compress image (módulo image processing)
+    
+    PATH 3 - Planilhas:
+      Filter: {{1.attachments[].name}} ends with ".xlsx"
+      → Drive: Upload to /Planilhas
+      → Sheets: Import data (se formato conhecido)
+    
+    PATH 4 - Outros:
+      Default (sem filter)
+      → Drive: Upload to /Outros
+      → Slack: Notifica "arquivo desconhecido"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Resultado:</span> 1 email com 5 anexos → 5 arquivos organizados automaticamente</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Como configurar:</span> 1. Adicione módulo "Iterator" após fonte de dados
+2. Selecione array para iterar (ex: attachments[])
+3. Módulos depois do iterator processam 1 item por vez
+4. Make roda loop automaticamente</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.3 Error Handling (Tratamento de Erros)</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Problema:</span> Automação falha às vezes (API fora, conexão ruim, etc)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Sem error handling:</span> Automação para, dados se perdem</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Com error handling:</span> Automação tenta resolver ou notifica</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Exemplo:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+TRIGGER: Novo pedido e-commerce</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">TRY:
+  ACTION 1: Upload invoice to Drive
+  
+CATCH (se ACTION 1 falha):
+  → Retry 3x (intervalo 1min entre tentativas)
+  → Se ainda falha:
+    → Save invoice locally (fallback storage)
+    → Slack: Notifica tech team com erro específico
+    → Google Sheets: Log erro (timestamp, order_id, error_message)
+    → Continue processando resto (não trava tudo)
+  
+TRY:
+  ACTION 2: Send email to customer</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">CATCH:
+  → Wait 5min
+  → Retry 2x
+  → If still fails: Add to "retry queue" (outro cenário processa depois)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Como configurar:</span> 1. Clique direito no módulo
+2. "Add error handler"
+3. Escolha tipo:
+   - Ignore (continua como se nada)
+   - Retry (tenta X vezes)
+   - Commit (aceita erro e continua)
+   - Resume (executa ações alternativas)
+   - Rollback (desfaz mudanças)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Best practices:</span> - Always add error handling em módulos críticos
+- Log erros pra análise posterior
+- Notifique equipe em erros graves
+- Tenha fallback (plano B)</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.4 Webhooks (Integrações Custom)</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">O que é:</span> URL única que recebe dados de qualquer lugar</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Quando usar:</span> - App não tem integração nativa no Make
+- Quer triggerar automação de outro sistema
+- API custom da empresa</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Exemplo:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+CENÁRIO MAKE:</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">TRIGGER: Webhook - Custom Webhook
+  URL gerada: https://hook.make.com/abc123xyz</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTIONS: [processar dados recebidos]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">---</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">EM OUTRO SISTEMA (seu site, app, etc):</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Quando evento acontece:
+  POST para https://hook.make.com/abc123xyz
+  Body: {
+    "user_id": 123,
+    "action": "purchase",
+    "value": 299.90
+  }</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Make recebe → processa → executa ações
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Caso real:</span> Formulário custom no seu site → envia dados pro webhook → Make processa</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Como configurar:</span> 1. Adicione módulo "Webhooks - Custom webhook"
+2. Make gera URL única
+3. Configure seu sistema pra enviar dados pra essa URL
+4. Dados chegam no Make → automação roda</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Poder:</span> Integra QUALQUER coisa, até sistemas proprietários</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 5. Casos de Uso que Geram Valor (Templates Prontos) -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">5. Casos de Uso que Geram Valor (Templates Prontos)</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">5.1 Para Freelancers</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Automação 1: Invoice Automático</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>TRIGGER: Trello - Card moved to "Concluído"</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 1: Google Docs - Generate from template
+  Template: Invoice padrão
+  Replace:
+    {{cliente}}: {{1.card.name}}
+    {{valor}}: {{1.custom_field.valor}}
+    {{data}}: {{formatDate(now; "DD/MM/YYYY")}}
+    {{descricao}}: {{1.card.desc}}
+  
+  Generate PDF</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 2: Gmail - Send Email
+  To: {{1.custom_field.email_cliente}}
+  Subject: "Invoice #{{1.card.idShort}} - {{formatDate(now; "MM/YYYY")}}"
+  Attachments: {{2.pdf}}
+  Body: [Template profissional]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 3: Google Sheets - Add row (financeiro)
+  - Data emissão
+  - Cliente
+  - Valor
+  - Status: Enviado
+  - Vencimento: +15 dias</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 4: Google Calendar - Create reminder
+  Date: +14 dias (1 dia antes vencimento)
+  Title: "Checar pagamento {{1.card.name}}"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Economia:</span> 30min por projeto × 10 projetos/mês = 5h/mês</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Automação 2: Time Tracking Automático</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>TRIGGER: Toggl - Timer Stopped</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION: Google Sheets - Add Row
+  Sheet: "Horas 2025"
+  Values:
+    - Data: {{1.end}}
+    - Cliente: {{1.project.name}}
+    - Tarefa: {{1.description}}
+    - Horas: {{formatNumber(1.duration/3600; 2)}}
+    - Valor hora: R$ 80 (ou busca de tabela preços)
+    - Valor total: =Horas * Valor hora
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Valor:</span> Relatório automático pra cobrar clientes. Precisão 100%.</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">5.2 Para Pequenas Empresas</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Automação: Onboarding Funcionário Completo</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>TRIGGER: Google Forms - Novo Funcionário</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">[Executa tudo em paralelo para speed]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 1: Google Workspace - Create User
+  Email: {{lowercase(1.nome)}}.{{lowercase(1.sobrenome)}}@empresa.com
+  Password: [auto-generated]
+  Send welcome email: Yes</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 2: Google Drive - Create Folder Structure
+  /Funcionarios/{{1.nome}}/
+    - Documentos
+    - Projetos
+    - 1:1s
+  Permissions: Share com manager</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 3: Notion - Add to Database
+  Database: Team
+  Properties:
+    - Nome: {{1.nome}}
+    - Cargo: {{1.cargo}}
+    - Department: {{1.departamento}}
+    - Start Date: {{1.data_inicio}}
+    - Manager: {{1.gestor}}
+    - Status: Active</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 4: Slack - Multi-step
+  - Add to workspace
+  - Add to channels baseado em dept
+  - Send DM:
+    "Bem-vindo {{1.nome}}! 🎉
+    
+    Seu email: [email criado]
+    Senha temporária: [gerada]
+    
+    Próximos passos:
+    1. Acesse email e mude senha
+    2. Preencha perfil Slack
+    3. Confira Notion (tarefas onboarding)
+    4. Reunião 1:1 com {{1.gestor}} agendada para [data]"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 5: Trello - Create Board
+  Name: "Onboarding - {{1.nome}}"
+  Lists: Dia 1 | Semana 1 | Mês 1 | Concluído
+  Cards: [Checklist de onboarding predefinido]
+  Assign: {{1.gestor}}</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 6: Google Calendar - Schedule Meetings
+  - 1:1 com gestor (Dia 1, 10h)
+  - Tour escritório (Dia 1, 14h)
+  - Apresentação equipe (Dia 2, 11h)
+  - Check-in semanal (toda sexta, 15h)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 7: Gmail - Send Manual Recursos Humanos
+  Attachments: 
+    - Manual funcionário (PDF)
+    - Política home office
+    - Benefícios
+    - Contato TI
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Impacto:</span> - Manual: 8 horas (RH + TI + Manager)
+- Automação: 10 minutos (só preencher form)
+- Economia: ~R$ 800 em horas-homem por contratação
+- Experiência: Funcionário impressionado desde dia 1</p>
+          </div>
+
+        </div>
+
+        <div class="bg-talento/10 dark:bg-talento/20 border-2 border-talento/30 p-6 rounded-xl mb-8">
+          <h3 class="text-xl font-bold text-talento mb-4">5.3 Para Uso Pessoal (Exemplos Práticos)</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Automação 1: Controle Financeiro Automático</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>TRIGGER: Gmail - Watch Emails
+  Filter: From contains "extrato" OR "fatura" OR "cobranca"</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 1: OpenAI - Extract Data (IA extrai valores)
+  Prompt: "Deste email de banco/fatura, extraia:
+           - Data: [formato DD/MM/YYYY]
+           - Valor: [só número]
+           - Categoria: [alimentacao|transporte|moradia|lazer|etc]
+           - Descrição: [breve]
+           
+           Email: {{1.text}}"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 2: Google Sheets - Add Row
+  Sheet: "Financas 2025"
+  Values:
+    - Data: {{2.data}}
+    - Categoria: {{2.categoria}}
+    - Descrição: {{2.descricao}}
+    - Valor: {{2.valor}}
+    - Tipo: Despesa</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 3: Calculate Monthly Total
+  Formula: =SUMIF(categoria, {{2.categoria}}, valor)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 4: IF total > orçamento categoria:
+  → Gmail: Send alert to yourself
+    "⚠️ Alerta: você gastou R$ {{3.total}} em {{2.categoria}} este mês.
+    Orçamento: R$ {{limite}}
+    Excedeu: R$ {{3.total - limite}}"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Valor:</span> Controle financeiro sem abrir app, sem planilha manual</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Automação 2: Digest Diário Personalizado</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>SCHEDULE: Every day 7am</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 1: Weather API - Get forecast
+  Location: Sua cidade
+  
+ACTION 2: Google Calendar - Get today events</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 3: Notion - Query tasks
+  Filter: Due date = today OR overdue</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 4: RSS - Get top news (fontes escolhidas)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 5: Aggregate tudo</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ACTION 6: Gmail - Send Email
+  To: você
+  Subject: "🌅 Seu dia {{formatDate(now; "DD/MM")}}"
+  Body:
+    "Bom dia!
+    
+    ☁️ CLIMA:
+    {{1.condition}} - {{1.temp_min}}°C a {{1.temp_max}}°C
+    
+    📅 AGENDA ({{2.count}} eventos):
+    {{#each 2.items}}
+    - {{this.time}}: {{this.summary}}
+    {{/each}}
+    
+    ✅ TAREFAS ({{3.count}} pendentes):
+    {{#each 3.items}}
+    - {{this.title}} {{if this.overdue}}⚠️ ATRASADO{{/if}}
+    {{/each}}
+    
+    📰 NOTÍCIAS:
+    {{#each 4.items limit=5}}
+    - {{this.title}} [{{this.source}}]
+    {{/each}}
+    
+    Bom dia produtivo! 💪"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Impacto:</span> Começa dia informado, organizado, em 2 minutos de leitura</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 6. Como Monetizar Automação (R$ 500 - R$ 10.000 por Projeto) -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">6. Como Monetizar Automação (R$ 500 - R$ 10.000 por Projeto)</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">6.1 Modelos de Precificação</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Modelo 1: Por Hora (Iniciante)</strong>
+- Júnior (0-6 meses exp): R$ 50-80/h
+- Pleno (6-18 meses exp): R$ 80-150/h
+- Sênior (18+ meses exp): R$ 150-250/h</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Quando usar:</span> Projetos imprevisíveis, escopo não claro</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Modelo 2: Por Projeto (Recomendado)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Baseado em complexidade + valor entregue:</p>
+
+
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="bg-talento/20 dark:bg-talento/30">
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Tipo</th>
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Módulos</th>
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Tempo</th>
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Preço</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-white dark:bg-neutral-800">
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">------</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">---------</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">-------</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">-------</td>
+                </tr>
+                <tr class="bg-neutral-50 dark:bg-neutral-900">
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Simples</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">2-3</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">2-4h</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">R$ 500-1.500</td>
+                </tr>
+                <tr class="bg-white dark:bg-neutral-800">
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Médio</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">5-10</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">6-12h</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">R$ 1.500-4.000</td>
+                </tr>
+                <tr class="bg-neutral-50 dark:bg-neutral-900">
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Complexo</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">10-20</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">15-30h</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">R$ 4.000-10.000</td>
+                </tr>
+                <tr class="bg-white dark:bg-neutral-800">
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Enterprise</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">20+</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">40+h</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">R$ 10.000+</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Exemplo:</span> - Automação "Form → CRM → Email": Simples = R$ 800
+- Automação "E-commerce completo": Complexo = R$ 6.000</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Modelo 3: Valor (Avançado - Melhor ROI)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Precifique baseado no valor que cliente economiza:</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Cliente economiza 20h/semana = 80h/mês
+Valor hora funcionário: R$ 50
+Economia: R$ 4.000/mês</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Seu preço:</span> - Setup: R$ 3.000 (paga em 3 semanas de economia)
+- Manutenção: R$ 500/mês (12,5% da economia)
+- ROI cliente: 1.200%+ no primeiro ano</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Cliente fica feliz (economiza muito) + você ganha bem</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Modelo 4: Retainer Mensal (Melhor para você)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Pacotes:</p>
+
+
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="bg-talento/20 dark:bg-talento/30">
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Plano</th>
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Automações</th>
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Suporte</th>
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Preço</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-white dark:bg-neutral-800">
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">-------</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">-----------</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">---------</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">-------</td>
+                </tr>
+                <tr class="bg-neutral-50 dark:bg-neutral-900">
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Starter</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">até 5</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Email</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">R$ 500/mês</td>
+                </tr>
+                <tr class="bg-white dark:bg-neutral-800">
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Business</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">até 15</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Slack + 2h/mês ajustes</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">R$ 1.200/mês</td>
+                </tr>
+                <tr class="bg-neutral-50 dark:bg-neutral-900">
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Enterprise</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">ilimitado</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Prioridade + 8h/mês</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">R$ 3.000/mês</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Vantagem:</span> Receita recorrente previsível</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">6.2 Proposta que Vende (Template)</h3>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PROPOSTA: Automação [Nome Processo]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">PARA: [Cliente]
+DE: [Seu Nome] - Automation Specialist
+DATA: [Data]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">━━━ SITUAÇÃO ATUAL ━━━</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Processo: [Nome]
+Frequência: [X vezes/dia, semana, mês]
+Tempo por execução: [Xh]
+Pessoas envolvidas: [quantas]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">CUSTO ATUAL:
+- Tempo total: [Xh/mês]
+- Custo hora: R$ [Y]
+- Custo mensal: R$ [X × Y] = R$ [TOTAL]
+- Custo anual: R$ [TOTAL × 12]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">PROBLEMAS IDENTIFICADOS:
+- [Problema 1: ex: erro humano frequente]
+- [Problema 2: ex: demora excessiva]
+- [Problema 3: ex: falta rastreabilidade]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">━━━ SOLUÇÃO PROPOSTA ━━━</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Automação com Make conectando:
+- [App 1]
+- [App 2]
+- [App 3]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">FUNCIONAMENTO:
+1. [Trigger]: Quando [evento]
+2. [Action 1]: Sistema automaticamente [faz X]
+3. [Action 2]: E então [faz Y]
+4. [Action 3]: Por fim [faz Z]
+5. [Notificação]: Equipe recebe confirmação</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">BENEFÍCIOS:
+✅ Reduz tempo: [Xh] → [Ymin] (redução de [%])
+✅ Elimina erros manuais
+✅ Rastreabilidade completa (logs)
+✅ Escalável (processa 10 ou 1.000, mesmo esforço)
+✅ Funciona 24/7 sem intervenção</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">━━━ INVESTIMENTO ━━━</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">SETUP (one-time):
+- Mapeamento processo: R$ [X]
+- Desenvolvimento automação: R$ [Y]
+- Testes + ajustes: R$ [Z]
+- Treinamento equipe: R$ [W]
+TOTAL SETUP: R$ [X+Y+Z+W]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">MENSAL (recorrente):
+- Monitoramento: R$ [X]/mês
+- Ajustes/melhorias (2h/mês): R$ [Y]/mês
+- Suporte: R$ [Z]/mês
+TOTAL MENSAL: R$ [X+Y+Z]/mês</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">FERRAMENTAS (cliente paga):
+- Make: R$ 55/mês (plano Core)
+- [Outras se necessário]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">━━━ ROI ━━━</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Economia mensal: R$ [economia - custo mensal]
+Payback: [setup ÷ economia mensal] meses
+ROI primeiro ano: [((economia×12 - setup - mensal×12) ÷ (setup + mensal×12)) × 100]%</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Exemplo:
+- Economia: R$ 4.000/mês
+- Setup: R$ 3.000
+- Mensal: R$ 500
+- Payback: 0,75 mês (~3 semanas)
+- ROI ano 1: 1.050%</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">━━━ CRONOGRAMA ━━━</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Semana 1:
+- Reunião alinhamento (1h)
+- Mapeamento detalhado processo (2h)
+- Aprovação escopo</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Semana 2:
+- Desenvolvimento automação
+- Testes internos</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Semana 3:
+- Testes com equipe cliente
+- Ajustes baseado em feedback</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Semana 4:
+- Go-live
+- Treinamento equipe (2h)
+- Documentação entregue</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">TIMELINE TOTAL: 4 semanas</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">━━━ GARANTIAS ━━━</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ Automação funcionando 100% ou reembolso
+✅ 30 dias de suporte pós-go-live inclusos
+✅ Documentação completa entregue
+✅ Treinamento gravado para consulta</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">━━━ PRÓXIMOS PASSOS ━━━</p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Aprovação desta proposta</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Assinatura contrato</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Pagamento 50% setup (início trabalho)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Kickoff meeting agendado</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Pagamento 50% restante (go-live)</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">VALIDADE PROPOSTA: 15 dias</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">[Seu Nome]
+Automation Specialist
+[Email] | [Telefone] | [LinkedIn]
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Taxa de conversão:</span> Propostas assim convertem 40-60% (vs 10-20% propostas genéricas)</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">6.3 Onde Encontrar Clientes</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Online:</span> 1. Workana, 99Freelas (Brasil)
+2. Upwork, Fiverr (internacional)
+3. LinkedIn (poste projetos, DM em empresas)
+4. Comunidades: grupos Slack/Discord de no-code</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Networking:</span> 1. Eventos tech/startups locais
+2. Meetups de automação
+3. Ofereça grátis pra 2-3 primeiros (portfolio)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Prospecção ativa:</span> 1. Identifica empresas usando apps integráveis
+2. Envia proposta: "Vi que usam X e Y, posso conectá-los automaticamente"
+3. Taxa resposta: 5-10% (mas qualificados)</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 7. Exercício Prático (2 Horas) -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">7. Exercício Prático (2 Horas)</h2>
+
+        <div class="mb-6">
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Objetivo:</span> Sair deste módulo com 3 automações funcionando que você pode mostrar em portfolio</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>PARTE 1: Automação Pessoal (45min)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Escolha 1:
+- A) Finanças: Emails de banco → Sheets (categoriza gastos)
+- B) Produtividade: Todo list Notion → Reminder Slack/Email
+- C) Aprendizado: RSS blogs → Notion (com resumo IA)</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Entrega:</span> Automação funcionando + screenshot</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>PARTE 2: Automação Profissional (45min)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Escolha 1:
+- A) Lead capture: Form → Sheets + Email + CRM
+- B) Atendimento: Email suporte → Trello card + Auto-reply
+- C) Relatório: Dados (qualquer fonte) → Sheet + Email digest diário</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Entrega:</span> Automação funcionando + documentação (o que faz, por quê, ROI)</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>PARTE 3: Automação Portfolio (30min)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Crie algo impressionante para mostrar:
+- Complexo (5+ módulos)
+- Útil (resolve problema real)
+- Visual (gráficos, dashboards)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Ideias:
+- E-commerce mini: Produto vendido → tudo automático
+- Dashboard executivo: Várias fontes → 1 email/sheet
+- Onboarding completo: Form → 8 ações simultâneas</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Entrega:</span> 1. Vídeo 2min mostrando funcionando (Loom)
+2. Descrição completa
+3. "Antes vs Depois" (tempo economizado)</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>BÔNUS: Publique no LinkedIn</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Post modelo:
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Acabei de criar minha [número]ª automação no-code! 🤖</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Problema: [descrever]
+Solução: [descrever]
+Resultado: [tempo economizado, erro eliminado, etc]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Ferramentas: Make + [apps]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">[Imagem/vídeo da automação]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">#nocode #automacao #produtividade #make
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Isso atrai recrutadores e clientes.</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">---</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Próximos Passos -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">Próximos Passos</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Módulo 5: Notion para Produtividade</strong>
+- Notion como segundo cérebro
+- Gestão de projetos e tarefas
+- Databases e relations
+- Base de conhecimento
+- Integrações Make + Notion (power combo!)</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Prepare-se para:</span> Organização nivel expert que impressiona em entrevistas</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Nos vemos lá! 🚀</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">---</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>© 2025 FETD - Formação em Engenharia de Intenção</strong></p>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer / Navegação -->
+  <section class="py-12 bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center">
+        <a href="../../trilhas/talento.html" class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90">
+          ← Voltar para Trilha
+        </a>
+        <a href="modulo-05.html" class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90">Próximo Módulo →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dark Mode Toggle Script -->
   <script>
-    document.documentElement.classList.remove('preload');
+    // Remove preload class
+    window.addEventListener('load', () => {
+      document.body.classList.remove('preload');
+    });
+
+    // Dark mode toggle
     const themeToggleBtn = document.getElementById('theme-toggle');
-    const darkIcon = document.getElementById('theme-toggle-dark-icon');
-    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    // Check localStorage
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      themeToggleLightIcon.classList.remove('hidden');
       document.documentElement.classList.add('dark');
-      lightIcon.classList.remove('hidden');
     } else {
-      darkIcon.classList.remove('hidden');
+      themeToggleDarkIcon.classList.remove('hidden');
     }
-    themeToggleBtn.addEventListener('click', function() {
-      darkIcon.classList.toggle('hidden');
-      lightIcon.classList.toggle('hidden');
-      if (document.documentElement.classList.contains('dark')) {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('color-theme', 'light');
+
+    themeToggleBtn.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        }
       } else {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('color-theme', 'dark');
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        }
       }
     });
   </script>
+
 </body>
 </html>

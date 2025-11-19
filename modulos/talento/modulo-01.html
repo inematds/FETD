@@ -3,21 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1: O Mercado que Te Espera | FETD</title>
+  <title>Módulo 1: O Mercado que Te Espera | Trilha Talento Emergente | FETD</title>
+  <meta name="description" content="Entender as oportunidades reais para quem está começando em 2025">
 
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/tailwindcss-cdn@3.4.1/tailwindcss.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            'operacional': '#3B82F6',
-            'comunicador': '#10B981',
             'talento': '#F59E0B',
-            'tecnico': '#F97316',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
           },
         }
       }
@@ -25,237 +32,1715 @@
   </script>
 
   <style>
-    * { transition: background-color 200ms, border-color 200ms, color 200ms; }
-    .preload * { transition: none !important; }
-    body { font-family: 'Inter', sans-serif; }
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
   </style>
 </head>
 
 <body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
 
+  <!-- Navbar -->
   <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-talento to-operacional bg-clip-text text-transparent">🎓 FETD</a>
-        <div class="flex items-center space-x-8">
+        <div class="flex items-center">
+          <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-talento to-talento bg-clip-text text-transparent">
+            🎓 FETD
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
           <a href="../../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Início</a>
-          <a href="../../trilhas/talento.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Trilha</a>
+          <a href="../../trilhas/talento.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Trilha Talento Emergente</a>
           <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
           </button>
         </div>
       </div>
     </div>
   </nav>
 
+  <!-- Breadcrumb -->
   <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <nav class="flex text-sm">
-        <a href="../../index.html" class="text-talento hover:underline">Início</a>
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../../index.html" class="text-talento hover:opacity-80">Início</a>
         <span class="mx-2 text-neutral-400">/</span>
-        <a href="../../trilhas/talento.html" class="text-talento hover:underline">Trilha Talento Emergente</a>
+        <a href="../../trilhas/talento.html" class="text-talento hover:opacity-80">Trilha Talento Emergente</a>
         <span class="mx-2 text-neutral-400">/</span>
         <span class="text-neutral-600 dark:text-neutral-400">Módulo 1</span>
       </nav>
     </div>
   </div>
 
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-talento to-amber-600 py-16">
+  <!-- Hero Módulo -->
+  <section class="bg-gradient-to-r from-talento to-talento py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+
       <div class="flex items-center gap-3 mb-4">
-        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">🟡 Módulo 1 de 10</span>
-        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">⏱️ 30min</span>
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">Módulo 1 de 10</span>
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">⏱️ 45-60 minutos</span>
       </div>
-      <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">O Mercado que Te Espera</h1>
-      <p class="text-xl opacity-90 mb-6"><strong>Objetivo:</strong> Entender as oportunidades reais para quem está começando em 2025</p>
-      <a href="../../downloads/talento/modulo-01.md" download class="inline-flex items-center px-6 py-3 bg-white text-talento rounded-lg font-semibold hover:bg-neutral-100 transition-all">
-        📥 Download Conteúdo (.md)
-      </a>
+
+      <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">
+        Módulo 1: O Mercado que Te Espera
+      </h1>
+
+      <p class="text-xl text-white/90 mb-6 max-w-3xl">
+        Entender as oportunidades reais para quem está começando em 2025
+      </p>
+
+      <div class="flex items-center gap-4">
+        <span class="text-white/80">📚 Teoria</span>
+        <span class="text-white/80">•</span>
+        <span class="text-white/80">💭 Reflexão</span>
+        <span class="text-white/80">•</span>
+        <span class="text-white/80">🛠️ Prática</span>
+      </div>
     </div>
   </section>
 
-  <!-- Main Content -->
-  <section class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Conteúdo Principal -->
+  <section class="py-16 bg-white dark:bg-neutral-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <!-- Grid Cards -->
-      <div class="grid md:grid-cols-2 gap-8 mb-16">
+      <!-- Download Button -->
+      <div class="flex justify-end mb-8">
+        <a href="../../downloads/talento/modulo-01.md" download class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90 inline-flex items-center gap-2">
+          <span>📥</span>
+          <span>Download MD</span>
+        </a>
+      </div>
 
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">🚀</div>
-          <h3 class="text-2xl font-bold mb-4">A Grande Transformação</h3>
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
-            O mercado de trabalho passou por uma <strong>revolução silenciosa</strong> nos últimos 3 anos. O que antes exigia 10 anos de experiência, hoje pode ser alcançado em 6 meses com as ferramentas certas.
-          </p>
-          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl">
-            <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">
-              💡 Empresas estão mais interessadas em <strong>capacidade de aprender e se adaptar</strong> do que em anos de experiência tradicional.
-            </p>
+
+      <!-- Seção: Introdução: A Janela de Oportunidade Está Aberta -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">Introdução: A Janela de Oportunidade Está Aberta</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Se você está começando sua carreira profissional agora, em 2025, você tem uma vantagem que nenhuma geração anterior teve: <strong>você está entrando no mercado exatamente no momento em que as empresas precisam desesperadamente de pessoas que saibam trabalhar com IA e automação</strong>.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Este não é um exagero motivacional. É um fato documentado por dezenas de pesquisas de mercado, relatórios de RH e dados de contratação. As empresas brasileiras e internacionais estão lutando para encontrar profissionais que dominem ferramentas de IA, automação no-code, análise de dados assistida por IA e outras habilidades da nova economia digital.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">E aqui está o detalhe mais importante: <strong>essas habilidades não exigem diploma universitário, anos de experiência ou conhecimento técnico profundo</strong>. Elas podem ser aprendidas em semanas ou meses por qualquer pessoa disposta a se dedicar.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Neste módulo, você vai entender:
+- Por que o mercado de trabalho mudou radicalmente nos últimos 2-3 anos
+- Quais são as habilidades mais procuradas (e melhor pagas) em 2025
+- Como pessoas comuns, sem formação técnica, estão conseguindo empregos de R$ 4.000-8.000
+- Quais mitos sobre "falta de experiência" estão te impedindo de começar
+- Onde estão as oportunidades concretas e como se posicionar para aproveitá-las</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 1. A Grande Transformação do Mercado de Trabalho -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">1. A Grande Transformação do Mercado de Trabalho</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">1.1 O Que Mudou (e Quando)</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Há apenas três anos, em 2022, o mercado de trabalho funcionava de forma relativamente previsível. Para conseguir um emprego em tecnologia ou áreas relacionadas, você precisava de:</p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Formação universitária</strong> (preferencialmente em Ciência da Computação, Engenharia ou áreas correlatas)</li>
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Pelo menos 2-3 anos de experiência</strong> comprovada</li>
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Conhecimento técnico profundo</strong> (programação, redes, infraestrutura)</li>
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Certificações caras</strong> que levavam meses ou anos para completar</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Essa barreira de entrada mantinha milhões de pessoas talentosas fora do mercado. Não importava o quão inteligente, dedicado ou criativo você fosse – sem diploma e experiência formal, as portas permaneciam fechadas.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Então veio novembro de 2022.</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">O lançamento do ChatGPT mudou tudo. Não imediatamente, mas ao longo de 2023 e 2024, uma transformação silenciosa mas profunda aconteceu no mercado de trabalho:</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Empresas começaram a perceber que:</span> - Tarefas que antes exigiam desenvolvedores seniores podiam ser feitas por pessoas com conhecimento básico + IA
+- Automações complexas não precisavam mais de programação – ferramentas no-code democratizaram isso
+- Análise de dados não exigia mais SQL avançado – IA podia fazer isso conversacionalmente
+- Atendimento ao cliente, vendas e suporte podiam ser 10x mais eficientes com automação + IA</p>
           </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>E mais importante: empresas começaram a contratar com base em habilidades práticas, não em diplomas.</strong></p>
+
         </div>
 
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">🎯</div>
-          <h3 class="text-2xl font-bold mb-4">Habilidades Mais Procuradas</h3>
-          <ul class="space-y-3 text-neutral-700 dark:text-neutral-300">
-            <li class="flex items-start gap-2">
-              <span class="text-talento text-xl">▸</span>
-              <span><strong>Prompt Engineering:</strong> Saber trabalhar com IA generativa (ChatGPT, Claude, etc.)</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-talento text-xl">▸</span>
-              <span><strong>Automação No-Code:</strong> Make, Zapier, n8n para criar fluxos sem programar</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-talento text-xl">▸</span>
-              <span><strong>Análise de Dados:</strong> Transformar números em decisões com IA</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-talento text-xl">▸</span>
-              <span><strong>Adaptabilidade:</strong> Aprender ferramentas novas rapidamente</span>
-            </li>
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">1.2 Os Números Não Mentem</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Vamos olhar dados concretos do mercado brasileiro (dados de 2024-2025):</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Crescimento de vagas que NÃO exigem diploma:</span> - 2022: 12% das vagas em tech aceitavam candidatos sem graduação
+- 2023: 31% (crescimento de 158%)
+- 2024: 47% (quase metade!)
+- 2025: projeção de 60%+</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Salários médios para posições júnior com habilidades em IA/Automação:</strong>
+- Analista de Automação Jr.: R$ 3.500 - 6.000
+- Especialista em Prompt IA: R$ 4.000 - 8.000
+- Assistente de Dados com IA: R$ 3.000 - 5.500
+- Consultor Notion/No-code: R$ 4.500 - 7.000
+- Analista de IA para Atendimento: R$ 3.800 - 6.500</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Compare isso com salários de profissões tradicionais que exigem diploma:
+- Assistente administrativo: R$ 1.800 - 2.500
+- Auxiliar contábil: R$ 2.000 - 3.000
+- Atendente de loja: R$ 1.600 - 2.200</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>A diferença é de 100-300% em salário, com MENOS requisitos de formação.</strong></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">1.3 Por Que as Empresas Mudaram de Postura?</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Três razões principais:</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Razão 1: Escassez de Talentos</strong>
+Simplesmente não existem profissionais formados suficientes para preencher a demanda. Universidades levam 4-5 anos para formar alguém, mas o mercado precisa de pessoas AGORA. Empresas que insistirem em exigir diploma vão ficar sem ninguém para contratar.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Razão 2: Habilidades Práticas > Teoria Acadêmica</strong>
+Empresas perceberam que alguém que sabe usar ChatGPT, Make e Notion de forma avançada entrega mais valor imediato do que um recém-formado que estudou teoria mas nunca automatizou nada na prática.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Razão 3: ROI Comprovado</strong>
+Empresas que contrataram "talentos emergentes" (pessoas sem formação tradicional mas com habilidades em IA/automação) viram resultados impressionantes:
+- Processos que levavam 8 horas/dia reduzidos para 30 minutos
+- Atendimento ao cliente 3x mais rápido e eficiente
+- Análises de dados que antes levavam dias sendo feitas em horas
+- Economias de R$ 10.000-50.000/mês em processos automatizados</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Quando o retorno financeiro é tão claro, diplomas deixam de importar.</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 2. As Habilidades Mais Procuradas em 2025 -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">2. As Habilidades Mais Procuradas em 2025</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">2.1 Prompt Engineering (Engenharia de Prompts)</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">O que é:</span> A habilidade de se comunicar efetivamente com IAs (ChatGPT, Claude, Gemini, etc.) para obter resultados precisos e úteis.</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Por que vale tanto:</span> 90% das pessoas usam IA de forma superficial ("escreva um email", "resuma este texto"). Quem sabe criar prompts avançados consegue:
+- Automatizar análises complexas
+- Gerar conteúdo de alta qualidade em escala
+- Extrair insights de dados não estruturados
+- Criar fluxos de trabalho inteiros assistidos por IA</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Faixa salarial:</span> R$ 4.000 - 8.000 para júnior/pleno</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Exemplo prático:</span> Pessoa comum pergunta ao ChatGPT: "Me ajude a escrever um email de vendas"
+Especialista em prompts: "Você é um copywriter especializado em vendas B2B no setor de SaaS. Analise estas 3 propostas anteriores que converteram [cola exemplos]. Identifique os padrões de linguagem, estrutura e gatilhos mentais. Agora crie uma nova proposta para [cliente X] que vende [produto Y], incorporando esses padrões mas personalizada para o contexto deles. Formato: máximo 150 palavras, tom consultivo, CTA claro no final."</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Vê a diferença? O segundo profissional extrai 10x mais valor da mesma ferramenta.</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">2.2 Automação No-Code (Make, Zapier, n8n)</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">O que é:</span> Criar automações complexas conectando diferentes aplicativos sem escrever código, usando interfaces visuais.</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Por que vale tanto:</span> Empresas gastam milhares de reais/mês com tarefas repetitivas que poderiam ser automatizadas:
+- Transferir dados entre sistemas
+- Enviar notificações e relatórios
+- Processar emails e anexos
+- Sincronizar planilhas e bancos de dados
+- Gerar documentos personalizados em massa</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Quem sabe criar essas automações economiza tempo e dinheiro direto para a empresa.</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Faixa salarial:</span> R$ 3.500 - 7.000 para júnior/pleno</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Exemplo prático:</span> Uma empresa de e-commerce recebe 200 pedidos/dia. Manualmente, alguém precisa:
+1. Pegar dados do pedido no Shopify
+2. Criar linha na planilha de estoque
+3. Enviar email de confirmação personalizado
+4. Notificar time de logística no Slack
+5. Criar tarefa no Trello para separação</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Isso leva 3-4 minutos por pedido = 10-12 horas/dia de trabalho manual.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Com Make/Zapier: tudo isso acontece automaticamente em 5 segundos por pedido. Economia de 1-2 funcionários full-time.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Quem sabe criar essa automação vale ouro para a empresa.</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">2.3 Análise de Dados com IA</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">O que é:</span> Usar ferramentas de IA para analisar planilhas, extrair insights, criar relatórios e responder perguntas de negócio sem precisar saber SQL ou programação.</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Por que vale tanto:</span> Empresas têm montanhas de dados (vendas, clientes, produtos, financeiro) mas não sabem o que fazer com eles. Profissionais de BI tradicionais são caros (R$ 8.000-15.000) e escassos.</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Quem sabe usar ChatGPT/Claude + Excel/Google Sheets + ferramentas como Julius AI ou DataCamp consegue:
+- Identificar tendências de vendas
+- Segmentar clientes
+- Prever demanda
+- Encontrar problemas operacionais
+- Sugerir melhorias baseadas em dados</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Faixa salarial:</span> R$ 3.000 - 6.500 para júnior/pleno</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Exemplo prático:</span> Gerente pergunta: "Por que as vendas caíram 15% no último trimestre?"</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Analista tradicional: precisa de 2-3 dias criando queries SQL, tabelas dinâmicas, gráficos.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Analista com IA:
+1. Faz upload da planilha de vendas no ChatGPT/Claude
+2. Pergunta: "Analise esta planilha e identifique: (a) quais produtos tiveram maior queda, (b) quais regiões foram mais afetadas, (c) se há correlação com sazonalidade ou eventos externos, (d) quais categorias de clientes reduziram compras"
+3. Recebe análise completa em 5 minutos
+4. Pede visualizações: "Crie gráficos comparando trimestre atual vs anterior por categoria"
+5. Valida hipóteses: "Teste se a queda está relacionada a aumento de preço ou perda de clientes"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Resultado em 30 minutos vs 2-3 dias.</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">2.4 Gestão de Conhecimento (Notion, Obsidian, IA)</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">O que é:</span> Organizar informações, processos, documentação e conhecimento da empresa de forma acessível e eficiente usando ferramentas modernas.</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Por que vale tanto:</span> Empresas perdem milhões em:
+- Tempo procurando informações
+- Conhecimento que sai quando funcionários saem
+- Processos não documentados
+- Onboarding lento de novos funcionários
+- Retrabalho por falta de documentação</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Profissionais que dominam Notion + IA conseguem:
+- Criar bases de conhecimento completas
+- Documentar processos automaticamente
+- Construir wikis internas
+- Automatizar atualização de documentação
+- Criar templates reutilizáveis</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Faixa salarial:</span> R$ 3.500 - 6.000 (interno) ou R$ 500-2.000 por projeto (freelance)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Exemplo prático:</span> Startup com 30 funcionários está caótica:
+- Cada time usa ferramentas diferentes
+- Ninguém sabe onde encontrar informações
+- Novos funcionários levam 2 meses para se ambientar
+- Processos existem mas não estão documentados</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Especialista em Notion cria em 2-3 semanas:
+- Wiki central com toda informação da empresa
+- Templates para processos recorrentes
+- Automações integrando Notion com Slack, Gmail, etc.
+- Sistema de onboarding que reduz tempo de 2 meses para 2 semanas
+- Base de conhecimento pesquisável com IA</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ROI: economia de 100+ horas/mês em buscas e retrabalho.</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">2.5 Adaptabilidade e Aprendizado Rápido</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">O que é:</span> A capacidade de aprender novas ferramentas rapidamente, se adaptar a mudanças e não ter medo de tecnologia.</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Por que vale tanto:</span> Esta é a "meta-habilidade" mais importante. Ferramentas mudam rápido:
+- Há 2 anos, ChatGPT não existia
+- Há 1 ano, Claude e Gemini eram desconhecidos
+- Daqui 6 meses, haverá novas ferramentas que nem imaginamos</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Empresas não querem contratar alguém que sabe usar ferramenta X. Elas querem alguém que <strong>aprende qualquer ferramenta nova em 1-2 semanas</strong>.</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Como demonstrar:</span> - Portfólio mostrando que você aprendeu 5-6 ferramentas diferentes
+- Projetos pessoais experimentando tecnologias novas
+- Presença em comunidades (Discord, fóruns) discutindo novidades
+- Blog/LinkedIn compartilhando aprendizados</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Faixa salarial:</span> Não é uma posição específica, mas multiplica seu valor em qualquer cargo em 30-50%</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 3. Mitos que Te Impedem de Começar -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">3. Mitos que Te Impedem de Começar</h2>
+
+
+        <div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-6 rounded-lg mb-8">
+          <h3 class="text-xl font-bold text-red-700 dark:text-red-400 mb-4">Mito 1: "Preciso de faculdade para trabalhar com tecnologia"</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">A realidade em 2025:</span> 47% das vagas em tech não exigem diploma. Esse número sobe para 65%+ em startups e empresas digitais.</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Por que o mito persiste:</span> - Gerações anteriores realmente precisavam de diploma
+- Seus pais/professores foram criados nesse paradigma
+- Universidades têm interesse em perpetuar essa crença</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">A verdade:</span> Empresas modernas contratam por <strong>portfólio e habilidades demonstradas</strong>, não por papel de diploma.</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">O que fazer:</span> Em vez de 4 anos de faculdade, invista 6-12 meses criando:
+- 5-10 projetos práticos
+- Presença profissional no LinkedIn
+- Certificações em ferramentas específicas (muitas gratuitas)
+- Portfólio online mostrando o que você sabe fazer</p>
+          </div>
+
+        </div>
+
+        <div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-6 rounded-lg mb-8">
+          <h3 class="text-xl font-bold text-red-700 dark:text-red-400 mb-4">Mito 2: "Preciso de 2-3 anos de experiência para começar"</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">A realidade:</span> O famoso paradoxo: "precisamos de júnior com experiência". Isso está mudando rapidamente.</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Por que o mito persiste:</span> - RH tradicional usa filtros automáticos que descartam candidatos sem experiência
+- Gerentes têm medo de contratar e treinar alguém do zero</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">A verdade:</span> "Experiência" pode ser substituída por:
+- <strong>Projetos pessoais:</strong> Automatizou processos da própria vida? Isso é experiência.
+- <strong>Freelance:</strong> Fez 3-5 trabalhos pequenos? Você tem experiência.
+- <strong>Portfólio público:</strong> Documentou aprendizados e criou conteúdo? Experiência demonstrada.</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">O que fazer:</span> Crie experiência antes de ser contratado:
+- Ofereça automação gratuita para pequenos negócios (em troca de depoimento)
+- Faça projetos pessoais documentados
+- Contribua em comunidades (fóruns, Discord, Reddit)
+- Crie conteúdo (LinkedIn, Medium, YouTube) ensinando o que aprende</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Em 3-4 meses, você terá "experiência" equivalente a 1 ano de trabalho formal.</p>
+
+        </div>
+
+        <div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-6 rounded-lg mb-8">
+          <h3 class="text-xl font-bold text-red-700 dark:text-red-400 mb-4">Mito 3: "Só grandes empresas contratam, e elas exigem muito"</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">A realidade:</span> Startups, PMEs e negócios digitais contratam MUITO MAIS que grandes empresas, e com requisitos muito menores.</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Por que o mito persiste:</span> - Grandes empresas têm marca visível
+- Startups e PMEs não fazem anúncios de vagas em portais tradicionais
+- Processos seletivos de startups são menos formais (alguns acham que "não são sérios")</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">A verdade:</span> <strong>Onde estão 80% das oportunidades reais:</strong>
+- Startups (5-50 funcionários)
+- Agências digitais pequenas/médias
+- E-commerces e negócios online
+- Consultorias boutique
+- Empresas tradicionais em transformação digital</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Essas empresas:
+- Pagam bem (muitas vezes melhor que grandes empresas)
+- São mais flexíveis com requisitos
+- Valorizam atitude e vontade de aprender
+- Oferecem crescimento rápido (em 1 ano você pode ser pleno)</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">O que fazer:</span> Pare de enviar currículos para Vagas.com e LinkedIn Jobs. Comece a:
+- Procurar startups no LinkedIn e enviar mensagens diretas
+- Participar de comunidades onde fundadores/CEOs estão (Discord, Slack)
+- Oferecer projetos pequenos como teste
+- Usar plataformas de freelance (Workana, 99Freelas) para começar</p>
+          </div>
+
+        </div>
+
+        <div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-6 rounded-lg mb-8">
+          <h3 class="text-xl font-bold text-red-700 dark:text-red-400 mb-4">Mito 4: "Tecnologia é só para quem sabe programar"</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">A realidade:</span> Em 2025, programação é <strong>opcional</strong>, não obrigatória, para 70% das vagas em tech.</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Por que o mito persiste:</span> - Tecnologia sempre foi sinônimo de programação (até 3-4 anos atrás era verdade)
+- Cursos e bootcamps vendem programação como "única entrada" em tech
+- Influenciadores tech falam muito de programação (porque é o que eles sabem)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">A verdade:</span> Ferramentas no-code e IA eliminaram a necessidade de programar para:
+- Automação de processos
+- Criação de sites e apps simples
+- Análise de dados
+- Gestão de projetos
+- Marketing digital
+- Atendimento ao cliente com IA
+- Vendas e CRM</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">O que fazer:</span> Foque em <strong>resolver problemas</strong>, não em aprender linguagens de programação.</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Se você consegue:
+- Automatizar uma tarefa repetitiva
+- Criar um processo eficiente
+- Analisar dados e encontrar insights
+- Integrar sistemas diferentes</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">...você é valioso, COM OU SEM programação.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">(Programação pode ser um <strong>bônus</strong> que você adiciona depois, se quiser, mas não é pré-requisito.)</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 4. As Soft Skills que o Mercado Realmente Valoriza -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">4. As Soft Skills que o Mercado Realmente Valoriza</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.1 Domínio de Processo: Entender o Fluxo das Coisas</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">O que é:</span> Não é só executar tarefas. É <strong>entender como as coisas funcionam dentro da empresa</strong>: como informação flui, como decisões são tomadas, quem depende de quem, onde estão os gargalos.</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Por que vale mais que conhecimento técnico:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Imagine dois profissionais:</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Profissional A (técnico puro):</span> - Domina Make, Notion, ChatGPT
+- Faz o que pedem perfeitamente
+- Não questiona, não sugere
+- "Me passa o processo que eu automatizo"</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Profissional B (domínio de processo):</span> - Conhecimento técnico bom (não precisa ser expert)
+- Antes de automatizar, <strong>pergunta</strong>:
+  * "Por que fazemos isso desse jeito?"
+  * "Quem usa essa informação depois?"
+  * "O que acontece se atrasar?"
+  * "Tem alguma regra de negócio que preciso saber?"
+- Monta fluxograma do processo
+- Identifica 3 problemas que ninguém tinha visto
+- Propõe automação que resolve não só a tarefa, mas o problema real</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Resultado:</span> Profissional B ganha 40-60% mais, é promovido mais rápido, recebe projetos mais importantes.</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo real:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Empresa pede: "Automatize envio de relatório de vendas toda segunda-feira"</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Abordagem técnica (Profissional A):</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+OK, vou criar automação Make:
+- Segunda 9h → Puxa dados Google Sheets
+- Formata em tabela
+- Envia email pro gerente
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Tempo: 2 horas. Valor: R$ 300.</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Abordagem com domínio de processo (Profissional B):</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Antes, algumas perguntas:
+1. Quem usa esse relatório? (Descobre: gerente + 3 diretores)
+2. O que eles fazem com a informação? (Descobre: comparam com meta, decidem ações)
+3. Quando precisam decidir? (Descobre: reunião segunda 10h)
+4. Que perguntas eles fazem sempre? (Descobre: "Estamos acima/abaixo da meta? Qual região tá mal? Qual vendedor tá bem?")</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Proposta melhorada:
+- Automatização traz dados + COMPARA com meta automaticamente
+- Destaca em vermelho o que tá abaixo (visual imediato)
+- Calcula ranking de vendedores/regiões
+- Envia às 8h (1h antes da reunião, tempo de ler)
+- Copia: gerente + diretores (não precisam pedir forward)
+- Adiciona link pra dashboard interativo (podem filtrar por vendedor/região)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Tempo: 4 horas. Valor: R$ 1.200.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Mesma "automação", mas uma vale 4x mais porque entendeu O PROCESSO, não só a tarefa.</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Como desenvolver domínio de processo:</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Sempre faça 5 perguntas antes de começar qualquer tarefa:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Por que precisamos disso?</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Quem vai usar o resultado?</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- O que eles fazem com essa informação?</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- O que acontece se atrasar/errar?</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Existe contexto que eu deveria saber?</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Mapeie processos visualmente:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Desenhe fluxograma (papel, Miro, FigJam)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Identifique: início → passos → decisões → fim</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Marque onde tem espera, retrabalho, gargalo</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Converse com quem usa o processo:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Não só com quem pediu (gerente)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Fale com quem EXECUTA dia-a-dia</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Pergunte: "O que te irrita nesse processo?"</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Anote frustrações (ouro para melhorias)</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Pense "upstream" e "downstream":</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- <strong>Upstream:</strong> De onde vem essa informação? Quem criou?</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- <strong>Downstream:</strong> Pra onde vai? Quem depende disso?</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Entender toda cadeia = propor melhorias sistêmicas</li>
+          </ol>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Valor no mercado:</span> - Júnior que entende processo: R$ 4.000-6.000
+- Júnior técnico puro: R$ 2.500-4.000</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Diferença de <strong>40-60%</strong> em salário pela mesma senioridade.</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.2 Atitude: Muito Mais Importante que Conhecimento</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>A frase que todo recrutador fala (e é verdade):</strong>
+> "Prefiro contratar alguém com atitude incrível e conhecimento médio do que alguém expert sem atitude."</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Por quê?</strong>
+- Conhecimento você ensina em 2-3 meses
+- Atitude não se ensina, é parte da pessoa
+- Pessoas com atitude aprendem sozinhas, não precisam de babá</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>O que é "atitude" na prática:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Proatividade (Não espera mandar)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>Sem atitude:</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Termina tarefa → Fica esperando próxima
+Vê problema → Ignora (não é minha responsabilidade)
+Não sabe fazer → Para e espera alguém ensinar
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Com atitude:</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Termina tarefa → "Posso ajudar em mais alguma coisa? Vi que projeto X tá atrasado"
+Vê problema → "Notei que processo Y tá travando. Posso investigar e propor solução?"
+Não sabe fazer → Pesquisa, tenta, documenta dúvidas específicas, AI pede ajuda
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Ownership (Dono do resultado, não da tarefa)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>Sem atitude:</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+"Fiz o que você pediu" (mas não funcionou → não é problema dele)
+"Não deu tempo" (sem propor solução)
+"Ninguém me avisou que era urgente" (joga responsabilidade em outros)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Com atitude:</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+"Encontrei problema X, já testei soluções A e B, vou testar C amanhã"
+"Não vai dar tempo no prazo original. Opções: reduzir escopo (entregas Y e Z) ou prazo +3 dias. Qual prefere?"
+"Não recebi info X que preciso. Já mandei email pro time Y pedindo, enquanto isso vou adiantar parte Z"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Resiliência (Não desiste no primeiro obstáculo)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>Sem atitude:</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Erro na automação → "Não tá funcionando, não sei o que fazer"
+Cliente não gostou → "Fiz o que você pediu, não foi minha culpa"
+Dificuldade técnica → Desiste, vai pra tarefa mais fácil
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Com atitude:</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Erro na automação → Testa 5 abordagens diferentes, pesquisa documentação, pergunta em fórum, DEPOIS pede ajuda com contexto completo
+Cliente não gostou → "Entendo. Pode detalhar o que não atendeu? Vou ajustar até ficar perfeito"
+Dificuldade técnica → "É desafiador mas vou aprender. Preciso de X dias a mais, pode ser?"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. Positividade (Não reclama, resolve)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>Sem atitude:</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+"Esse processo é horrível" (reclama mas não faz nada)
+"Aqui tudo é desorganizado" (crítica destrutiva)
+"Esse prazo é impossível" (negatividade)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Com atitude:</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+"Esse processo pode melhorar. Posso sugerir 3 mudanças?" (crítica construtiva)
+"Vejo oportunidades de organizar melhor. Posso montar proposta?" (propositivo)
+"Prazo é apertado. Vou priorizar entregas críticas e fazer o resto depois. Funciona?" (solucionador)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo real que vi acontecer:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Duas estagiárias, mesma empresa, mesmo salário (R$ 1.400):</strong></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Estagiária A (conhecimento técnico melhor):</span> - Sabia Excel avançado
+- Dominava PowerPoint
+- Graduando em Administração (boas notas)
+- Fazia o que mandavam, certinho
+- <strong>Atitude:</strong> média
+- <strong>6 meses depois:</strong> Ainda estagiária, R$ 1.600</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Estagiária B (conhecimento técnico médio):</span> - Excel básico/intermediário
+- PowerPoint básico
+- Cursando Gestão de RH (notas ok)
+- <strong>MAS:</strong> Notava problemas e propunha soluções sem pedirem
+- <strong>Exemplo:</strong> Viu que onboarding era caótico, criou checklist em Notion (aprendeu sozinha)
+- <strong>Exemplo 2:</strong> Percebeu reunião semanal desorganizada, criou template de pauta
+- <strong>Exemplo 3:</strong> Time reclamava de processo, ela mapeou e sugeriu melhoria
+- <strong>Atitude:</strong> excepcional
+- <strong>6 meses depois:</strong> Efetivada como Analista Jr., R$ 3.800</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Diferença de 137% em salário em 6 meses. Mesma empresa. Mesma posição inicial.</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>O que fez a diferença? ATITUDE.</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Como demonstrar atitude (antes mesmo de ser contratado):</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>No processo seletivo:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Pesquise a empresa ANTES da entrevista</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Identifique 2-3 problemas que você poderia resolver</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Leve proposta (rascunho) de como resolveria</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- "Vi no LinkedIn que vocês X. Tive ideia de Y. Posso mostrar?"</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Nos primeiros projetos freelance:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Não entregue só o que pedem</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Entregue isso + 1 bonus que você identificou que ajudaria</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Exemplo: Cliente pediu automação → você entrega automação + documentação + vídeo tutorial</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>No LinkedIn:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Não só compartilhe projetos</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Compartilhe PROBLEMAS que resolveu</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Mostre processo: "Tinha problema X, testei A e B (não deram certo), C funcionou porque Y"</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Isso demonstra atitude de resolver, não desistir</li>
+          </ol>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.3 Empatia e Disponibilidade: O Diferencial Oculto</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">A verdade que ninguém fala:</span> Habilidades técnicas te fazem ser contratado. <strong>Empatia e disponibilidade te fazem ser AMADO (e promovido, e bem pago).</strong></p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>O que significa na prática:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Empatia no trabalho:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>Sem empatia:</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Colega: "Não tô conseguindo fazer essa automação"
+Você: "É fácil, só fazer X, Y, Z" (deixa pessoa se sentindo burra)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Cliente: "Preciso urgente desse relatório"
+Você: "Tô ocupado, só semana que vem" (não considera urgência dele)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Gestor: "Pode ficar até mais tarde hoje?"
+Você: "Não" (sem explicar, sem propor alternativa)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Com empatia:</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Colega: "Não tô conseguindo fazer essa automação"
+Você: "Também travei nisso no começo! Bora junto, mostro como resolvi"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Cliente: "Preciso urgente desse relatório"
+Você: "Entendo a urgência! Minha agenda tá assim [mostra]. Posso entregar versão simplificada amanhã e completa em 3 dias, funciona?"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Gestor: "Pode ficar até mais tarde hoje?"
+Você: "Hoje não consigo (compromisso familiar), mas posso começar 1h mais cedo amanhã ou trabalhar no almoço. Qual ajuda mais?"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Diferença?</strong>
+- Pessoa sem empatia: Tecnicamente correta, mas ninguém gosta de trabalhar com ela
+- Pessoa com empatia: Talvez menos técnica, mas TODO MUNDO quer ela no time</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>E adivinha quem é promovido primeiro? Quem vira líder? Quem recebe aumento?</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Disponibilidade (sem ser capacho):</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Existe equilíbrio:</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>Pouca disponibilidade:</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+"Não posso ajudar" (sempre)
+"Não é minha função" (se esconde em job description)
+Nunca fica além do horário (mesmo quando time precisa)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>Disponibilidade excessiva (capacho):</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Aceita tudo (sobrecarrega, entrega mal)
+Nunca diz não (vira "quebra-galho" sem crescer)
+Trabalha 12h/dia, fim de semana (vira abuso)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Disponibilidade equilibrada:</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+"Posso ajudar sim! Só preciso terminar X até Y, depois foco nisso. Funciona?"
+"Não é minha função original, mas posso aprender! Preciso de Z tempo/recursos"
+"Hoje posso ficar +1h se ajudar. Mas não consigo todo dia (tenho Y responsabilidade)"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo real:</strong></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Analista de dados em startup:</span> - Função: Análise de vendas
+- <strong>MAS:</strong> Notou que time de CS não tinha dashboard de churn
+- <strong>Disponibilidade:</strong> "Pessoal, vi que vocês não têm dashboard. Posso montar um? Faço nas horas vagas"
+- Montou em 1 semana (3-4h extras)
+- Time de CS ficou MUITO grato
+- CEO soube
+- <strong>3 meses depois:</strong> Promovido a Analista Sênior (R$ 6.000 → R$ 9.500)</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Ele não era obrigado. Ele se disponibilizou (com limites claros). Foi reconhecido.</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Como praticar empatia e disponibilidade:</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Antes de responder, pense:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Como eu me sentiria na posição dessa pessoa?</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- O que ela realmente precisa (além do que tá pedindo)?</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Como posso ajudar de verdade, não só "cumprir tarefa"?</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Comunique com humanidade:</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Substitua "não" por "não posso X, mas posso Y"</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Adicione contexto: "Não consigo hoje porque X, mas amanhã sim"</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Mostre que você se importa: "Entendo a urgência, vamos achar solução juntos"</li>
+          </ol>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300"><strong>Ajude colegas (sem esperar retorno):</strong></li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Viu alguém travado? Oferece 10min do seu tempo</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Aprendeu algo novo? Compartilha com time</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Alguém tá sobrecarregado? "Posso ajudar em algo pequeno?"</li>
+          </ol>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">ROI disso:</span> - Você vira "pessoa querida" no time
+- Quando houver promoção, pensam em você primeiro
+- Quando precisarem de alguém confiável pra projeto importante, lembram de você
+- Networking se fortalece (indicações, oportunidades)</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.4 Trabalho em Equipe: A Habilidade Subestimada</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Mito:</span> "Se eu fizer tudo sozinho, vão me valorizar mais"</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Realidade:</span> Empresas não querem heróis solitários. Querem <strong>team players</strong> que fazem o TIME ganhar.</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Por quê?</strong>
+- Projeto grande = time
+- Se você não sabe trabalhar em equipe = é um risco
+- Promoções vão pra quem multiplica resultados (pelo time), não pra quem acumula tarefas</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Comportamentos que mostram você sabe trabalhar em equipe:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Comunicação clara e constante</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>Não colaborativo:</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Trabalha em silêncio → Ninguém sabe o que tá fazendo
+Descobre problema → Só fala quando estoura
+Termina parte → Não avisa ninguém (outros ficam esperando)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Colaborativo:</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Daily update (async, 2-3 linhas): "Ontem: terminei X. Hoje: começando Y. Bloqueio: preciso info Z do time W"
+Descobre problema cedo → Avisa time: "Achei problema X, pode impactar deadline. Podemos discutir?"
+Termina parte → Avisa: "Parte Y pronta. Time Z, podem começar a integrar"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Compartilhar conhecimento</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>Não colaborativo:</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Aprendeu técnica nova → Guarda pra si (quer ser "o único que sabe")
+Colega pergunta → Responde rápido sem ensinar (pra ele continuar dependendo)
+Cria solução → Não documenta (só você sabe usar)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Colaborativo:</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Aprendeu técnica nova → Compartilha: "Pessoal, aprendi X que economiza 2h/semana. Quem quer que eu mostre?"
+Colega pergunta → Ensina de verdade: "Deixa eu te mostrar passo-a-passo. Depois você tenta sozinho, qualquer dúvida eu tô aqui"
+Cria solução → Documenta: "Criei automação X. Aqui tá doc de como usar + vídeo tutorial. Qualquer coisa, me chama"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Dar crédito (não roubar protagonismo)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>Não colaborativo:</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Projeto em grupo teve sucesso → Apresenta como se fosse só seu
+Colega deu ideia → Você implementa e não menciona origem
+Resultado bom → "Eu fiz", "Eu criei", "Meu projeto"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Colaborativo:</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Projeto em grupo teve sucesso → "Time fez incrível! Fulano liderou, Sicrano implementou, eu ajudei em X"
+Colega deu ideia → "Ideia foi da Maria, eu implementei baseado na sugestão dela"
+Resultado bom → "A GENTE conseguiu", "NOSSO time", "Trabalhamos juntos"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Por que isso importa pra carreira:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Você pode achar: "Mas se eu der crédito pros outros, eu não vou brilhar"</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Realidade:</span> Acontece o oposto.
+- Quando você valoriza outros, ELES te valorizam de volta
+- Gestores querem líderes que elevam o time, não que pisam nele
+- Generosidade com crédito = Reputação de confiável
+- Pessoas querem trabalhar com você = Mais oportunidades</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo real:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Dois desenvolvedores júniors (ambos bons tecnicamente):</strong></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Dev A:</span> - Resolve problemas rápido
+- Mas nunca ensina colegas (quer ser "indispensável")
+- Quando projeto dá certo, posta no LinkedIn como se fosse só dele
+- <strong>12 meses depois:</strong> Ainda júnior, R$ 4.500</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Dev B:</span> - Resolve problemas (talvez um pouco mais devagar)
+- MAS documenta tudo, ensina colegas, compartilha conhecimento
+- Quando projeto dá certo, faz post destacando contribuições do TIME
+- Time AMA trabalhar com ele
+- <strong>12 meses depois:</strong> Promovido a Pleno, R$ 7.500 + virando tech lead</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Trabalhar em equipe = Multiplicador de carreira</strong></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.5 Liderança (Mesmo sem Cargo de Líder)</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Mito:</span> "Preciso ser gerente/coordenador pra liderar"</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Realidade:</span> Liderança é comportamento, não cargo.</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Liderança sem cargo:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Tomar iniciativa quando ninguém toma</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Situação: Time tem problema, todo mundo sabe, ninguém faz nada.</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Líder sem cargo:</span> "Pessoal, percebo que X tá travando a gente. Posso propor solução? Marquei 30min com quem tiver interesse pra discutir"</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Organizar quando tá desorganizado</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Situação: Projeto sem dono, caótico, ninguém sabe quem faz o quê.</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Líder sem cargo:</span> "Galera, vou criar um Notion rápido com tasks + responsáveis + deadlines. Amanhã compartilho, daí cada um pega o que faz sentido. Ok?"</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Mediar conflitos</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Situação: Dois colegas discordando, ambiente tenso.</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Líder sem cargo:</span> "Vocês dois têm pontos válidos. Que tal: João faz teste abordagem A essa semana, Maria testa B semana que vem, comparamos resultados e decidimos com dados?"</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. Elevar o time</strong></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Não-líder:</span> Foco em brilhar sozinho
+<strong>Líder:</strong> Foco em fazer TIME brilhar</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Comportamentos:
+- Elogia trabalho de colegas (publicamente)
+- Ajuda quem tá com dificuldade
+- Compartilha oportunidades ("Vi vaga legal pro seu perfil, João")
+- Celebra vitórias do time</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>5. Visão de longo prazo</strong></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Não-líder:</span> Pensa só na tarefa de hoje
+<strong>Líder:</strong> Pensa "como isso impacta projeto inteiro? Empresa? Time?"</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Exemplo:
+- Tarefa: Criar automação X
+- <strong>Não-líder:</strong> Faz a automação, done
+- <strong>Líder:</strong> Faz automação + documenta + treina time + pensa "que outras áreas podem usar isso?" + compartilha template</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Por que desenvolver liderança ANTES de ter cargo:</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Promoções vão pra quem JÁ demonstra comportamento de líder</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Quando vaga de coordenador/gerente abrir, pensam em você</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Mesmo sem promoção formal, você ganha respeito e influência</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Facilita transição pra cargo de liderança (você já praticou)</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Como começar a liderar sem cargo:</strong></p>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Não espere permissão pra organizar/propor/melhorar</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Diga "posso?" em vez de esperar que mandem</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Exemplo: "Posso criar doc padrão pra esse processo?"</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Quando tiver ideia, compartilhe: "Tive ideia X, faz sentido testar?"</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Seja a pessoa que conecta pessoas: "João tá com problema Y, Maria tem expertise nisso. Apresento vocês?"</span></li>
           </ul>
+
         </div>
 
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">💼</div>
-          <h3 class="text-2xl font-bold mb-4">Oportunidades Reais</h3>
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
-            Veja onde estão as vagas e quanto pagam em 2025:
-          </p>
-          <div class="space-y-3">
-            <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
-              <p class="font-bold text-green-700 dark:text-green-300">Analista de Automação Jr.</p>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400">R$ 3.500 - 6.000 | Remoto</p>
-            </div>
-            <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-              <p class="font-bold text-blue-700 dark:text-blue-300">Especialista em Prompt IA</p>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400">R$ 4.000 - 8.000 | Híbrido</p>
-            </div>
-            <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
-              <p class="font-bold text-purple-700 dark:text-purple-300">Assistente de Dados com IA</p>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400">R$ 3.000 - 5.500 | Remoto</p>
-            </div>
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.6 Trabalhar Dentro das Regras Organizacionais (Inteligência Política)</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>A verdade que ninguém gosta de ouvir:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Você NÃO tem liberdade total numa empresa. E tudo bem.</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Empresas têm:
+- Processos (que você pode achar ineficientes)
+- Políticas (que você pode não concordar)
+- Hierarquia (que você precisa respeitar)
+- Cultura (que pode ser diferente da sua)
+- Restrições (orçamento, tempo, recursos)</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">O profissional imaturo:</span> "Essas regras são idiotas, vou ignorar e fazer do meu jeito"</p>
           </div>
-        </div>
 
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">❌</div>
-          <h3 class="text-2xl font-bold mb-4">Mitos que Te Impedem</h3>
-          <div class="space-y-4 text-neutral-700 dark:text-neutral-300">
-            <div>
-              <p class="font-bold text-red-600 dark:text-red-400 mb-1">❌ "Preciso de faculdade"</p>
-              <p class="text-sm">✅ <strong>Realidade:</strong> 68% das vagas de entrada aceitam certificações técnicas</p>
-            </div>
-            <div>
-              <p class="font-bold text-red-600 dark:text-red-400 mb-1">❌ "Preciso de 2 anos de experiência"</p>
-              <p class="text-sm">✅ <strong>Realidade:</strong> Portfólio com 3-5 projetos reais vale mais</p>
-            </div>
-            <div>
-              <p class="font-bold text-red-600 dark:text-red-400 mb-1">❌ "Só grandes empresas contratam"</p>
-              <p class="text-sm">✅ <strong>Realidade:</strong> Startups e PMEs contratam mais e são mais flexíveis</p>
-            </div>
-            <div>
-              <p class="font-bold text-red-600 dark:text-red-400 mb-1">❌ "Tecnologia é só para quem sabe programar"</p>
-              <p class="text-sm">✅ <strong>Realidade:</strong> Ferramentas no-code eliminaram essa barreira</p>
-            </div>
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">O profissional maduro:</span> "Não concordo com X, mas vou trabalhar DENTRO do sistema pra mudá-lo"</p>
           </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Inteligência política:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Entenda as regras antes de questionar</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>Imaturo:</strong>
+Entra na empresa → Dia 3 já tá criticando tudo → "Aqui tá tudo errado"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Maduro:</strong>
+Primeiros 30-60 dias → Observa, pergunta "por que fazemos assim?" → Entende razões históricas → DEPOIS propõe melhorias com contexto</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Respeite hierarquia (mesmo que não concorde)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>Imaturo:</strong>
+Discorda do gestor → Vai direto pro diretor (pula hierarquia) → Queima ponte</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Maduro:</strong>
+Discorda do gestor → Agenda 1:1: "Entendo tua decisão sobre X. Posso apresentar visão alternativa?" → Se ainda não rolar, aceita (ou escala apropriadamente)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Proponha mudanças de forma estratégica</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>Imaturo:</strong>
+"Esse processo é horrível, tem que mudar!" (crítica sem proposta)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Maduro:</strong>
+"Processo atual tem desafios X, Y. Testei abordagem Z (mostro resultados). Podemos pilotar em 1 time antes de escalar?"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. Escolha suas batalhas</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Nem tudo vale a pena questionar.</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Framework:</span> - <strong>Impacto Alto + Chances Mudar = Alto:</strong> LUTA POR ISSO
+- <strong>Impacto Alto + Chances Mudar = Baixo:</strong> Aceita (ou busca mudar organização)
+- <strong>Impacto Baixo:</strong> Aceita e segue em frente</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Exemplo:
+- Processo de aprovação tem 5 passos desnecessários (Impacto Alto): Vale questionar
+- Reunião semanal é às 9h (você preferia 10h, Impacto Baixo): Aceita</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>5. Use regras a seu favor (não contra você)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Empresa tem regra: "Toda automação precisa aprovação de IT antes de rodar em produção"</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Imaturo:</span> Ignora regra → Cria automação → Roda sem avisar → Quebra algo → É demitido</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Maduro:</span> Respeita regra → Cria automação em ambiente de testes → Documenta benefícios (economiza R$ 5k/mês) → Apresenta pro IT com dados → IT aprova porque viu valor → Você ganha reputação de "segue processo E entrega resultado"</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>6. Navegue política sem ser político</strong></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Política ruim:</span> Puxa saco, joga colegas pra baixo, fofoca</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Política saudável:</span> Entende stakeholders, constrói alianças, comunica bem</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Como fazer política saudável:
+- Identifique quem são decisores (não só seu gestor direto)
+- Comunique resultados pra quem importa (visibilidade estratégica)
+- Constrói reputação de confiável (cumpre prazos, entrega qualidade)
+- Ajuda outras áreas (não fica no seu silo)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo real:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Analista quer implementar nova ferramenta (Notion):</strong></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Abordagem ruim:</span> Simplesmente começa a usar → Alguns colegas migram → Gera divisão → IT bloqueia → Projeto morre</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Abordagem inteligente:</span> 1. Testa Notion no próprio trabalho (piloto individual)
+2. Documenta benefícios (economizou 5h/semana dele)
+3. Mostra pro gestor direto: "Olha resultado, posso testar com time?"
+4. Pilota com time (2 semanas)
+5. Documenta resultados: "Time economizou 15h/semana"
+6. Gestor apresenta pra diretoria
+7. IT vê valor e viabilidade
+8. Aprovam rollout empresa inteira
+9. Analista é reconhecido como "agente de mudança" → Promovido</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Trabalhar dentro das regras ≠ Aceitar tudo</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Você PODE mudar as regras. Mas precisa fazer de forma inteligente:
+- Com dados (não opinião)
+- Com piloto (não big bang)
+- Com paciência (mudança leva tempo)
+- Com respeito (não rebelião)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>O objetivo:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Usar restrições organizacionais como FERRAMENTA pra crescer empresa E sua carreira.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Não é "aceitar tudo calado". É "mudar de dentro, de forma eficaz".</p>
+
         </div>
 
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.7 Resumo: O Profissional Completo</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Habilidades técnicas te colocam na porta. Soft skills te fazem entrar e crescer.</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Profissional top 10% tem:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Domínio de processo:</strong> Entende o "porquê", não só o "como"
+✅ <strong>Atitude:</strong> Proativo, dono do resultado, resiliente
+✅ <strong>Empatia:</strong> Entende pessoas, comunicação humana, disponível (com limites)
+✅ <strong>Trabalho em equipe:</strong> Colabora, compartilha crédito, eleva o time
+✅ <strong>Liderança:</strong> Toma iniciativa, organiza, tem visão
+✅ <strong>Inteligência política:</strong> Trabalha dentro das regras pra mudá-las</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>E sabe o melhor?</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Essas habilidades você pode começar a desenvolver HOJE. Não precisa esperar emprego.</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Como:</span> - Projetos pessoais: Pratique entender processos (seu próprio workflow)
+- Comunidades online: Pratique ajudar outros (empatia, trabalho em equipe)
+- LinkedIn: Pratique dar crédito, compartilhar conhecimento
+- Freelances iniciais: Pratique atitude (ir além do pedido), liderança (propor melhorias)</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Quando chegar na entrevista/primeiro dia de trabalho:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Você não vai dizer "tenho soft skills". Você vai DEMONSTRAR naturalmente, porque já praticou.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>E isso te diferencia de 90% dos candidatos.</strong></p>
+
+        </div>
       </div>
 
-      <!-- Warning Box -->
-      <div class="bg-amber-50 dark:bg-amber-900/20 p-8 rounded-2xl border-2 border-amber-400 mb-16">
-        <div class="flex items-start gap-4">
-          <div class="text-4xl">⚠️</div>
-          <div>
-            <h3 class="text-2xl font-bold mb-3 text-amber-800 dark:text-amber-200">A Janela de Oportunidade Está Aberta AGORA</h3>
-            <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
-              Estamos em um momento único: empresas precisam de pessoas que <strong>saibam usar IA</strong>, mas ainda existem <strong>poucos profissionais qualificados</strong>. Nos próximos 2-3 anos, essa vantagem competitiva vai diminuir.
-            </p>
-            <p class="font-bold text-amber-800 dark:text-amber-200">
-              Quem se preparar HOJE terá uma vantagem de 12-24 meses sobre a concorrência.
-            </p>
+
+      <!-- Seção: 5. Oportunidades Concretas: Onde Estão as Vagas? -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">5. Oportunidades Concretas: Onde Estão as Vagas?</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.1 Mercado de Trabalho CLT</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Posições mais comuns para iniciantes:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Analista de Automação Júnior</strong>
+- Salário: R$ 3.500 - 6.000
+- O que faz: Cria automações com Make/Zapier, documenta processos, otimiza fluxos de trabalho
+- Requisitos típicos: Conhecimento em no-code, atenção a detalhes, comunicação clara
+- Onde encontrar: Startups SaaS, agências digitais, e-commerces</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Assistente de IA / Prompt Engineer Jr.</strong>
+- Salário: R$ 4.000 - 8.000
+- O que faz: Cria prompts avançados, treina times em uso de IA, otimiza processos com ChatGPT/Claude
+- Requisitos típicos: Domínio de IAs generativas, criatividade, pensamento analítico
+- Onde encontrar: Agências de marketing, consultorias, empresas tech</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Analista de Dados com IA</strong>
+- Salário: R$ 3.000 - 6.500
+- O que faz: Analisa planilhas, gera relatórios, encontra insights usando IA + Excel/Sheets
+- Requisitos típicos: Excel intermediário, ChatGPT/Claude, lógica de negócios
+- Onde encontrar: E-commerces, varejo online, empresas B2B</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. Especialista em Notion / Knowledge Manager</strong>
+- Salário: R$ 3.500 - 6.000
+- O que faz: Organiza conhecimento da empresa, cria bases de dados, documenta processos
+- Requisitos típicos: Notion avançado, organização, comunicação escrita
+- Onde encontrar: Startups, empresas remotas, consultorias</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>5. Operador de IA para Atendimento</strong>
+- Salário: R$ 3.000 - 5.500
+- O que faz: Gerencia chatbots, treina IAs de atendimento, monitora qualidade
+- Requisitos típicos: Experiência com atendimento, IA conversacional, empatia
+- Onde encontrar: E-commerces, SaaS, empresas de serviços</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.2 Mercado Freelance</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Projetos mais lucrativos:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Automação de Processos (Make/Zapier)</strong>
+- Preço médio: R$ 800 - 3.000 por projeto
+- Tempo médio: 3-10 horas
+- Onde vender: Workana, 99Freelas, Upwork, contatos diretos
+- Exemplo: "Automatizar processo de vendas: quando lead preenche formulário → salvar no CRM → enviar email de boas-vindas → criar tarefa para vendedor → notificar no Slack"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Setup de Notion Empresarial</strong>
+- Preço médio: R$ 1.200 - 4.000 por projeto
+- Tempo médio: 8-20 horas
+- Onde vender: Workana, LinkedIn (cold outreach), comunidades de founders
+- Exemplo: "Criar workspace completo: wiki interna, base de clientes, gestão de projetos, templates, integrações"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Consultoria de IA para Empresas</strong>
+- Preço médio: R$ 2.000 - 6.000/mês (recorrente)
+- Tempo médio: 10-15 horas/mês
+- Onde vender: LinkedIn, networking, indicações
+- Exemplo: "Treinar equipe em ChatGPT/Claude, criar biblioteca de prompts, otimizar processos com IA, monitorar ROI"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. Criação de Dashboards e Relatórios</strong>
+- Preço médio: R$ 600 - 2.500 por projeto
+- Tempo médio: 4-12 horas
+- Onde vender: Upwork, Workana, LinkedIn
+- Exemplo: "Criar dashboard de vendas em Google Sheets com IA que atualiza automaticamente e envia relatórios semanais"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>5. Análise de Dados com IA</strong>
+- Preço médio: R$ 500 - 2.000 por análise
+- Tempo médio: 2-8 horas
+- Onde vender: 99Freelas, GetNinjas, LinkedIn
+- Exemplo: "Analisar base de clientes, segmentar por comportamento, identificar padrões de churn, sugerir ações"</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.3 Como Se Posicionar para Ser Encontrado</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Estratégia 1: LinkedIn Otimizado</strong>
+- Headline forte: "Especialista em Automação No-Code | Make & Zapier | Economizo 20h/semana para empresas"
+- Sobre rico em palavras-chave: IA, automação, no-code, ChatGPT, Make, Notion
+- Projetos documentados: 5-10 posts mostrando o que você já fez
+- Engajamento: comentar em posts de founders, compartilhar aprendizados</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Estratégia 2: Portfólio Público</strong>
+- GitHub (para automações)
+- Notion público (para casos de uso)
+- Loom/YouTube (vídeos mostrando projetos)
+- Medium/LinkedIn (artigos ensinando)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Estratégia 3: Comunidades Estratégicas</strong>
+- Discord de startups e founders
+- Grupos de WhatsApp/Telegram de empreendedores
+- Fóruns especializados (Product Hunt, Indie Hackers versões BR)
+- LinkedIn ativo (não só consumir, PUBLICAR)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Estratégia 4: Cold Outreach</strong>
+Mensagem modelo para founders de startups no LinkedIn:</p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>Oi [Nome]! Vi que você está construindo [nome da startup].</code></pre>
           </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Tenho ajudado empresas como a sua a economizar 10-20h/semana automatizando processos com IA e ferramentas no-code.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Criei uma automação simples [descrever brevemente] que poderia ajudar vocês com [problema que você identificou no perfil/site deles].</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Posso mandar um vídeo de 2 min mostrando como funciona? Sem compromisso, só para agregar.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Abraço!
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Taxa de resposta: 15-30% (muito acima de aplicações tradicionais).</p>
+
         </div>
       </div>
 
-      <!-- Case Studies -->
-      <h2 class="text-3xl font-bold mb-8">📊 Casos Reais de Sucesso</h2>
-      <div class="grid md:grid-cols-3 gap-6 mb-16">
-        <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl border border-neutral-200 dark:border-neutral-700">
-          <p class="text-sm text-neutral-500 mb-2">Fernanda, 24 anos</p>
-          <p class="font-bold text-lg mb-3">De atendente a Especialista em IA</p>
-          <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-3">
-            Começou como atendente de telemarketing. Aprendeu prompt engineering e automação. Hoje coordena IA em startup.
-          </p>
-          <p class="text-talento font-bold">Salário: R$ 2.100 → R$ 7.500</p>
+
+      <!-- Seção: 5. Casos Reais de Sucesso -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">5. Casos Reais de Sucesso</h2>
+
+
+        <div class="bg-talento/10 dark:bg-talento/20 border-2 border-talento/30 p-6 rounded-xl mb-8">
+          <h3 class="text-xl font-bold text-talento mb-4">Caso 1: Fernanda, 24 anos - De Atendente a Especialista em IA</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Situação inicial (janeiro 2024):</span> - Atendente de telemarketing: R$ 2.100/mês
+- Ensino médio completo, sem faculdade
+- Sem experiência em tech</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">O que ela fez:</span> 1. <strong>Mês 1-2:</strong> Aprendeu ChatGPT e Claude intensivamente (2h/dia após trabalho)
+2. <strong>Mês 3:</strong> Criou 5 projetos pessoais usando IA (análise de dados, automação de emails, criação de conteúdo)
+3. <strong>Mês 4:</strong> Documentou tudo no LinkedIn (10 posts mostrando projetos)
+4. <strong>Mês 5:</strong> Conseguiu primeiro freelance (R$ 800 para criar biblioteca de prompts)
+5. <strong>Mês 6:</strong> Foi notada por startup que viu seus posts, contratada como "AI Operations Assistant"</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Resultado (novembro 2024):</span> - Salário: R$ 7.500/mês
+- Trabalho 100% remoto
+- Coordena uso de IA em startup de 25 pessoas
+- Dá consultorias freelance aos sábados (R$ 2.000-3.000/mês extra)</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Salário: R$ 2.100 → R$ 7.500 (+ R$ 2.500 freelance) em 10 meses</strong></p>
+
         </div>
-        <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl border border-neutral-200 dark:border-neutral-700">
-          <p class="text-sm text-neutral-500 mb-2">Ricardo, 29 anos</p>
-          <p class="font-bold text-lg mb-3">De estoquista a Analista de Dados</p>
-          <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-3">
-            Trabalhava em estoque. Fez curso de análise com Python e IA. Hoje analisa dados para e-commerce.
-          </p>
-          <p class="text-talento font-bold">Salário: R$ 1.800 → R$ 6.200</p>
+
+        <div class="bg-talento/10 dark:bg-talento/20 border-2 border-talento/30 p-6 rounded-xl mb-8">
+          <h3 class="text-xl font-bold text-talento mb-4">Caso 2: Ricardo, 29 anos - De Estoquista a Analista de Dados</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Situação inicial (março 2024):</span> - Estoquista em loja de materiais de construção: R$ 1.800/mês
+- Ensino médio, começou faculdade de Administração mas trancou
+- Mexia com Excel básico no trabalho</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">O que ele fez:</span> 1. <strong>Mês 1:</strong> Aprendeu Excel avançado + ChatGPT para análise (3h/dia, antes e depois do trabalho)
+2. <strong>Mês 2-3:</strong> Analisou dados da própria loja usando IA, encontrou R$ 12.000/mês em perdas evitáveis
+3. <strong>Mês 4:</strong> Apresentou análise pro dono, que ficou impressionado
+4. <strong>Mês 5:</strong> Dono pagou curso de Power BI e o promoveu para "Assistente de Gestão" (R$ 3.200)
+5. <strong>Mês 6-8:</strong> Continuou estudando, criou portfólio de análises
+6. <strong>Mês 9:</strong> Aplicou para vaga de "Analista de Dados Jr." em e-commerce</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Resultado (dezembro 2024):</span> - Salário: R$ 6.200/mês
+- Trabalho híbrido (2x semana presencial)
+- Analisa dados de vendas para e-commerce médio
+- Projetos freelance de análise (R$ 1.000-2.000/mês extra)</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Salário: R$ 1.800 → R$ 6.200 (+ R$ 1.500 freelance médio) em 9 meses</strong></p>
+
         </div>
-        <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl border border-neutral-200 dark:border-neutral-700">
-          <p class="text-sm text-neutral-500 mb-2">Ana, 22 anos</p>
-          <p class="font-bold text-lg mb-3">De estagiária a Automação Pleno</p>
-          <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-3">
-            Estagiária administrativa. Aprendeu Make e n8n. Hoje automatiza processos em multinacional.
-          </p>
-          <p class="text-talento font-bold">Salário: R$ 1.200 → R$ 8.000</p>
+
+        <div class="bg-talento/10 dark:bg-talento/20 border-2 border-talento/30 p-6 rounded-xl mb-8">
+          <h3 class="text-xl font-bold text-talento mb-4">Caso 3: Ana, 22 anos - De Estagiária a Especialista em Automação Pleno</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Situação inicial (junho 2023):</span> - Estagiária administrativa: R$ 1.200/mês
+- Cursando Gestão de RH (2º ano)
+- Muito organizada, frustrada com processos manuais</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">O que ela fez:</span> 1. <strong>Mês 1-2:</strong> Descobriu Make e automação no-code, ficou fascinada
+2. <strong>Mês 3-4:</strong> Automatizou processos da própria empresa (onboarding, controle de ponto, relatórios)
+3. <strong>Mês 5:</strong> Economizou 30h/semana da equipe, foi promovida a "Assistente de Processos" (R$ 2.800)
+4. <strong>Mês 6-12:</strong> Automatizou 40+ processos, documentou tudo, criou biblioteca de automações
+5. <strong>Mês 13:</strong> Foi recrutada por multinacional que viu seu trabalho</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Resultado (julho 2024 - 1 ano depois):</span> - Salário: R$ 8.000/mês
+- Multinacional, trabalho remoto
+- Coordena automação de 3 departamentos
+- Recebe propostas de consultoria toda semana (recusa por falta de tempo)</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Salário: R$ 1.200 → R$ 8.000 em 13 meses</strong></p>
+
+        </div>
+
+        <div class="bg-talento/10 dark:bg-talento/20 border-2 border-talento/30 p-6 rounded-xl mb-8">
+          <h3 class="text-xl font-bold text-talento mb-4">Padrão nos 3 Casos:</h3>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">✅ Nenhum tinha formação técnica</li>
+            <li class="text-neutral-700 dark:text-neutral-300">✅ Todos começaram estudando 2-3h/dia</li>
+            <li class="text-neutral-700 dark:text-neutral-300">✅ Criaram projetos práticos (não ficaram só na teoria)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">✅ Documentaram e mostraram resultados</li>
+            <li class="text-neutral-700 dark:text-neutral-300">✅ Foram proativos (não esperaram oportunidades, criaram)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">✅ Crescimento de 200-500% em salário em menos de 1 ano</li>
+          </ol>
+
         </div>
       </div>
 
-      <!-- Next Steps -->
-      <div class="bg-gradient-to-r from-talento to-amber-600 p-8 rounded-2xl text-white">
-        <h2 class="text-3xl font-bold mb-4">🎯 Próximos Passos</h2>
-        <p class="text-lg mb-6 opacity-90">
-          Agora que você entende o mercado, nos próximos módulos você vai aprender exatamente como se posicionar para aproveitar essas oportunidades.
-        </p>
-        <div class="flex gap-4">
-          <a href="modulo-02.html" class="px-6 py-3 bg-white text-talento rounded-lg font-semibold hover:bg-neutral-100 transition-all">
-            Módulo 2: Construindo Seu Perfil →
-          </a>
-          <a href="../../trilhas/talento.html" class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 transition-all">
-            ← Voltar para Trilha
-          </a>
+
+      <!-- Seção: 6. A Janela de Oportunidade Está Fechando -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">6. A Janela de Oportunidade Está Fechando</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Aqui vai a parte mais importante deste módulo:</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Essa vantagem competitiva é TEMPORÁRIA.</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Em 2-3 anos:
+- Universidades vão adicionar IA e automação aos currículos
+- Bootcamps vão saturar o mercado com profissionais
+- A "vantagem de ser early adopter" vai desaparecer
+- A competição vai aumentar exponencialmente</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Agora, em 2025, você está num momento único:</span> - Demanda altíssima por habilidades em IA/automação
+- Oferta baixa de profissionais qualificados
+- Empresas dispostas a contratar e treinar
+- Salários acima da média porque precisam preencher vagas</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Quem se mover AGORA tem 12-24 meses de vantagem sobre a concorrência.</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Não é exagero. É o que aconteceu com:
+- Desenvolvimento web (anos 2000): quem começou cedo ficou rico
+- Social media (2010-2015): early adopters viraram gerentes/diretores
+- UX/UI design (2015-2020): quem aprendeu primeiro cobra R$ 15.000-30.000/mês hoje</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>História se repete. A pergunta é: você vai fazer parte dela?</strong></p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Exercício Prático -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">Exercício Prático</h2>
+
+        <div class="mb-6">
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Duração:</span> 30 minutos</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Objetivo:</span> Mapear oportunidades concretas para o SEU perfil</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Passo 1 (10 min):</span> Liste 3 habilidades que você JÁ tem (mesmo que básicas)
+- Exemplo: "Sou organizado", "Mexo bem no Excel", "Escrevo bem", "Entendo de vendas"</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Passo 2 (10 min):</span> Para cada habilidade, procure no LinkedIn 5 vagas que combinam essa habilidade + IA/automação
+- Exemplo: Se você "escreve bem" → procure "content creator IA", "copywriter ChatGPT", "prompt engineer"</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Passo 3 (10 min):</span> Escolha UMA vaga que te interessou e responda:
+- Quais habilidades você já tem?
+- Quais habilidades faltam?
+- Quanto tempo levaria para aprender as que faltam?
+- Qual seria o primeiro projeto prático para demonstrar essas habilidades?</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Entrega:</span> Documento de 1 página com suas respostas</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Este exercício vai mostrar que a distância entre onde você está e um emprego de R$ 4.000-7.000 é menor do que você imagina.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">---</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Próximos Passos -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">Próximos Passos</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">No próximo módulo (<strong>Módulo 2: Construindo Seu Perfil Profissional</strong>), você vai aprender exatamente como:
+- Criar um LinkedIn que recrutadores encontram e querem entrar em contato
+- Montar um portfólio digital que vale mais que diploma
+- Fazer networking estratégico (mesmo sendo introvertido)
+- Se posicionar como especialista (mesmo sendo iniciante)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Mas antes de avançar, faça o exercício prático acima. Conhecimento sem ação é ilusão.</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Nos vemos no Módulo 2! 🚀</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">---</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>© 2025 FETD - Formação em Engenharia de Intenção</strong></p>
+
         </div>
       </div>
 
     </div>
   </section>
 
-  <footer class="bg-white dark:bg-neutral-800 border-t border-neutral-200 dark:border-neutral-700 py-8 mt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-600 dark:text-neutral-400">
-      <p>© 2025 FETD - Formação em Engenharia de Intenção</p>
+  <!-- Footer / Navegação -->
+  <section class="py-12 bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center">
+        <a href="../../trilhas/talento.html" class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90">
+          ← Voltar para Trilha
+        </a>
+        <a href="modulo-02.html" class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90">Próximo Módulo →</a>
+      </div>
     </div>
-  </footer>
+  </section>
 
+  <!-- Dark Mode Toggle Script -->
   <script>
-    document.documentElement.classList.remove('preload');
+    // Remove preload class
+    window.addEventListener('load', () => {
+      document.body.classList.remove('preload');
+    });
+
+    // Dark mode toggle
     const themeToggleBtn = document.getElementById('theme-toggle');
-    const darkIcon = document.getElementById('theme-toggle-dark-icon');
-    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    // Check localStorage
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      themeToggleLightIcon.classList.remove('hidden');
       document.documentElement.classList.add('dark');
-      lightIcon.classList.remove('hidden');
     } else {
-      darkIcon.classList.remove('hidden');
+      themeToggleDarkIcon.classList.remove('hidden');
     }
-    themeToggleBtn.addEventListener('click', function() {
-      darkIcon.classList.toggle('hidden');
-      lightIcon.classList.toggle('hidden');
-      if (document.documentElement.classList.contains('dark')) {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('color-theme', 'light');
+
+    themeToggleBtn.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        }
       } else {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('color-theme', 'dark');
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        }
       }
     });
   </script>

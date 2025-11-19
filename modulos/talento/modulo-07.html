@@ -3,154 +3,1129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 7: Slack e Comunicação Assíncrona | FETD</title>
+  <title>Módulo 7: Slack e Comunicação Assíncrona | Trilha Talento Emergente | FETD</title>
+  <meta name="description" content="Dominar ferramentas de comunicação profissional remota">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/tailwindcss-cdn@3.4.1/tailwindcss.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            'operacional': '#3B82F6',
-            'comunicador': '#10B981',
             'talento': '#F59E0B',
-            'tecnico': '#F97316',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
           },
         }
       }
     }
   </script>
+
   <style>
-    * { transition: background-color 200ms, border-color 200ms, color 200ms; }
-    .preload * { transition: none !important; }
-    body { font-family: 'Inter', sans-serif; }
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
   </style>
 </head>
+
 <body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navbar -->
   <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-talento to-operacional bg-clip-text text-transparent">🎓 FETD</a>
-        <div class="flex items-center space-x-8">
+        <div class="flex items-center">
+          <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-talento to-talento bg-clip-text text-transparent">
+            🎓 FETD
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
           <a href="../../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Início</a>
-          <a href="../../trilhas/talento.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Trilha</a>
+          <a href="../../trilhas/talento.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Trilha Talento Emergente</a>
           <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
           </button>
         </div>
       </div>
     </div>
   </nav>
 
+  <!-- Breadcrumb -->
   <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <nav class="flex text-sm">
-        <a href="../../index.html" class="text-talento hover:underline">Início</a>
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../../index.html" class="text-talento hover:opacity-80">Início</a>
         <span class="mx-2 text-neutral-400">/</span>
-        <a href="../../trilhas/talento.html" class="text-talento hover:underline">Trilha Talento Emergente</a>
+        <a href="../../trilhas/talento.html" class="text-talento hover:opacity-80">Trilha Talento Emergente</a>
         <span class="mx-2 text-neutral-400">/</span>
         <span class="text-neutral-600 dark:text-neutral-400">Módulo 7</span>
       </nav>
     </div>
   </div>
 
-  <section class="bg-gradient-to-r from-talento to-amber-600 py-16">
+  <!-- Hero Módulo -->
+  <section class="bg-gradient-to-r from-talento to-talento py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+
       <div class="flex items-center gap-3 mb-4">
-        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">🟡 Módulo 7 de 10</span>
-        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">⏱️ 45min</span>
-      </div>
-      <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">Slack e Comunicação Assíncrona</h1>
-      <p class="text-xl opacity-90 mb-6"><strong>Objetivo:</strong> Dominar ferramentas de comunicação profissional</p>
-      <a href="../../downloads/talento/modulo-07.md" download class="inline-flex items-center px-6 py-3 bg-white text-talento rounded-lg font-semibold hover:bg-neutral-100 transition-all">
-        📥 Download Conteúdo (.md)
-      </a>
-    </div>
-  </section>
-
-  <section class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-8 mb-16">
-
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">💬</div>
-          <h3 class="text-2xl font-bold mb-4">Slack Profissional</h3>
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">Slack é o padrão em startups e tech. Aprenda a usar canais, threads, menções e integrações como um pro.</p>
-          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl">
-            <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">💡 Canais públicos/privados, threads organizados, menções estratégicas, status e notificações</p>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">🤖</div>
-          <h3 class="text-2xl font-bold mb-4">Slack Bots e Automação</h3>
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">Integre Slack com Make, receba notificações de sistemas, crie comandos customizados, automatize workflows.</p>
-          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl">
-            <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">💡 Incoming webhooks, slash commands, apps, Workflow Builder</p>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">📅</div>
-          <h3 class="text-2xl font-bold mb-4">Comunicação Assíncrona</h3>
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">Trabalho remoto exige comunicação clara sem reuniões desnecessárias. Domine mensagens assíncronas eficazes.</p>
-          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl">
-            <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">💡 Contexto completo, formato claro, anexos, deadline, resposta esperada</p>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">🎯</div>
-          <h3 class="text-2xl font-bold mb-4">Etiqueta Digital</h3>
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">Como escrever mensagens profissionais, quando usar DM vs canal, como dar feedback, resolver conflitos digitalmente.</p>
-          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl">
-            <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">💡 Tom adequado, clareza, emojis profissionais, respeito ao horário</p>
-          </div>
-        </div>
-
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">Módulo 7 de 10</span>
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">⏱️ 45 minutos</span>
       </div>
 
-      <div class="bg-gradient-to-r from-talento to-amber-600 p-8 rounded-2xl text-white">
-        <h2 class="text-3xl font-bold mb-4">🎯 Próximos Passos</h2>
-        <p class="text-lg mb-6 opacity-90">Continue sua jornada na Trilha Talento Emergente!</p>
-        <div class="flex gap-4">
-          <a href="modulo-06.html" class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 transition-all">← Anterior</a>
-          <a href="modulo-08.html" class="px-6 py-3 bg-white text-talento rounded-lg font-semibold hover:bg-neutral-100 transition-all">Próximo →</a>
-        </div>
+      <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">
+        Módulo 7: Slack e Comunicação Assíncrona
+      </h1>
+
+      <p class="text-xl text-white/90 mb-6 max-w-3xl">
+        Dominar ferramentas de comunicação profissional remota
+      </p>
+
+      <div class="flex items-center gap-4">
+        <span class="text-white/80">📚 Teoria</span>
+        <span class="text-white/80">•</span>
+        <span class="text-white/80">💭 Reflexão</span>
+        <span class="text-white/80">•</span>
+        <span class="text-white/80">🛠️ Prática</span>
       </div>
     </div>
   </section>
 
-  <footer class="bg-white dark:bg-neutral-800 border-t border-neutral-200 dark:border-neutral-700 py-8 mt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-600 dark:text-neutral-400">
-      <p>© 2025 FETD - Formação em Engenharia de Intenção</p>
-    </div>
-  </footer>
+  <!-- Conteúdo Principal -->
+  <section class="py-16 bg-white dark:bg-neutral-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
+      <!-- Download Button -->
+      <div class="flex justify-end mb-8">
+        <a href="../../downloads/talento/modulo-07.md" download class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90 inline-flex items-center gap-2">
+          <span>📥</span>
+          <span>Download MD</span>
+        </a>
+      </div>
+
+
+      <!-- Seção: Introdução: A Nova Era do Trabalho Remoto -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">Introdução: A Nova Era do Trabalho Remoto</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Trabalho remoto exige comunicação eficaz. <strong>Slack</strong> é padrão em 80%+ das startups e scale-ups brasileiras.</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Dados 2024-2025:</span> - 70% empresas tech usam Slack
+- Profissionais gastam 2-4h/dia no Slack
+- Má comunicação assíncrona: -20% produtividade
+- Boa comunicação assíncrona: +35% produtividade
+- Dominar Slack = diferencial em 90% das vagas remotas</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">O que você vai aprender:</span> - Slack profissional (etiqueta que impressiona)
+- Canais e organização
+- Comunicação assíncrona eficaz
+- Bots e automações
+- Integrações (Slack + Make + Notion + IA)</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 1. Slack Profissional: Fundamentos -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">1. Slack Profissional: Fundamentos</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">1.1 Anatomia do Slack</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Elementos principais:</strong></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Workspace:</span> Empresa/comunidade inteira
+- Exemplo: empresa-tech.slack.com</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Channels:</span> Conversas organizadas por tópico
+- Públicos: Qualquer um no workspace vê
+- Privados: Só membros convidados
+- Prefixos comuns:
+  * <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">#geral</code> - Announcements gerais
+  * <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">#random</code> - Casual/off-topic
+  * <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">#proj-nome</code> - Por projeto
+  * <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">#team-nome</code> - Por equipe
+  * <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">#help-tema</code> - Suporte/dúvidas
+  * <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">#notif-sistema</code> - Notificações automáticas</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Direct Messages (DMs):</span> Conversas 1:1 ou pequenos grupos</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Threads:</span> Respostas organizadas (NÃO polui canal)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Mentions:</span> - <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">@pessoa</code> - Notifica pessoa específica
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">@channel</code> - Notifica todos no canal (use com parcimônia!)
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">@here</code> - Notifica só quem está online agora</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Reações:</span> Emojis pra responder rápido (✅ ❌ 👀 🎉)</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">1.2 Etiqueta Slack que Impressiona</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>DO (Faça):</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Use threads religiosamente</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Mensagem original:
+"Precisamos decidir sobre X"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ Resposta solta no canal:
+"Concordo, e também acho que..."</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ Resposta em thread:
+[Click "Reply in thread"]
+"Concordo, e também acho que..."
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Por quê: Mantém canal limpo. Facilita acompanhar discussões.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Mensagens completas e claras</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+❌ Ruim:
+"Oi, tudo bem? Podemos conversar?"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ Bom:
+"Oi Maria! Sobre projeto X:</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Contexto: Precisamos definir timeline
+Pergunta: Você consegue entregar módulo Y até sexta?
+Urgência: Não urgente, responde quando puder</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Obrigado!"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Status claro</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+🟢 Disponível (padrão)
+🟡 Ausente (afk, almoço)
+🔴 Não perturbe (deep work)
+🟣 Férias
+🔵 Reunião
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Settings → Set a status</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Reaja antes de responder</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Alguém posta: "Revisem doc X até amanhã"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Você:
+1. Reage com 👀 (vi)
+2. Quando revisa, reage com ✅ (feito)
+3. Se tiver comentário, responde em thread
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Evita 20 mensagens de "ok", "vi", "feito".</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Code blocks para código/logs</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+❌ Ruim:
+Olha esse erro: TypeError: undefined is not a function</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ Bom:
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+TypeError: undefined is not a function
+  at Object.<anonymous> (/src/app.js:42:5)
+  at Module._compile (module.js:652:30)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Use <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded"> para inline code, </code>`` para blocos.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>DON'T (Não faça):</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>@channel sem necessidade</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+❌ "@channel alguém sabe onde fica arquivo X?"
+✅ "Alguém sabe onde fica arquivo X?" (sem @)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">@channel só se:
+- Emergência (site fora, bug crítico)
+- Anúncio importante que TODO MUNDO precisa ver AGORA</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>DM quando deveria ser canal</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+❌ DM: "Como faço X?"
+✅ Canal #help-tech: "Como faço X?"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Por quê: Outros aprendem também. Conhecimento fica documentado.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>Mensagens quebradas</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+❌ Ruim:
+[13:04] "Oi"
+[13:04] "Tudo bem?"
+[13:05] "Preciso"
+[13:05] "de ajuda"
+[13:06] "com algo"</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ Bom:
+[13:04] "Oi! Tudo bem? Preciso de ajuda com X. [detalhes completos]"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>Sem contexto em threads antigas</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+❌ "Resolveu?"
+(Ninguém lembra do que era)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ "Resolveu aquele bug do login que você mencionou ontem?"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>TUDO EM CAPS LOCK</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+❌ "URGENTE PRECISO AJUDA AGORA"
+✅ "🚨 Urgente: Site fora do ar, precisamos investigar"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">1.3 Atalhos de Teclado (Slack Ninja)</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Navegação:</span> - <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + K</code> - Jump to channel/DM (mais usado!)
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Alt + ↑/↓</code> - Canal anterior/próximo
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + [/]</code> - Navegação histórico
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + .</code> - Toggle right sidebar</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Mensagens:</span> - <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + Enter</code> - Envia mensagem
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">↑</code> - Edita última mensagem sua
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">R</code> - Responder em thread (message selecionada)
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">E</code> - Adicionar emoji reaction
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">M</code> - Mencionar pessoa</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Marcação:</span> - <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Shift + Esc</code> - Marca tudo como lido
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Esc</code> - Limpa mensagens não lidas do canal atual</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Formatação:</span> - <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + B</code> - <strong>Bold</strong>
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + I</code> - <em>Italic</em>
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + Shift + X</code> - ~~Strikethrough~~
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + Shift + C</code> - <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Code</code></p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Busca:</span> - <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + G</code> - Busca avançada
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + F</code> - Busca no canal atual</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Desafio:</span> 1 dia inteiro sem usar mouse no Slack.</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">1.4 Configurações de Produtividade</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Notificações (Settings → Notifications):</strong></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Recomendado:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Desktop notifications:
+- Direct messages, mentions, keywords: ✓
+- All new messages: ✗ (NUNCA ative isso)</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Do Not Disturb:
+- Schedule: 20:00 - 08:00 (ou seu horário)
+- Duration: Quando ativar manual, 1h padrão</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Keywords: 
+- Seu nome
+- Palavras relacionadas ao seu trabalho
+- "urgente", "crítico" (se relevante)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Sound:
+- Direct messages, mentions: ✓
+- All messages: ✗
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Focus time:</span> 1. <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">/dnd 2 hours</code> - Ativa DND por 2h
+2. Status: 🔴 Deep Work - Disponível às 16h
+3. Notificações: Off
+4. Trabalha focado</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Starred Channels:</span> - Canais que você acessa 5x/dia
+- Aparecem no topo da sidebar
+- Click na estrela ao lado do nome do canal</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Sections (sidebar organizada):</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Organize canais em seções:
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+⭐ Starred
+📁 Projetos
+  #proj-a
+  #proj-b
+👥 Times
+  #team-tech
+  #team-product
+📢 Updates
+  #anuncios
+  #general
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Settings → Sidebar → Create new section</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 2. Comunicação Assíncrona Eficaz -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">2. Comunicação Assíncrona Eficaz</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">2.1 O que é Comunicação Assíncrona</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Síncrona:</span> Resposta imediata esperada (call, reunião, chat ao vivo)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Assíncrona:</span> Resposta quando conveniente (email, Slack, Notion comments)</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Por que assíncrona é melhor para trabalho profundo:</strong>
+- Sem interrupções constantes
+- Responde quando tem contexto
+- Pensamento mais elaborado
+- Documentado automaticamente</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Mas requer disciplina e clareza.</strong></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">2.2 Framework de Mensagem Assíncrona Perfeita</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>CRISP for Slack:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>C - Context (Contexto)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+"Sobre projeto X:"
+"Referente ao bug reportado ontem:"
+"No PR #123:"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>R - Request (Pedido específico)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+"Preciso que você revise o doc Y"
+"Pode aprovar o PR?"
+"Confirma se esse approach faz sentido?"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>I - Information (Informações necessárias)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+"Link: [url]"
+"Prazo ideal: sexta"
+"Contexto adicional: [detalhes]"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>S - Support (Como ajudar)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+"Se tiver dúvidas, me chama"
+"Posso explicar melhor em call se preferir"
+"Não urgente, responde quando conseguir"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>P - Priority (Urgência)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+🔴 Urgente: Preciso até EOD (end of day)
+🟡 Importante: Até esta semana
+🟢 Normal: Quando conseguir, próximos dias
+⚪ FYI: Só informando, sem ação necessária
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Exemplo completo:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+📊 Sobre projeto X (Dashboard vendas)</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Preciso que você revise o Figma antes da reunião de amanhã.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Link: [figma.com/...]
+Foco: UX do filtro de datas (slide 3-5)
+Contexto: Cliente pediu simplificar</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Se tiver dúvidas, marca call comigo.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">🟡 Importante: Até amanhã 10h (reunião às 11h)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">vs mensagem ruim:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+"Oi, vê isso aqui quando puder [link] valeu"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">2.3 Quando Usar Qual Canal</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Slack DM:</span> - Questão rápida pra 1 pessoa
+- Feedback pessoal (não público)
+- Conversa casual 1:1
+- Coordenar algo que não interessa ao time</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Slack Channel:</span> - Discussão que beneficia time
+- Decisões que precisam documentação
+- Updates de projeto
+- Ajuda técnica (outros aprendem)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Thread:</span> - Resposta a mensagem específica
+- Discussão profunda sobre tópico
+- Não quer poluir canal principal</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Reunião síncrona (Call):</span> - Discussão complexa com muitas idas e voltas
+- Brainstorming criativo
+- Decisão crítica e urgente
+- Alinhar quando assíncrono falhando</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Email:</span> - Formal/oficial
+- Externo (fora da empresa)
+- Documento/contrato
+- Registro legal</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Regra de ouro:</span> Default = assíncrono. Só vai pra síncrono se necessário.</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 3. Slack Bots e Automações -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">3. Slack Bots e Automações</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">3.1 Bots Essenciais</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Polly (Polls/Votações)</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>/polly "Qual horário melhor pra reunião?" "10h" "14h" "16h"</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Cria poll interativa. Time vota com cliques.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Simple Poll</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>/poll "Aprovam proposta X?" "Sim" "Não" "Preciso mais info"</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Standup Bot (Daily standup assíncrono)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Config:
+- Pergunta diariamente (9h):
+  * O que fez ontem?
+  * O que vai fazer hoje?
+  * Algum bloqueio?
+- Respostas compiladas e postadas no canal</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Substitui reunião diária de 30min por 5min assíncronos.</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. Donut (Team bonding)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Pareia aleatoriamente pessoas do time pra coffee chat.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>5. Geekbot (Async standups + retrospectives)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Templates prontos:
+- Daily standup
+- Weekly check-in
+- Sprint retrospective
+- 1:1 prep</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>6. Workflow Builder (Slack nativo - sem code)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Cria workflows:</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo: Onboarding automatizado</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Trigger: Pessoa entra no workspace
+→ Envia DM:
+  "Bem-vindo! 👋
+   
+   Próximos passos:
+   1. Preenche perfil
+   2. Lê #handbook
+   3. Apresenta-se no #geral
+   
+   Dúvidas? Chama @HR"
+→ Add aos canais: #geral, #random, #anuncios
+→ Notifica RH: "Novo membro: [nome]"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo: Request de férias</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Trigger: Comando /ferias
+→ Form aparece:
+  - Datas
+  - Motivo
+  - Observações
+→ Post no #rh-requests
+→ Notifica gestor
+→ Add ao Google Calendar
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Slack → Tools → Workflow Builder → Create</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Não precisa código!</strong></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">3.2 Slack + Make (Automações Custom)</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Automação 1: Novo lead → Slack notification</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Google Forms - New response (Lead form)
+→ Slack - Send Message
+  Channel: #vendas
+  Message:
+    "🎯 Novo lead!
+    
+    Nome: {{1.nome}}
+    Empresa: {{1.empresa}}
+    Interesse: {{1.produto}}
+    Budget: {{1.orcamento}}
+    
+    @vendedor, fazer follow-up!"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Automação 2: Deploy falhou → Alert Slack</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+GitHub - Workflow Run Failed
+→ Slack - Send Message
+  Channel: #tech-alerts
+  Message:
+    "🚨 Deploy FALHOU
+    
+    Repo: {{1.repository}}
+    Branch: {{1.branch}}
+    Commit: {{1.commit_message}}
+    Author: @{{1.author}}
+    
+    Logs: {{1.logs_url}}"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Automação 3: Task Notion completada → Celebrar no Slack</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Notion - Watch Database Items (Tasks)
+  Filter: Status = Done AND Priority = P1
+→ Slack - Send Message
+  Channel: #wins
+  Message:
+    "🎉 @{{1.owner}} completou task P1!
+    
+    Task: {{1.name}}
+    Projeto: {{1.project}}
+    
+    Great job! 🚀"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Automação 4: Slack → Notion (Capture ideas)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Slack - New Message
+  Channel: #ideias
+  Filter: Contains emoji :bulb:
+→ Notion - Create Page
+  Database: Ideias
+  Properties:
+    - Ideia: {{1.text}}
+    - Autor: {{1.user}}
+    - Data: {{1.timestamp}}
+    - Link Slack: {{1.permalink}}
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Workflow: Teve ideia → posta no #ideias com 💡 → vai pro Notion automaticamente</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">3.3 Slash Commands Custom</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Crie comandos próprios:</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>API → Slack webhook:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo: <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">/deploy production</code></strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Quando você digita isso no Slack:
+1. Slack envia webhook pra seu servidor
+2. Servidor executa deploy
+3. Responde no Slack: "Deploy iniciado... ✓ Completo!"</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Como configurar:</span> 1. Slack API → Create app
+2. Slash Commands → Create command
+   - Command: <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">/deploy</code>
+   - Request URL: <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">https://seu-servidor.com/slack/deploy</code>
+3. Permissions: Adicione ao workspace
+4. Código no servidor processa e responde</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Outros exemplos:</span> - <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">/standup</code> - Posta standup
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">/analytics</code> - Mostra métricas
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">/support</code> - Abre ticket
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">/lunch</code> - Pede comida (integra com iFood API 😄)</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 4. Integrações Avançadas -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">4. Integrações Avançadas</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.1 Slack + Notion</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Via Make:</strong></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Sync bidirecional:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Notion - New page em Database "Tasks"
+→ Slack - Post em #tasks
+  "Nova task: {{1.name}}
+   Owner: @{{1.owner}}
+   Due: {{1.due_date}}"</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Slack - Reaction added (:white_check_mark:)
+→ Notion - Update page
+  Status: Done
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Meeting notes:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Slack - Scheduled Message (antes reunião)
+  "Reunião em 1h: [tópico]
+   Notas: [link Notion]
+   Agenda: [lista]"</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Google Calendar - Event ended
+→ Slack - Reminder
+  "@participantes: Preencham notas reunião [link]"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.2 Slack + IA (ChatGPT/Claude)</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Bot IA no Slack:</strong></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Via Make + OpenAI API:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Slack - New Message
+  Channel: #ai-assistant
+→ OpenAI - Create Completion
+  Prompt: {{1.text}}
+  Model: gpt-4
+→ Slack - Reply Thread
+  Text: {{2.response}}
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Resultado:</span> Qualquer pergunta no #ai-assistant → IA responde</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Use cases:</span> - "Resuma este doc: [link]"
+- "Traduza para inglês: [texto]"
+- "Crie email de follow-up para [contexto]"
+- "Analise estes dados: [dados]"</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Atenção:</span> Custo de API. Configure limits.</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.3 Slack + Google Workspace</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Native integrations (Slack app):</strong></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Google Calendar:</span> - Eventos aparecem como status Slack
+- Reminder 10min antes
+- Join meet direto do Slack</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Google Drive:</span> - Post link Drive → preview automático
+- Commenta no Drive → notifica Slack
+- Share Drive file direto no Slack</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Gmail:</span> - Email importante → forward pro Slack (email único por canal)</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 5. Slack Analytics e Produtividade -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">5. Slack Analytics e Produtividade</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">5.1 Search (Busca Profissional)</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Operadores:</strong></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Por pessoa:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+from:@joao
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Por canal:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+in:#tech
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Por data:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+after:2025-01-01
+before:2025-02-01
+during:january
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Por tipo:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+has:link
+has:file
+has:emoji
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Combinados:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+from:@maria in:#projeto-x has:link after:2025-01-15</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">= Mensagens da Maria no #projeto-x com links após 15/01
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Saved searches:</span> - Busca complexa frequente
+- Click "Save this search"
+- Acesso rápido depois</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">5.2 Produtividade no Slack</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Tips:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Inbox Zero diário</strong>
+- Todas mentions/DMs respondidos ou marcados pra depois
+- "Mark as unread" se precisa voltar depois
+- Ou salva com estrela</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Snooze messages</strong>
+- Mensagem que precisa responder depois
+- Click ⋮ → Remind me about this
+- Choose: 20min, 1h, tomorrow, custom</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Scheduled messages</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+/remind @pessoa "fazer X" at 9am tomorrow
+/remind #canal "reunião em 10min" in 10 minutes
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Ou:
+- Escreve mensagem
+- Click ⌄ ao lado do Send
+- Schedule for later</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Caso de uso:</span> Trabalha de noite, mas não quer notificar time → agenda pra 9am</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. Saved items</strong>
+- Mensagem importante
+- Click estrela ⭐
+- Acessa depois: Saved items (sidebar)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>5. Custom status</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+🏖️ Férias até 20/02
+🤒 Doente hoje
+🏃 Academia - volto 14h
+🎧 Focus time - respondo às 16h
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Settings → Set a status</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 6. Exercício Prático (45min) -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">6. Exercício Prático (45min)</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>PARTE 1: Setup Profissional (15min)</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Configure notificações otimizadas</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Crie 3 sections na sidebar</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Configure status com emoji + texto</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Starre 3 canais mais usados</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Salve 2 searches úteis</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>PARTE 2: Comunicação (15min)</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Escreva 3 mensagens usando framework CRISP:</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Request de revisão</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Update de projeto</li>
+            <li class="text-neutral-700 dark:text-neutral-300">- Dúvida técnica</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Pratique threads (não polua canal!)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Use reações adequadamente</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>PARTE 3: Automação (15min)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Escolha 1:
+- A) Configure Workflow Builder (onboarding ou request)
+- B) Make: Slack notification de algo (Form, Notion, etc)
+- C) Configure bot (Polly, Standup, etc)</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">ENTREGA:</span> - Screenshots de cada parte
+- 3 mensagens escritas (exemplos reais ou simulados)
+- 1 automação funcionando</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">BÔNUS:</span> Compartilha no LinkedIn dica de Slack que aprendeu. Tag #slack #comunicacaoassincrona</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">---</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Próximos Passos -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">Próximos Passos</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Módulo 8: Canva e Design Básico</strong>
+- Criar visuais profissionais sem ser designer
+- Posts LinkedIn que convertem
+- Apresentações impactantes
+- Brand kit pessoal</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Prepare-se para:</span> Comunicação visual que destaca</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Nos vemos lá! 🚀</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">---</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>© 2025 FETD - Formação em Engenharia de Intenção</strong></p>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer / Navegação -->
+  <section class="py-12 bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center">
+        <a href="../../trilhas/talento.html" class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90">
+          ← Voltar para Trilha
+        </a>
+        <a href="modulo-08.html" class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90">Próximo Módulo →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dark Mode Toggle Script -->
   <script>
-    document.documentElement.classList.remove('preload');
+    // Remove preload class
+    window.addEventListener('load', () => {
+      document.body.classList.remove('preload');
+    });
+
+    // Dark mode toggle
     const themeToggleBtn = document.getElementById('theme-toggle');
-    const darkIcon = document.getElementById('theme-toggle-dark-icon');
-    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    // Check localStorage
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      themeToggleLightIcon.classList.remove('hidden');
       document.documentElement.classList.add('dark');
-      lightIcon.classList.remove('hidden');
     } else {
-      darkIcon.classList.remove('hidden');
+      themeToggleDarkIcon.classList.remove('hidden');
     }
-    themeToggleBtn.addEventListener('click', function() {
-      darkIcon.classList.toggle('hidden');
-      lightIcon.classList.toggle('hidden');
-      if (document.documentElement.classList.contains('dark')) {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('color-theme', 'light');
+
+    themeToggleBtn.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        }
       } else {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('color-theme', 'dark');
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        }
       }
     });
   </script>
+
 </body>
 </html>

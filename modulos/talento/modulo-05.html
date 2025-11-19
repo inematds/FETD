@@ -3,154 +3,1561 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 5: Notion para Produtividade | FETD</title>
+  <title>Módulo 5: Notion para Produtividade | Trilha Talento Emergente | FETD</title>
+  <meta name="description" content="Organizar trabalho e projetos profissionalmente usando Notion">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/tailwindcss-cdn@3.4.1/tailwindcss.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            'operacional': '#3B82F6',
-            'comunicador': '#10B981',
             'talento': '#F59E0B',
-            'tecnico': '#F97316',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
           },
         }
       }
     }
   </script>
+
   <style>
-    * { transition: background-color 200ms, border-color 200ms, color 200ms; }
-    .preload * { transition: none !important; }
-    body { font-family: 'Inter', sans-serif; }
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
   </style>
 </head>
+
 <body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navbar -->
   <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-talento to-operacional bg-clip-text text-transparent">🎓 FETD</a>
-        <div class="flex items-center space-x-8">
+        <div class="flex items-center">
+          <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-talento to-talento bg-clip-text text-transparent">
+            🎓 FETD
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
           <a href="../../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Início</a>
-          <a href="../../trilhas/talento.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Trilha</a>
+          <a href="../../trilhas/talento.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Trilha Talento Emergente</a>
           <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
           </button>
         </div>
       </div>
     </div>
   </nav>
 
+  <!-- Breadcrumb -->
   <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <nav class="flex text-sm">
-        <a href="../../index.html" class="text-talento hover:underline">Início</a>
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../../index.html" class="text-talento hover:opacity-80">Início</a>
         <span class="mx-2 text-neutral-400">/</span>
-        <a href="../../trilhas/talento.html" class="text-talento hover:underline">Trilha Talento Emergente</a>
+        <a href="../../trilhas/talento.html" class="text-talento hover:opacity-80">Trilha Talento Emergente</a>
         <span class="mx-2 text-neutral-400">/</span>
         <span class="text-neutral-600 dark:text-neutral-400">Módulo 5</span>
       </nav>
     </div>
   </div>
 
-  <section class="bg-gradient-to-r from-talento to-amber-600 py-16">
+  <!-- Hero Módulo -->
+  <section class="bg-gradient-to-r from-talento to-talento py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+
       <div class="flex items-center gap-3 mb-4">
-        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">🟡 Módulo 5 de 10</span>
-        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">⏱️ 45min</span>
-      </div>
-      <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">Notion para Produtividade</h1>
-      <p class="text-xl opacity-90 mb-6"><strong>Objetivo:</strong> Organizar trabalho e projetos profissionalmente</p>
-      <a href="../../downloads/talento/modulo-05.md" download class="inline-flex items-center px-6 py-3 bg-white text-talento rounded-lg font-semibold hover:bg-neutral-100 transition-all">
-        📥 Download Conteúdo (.md)
-      </a>
-    </div>
-  </section>
-
-  <section class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-8 mb-16">
-
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">📚</div>
-          <h3 class="text-2xl font-bold mb-4">Notion como Sistema</h3>
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">Notion não é só anotações. É um <strong>sistema operacional</strong> para sua vida profissional: tarefas, projetos, conhecimento, tudo integrado.</p>
-          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl">
-            <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">💡 Databases relacionados, templates reutilizáveis, views personalizadas, colaboração em tempo real</p>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">✅</div>
-          <h3 class="text-2xl font-bold mb-4">Gestão de Tarefas</h3>
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">Crie um sistema GTD (Getting Things Done) completo: inbox, próximas ações, projetos, áreas de responsabilidade.</p>
-          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl">
-            <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">💡 Kanban, calendário, lista, galeria, propriedades customizadas</p>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">🧠</div>
-          <h3 class="text-2xl font-bold mb-4">Base de Conhecimento</h3>
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">Construa um <strong>segundo cérebro digital</strong>: salve tudo que aprende organizado e pesquisável.</p>
-          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl">
-            <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">💡 Hierarquia de páginas, backlinks, busca avançada, embeds, web clipper</p>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-neutral-800 p-8 rounded-2xl border-2 border-talento/30 hover:border-talento transition-all">
-          <div class="text-4xl mb-4">🎨</div>
-          <h3 class="text-2xl font-bold mb-4">Portfólio no Notion</h3>
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">Crie um portfólio profissional público gratuitamente. Recrutadores amam ver candidatos organizados.</p>
-          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl">
-            <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">💡 Templates prontos, domínio personalizado, analytics, mobile-friendly</p>
-          </div>
-        </div>
-
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">Módulo 5 de 10</span>
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">⏱️ 60 minutos</span>
       </div>
 
-      <div class="bg-gradient-to-r from-talento to-amber-600 p-8 rounded-2xl text-white">
-        <h2 class="text-3xl font-bold mb-4">🎯 Próximos Passos</h2>
-        <p class="text-lg mb-6 opacity-90">Continue sua jornada na Trilha Talento Emergente!</p>
-        <div class="flex gap-4">
-          <a href="modulo-04.html" class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 transition-all">← Anterior</a>
-          <a href="modulo-06.html" class="px-6 py-3 bg-white text-talento rounded-lg font-semibold hover:bg-neutral-100 transition-all">Próximo →</a>
-        </div>
+      <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">
+        Módulo 5: Notion para Produtividade
+      </h1>
+
+      <p class="text-xl text-white/90 mb-6 max-w-3xl">
+        Organizar trabalho e projetos profissionalmente usando Notion
+      </p>
+
+      <div class="flex items-center gap-4">
+        <span class="text-white/80">📚 Teoria</span>
+        <span class="text-white/80">•</span>
+        <span class="text-white/80">💭 Reflexão</span>
+        <span class="text-white/80">•</span>
+        <span class="text-white/80">🛠️ Prática</span>
       </div>
     </div>
   </section>
 
-  <footer class="bg-white dark:bg-neutral-800 border-t border-neutral-200 dark:border-neutral-700 py-8 mt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-600 dark:text-neutral-400">
-      <p>© 2025 FETD - Formação em Engenharia de Intenção</p>
-    </div>
-  </footer>
+  <!-- Conteúdo Principal -->
+  <section class="py-16 bg-white dark:bg-neutral-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
+      <!-- Download Button -->
+      <div class="flex justify-end mb-8">
+        <a href="../../downloads/talento/modulo-05.md" download class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90 inline-flex items-center gap-2">
+          <span>📥</span>
+          <span>Download MD</span>
+        </a>
+      </div>
+
+
+      <!-- Seção: Introdução: O Sistema Operacional da Sua Vida Profissional -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">Introdução: O Sistema Operacional da Sua Vida Profissional</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Notion não é só ferramenta de anotações. É seu <strong>sistema operacional profissional</strong>.</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Dados reais (2024-2025):</span> - 40+ milhões usuários globalmente
+- Empresas como Nike, Pixar, Shopify usam Notion
+- Consultores Notion: R$ 2.000-8.000 por projeto de setup
+- Cargo "Notion Specialist": R$ 4.000-10.000/mês
+- 95% dos usuários usam <10% do potencial</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">O que você vai aprender:</span> - Notion como "segundo cérebro" profissional
+- Sistema GTD (Getting Things Done) implementado
+- Databases relacionais (power feature)
+- Templates que economizam 5-10h/semana
+- Integrações Notion + Make + IA
+- Como vender serviços de Notion consulting</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Por que Notion vs outras ferramentas:</span> - Trello: Bom para tasks, limitado para knowledge
+- Evernote: Bom para notes, sem estrutura projeto
+- Google Docs: Arquivos soltos, difícil organizar
+- <strong>Notion:</strong> Tudo em um (wiki + tasks + database + docs)</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 1. Notion como Segundo Cérebro (BASB Method) -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">1. Notion como Segundo Cérebro (BASB Method)</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">1.1 Conceito: Building a Second Brain</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Problema:</span> Cérebro é péssimo para armazenar informações. Ótimo para processar.</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Solução:</span> Externalize TUDO no Notion. Confie no sistema, não na memória.</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Os 4 Pilares do Segundo Cérebro:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. CAPTURE (Capturar)</strong>
+- Toda ideia, nota, link vai pro Notion
+- Inbox universal: um lugar pra tudo entrar
+- Rápido: <30 segundos para capturar qualquer coisa
+- Ferramentas: Web Clipper, mobile, email to Notion</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. ORGANIZE (Organizar)</strong>
+- Sistema PARA (Projects, Areas, Resources, Archive)
+- Não organize demais (armadilha comum)
+- Tags + Relations > Pastas complexas</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. DISTILL (Destilar)</strong>
+- Não salve artigo inteiro → salve insights
+- Highlights progressivos (bold → destaque → nota)
+- Resumos acionáveis</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. EXPRESS (Expressar)</strong>
+- Conhecimento serve pra usar, não acumular
+- Link aprendizados com projetos
+- Compartilhe (ensinar = aprender 2x)</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">1.2 Estrutura Base do Workspace</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Hierarquia recomendada:</strong></p>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>🏠 HOME (Dashboard principal)
+│
+├── 📥 INBOX (tudo entra aqui primeiro)
+│   └── Quick Capture
+│
+├── 🎯 PROJETOS (objetivos ativos multi-etapas)
+│   ├── Projeto A
+│   ├── Projeto B  
+│   └── Templates
+│
+├── 🗂️ ÁREAS (responsabilidades contínuas)
+│   ├── Trabalho
+│   ├── Saúde
+│   ├── Finanças
+│   └── Aprendizado
+│
+├── 📚 RECURSOS (knowledge base)
+│   ├── Artigos salvos
+│   ├── Cursos
+│   ├── Templates
+│   └── Referências
+│
+├── 📊 DATABASES (centralizadas)
+│   ├── Tasks Master
+│   ├── Projetos Master
+│   ├── Notas Master
+│   └── Contatos
+│
+└── 🗄️ ARQUIVO (concluídos/inativos)
+    ├── Projetos antigos
+    └── Notas antigas</code></pre>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Regra de ouro:</span> Tudo tem um lugar. Nada fica órfão.</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">1.3 Dashboard Principal (Home)</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Seu HQ. Abrir Notion = ver isso primeiro.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Elementos essenciais:</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Quick Stats (métricas rápidas)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+📊 Tasks hoje: 7
+⏰ Reuniões: 3
+🎯 Projetos ativos: 5
+📥 Inbox: 12 itens
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Tasks Hoje (filtradas)</strong>
+- Database view: só tarefas de hoje
+- Agrupadas por prioridade
+- Checkbox pra completar rápido</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Próximas Reuniões</strong>
+- Integração Google Calendar (via Make ou Zapier)
+- Link direto pra nota da reunião
+- Agenda + preparação</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. Projetos em Progresso</strong>
+- Gallery view com barra progresso
+- Próximas ações de cada projeto
+- Deadlines approaching (alerta visual)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>5. Quick Links</strong>
+- Páginas acessadas frequentemente
+- Templates favoritos
+- Recursos externos (Drive, Figma, etc)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>6. Inbox Count</strong>
+- Número de itens não processados
+- Link direto pro Inbox
+- Meta: processar até 0 diariamente</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Setup:</span> 20 minutos. Retorno: 30min/dia economizado.</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 2. Sistema GTD (Getting Things Done) no Notion -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">2. Sistema GTD (Getting Things Done) no Notion</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">2.1 Os 5 Pilares do GTD</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. CAPTURE (Capturar)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Tudo que chama sua atenção vai pro Inbox.</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Inbox Database:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Properties:
+- Name (título rápido)
+- Type (task, note, idea, link, file)
+- Source (onde veio: email, meeting, random thought)
+- Date Added (automático)
+- Processed (checkbox)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Fontes de captura:</span> - Notion mobile (pensamento rápido)
+- Web Clipper (artigos)
+- Email to Notion (forwards)
+- Integração Slack/Teams (mensagens importantes)
+- Voz (transcrição automática com IA)</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Regra:</span> Capturou? Esquece até hora de processar.</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. CLARIFY (Clarificar)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Diariamente (ou 2x/dia), processa Inbox.</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Para cada item, pergunte:</span> - É acionável?
+  - <strong>SIM:</strong>
+    * <2min → Faz agora
+    * Projeto (multi-step) → Cria projeto
+    * Task simples → Move pra Tasks
+    * Delegar → Cria task + atribui
+  - <strong>NÃO:</strong>
+    * Referência → Move pra Knowledge Base
+    * Algum dia/talvez → Move pra Someday
+    * Lixo → Deleta</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Template de processamento:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+[ ] Item 1: [ação] → [destino]
+[ ] Item 2: [ação] → [destino]
+...
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Meta:</span> Inbox zero ao fim do dia.</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. ORGANIZE (Organizar)</strong></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Tasks Database (Master):</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Properties:
+- Task Name
+- Status (Not Started, In Progress, Blocked, Done)
+- Priority (P1 Urgent, P2 High, P3 Medium, P4 Low)
+- Project (relation)
+- Area (relation)
+- Due Date
+- Time Estimate
+- Energy (High, Medium, Low - pra quando tá cansado)
+- Context (@ Computer, @ Phone, @ Anywhere)
+- Tags (multi-select)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Views úteis:</span> - <strong>Today:</strong> Due = today OR overdue
+- <strong>This Week:</strong> Due = this week
+- <strong>By Project:</strong> Agrupado por projeto
+- <strong>Quick Wins:</strong> Time ≤ 15min AND Energy = Low
+- <strong>Deep Work:</strong> Time > 1h AND Energy = High</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. REFLECT (Refletir)</strong></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Daily Review (5min):</span> - Processa Inbox
+- Planeja amanhã
+- Atualiza progresso projetos</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Weekly Review (30min - sexta ou domingo):</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+[ ] Inbox zero
+[ ] Review tasks: concluir/adiar/deletar
+[ ] Review projetos: progresso cada um
+[ ] Próxima semana: planejar prioridades
+[ ] Aprendizados: o que foi bem, o que melhorar
+[ ] Algum Dia: algo virar projeto agora?
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Template Weekly Review no Notion:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Week [número] - [data] -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">Week [número] - [data]</h2>
+
+
+        <div class="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-6 rounded-lg mb-8">
+          <h3 class="text-xl font-bold text-green-700 dark:text-green-400 mb-4">✅ Wins da Semana</h3>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[conquista 1]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[conquista 2]</span></li>
+          </ul>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">📊 Projetos - Update</h3>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[Projeto A]: [status], [próxima ação]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[Projeto B]: [status], [próxima ação]</span></li>
+          </ul>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">🎯 Próxima Semana - Prioridades</h3>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">[prioridade 1]</li>
+            <li class="text-neutral-700 dark:text-neutral-300">[prioridade 2]</li>
+            <li class="text-neutral-700 dark:text-neutral-300">[prioridade 3]</li>
+          </ol>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">💡 Aprendizados</h3>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[aprendizado 1]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[aprendizado 2]</span></li>
+          </ul>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">🚀 Melhorias</h3>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[o que mudar semana que vem]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></span></li>
+          </ul>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>5. ENGAGE (Engajar)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Escolhe o que fazer baseado em:
+- <strong>Contexto:</strong> @ Computer, @ Phone, @ Anywhere
+- <strong>Tempo disponível:</strong> 15min free → Quick wins view
+- <strong>Energia:</strong> Cansado → Low energy tasks
+- <strong>Prioridade:</strong> Sempre P1 primeiro</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Notion facilita:</span> 1 clique no view → lista perfeita.</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">2.2 Implementação Passo-a-Passo</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 1: Criar Databases (15min)</strong></p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Tasks Database (full-page)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Projects Database (full-page)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Notes Database (full-page)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Inbox Database (full-page)</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 2: Relacionar Databases (10min)</strong></p>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Tasks → Projects (relation)</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Tasks → Notes (relation)</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Projects → Notes (relation)</span></li>
+          </ul>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Por que relações são poderosas:</span> - Vê todas tasks de um projeto
+- Vê todas notas relacionadas
+- Bidirecional: atualiza ambos lados</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 3: Criar Views (15min)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Para cada database, crie views:</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Tasks:
+- Today (Calendar ou List)
+- This Week (Board por status)
+- By Project (agrupado)
+- Quick Wins (filtro: time ≤15min)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Projects:
+- Active (Gallery com imagens)
+- Planning (List)
+- Archive (Table compacta)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 4: Dashboard Home (15min)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Incorpora views dos databases no Home.</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 5: Processar tudo uma vez (20min)</strong></p>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Tudo que tá na cabeça → Inbox</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Tudo que tá em papéis → Inbox</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Tudo que tá em apps → Inbox</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Processa tudo seguindo GTD</span></li>
+          </ul>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Total:</span> 75min setup. Benefício: lifetime.</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 3. Databases Avançados: O Poder do Notion -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">3. Databases Avançados: O Poder do Notion</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">3.1 Entendendo Databases</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Diferença de Google Sheets:</span> - Sheets: linhas e colunas (visual único)
+- Notion: mesmos dados, múltiplos visuais (table, board, gallery, calendar, timeline)</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Uma database, infinitas visualizações.</strong></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">3.2 Property Types (Tipos de Campos)</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Essenciais:</span> - <strong>Text:</strong> Texto livre
+- <strong>Number:</strong> Números (pode fazer cálculos)
+- <strong>Select:</strong> 1 opção (ex: Status)
+- <strong>Multi-select:</strong> Várias opções (ex: Tags)
+- <strong>Date:</strong> Data/datetime
+- <strong>Checkbox:</strong> Sim/não
+- <strong>URL:</strong> Links
+- <strong>Email:</strong> Emails
+- <strong>Phone:</strong> Telefones</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Avançados:</span> - <strong>Relation:</strong> Conecta databases
+- <strong>Rollup:</strong> Agrega dados de relation (soma, média, etc)
+- <strong>Formula:</strong> Cálculos (tipo Excel)
+- <strong>Created time:</strong> Automático
+- <strong>Created by:</strong> Quem criou
+- <strong>Last edited time:</strong> Última alteração
+- <strong>Last edited by:</strong> Quem editou</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Exemplo Rollup:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Tasks Database tem relation com Projects.</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">No Projects:
+- Relation: Tasks (todos tasks desse projeto)
+- Rollup: 
+  * Total Tasks = count(Tasks)
+  * Completed = count(Tasks where Status = Done)
+  <em> Progress = (Completed / Total) </em> 100
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Agora cada projeto mostra % de conclusão automaticamente!</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">3.3 Fórmulas Úteis</h3>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">1. Calcular dias até deadline:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+dateBetween(prop("Due Date"), now(), "days")
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">2. Status automático baseado em data:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+if(prop("Due Date") < now(), "Overdue", 
+   if(prop("Due Date") < dateAdd(now(), 3, "days"), "Due Soon", 
+      "On Track"))
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">3. Prioridade por urgência + importância:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+if(prop("Urgent") and prop("Important"), "P1",
+   if(prop("Urgent"), "P2",
+      if(prop("Important"), "P3", "P4")))
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">4. Tempo total estimado de tasks:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+sum(prop("Tasks").prop("Time Estimate"))
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">5. Progresso visual:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+slice("▓▓▓▓▓▓▓▓▓▓", 0, floor(prop("Progress") / 10)) + 
+slice("░░░░░░░░░░", 0, 10 - floor(prop("Progress") / 10)) +
+" " + format(prop("Progress")) + "%"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Resultado: <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">▓▓▓▓▓░░░░░ 50%</code></p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 4. Templates Profissionais -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">4. Templates Profissionais</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.1 Template de Projeto</h3>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code># [Nome do Projeto]</code></pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 📋 Informações Básicas -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">📋 Informações Básicas</h2>
+
+        <div class="mb-6">
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Status:</strong> Planning | In Progress | On Hold | Completed</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Owner:</strong> @pessoa</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Start Date:</strong> DD/MM/YYYY</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Target Date:</strong> DD/MM/YYYY</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Priority:</strong> P1 | P2 | P3</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Budget:</strong> R$ X.XXX</span></li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Objetivo -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">🎯 Objetivo</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">[1-2 frases descrevendo o que quer alcançar]</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Métricas de Sucesso -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">📊 Métricas de Sucesso</h2>
+
+        <div class="mb-6">
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[ ] Métrica 1: [target]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[ ] Métrica 2: [target]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[ ] Métrica 3: [target]</span></li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Tasks (linked database) -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">✅ Tasks (linked database)</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">[View: Tasks where Project = this]</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Notas e Decisões -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">📝 Notas e Decisões</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">[Timeline reversa - mais recente primeiro]</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">DD/MM/YYYY:</span> - Decisão: [o que foi decidido]
+- Contexto: [por que]
+- Owner: [quem executa]</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 📎 Recursos -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">📎 Recursos</h2>
+
+        <div class="mb-6">
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[Link 1]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[Link 2]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[Doc 3]</span></li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 🚧 Riscos e Bloqueios -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">🚧 Riscos e Bloqueios</h2>
+
+        <div class="mb-6">
+
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="bg-talento/20 dark:bg-talento/30">
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Risco</th>
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Probabilidade</th>
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Impacto</th>
+                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Mitigação</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-white dark:bg-neutral-800">
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">-------</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">--------------</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">---------</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">-----------</td>
+                </tr>
+                <tr class="bg-neutral-50 dark:bg-neutral-900">
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">[descrição]</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Alta/Média/Baixa</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Alto/Médio/Baixo</td>
+                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">[como prevenir]</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 🎉 Retrospectiva (preencher ao concluir) -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">🎉 Retrospectiva (preencher ao concluir)</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">O que foi bem</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">-</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">O que melhorar</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">-</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">Aprendizados</h3>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">-</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></span></li>
+          </ul>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Como usar:</span> 1. Cria projeto novo
+2. Preenche template
+3. Todas tasks relacionadas aparecem automaticamente
+4. Atualiza notas conforme progride
+5. Ao concluir, preenche retrospectiva</p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.2 Template de Reunião</h3>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code># Reunião: [Tópico] - [Data]</code></pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: ⚙️ Info -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">⚙️ Info</h2>
+
+        <div class="mb-6">
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Data/Hora:</strong> DD/MM/YYYY HH:MM</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Duração:</strong> Xmin</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Participantes:</strong> @pessoa1, @pessoa2</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Projeto Relacionado:</strong> [[link]]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Gravação:</strong> [link se houver]</span></li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 📋 Agenda -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">📋 Agenda</h2>
+
+        <div class="mb-6">
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">[Tópico 1] - Xmin</li>
+            <li class="text-neutral-700 dark:text-neutral-300">[Tópico 2] - Xmin</li>
+            <li class="text-neutral-700 dark:text-neutral-300">[Tópico 3] - Xmin</li>
+          </ol>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Notas -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">📝 Notas</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">[Durante reunião]</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">[Tópico 1]</h3>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Ponto discutido</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Ponto discutido</span></li>
+          </ul>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">[Tópico 2]</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">-</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Decisões Tomadas -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">✅ Decisões Tomadas</h2>
+
+        <div class="mb-6">
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[ ] Decisão 1: [o que] - Owner: @quem</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[ ] Decisão 2: [o que] - Owner: @quem</span></li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Action Items (linked to Tasks) -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">🎯 Action Items (linked to Tasks)</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">[View: Tasks created in this meeting]</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: ❓ Questões Abertas -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">❓ Questões Abertas</h2>
+
+        <div class="mb-6">
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[ ] Questão 1: [quem] precisa responder até [quando]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[ ] Questão 2:</span></li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 📅 Próxima Reunião -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">📅 Próxima Reunião</h2>
+
+        <div class="mb-6">
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Data: [agendar]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Tópicos:</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></span></li>
+          </ul>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Automação Make:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Google Calendar - Meeting Ended
+→ Notion - Create Page (template reunião preenchido)
+→ Slack - Reminder "preencher notas reunião"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">4.3 Template de Aprendizado (Zettelkasten)</h3>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code># [Título do Conteúdo]</code></pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 📚 Metadata -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">📚 Metadata</h2>
+
+        <div class="mb-6">
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Tipo:</strong> Artigo | Livro | Vídeo | Curso | Podcast</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Autor:</strong> [nome]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>URL:</strong> [link]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Data:</strong> DD/MM/YYYY</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Status:</strong> To Read | Reading | Completed</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Rating:</strong> ⭐⭐⭐⭐⭐</span></li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Por Que Ler -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">🎯 Por Que Ler</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">[Expectativa em 1 frase]</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Notas -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">📝 Notas</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">[Durante consumo - highlights progressivos]</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">Ideia Principal</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">[1 parágrafo]</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">Insights-Chave</h3>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Insight 1:</strong> [descrição]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Por que importa: [relevância]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Como aplicar: [ação]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Insight 2:</strong></span></li>
+          </ul>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">Quotes Importantes</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">> "Quote 1"
+> 
+> "Quote 2"</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Aplicações Práticas -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">💡 Aplicações Práticas</h2>
+
+        <div class="mb-6">
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[ ] Aplicação 1: [onde/como usar] - Projeto: [[link]]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">[ ] Aplicação 2:</span></li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 🔗 Conexões -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">🔗 Conexões</h2>
+
+        <div class="mb-6">
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Relacionado com: [[nota X]], [[nota Y]]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Contradiz: [[nota Z]]</span></li>
+            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Expande: [[nota W]]</span></li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: ✍️ Resumo Executivo -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">✍️ Resumo Executivo</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">[3-5 bullets - você explica pros outros]
+- 
+-</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 🏷️ Tags -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">🏷️ Tags</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">#tema1 #tema2 #aplicado-em-projeto-x
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Por que funciona:</span> - Força processar, não só consumir
+- Conecta conhecimentos (insights compostos)
+- Fácil encontrar quando precisar
+- Pode compartilhar (ensinar outros)</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 5. Integrações Poderosas -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">5. Integrações Poderosas</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">5.1 Notion + Make (Automações)</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Automação 1: Lead Form → Notion CRM</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Google Forms - New Response
+→ Notion - Create Database Item (Leads)
+  - Nome: {{1.nome}}
+  - Email: {{1.email}}
+  - Empresa: {{1.empresa}}
+  - Interesse: {{1.produto}}
+  - Source: Google Forms
+  - Status: New
+  - Created: {{now}}
+→ Notion - Create Page (Meeting prep template)
+  - Linked to Lead
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Automação 2: Task Completed → Email Report</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Notion - Watch Database Items (Tasks)
+  Filter: Status changed to "Done"
+→ Aggregate (se múltiplas tasks hoje)
+→ Gmail - Send Daily Digest
+  "Você completou {{count}} tasks hoje:
+   {{#each tasks}}
+   - {{this.name}}
+   {{/each}}
+   
+   Ótimo trabalho! 🎉"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Automação 3: New Project → Setup Completo</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Notion - Watch Database Items (Projects)
+  Filter: newly created
+→ Notion - Create Pages:
+  - Project Brief (template)
+  - Meeting Notes (template)
+  - Tasks Inicial (checklist)
+→ Slack - Notify team
+→ Google Calendar - Create recurring check-ins
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">5.2 Notion + IA (ChatGPT/Claude)</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Use Case 1: Resumir notas de reunião</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+1. Copia notas brutas da reunião
+2. Prompt ChatGPT:
+   "Resuma estas notas de reunião:
+    
+    [cola notas]
+    
+    Formato:
+    - Decisões tomadas (bullets)
+    - Action items (quem, o que, quando)
+    - Questões abertas
+    - Próximos passos"
+3. Cola resumo no Notion
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Use Case 2: Gerar template de projeto</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+Prompt: "Crie template de projeto Notion para [tipo]:
+- Properties necessárias
+- Seções incluir
+- Checklist inicial
+- Métricas acompanhar</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Formato Notion markdown."
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Use Case 3: Análise de produtividade</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+1. Exporta database Tasks (CSV)
+2. Upload pro ChatGPT
+3. Prompt: "Analise minha produtividade:
+   - Quais tipos tasks completo mais
+   - Quando sou mais produtivo
+   - Tasks que travo (não completo)
+   - Recomendações melhorar"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">5.3 Notion API (Avançado)</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Se souber programação básica (ou usar Make):</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Criar dashboard externo:</span> - Puxa dados de databases Notion
+- Exibe em site/app custom
+- Gráficos, métricas, visualizações</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Sync bidirecional:</span> - Notion ↔ Google Sheets
+- Notion ↔ Airtable
+- Notion ↔ CRM externo</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Automações complexas:</span> - Atualiza Notion baseado em eventos externos
+- Triggers custom (não disponíveis em Make/Zapier)</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 6. Como Monetizar Notion (R$ 2.000-8.000/projeto) -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">6. Como Monetizar Notion (R$ 2.000-8.000/projeto)</h2>
+
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">6.1 Serviços que Pode Oferecer</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Notion Workspace Setup</strong>
+- Cliente: Freelancers, pequenas empresas
+- Escopo: Cria workspace completo do zero
+- Inclui: Databases, templates, automações
+- Preço: R$ 1.500-4.000
+- Tempo: 8-15 horas
+- Entrega: Workspace + documentação + 1h treinamento</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Notion Migration</strong>
+- Cliente: Empresa usando Trello/Asana/Evernote
+- Escopo: Migra tudo pro Notion
+- Inclui: Exporta dados, importa, organiza, treina
+- Preço: R$ 2.000-6.000
+- Tempo: 10-20 horas</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Notion Consulting (Retainer)</strong>
+- Cliente: Empresas 10-50 funcionários
+- Escopo: Manutenção, novos templates, suporte
+- Preço: R$ 800-2.000/mês
+- Tempo: 4-8h/mês
+- Benefício: Receita recorrente</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. Template Creation</strong>
+- Cliente: Nicho específico (ex: agências, e-commerce)
+- Escopo: Template completo vendido
+- Preço: R$ 97-497 por template
+- Tempo: 5-10h criar
+- Escala: Vende infinitamente (produto digital)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>5. Notion Training</strong>
+- Cliente: Equipes empresariais
+- Escopo: Workshop 3-4h ensinando Notion
+- Preço: R$ 1.500-3.000 por sessão
+- Formato: Presencial ou online</p>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">6.2 Proposta Notion Setup (Template)</h3>
+
+
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
+            <pre class="text-sm text-green-400"><code>━━━━━━━━━━━━━━━━━━━━━━━━━━
+PROPOSTA: Notion Workspace Setup
+━━━━━━━━━━━━━━━━━━━━━━━━━━</code></pre>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">PARA: [Cliente]
+DE: [Você] - Notion Specialist
+DATA: [Data]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">━━━ SITUAÇÃO ATUAL ━━━</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Ferramentas usadas:
+- [Tool 1]: [problema]
+- [Tool 2]: [problema]
+- [Tool 3]: [problema]</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Problemas:
+- Informação espalhada em 5+ apps
+- Falta visibilidade do que equipe faz
+- Processos não documentados
+- Onboarding demora semanas</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">━━━ SOLUÇÃO ━━━</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Workspace Notion centralizado com:</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Project Management</strong>
+- Database Projetos (todos projetos empresa)
+- Database Tasks (todas tasks, linkadas a projetos)
+- Views: por pessoa, por status, timeline, etc
+- Templates de projeto padrão</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Knowledge Base</strong>
+- Wiki interna (processos, políticas)
+- Documentação produtos
+- FAQs
+- Recursos (templates, links, etc)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Team Collaboration</strong>
+- Reuniões (notas estruturadas)
+- Decisões (log de tudo decidido)
+- OKRs/Metas (tracking progresso)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. Databases</strong>
+- Clients/Leads
+- Contacts
+- Resources
+- Notes</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>5. Automações (Notion + Make)</strong>
+- Novo client → cria workspace automaticamente
+- Task completada → atualiza projeto
+- Weekly digest automático</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">━━━ ENTREGÁVEIS ━━━</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ Workspace completo configurado
+✅ [número] databases criadas e linkadas
+✅ [número] templates customizados
+✅ [número] automações ativas
+✅ Documentação completa (como usar)
+✅ 2 sessões treinamento (2h cada)
+✅ 30 dias suporte pós-entrega</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">━━━ INVESTIMENTO ━━━</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Setup: R$ 3.500 (one-time)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Inclui:
+- Discovery session (2h)
+- Workspace design + build (12h)
+- Automações Make (3h)
+- Documentation (2h)
+- Training (4h)
+- Suporte 30d</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Opcional - Manutenção:
+R$ 800/mês (8h/mês ajustes + suporte)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">━━━ TIMELINE ━━━</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Semana 1:
+- Discovery (entender processos)
+- Workspace structure design
+- Aprovação estrutura</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Semana 2-3:
+- Build databases
+- Criar templates
+- Setup automações
+- Testes internos</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Semana 4:
+- Training sessão 1 (admins)
+- Training sessão 2 (equipe)
+- Go-live
+- Documentação entregue</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">TOTAL: 4 semanas</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">━━━ RESULTADOS ESPERADOS ━━━</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ Tudo em 1 lugar (elimina 4+ apps)
+✅ Visibilidade 100% do que acontece
+✅ Onboarding 70% mais rápido
+✅ Processos documentados
+✅ Colaboração mais eficiente
+✅ Tempo economizado: ~10h/semana/pessoa</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">━━━ PRÓXIMOS PASSOS ━━━</p>
+
+          <ol class="space-y-3 mb-6 list-decimal list-inside">
+            <li class="text-neutral-700 dark:text-neutral-300">Aprovação proposta</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Discovery call (agendar)</li>
+            <li class="text-neutral-700 dark:text-neutral-300">Kickoff semana seguinte</li>
+            <li class="text-neutral-700 dark:text-neutral-300">[Data]: Go-live</li>
+          </ol>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">[Seu nome]
+Notion Specialist
+[Contato]
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: 7. Exercício Prático (60 minutos) -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">7. Exercício Prático (60 minutos)</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>PARTE 1: Workspace Base (20min)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Crie:
+1. Home dashboard
+2. Inbox database
+3. Tasks database (com properties essenciais)
+4. Projects database
+5. Relacione Tasks ↔ Projects</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>PARTE 2: Templates (20min)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Crie 3 templates:
+1. Projeto (com checklist inicial)
+2. Reunião (com seções estruturadas)
+3. Aprendizado (com metadata)</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>PARTE 3: Automação (20min)</strong></p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Configure 1 automação:
+- Opção A: Form → Notion (via Make)
+- Opção B: Task done → Slack notification
+- Opção C: New project → Create pages auto</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">ENTREGA:</span> - Screenshot do workspace
+- Link compartilhado (read-only)
+- Explicação: como organizou e por quê</p>
+          </div>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">BÔNUS:</span> Poste no LinkedIn mostrando seu Notion organizado. Tag: #notion #produtividade</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">---</p>
+
+        </div>
+      </div>
+
+
+      <!-- Seção: Próximos Passos -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">Próximos Passos</h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Módulo 6: Google Workspace Avançado</strong>
+- Gmail profissional (filtros, labels, templates)
+- Google Sheets (fórmulas, dashboards, automações)
+- Google Drive (organização, compartilhamento, integrações)
+- Integrações: Workspace + Notion + Make</p>
+
+
+          <div class="mb-4">
+            <p class="text-lg"><span class="font-bold text-talento">Prepare-se para:</span> Dominar ferramentas que 99% das empresas usam</p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Nos vemos lá! 🚀</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">---</p>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>© 2025 FETD - Formação em Engenharia de Intenção</strong></p>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer / Navegação -->
+  <section class="py-12 bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center">
+        <a href="../../trilhas/talento.html" class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90">
+          ← Voltar para Trilha
+        </a>
+        <a href="modulo-06.html" class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90">Próximo Módulo →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dark Mode Toggle Script -->
   <script>
-    document.documentElement.classList.remove('preload');
+    // Remove preload class
+    window.addEventListener('load', () => {
+      document.body.classList.remove('preload');
+    });
+
+    // Dark mode toggle
     const themeToggleBtn = document.getElementById('theme-toggle');
-    const darkIcon = document.getElementById('theme-toggle-dark-icon');
-    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    // Check localStorage
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      themeToggleLightIcon.classList.remove('hidden');
       document.documentElement.classList.add('dark');
-      lightIcon.classList.remove('hidden');
     } else {
-      darkIcon.classList.remove('hidden');
+      themeToggleDarkIcon.classList.remove('hidden');
     }
-    themeToggleBtn.addEventListener('click', function() {
-      darkIcon.classList.toggle('hidden');
-      lightIcon.classList.toggle('hidden');
-      if (document.documentElement.classList.contains('dark')) {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('color-theme', 'light');
+
+    themeToggleBtn.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        }
       } else {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('color-theme', 'dark');
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        }
       }
     });
   </script>
+
 </body>
 </html>
