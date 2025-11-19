@@ -203,9 +203,24 @@ Contribuições são muito bem-vindas! Este é um projeto open-source com o obje
 
 ## 📄 Documentação
 
+### Documentação do Projeto
 - [PRD Completo](docs/prd.md) - Product Requirements Document
 - [Padrões de Layout](doc/PADRAO_LAYOUT_NAVEGACAO.md) - Especificação de design
 - [Padrões de Módulos](doc/PADRAO_MODULOS_INTERATIVOS.md) - Estrutura de conteúdo
+
+### 🎨 Conversor MD → HTML (Layout Ultra Rico v2.0)
+- **[COMO_USAR_CONVERSOR_V2.md](COMO_USAR_CONVERSOR_V2.md)** - Guia rápido de uso
+- **[LAYOUT_ULTRA_RICO_V2.md](LAYOUT_ULTRA_RICO_V2.md)** - Documentação completa do formato
+- **Script:** `converter_md_para_html_rico_v2.py`
+
+**Uso rápido:**
+```bash
+# Converter uma trilha completa
+python3 converter_md_para_html_rico_v2.py talento
+
+# Converter apenas um módulo
+python3 converter_md_para_html_rico_v2.py talento 1
+```
 
 ---
 
