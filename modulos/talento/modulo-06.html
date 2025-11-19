@@ -12,7 +12,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Tailwind Config -->
   <script>
@@ -47,18 +47,18 @@
 <body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
 
   <!-- Navbar -->
-  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-neutral-800/95 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-700 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <div class="flex items-center">
-          <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-talento to-talento bg-clip-text text-transparent">
+          <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-talento to-amber-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
             🎓 FETD
           </a>
         </div>
         <div class="hidden md:flex items-center space-x-8">
-          <a href="../../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Início</a>
-          <a href="../../trilhas/talento.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Trilha Talento Emergente</a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+          <a href="../../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors font-medium">Início</a>
+          <a href="../../trilhas/talento.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors font-medium">Trilha Talento Emergente</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-talento/10 transition-colors">
             <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
             </svg>
@@ -74,10 +74,10 @@
   <!-- Breadcrumb -->
   <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <nav class="flex text-sm" aria-label="Breadcrumb">
-        <a href="../../index.html" class="text-talento hover:opacity-80">Início</a>
+      <nav class="flex text-sm font-medium" aria-label="Breadcrumb">
+        <a href="../../index.html" class="text-talento hover:opacity-80 transition-opacity">Início</a>
         <span class="mx-2 text-neutral-400">/</span>
-        <a href="../../trilhas/talento.html" class="text-talento hover:opacity-80">Trilha Talento Emergente</a>
+        <a href="../../trilhas/talento.html" class="text-talento hover:opacity-80 transition-opacity">Trilha Talento Emergente</a>
         <span class="mx-2 text-neutral-400">/</span>
         <span class="text-neutral-600 dark:text-neutral-400">Módulo 6</span>
       </nav>
@@ -85,28 +85,32 @@
   </div>
 
   <!-- Hero Módulo -->
-  <section class="bg-gradient-to-r from-talento to-talento py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+  <section class="bg-gradient-to-br from-talento via-talento to-amber-600 py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white relative z-10">
 
-      <div class="flex items-center gap-3 mb-4">
-        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">Módulo 6 de 10</span>
-        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">⏱️ 60 minutos</span>
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <span class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-bold shadow-lg">Módulo 6 de 10</span>
+        <span class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-bold shadow-lg flex items-center gap-2">
+          <span>⏱️</span>
+          <span>60 minutos</span>
+        </span>
       </div>
 
-      <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
         Módulo 6: Google Workspace Avançado
       </h1>
 
-      <p class="text-xl text-white/90 mb-6 max-w-3xl">
+      <p class="text-xl md:text-2xl text-white/95 mb-8 max-w-3xl font-medium leading-relaxed">
         Dominar Google Workspace como profissional
       </p>
 
-      <div class="flex items-center gap-4">
-        <span class="text-white/80">📚 Teoria</span>
-        <span class="text-white/80">•</span>
-        <span class="text-white/80">💭 Reflexão</span>
-        <span class="text-white/80">•</span>
-        <span class="text-white/80">🛠️ Prática</span>
+      <div class="flex flex-wrap items-center gap-4 text-white/90">
+        <span class="flex items-center gap-2 font-medium"><span class="text-xl">📚</span> Teoria</span>
+        <span class="text-white/60">•</span>
+        <span class="flex items-center gap-2 font-medium"><span class="text-xl">💭</span> Reflexão</span>
+        <span class="text-white/60">•</span>
+        <span class="flex items-center gap-2 font-medium"><span class="text-xl">🛠️</span> Prática</span>
       </div>
     </div>
   </section>
@@ -117,25 +121,38 @@
 
       <!-- Download Button -->
       <div class="flex justify-end mb-8">
-        <a href="../../downloads/talento/modulo-06.md" download class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90 inline-flex items-center gap-2">
-          <span>📥</span>
+        <a href="../../downloads/talento/modulo-06.md" download class="px-6 py-3 bg-gradient-to-r from-talento to-amber-600 text-white rounded-lg font-bold hover:opacity-90 inline-flex items-center gap-2 shadow-lg hover:shadow-xl transition-all">
+          <span class="text-xl">📥</span>
           <span>Download MD</span>
         </a>
       </div>
 
 
+      <!-- Objetivo do Módulo -->
+      <div class="bg-talento/10 dark:bg-talento/20 border-l-4 border-talento p-6 rounded-lg mb-12 shadow-lg">
+        <h3 class="text-xl font-bold text-talento mb-2 flex items-center gap-2">
+          <span class="text-2xl">🎯</span>
+          <span>Objetivo deste Módulo</span>
+        </h3>
+        <p class="text-neutral-700 dark:text-neutral-300 text-lg">
+          Dominar Google Workspace como profissional
+        </p>
+      </div>
+
+
+
       <!-- Seção: Introdução -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">Introdução</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">Introdução</h2>
 
         <div class="mb-6">
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Google Workspace (Gmail, Drive, Sheets, Docs, Calendar) é usado por 90%+ das empresas.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Google Workspace (Gmail, Drive, Sheets, Docs, Calendar) é usado por 90%+ das empresas.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Dominar vai além de "saber usar". É usar PROFISSIONALMENTE com automações, organização e produtividade máxima.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Dominar vai além de "saber usar". É usar PROFISSIONALMENTE com automações, organização e produtividade máxima.</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Dados:</span> Profissionais avançados em Google Workspace economizam 8-12h/semana vs usuários básicos.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Dados:</span> <span class="text-neutral-700 dark:text-neutral-300">Profissionais avançados em Google Workspace economizam 8-12h/semana vs usuários básicos.</span></p>
           </div>
 
         </div>
@@ -144,273 +161,283 @@
 
       <!-- Seção: 0. Contexto de Mercado: Por Que Google Workspace Domina -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">0. Contexto de Mercado: Por Que Google Workspace Domina</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">0. Contexto de Mercado: Por Que Google Workspace Domina</h2>
 
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">0.1 Concorrentes e Comparação</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">0.1 Concorrentes e Comparação</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>O mercado de suites de produtividade/colaboração é dominado por poucos gigantes:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">O mercado de suites de produtividade/colaboração é dominado por poucos gigantes:</strong></p>
 
 
-          <div class="overflow-x-auto mb-6">
+          <div class="overflow-x-auto mb-8 shadow-lg rounded-lg">
             <table class="w-full border-collapse">
               <thead>
-                <tr class="bg-talento/20 dark:bg-talento/30">
-                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Suite</th>
-                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Foco</th>
-                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Pontos Fortes</th>
-                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Limitações</th>
-                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Preço</th>
+                <tr class="bg-gradient-to-r from-talento to-talento/80 text-white">
+                  <th class="px-6 py-4 text-left font-bold">Suite</th>
+                  <th class="px-6 py-4 text-left font-bold">Foco</th>
+                  <th class="px-6 py-4 text-left font-bold">Pontos Fortes</th>
+                  <th class="px-6 py-4 text-left font-bold">Limitações</th>
+                  <th class="px-6 py-4 text-left font-bold">Preço</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr class="bg-white dark:bg-neutral-800">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">-------</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">------</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">---------------</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">------------</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">-------</td>
+              <tbody class="bg-white dark:bg-neutral-800">
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">-------</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">------</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">---------------</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">------------</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">-------</td>
                 </tr>
-                <tr class="bg-neutral-50 dark:bg-neutral-900">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700"><strong>Google Workspace</strong></td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Cloud-first, colaboração</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Colaboração real-time perfeita, grátis robusto, busca poderosa</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Offline limitado, menos features avançadas que Office</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Grátis - $18/mês</td>
+                <tr class="bg-neutral-50 dark:bg-neutral-900 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Google Workspace</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Cloud-first, colaboração</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Colaboração real-time perfeita, grátis robusto, busca poderosa</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Offline limitado, menos features avançadas que Office</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Grátis - $18/mês</td>
                 </tr>
-                <tr class="bg-white dark:bg-neutral-800">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700"><strong>Microsoft 365</strong></td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Tradicional + cloud</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Excel/Word superiores, integração Windows/Teams, features enterprise</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Colaboração pior, interface pesada, caro</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">$6-23/mês</td>
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Microsoft 365</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Tradicional + cloud</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Excel/Word superiores, integração Windows/Teams, features enterprise</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Colaboração pior, interface pesada, caro</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">$6-23/mês</td>
                 </tr>
-                <tr class="bg-neutral-50 dark:bg-neutral-900">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700"><strong>Apple iWork</strong></td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Ecosystem Apple</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Bonito, grátis (Apple users), simples</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Só Apple, features limitadas, pouco usado empresas</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Grátis</td>
+                <tr class="bg-neutral-50 dark:bg-neutral-900 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Apple iWork</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Ecosystem Apple</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Bonito, grátis (Apple users), simples</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Só Apple, features limitadas, pouco usado empresas</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Grátis</td>
                 </tr>
-                <tr class="bg-white dark:bg-neutral-800">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700"><strong>LibreOffice</strong></td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Open source</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">100% grátis, offline, compatibilidade Office</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Interface antiga, sem colaboração nativa</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Grátis</td>
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">LibreOffice</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Open source</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">100% grátis, offline, compatibilidade Office</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Interface antiga, sem colaboração nativa</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Grátis</td>
                 </tr>
-                <tr class="bg-neutral-50 dark:bg-neutral-900">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700"><strong>Zoho Workspace</strong></td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">All-in-one barato</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Barato, muitas features, CRM integrado</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Menos popular, curva aprendizado</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">$3-9/mês</td>
+                <tr class="bg-neutral-50 dark:bg-neutral-900 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Zoho Workspace</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">All-in-one barato</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Barato, muitas features, CRM integrado</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Menos popular, curva aprendizado</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">$3-9/mês</td>
                 </tr>
-                <tr class="bg-white dark:bg-neutral-800">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700"><strong>OnlyOffice</strong></td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Open source + colaboração</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Grátis, self-hosted, colaboração real-time</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Menos integrações, comunidade menor</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Grátis - $13/mês</td>
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">OnlyOffice</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Open source + colaboração</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Grátis, self-hosted, colaboração real-time</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Menos integrações, comunidade menor</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Grátis - $13/mês</td>
                 </tr>
-                <tr class="bg-neutral-50 dark:bg-neutral-900">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700"><strong>Dropbox Paper</strong></td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Colaboração + storage</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Simples, integra Dropbox, bom UX</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Features limitadas vs Google Docs</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">$10-20/mês</td>
+                <tr class="bg-neutral-50 dark:bg-neutral-900 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Dropbox Paper</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Colaboração + storage</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Simples, integra Dropbox, bom UX</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Features limitadas vs Google Docs</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">$10-20/mês</td>
                 </tr>
-                <tr class="bg-white dark:bg-neutral-800">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700"><strong>Quip (Salesforce)</strong></td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Colaboração + CRM</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Integra Salesforce, mobile-first</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Nicho, caro sem Salesforce</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Incluso Salesforce</td>
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Quip (Salesforce)</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Colaboração + CRM</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Integra Salesforce, mobile-first</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Nicho, caro sem Salesforce</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Incluso Salesforce</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Por que Google Workspace vence:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Por que Google Workspace vence:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Colaboração real-time perfeita</strong> (10 pessoas editando mesmo doc, zero conflito)
-✅ <strong>Grátis robusto</strong> (15GB storage, todas ferramentas principais)
-✅ <strong>Busca poderosa</strong> (acha qualquer coisa em segundos, até dentro de PDFs)
-✅ <strong>Ecossistema integrado</strong> (Gmail + Drive + Sheets + Calendar = tudo conectado)
-✅ <strong>Apps Script</strong> (automação nativa, JavaScript para customizar tudo)
-✅ <strong>Mobile excelente</strong> (edita docs complexos no celular)
-✅ <strong>Adoção massiva</strong> (90%+ empresas = todos sabem usar)
-✅ <strong>Cloud-native</strong> (não precisa instalar nada, acessa de qualquer lugar)</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ <strong class="font-bold">Colaboração real-time perfeita</strong> (10 pessoas editando mesmo doc, zero conflito)
+✅ <strong class="font-bold">Grátis robusto</strong> (15GB storage, todas ferramentas principais)
+✅ <strong class="font-bold">Busca poderosa</strong> (acha qualquer coisa em segundos, até dentro de PDFs)
+✅ <strong class="font-bold">Ecossistema integrado</strong> (Gmail + Drive + Sheets + Calendar = tudo conectado)
+✅ <strong class="font-bold">Apps Script</strong> (automação nativa, JavaScript para customizar tudo)
+✅ <strong class="font-bold">Mobile excelente</strong> (edita docs complexos no celular)
+✅ <strong class="font-bold">Adoção massiva</strong> (90%+ empresas = todos sabem usar)
+✅ <strong class="font-bold">Cloud-native</strong> (não precisa instalar nada, acessa de qualquer lugar)</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Quando Google Workspace NÃO é ideal:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Quando Google Workspace NÃO é ideal:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>Excel power users:</strong> Microsoft Excel é superior (tabelas dinâmicas, macros VBA complexas, análise dados massiva)
-❌ <strong>Trabalho offline frequente:</strong> Microsoft Office offline é melhor
-❌ <strong>Design/publicação profissional:</strong> Microsoft Publisher, InDesign são superiores
-❌ <strong>企業 muito grande (10k+ funcionários):</strong> Microsoft 365 tem governança/compliance mais robusta
-❌ <strong>Integração deep com ecosystem Microsoft:</strong> Se usa Azure, Teams, SharePoint → fica em M365</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">❌ <strong class="font-bold">Excel power users:</strong> Microsoft Excel é superior (tabelas dinâmicas, macros VBA complexas, análise dados massiva)
+❌ <strong class="font-bold">Trabalho offline frequente:</strong> Microsoft Office offline é melhor
+❌ <strong class="font-bold">Design/publicação profissional:</strong> Microsoft Publisher, InDesign são superiores
+❌ <strong class="font-bold">企業 muito grande (10k+ funcionários):</strong> Microsoft 365 tem governança/compliance mais robusta
+❌ <strong class="font-bold">Integração deep com ecosystem Microsoft:</strong> Se usa Azure, Teams, SharePoint → fica em M365</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Tendência mercado (2024-2025):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Tendência mercado (2024-2025):</strong></p>
 
           <ul class="space-y-3 mb-6">
-            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Google Workspace:</strong> Dominando PMEs, startups, tech (crescimento 15-20%/ano)</span></li>
-            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Microsoft 365:</strong> Mantém enterprise/corporações grandes (Fortune 500)</span></li>
-            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Zoho:</strong> Crescendo em emergentes (Índia, Brasil) - preço vence</span></li>
-            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Apple iWork:</strong> Estagnado (só usuários Apple)</span></li>
-            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>LibreOffice:</strong> Declínio lento (empresas migram pra cloud)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-talento flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300"><strong class="font-bold">Google Workspace:</strong> Dominando PMEs, startups, tech (crescimento 15-20%/ano)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-talento flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300"><strong class="font-bold">Microsoft 365:</strong> Mantém enterprise/corporações grandes (Fortune 500)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-talento flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300"><strong class="font-bold">Zoho:</strong> Crescendo em emergentes (Índia, Brasil) - preço vence</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-talento flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300"><strong class="font-bold">Apple iWork:</strong> Estagnado (só usuários Apple)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-talento flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300"><strong class="font-bold">LibreOffice:</strong> Declínio lento (empresas migram pra cloud)</span></li>
           </ul>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Escolha Google Workspace se:</span> - Colaboração é crítica (equipe trabalha junto em docs)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Escolha Google Workspace se:</span> <span class="text-neutral-700 dark:text-neutral-300">- Colaboração é crítica (equipe trabalha junto em docs)
 - Orçamento limitado (plano grátis generoso)
 - Quer simplicidade (cloud, sem instalar)
 - Usa outras ferramentas Google (Android, Chrome, etc)
-- Startup/PME (<500 funcionários)</p>
+- Startup/PME (<500 funcionários)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Escolha Microsoft 365 se:</span> - Precisa Excel avançado (análise dados pesada)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Escolha Microsoft 365 se:</span> <span class="text-neutral-700 dark:text-neutral-300">- Precisa Excel avançado (análise dados pesada)
 - Empresa tradicional/grande (governança robusta)
 - Já investe em ecosystem Microsoft (Windows, Teams, Azure)
-- Trabalho offline frequente</p>
+- Trabalho offline frequente</span></p>
           </div>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">0.2 Por Que Dominar Google Workspace</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">0.2 Por Que Dominar Google Workspace</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>A pergunta honesta: "Todo mundo já usa Gmail/Drive... preciso MESMO 'dominar'?"</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">A pergunta honesta: "Todo mundo já usa Gmail/Drive... preciso MESMO 'dominar'?"</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Resposta:</span> Diferença entre usar e DOMINAR = 10-15h/semana economizadas.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Resposta:</span> <span class="text-neutral-700 dark:text-neutral-300">Diferença entre usar e DOMINAR = 10-15h/semana economizadas.</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Dados reais de produtividade:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Dados reais de produtividade:</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Usuário BÁSICO (95% das pessoas):</span> - <strong>Gmail:</strong> Inbox bagunçado (500+ emails), procura email 10-15min/dia
-- <strong>Sheets:</strong> Usa como Excel offline (sem fórmulas avançadas, sem automação)
-- <strong>Drive:</strong> Arquivos soltos, busca por "scroll infinito"
-- <strong>Calendar:</strong> Só reuniões (não time-blocking, sem organização)
-- <strong>Tempo desperdiçado:</strong> 10-15h/semana</p>
-          </div>
-
-
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Usuário AVANÇADO (você após este módulo):</span> - <strong>Gmail:</strong> Inbox zero diário (filtros automáticos, templates, atalhos teclado)
-- <strong>Sheets:</strong> Dashboards automáticos (QUERY, Apps Script, integra APIs)
-- <strong>Drive:</strong> Estrutura PARA organizada (tudo tem lugar, acha em <30seg)
-- <strong>Calendar:</strong> Time-blocking completo (agenda TODO tempo, não só reuniões)
-- <strong>Tempo ganho:</strong> 10-15h/semana</p>
-          </div>
-
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>IMPACTO FINANCEIRO:</strong></p>
-
-
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Freelancer:</span> - Básico: 40h trabalho - 15h caos = 25h produtivas × R$ 50/h = <strong>R$ 1.250/semana</strong>
-- Avançado: 40h trabalho - 2h sistema = 38h produtivas × R$ 50/h = <strong>R$ 1.900/semana</strong>
-- <strong>Ganho:</strong> +R$ 650/semana = R$ 2.600/mês = <strong>R$ 31.200/ano</strong></p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Usuário BÁSICO (95% das pessoas):</span> <span class="text-neutral-700 dark:text-neutral-300">- <strong class="font-bold">Gmail:</strong> Inbox bagunçado (500+ emails), procura email 10-15min/dia
+- <strong class="font-bold">Sheets:</strong> Usa como Excel offline (sem fórmulas avançadas, sem automação)
+- <strong class="font-bold">Drive:</strong> Arquivos soltos, busca por "scroll infinito"
+- <strong class="font-bold">Calendar:</strong> Só reuniões (não time-blocking, sem organização)
+- <strong class="font-bold">Tempo desperdiçado:</strong> 10-15h/semana</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Equipe 5 pessoas:</span> - Básico: 5 × 25h = 125h/semana produtivas
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Usuário AVANÇADO (você após este módulo):</span> <span class="text-neutral-700 dark:text-neutral-300">- <strong class="font-bold">Gmail:</strong> Inbox zero diário (filtros automáticos, templates, atalhos teclado)
+- <strong class="font-bold">Sheets:</strong> Dashboards automáticos (QUERY, Apps Script, integra APIs)
+- <strong class="font-bold">Drive:</strong> Estrutura PARA organizada (tudo tem lugar, acha em <30seg)
+- <strong class="font-bold">Calendar:</strong> Time-blocking completo (agenda TODO tempo, não só reuniões)
+- <strong class="font-bold">Tempo ganho:</strong> 10-15h/semana</span></p>
+          </div>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">IMPACTO FINANCEIRO:</strong></p>
+
+
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Freelancer:</span> <span class="text-neutral-700 dark:text-neutral-300">- Básico: 40h trabalho - 15h caos = 25h produtivas × R$ 50/h = <strong class="font-bold">R$ 1.250/semana</strong>
+- Avançado: 40h trabalho - 2h sistema = 38h produtivas × R$ 50/h = <strong class="font-bold">R$ 1.900/semana</strong>
+- <strong class="font-bold">Ganho:</strong> +R$ 650/semana = R$ 2.600/mês = <strong class="font-bold">R$ 31.200/ano</strong></span></p>
+          </div>
+
+
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Equipe 5 pessoas:</span> <span class="text-neutral-700 dark:text-neutral-300">- Básico: 5 × 25h = 125h/semana produtivas
 - Avançado: 5 × 38h = 190h/semana produtivas
-- <strong>Ganho:</strong> 65h/semana × R$ 50/h = R$ 3.250/semana = <strong>R$ 13.000/mês</strong></p>
+- <strong class="font-bold">Ganho:</strong> 65h/semana × R$ 50/h = R$ 3.250/semana = <strong class="font-bold">R$ 13.000/mês</strong></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Custo:</span> Google Workspace Business = $12/usuário/mês × 5 = <strong>$60/mês (~R$ 315)</strong>
-<strong>ROI:</strong> R$ 13.000 ganho ÷ R$ 315 custo = <strong>4.000% ROI</strong></p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Custo:</span> <span class="text-neutral-700 dark:text-neutral-300">Google Workspace Business = $12/usuário/mês × 5 = <strong class="font-bold">$60/mês (~R$ 315)</strong>
+<strong class="font-bold">ROI:</strong> R$ 13.000 ganho ÷ R$ 315 custo = <strong class="font-bold">4.000% ROI</strong></span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>MAS O MAIOR BENEFÍCIO É INTANGÍVEL:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">MAS O MAIOR BENEFÍCIO É INTANGÍVEL:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✨ <strong>Profissionalismo:</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✨ <strong class="font-bold">Profissionalismo:</strong>
 - Cliente pergunta "cadê aquele arquivo?" → 10 seg, envia link (vs 10min procurando)
 - Reunião: Puxa Sheet com dados ao vivo → impressiona (vs "deixa eu verifico e te retorno")
 - Email: Resposta formatada, profissional, rápida (vs email genérico, lento)</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✨ <strong>Paz de espírito:</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✨ <strong class="font-bold">Paz de espírito:</strong>
 - Confia que sistema acha tudo (não depende de memória)
 - Inbox organizado = não esquece nada crítico
 - Backup automático cloud = nunca perde trabalho</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✨ <strong>Colaboração sem atrito:</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✨ <strong class="font-bold">Colaboração sem atrito:</strong>
 - Compartilha doc → 5 pessoas editam simultâneo (vs email ping-pong 20 mensagens)
 - Histórico de versões → nunca perde mudança (vs "sobrescrevi arquivo errado")
 - Comentários inline → feedback contextual (vs reunião 1h pra discutir)</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Resumo:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Resumo:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Não é sobre "saber usar Gmail".</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Não é sobre "saber usar Gmail".</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">É sobre <strong>dominar Google Workspace como ferramenta profissional que 10x sua produtividade</strong>.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">É sobre <strong class="font-bold">dominar Google Workspace como ferramenta profissional que 10x sua produtividade</strong>.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">R$ 31k/ano pra freelancer. R$ 13k/mês pra equipe pequena. Zero esforço depois do setup inicial.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">R$ 31k/ano pra freelancer. R$ 13k/mês pra equipe pequena. Zero esforço depois do setup inicial.</p>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">0.3 O Futuro: IA Vai Substituir Tudo Isso?</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">0.3 O Futuro: IA Vai Substituir Tudo Isso?</h3>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">A pergunta:</span> "Google já tem IA (Gemini). Ela não vai fazer isso tudo pra mim?"</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">A pergunta:</span> <span class="text-neutral-700 dark:text-neutral-300">"Google já tem IA (Gemini). Ela não vai fazer isso tudo pra mim?"</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Resposta:</span> IA vai AMPLIFICAR, não SUBSTITUIR. Mas você precisa dos fundamentos.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Resposta:</span> <span class="text-neutral-700 dark:text-neutral-300">IA vai AMPLIFICAR, não SUBSTITUIR. Mas você precisa dos fundamentos.</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>O que está vindo (2025-2027):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">O que está vindo (2025-2027):</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">🔮 <strong>Gemini integrado em tudo (já começando 2025):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">🔮 <strong class="font-bold">Gemini integrado em tudo (já começando 2025):</strong></p>
 
 
-          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
-            <pre class="text-sm text-green-400"><code>Gmail com Gemini:
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-talento/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>Gmail com Gemini:
 - "Gemini, resuma emails de hoje e destaque urgentes"
 - IA lê inbox, sumariza, prioriza automaticamente
 - "Gemini, responde X dizendo Y de forma profissional"
 - IA escreve email, você só aprova</code></pre>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Sheets com Gemini:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Sheets com Gemini:
 - "Gemini, analisa estas vendas e mostra tendências"
 - IA cria gráficos, detecta padrões, sugere ações
 - "Gemini, cria dashboard completo desses dados"
 - IA gera dashboard profissional em segundos</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Docs com Gemini:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Docs com Gemini:
 - "Gemini, escreve proposta baseado nessas notas"
 - IA estrutura doc profissional completo
 - "Gemini, melhora clareza e corrige gramática"
 - IA refina instantaneamente
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Já existe (2025):</span> - <strong>Gemini em Gmail:</strong> Sumariza threads, sugere respostas, escreve emails
-- <strong>Gemini em Docs:</strong> Escreve conteúdo, refina texto, formata
-- <strong>Gemini em Sheets:</strong> Cria fórmulas complexas, explica dados, gera insights
-- <strong>Gemini em Meet:</strong> Transcreve reuniões, sumariza, extrai action items</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Já existe (2025):</span> <span class="text-neutral-700 dark:text-neutral-300">- <strong class="font-bold">Gemini em Gmail:</strong> Sumariza threads, sugere respostas, escreve emails
+- <strong class="font-bold">Gemini em Docs:</strong> Escreve conteúdo, refina texto, formata
+- <strong class="font-bold">Gemini em Sheets:</strong> Cria fórmulas complexas, explica dados, gera insights
+- <strong class="font-bold">Gemini em Meet:</strong> Transcreve reuniões, sumariza, extrai action items</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">🔮 <strong>Assistente IA Workspace (2026-2027):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">🔮 <strong class="font-bold">Assistente IA Workspace (2026-2027):</strong></p>
 
 
-          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
-            <pre class="text-sm text-green-400"><code>Seu assistente IA (integrado Workspace):
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-talento/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>Seu assistente IA (integrado Workspace):
 - Monitora email, calendario, drive 24/7
 - Detecta tarefas implícitas ("reunião segunda, preparar apresentação")
 - Auto-cria tasks, aloca tempo no calendar
@@ -420,123 +447,128 @@
 - Alerta: "Projeto X atrasado, deadline amanhã, 3h trabalho resta"</code></pre>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Você: Só revisa, aprova, foca em decisões estratégicas
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Você: Só revisa, aprova, foca em decisões estratégicas
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">🔮 <strong>Workspace auto-otimizado (2027+):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">🔮 <strong class="font-bold">Workspace auto-otimizado (2027+):</strong></p>
 
 
-          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
-            <pre class="text-sm text-green-400"><code>Google Workspace aprende SEU padrão:
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-talento/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>Google Workspace aprende SEU padrão:
 - Auto-cria filtros Gmail baseado em comportamento
 - Sugere estrutura Drive ideal pro SEU trabalho
 - Sheets templates personalizados (IA vê o que você faz repetidamente)
 - Calendar: IA agenda TUDO (reuniões, deep work, breaks) otimizando energia</code></pre>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">"Gemini, prepara tudo pra eu trabalhar em projeto X"
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">"Gemini, prepara tudo pra eu trabalhar em projeto X"
 → IA abre docs relevantes, puxa emails contexto, cria Sheet tracking, agenda tempo focado
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>ENTÃO POR QUE DOMINAR WORKSPACE AGORA?</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">ENTÃO POR QUE DOMINAR WORKSPACE AGORA?</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Razão 1: IA funciona MELHOR com sistemas organizados</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Razão 1: IA funciona MELHOR com sistemas organizados</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Workspace organizado → IA tem contexto → sugestões úteis
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Workspace organizado → IA tem contexto → sugestões úteis
 Workspace caótico → IA confusa → sugestões genéricas</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Exemplo:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Exemplo:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Gmail bagunçado (3.000 emails sem labels):
 Você: "Gemini, acha email do cliente X sobre projeto Y"
-IA: "Encontrei 47 emails mencionando 'cliente X'. Qual especificamente?"</p>
+IA: "Encontrei 47 emails mencionando 'cliente X'. Qual especificamente?"</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Gmail organizado (labels, filtros, inbox zero):
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Gmail organizado (labels, filtros, inbox zero):
 Você: "Gemini, acha email do cliente X sobre projeto Y"
 IA: "Email de 12/02 em label 'Cliente X / Projeto Y'. Aqui está.
      Contexto: Pediu alteração no contrato, prazo 15/02. Quer que responda?"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Razão 2: IA atual ainda é limitada (2025)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Razão 2: IA atual ainda é limitada (2025)</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Realidade hoje:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Realidade hoje:
 - Gemini não entende SUAS prioridades (só heurísticas genéricas)
 - IA sugere, você DECIDE (precisa saber avaliar sugestão)
 - IA erra ~10-20% (você precisa catch errors)
 - Automações complexas ainda precisam Apps Script / Make</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Você ainda precisa:</span> - Estrutura organizada (IA não cria do zero pra você)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Você ainda precisa:</span> <span class="text-neutral-700 dark:text-neutral-300">- Estrutura organizada (IA não cria do zero pra você)
 - Entender ferramentas (pra guiar IA corretamente)
-- Validar outputs IA (não confiar cegamente)</p>
+- Validar outputs IA (não confiar cegamente)</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Razão 3: Fundamentos são transferíveis</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Razão 3: Fundamentos são transferíveis</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Princípios que você aprende (inbox zero, time-blocking, estrutura PARA, fórmulas avançadas) funcionam em:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Princípios que você aprende (inbox zero, time-blocking, estrutura PARA, fórmulas avançadas) funcionam em:
 - Google Workspace hoje
 - Microsoft 365 amanhã
 - Ferramenta IA futura X</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Ferramenta muda, princípios ficam.</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Ferramenta muda, princípios ficam.</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Razão 4: Vantagem competitiva AGORA (enquanto IA não é perfeita)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Razão 4: Vantagem competitiva AGORA (enquanto IA não é perfeita)</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">95% das pessoas usam Workspace mal (inbox bagunçado, Sheets como bloco de notas).</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">95% das pessoas usam Workspace mal (inbox bagunçado, Sheets como bloco de notas).</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Você dominando = 2-3x mais produtivo = vence projetos, promoções, clientes.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Você dominando = 2-3x mais produtivo = vence projetos, promoções, clientes.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">IA democratiza depois (2027+), mas você já está 3 anos à frente.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">IA democratiza depois (2027+), mas você já está 3 anos à frente.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Cenário mais provável (2025-2030):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Cenário mais provável (2025-2030):</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Não será:</span> IA faz tudo, você fica sem fazer nada</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Não será:</span> <span class="text-neutral-700 dark:text-neutral-300">IA faz tudo, você fica sem fazer nada</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Será:</span> Híbrido humano + IA</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Será:</span> <span class="text-neutral-700 dark:text-neutral-300">Híbrido humano + IA</span></p>
           </div>
 
           <ul class="space-y-3 mb-6">
-            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Você:</strong> Define objetivos, prioriza, decide, valida</span></li>
-            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>IA (Gemini):</strong> Sugere, automatiza, organiza, sumariza</span></li>
-            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Workspace:</strong> Estrutura que conecta você + IA + equipe</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-talento flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300"><strong class="font-bold">Você:</strong> Define objetivos, prioriza, decide, valida</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-talento flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300"><strong class="font-bold">IA (Gemini):</strong> Sugere, automatiza, organiza, sumariza</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-talento flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300"><strong class="font-bold">Workspace:</strong> Estrutura que conecta você + IA + equipe</span></li>
           </ul>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Analogia GPS:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Analogia GPS:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Antes: Você = motorista, mapa papel (lento, erro fácil)
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Antes: Você = motorista, mapa papel (lento, erro fácil)
 2025: Você = motorista, Waze/Google Maps (sugestão rota, tempo real)
 Futuro: Carro autônomo + você (você define destino, carro dirige)</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Workspace é igual:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Workspace é igual:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Você sempre define DESTINO (objetivos, prioridades, decisões).
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Você sempre define DESTINO (objetivos, prioridades, decisões).
 IA/Gemini ajuda CHEGAR LÁ mais rápido (automação, insights, sugestões).</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>SUA ESTRATÉGIA:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">SUA ESTRATÉGIA:</strong></p>
 
-          <ol class="space-y-3 mb-6 list-decimal list-inside">
-            <li class="text-neutral-700 dark:text-neutral-300"><strong>Domine fundamentos AGORA</strong> (este módulo: filtros, fórmulas, Apps Script, organização)</li>
-            <li class="text-neutral-700 dark:text-neutral-300"><strong>Use Gemini gradualmente</strong> (já disponível: test em Docs, Sheets, Gmail)</li>
-            <li class="text-neutral-700 dark:text-neutral-300"><strong>Mantenha sistema organizado</strong> (IA amplifica sistema bom, não salva caos)</li>
-            <li class="text-neutral-700 dark:text-neutral-300"><strong>Acompanhe updates Google</strong> (Gemini melhora mensalmente, novas features)</li>
-            <li class="text-neutral-700 dark:text-neutral-300"><strong>Adapte workflow</strong> (incorpora IA onde faz sentido, mantém controle humano onde crítico)</li>
+          <ol class="space-y-3 mb-6 list-decimal list-inside marker:text-talento marker:font-bold">
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2"><strong class="font-bold">Domine fundamentos AGORA</strong> (este módulo: filtros, fórmulas, Apps Script, organização)</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2"><strong class="font-bold">Use Gemini gradualmente</strong> (já disponível: test em Docs, Sheets, Gmail)</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2"><strong class="font-bold">Mantenha sistema organizado</strong> (IA amplifica sistema bom, não salva caos)</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2"><strong class="font-bold">Acompanhe updates Google</strong> (Gemini melhora mensalmente, novas features)</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2"><strong class="font-bold">Adapte workflow</strong> (incorpora IA onde faz sentido, mantém controle humano onde crítico)</li>
           </ol>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>A habilidade mais valiosa não é "saber usar Gmail".</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">A habilidade mais valiosa não é "saber usar Gmail".</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>É "organizar informação, priorizar implacavelmente, automatizar repetitivo".</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">É "organizar informação, priorizar implacavelmente, automatizar repetitivo".</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Isso funciona em Workspace, em ferramenta IA futura, em qualquer coisa.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Isso funciona em Workspace, em ferramenta IA futura, em qualquer coisa.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Google Workspace é MEIO de praticar essa habilidade. Habilidade é o FIM.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Google Workspace é MEIO de praticar essa habilidade. Habilidade é o FIM.</p>
 
         </div>
       </div>
@@ -544,205 +576,205 @@ IA/Gemini ajuda CHEGAR LÁ mais rápido (automação, insights, sugestões).</p>
 
       <!-- Seção: 1. Gmail Profissional -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">1. Gmail Profissional</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">1. Gmail Profissional</h2>
 
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">1.1 Labels e Filtros Automatizados</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">1.1 Labels e Filtros Automatizados</h3>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Problema:</span> Inbox com 500+ emails. Caos total.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Problema:</span> <span class="text-neutral-700 dark:text-neutral-300">Inbox com 500+ emails. Caos total.</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Solução:</span> Sistema de labels + filtros automáticos.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Solução:</span> <span class="text-neutral-700 dark:text-neutral-300">Sistema de labels + filtros automáticos.</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Estrutura de Labels:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Estrutura de Labels:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 📥 0-INBOX (tudo processado)
 ├── @Action (preciso fazer algo)
 ├── @Waiting (aguardando resposta)
 ├── @Read (ler depois)
-└── @Archive (referência)</p>
+└── @Archive (referência)</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">📁 1-PROJETOS
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">📁 1-PROJETOS
 ├── Projeto A
 ├── Projeto B
 └── Projeto C</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">📁 2-CLIENTES
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">📁 2-CLIENTES
 ├── Cliente X
 ├── Cliente Y
 └── Cliente Z</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">📁 3-CATEGORIAS
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">📁 3-CATEGORIAS
 ├── Financeiro
 ├── Contratos
 ├── Marketing
 └── Tech
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Filtros Automáticos:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Filtros Automáticos:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Filtro 1: Emails de clientes VIP</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Filtro 1: Emails de clientes VIP</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 From: (cliente1@empresa.com OR cliente2@empresa.com)
 → Apply label: Clientes/VIP
 → Star it
 → Never send to spam
 → Mark as important
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Filtro 2: Newsletters para ler depois</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
-From: (newsletter@<em> OR noreply@</em>)
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Filtro 2: Newsletters para ler depois</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
+From: (newsletter@<em class="italic"> OR noreply@</em>)
 Has words: unsubscribe
 → Skip inbox
 → Apply label: @Read
 → Mark as read
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Filtro 3: Receipts/Financeiro</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Filtro 3: Receipts/Financeiro</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Subject: (invoice OR receipt OR payment OR fatura)
 → Apply label: Financeiro/Receipts
 → Skip inbox
 → Star it
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Criar filtro:</span> 1. Pesquise exemplo do email
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Criar filtro:</span> <span class="text-neutral-700 dark:text-neutral-300">1. Pesquise exemplo do email
 2. Click ⋮ (3 pontos)
 3. "Filter messages like this"
 4. Refine critérios
-5. "Create filter"</p>
+5. "Create filter"</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Meta: Inbox Zero diariamente.</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Meta: Inbox Zero diariamente.</strong></p>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">1.2 Templates e Respostas Prontas</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">1.2 Templates e Respostas Prontas</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Canned Responses (Respostas Prontas):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Canned Responses (Respostas Prontas):</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Ative: Settings → Advanced → Templates → Enable</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Ative: Settings → Advanced → Templates → Enable</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Template 1: Follow-up Educado</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Template 1: Follow-up Educado</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Assunto: Re: [assunto]</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Oi [Nome],</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Oi [Nome],</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Espero que esteja bem!</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Espero que esteja bem!</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Estou acompanhando nossa conversa sobre [tópico].</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Estou acompanhando nossa conversa sobre [tópico].</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Você conseguiu [o que estava esperando]?</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Você conseguiu [o que estava esperando]?</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Qualquer dúvida, estou à disposição.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Qualquer dúvida, estou à disposição.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Abraço,
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Abraço,
 [Seu Nome]
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Template 2: Agendar Reunião</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Template 2: Agendar Reunião</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Assunto: Reunião: [tópico]</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Oi [Nome],</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Oi [Nome],</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Ótimo! Vamos agendar.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Ótimo! Vamos agendar.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Estes horários funcionam pra você?
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Estes horários funcionam pra você?
 - [Data 1] às [hora]
 - [Data 2] às [hora]
 - [Data 3] às [hora]</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Duração estimada: [X] minutos</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Duração estimada: [X] minutos</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Me confirma qual melhor!</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Me confirma qual melhor!</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Abs,
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Abs,
 [Seu Nome]
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Como usar:</span> 1. Compose
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Como usar:</span> <span class="text-neutral-700 dark:text-neutral-300">1. Compose
 2. Click ⋮ → Templates → Insert template
 3. Personaliza [campos]
-4. Envia</p>
+4. Envia</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Economia:</span> 5-10min por email × 20 emails/semana = 2h/semana</p>
-          </div>
-
-        </div>
-
-        <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">1.3 Atalhos de Teclado (Gmail Ninja)</h3>
-
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Ative: Settings → General → Keyboard shortcuts → ON</p>
-
-
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Essenciais:</span> - <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">c</code> - Compose (novo email)
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">r</code> - Reply
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">a</code> - Reply all
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">f</code> - Forward
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">e</code> - Archive
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">#</code> - Delete
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">s</code> - Star
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">gi</code> - Go to Inbox
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">gl</code> - Go to label
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">j/k</code> - Email anterior/próximo
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">o</code> - Abrir email
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">u</code> - Volta pra lista</p>
-          </div>
-
-
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Avançados:</span> - <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">l</code> - Apply label (abre menu)
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">v</code> - Move to (folder)
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Shift+i</code> - Mark as read
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Shift+u</code> - Mark as unread
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Shift+3</code> - Delete
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Tab+Enter</code> - Envia email</p>
-          </div>
-
-
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Desafio:</span> Processe 50 emails sem usar mouse.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Economia:</span> <span class="text-neutral-700 dark:text-neutral-300">5-10min por email × 20 emails/semana = 2h/semana</span></p>
           </div>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">1.4 Múltiplas Caixas de Entrada</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">1.3 Atalhos de Teclado (Gmail Ninja)</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Settings → Inbox → Inbox type → Multiple Inboxes</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Ative: Settings → General → Keyboard shortcuts → ON</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Config:</span> - <strong>Caixa 1:</strong> is:starred (favoritos)
-- <strong>Caixa 2:</strong> label:@Action (preciso agir)
-- <strong>Caixa 3:</strong> label:@Waiting (aguardando)
-- <strong>Caixa 4:</strong> is:unread (não lidos)</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Essenciais:</span> <span class="text-neutral-700 dark:text-neutral-300">- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">c</code> - Compose (novo email)
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">r</code> - Reply
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">a</code> - Reply all
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">f</code> - Forward
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">e</code> - Archive
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">#</code> - Delete
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">s</code> - Star
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">gi</code> - Go to Inbox
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">gl</code> - Go to label
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">j/k</code> - Email anterior/próximo
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">o</code> - Abrir email
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">u</code> - Volta pra lista</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Resultado:</span> Vê tudo importante num golpe de vista.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Avançados:</span> <span class="text-neutral-700 dark:text-neutral-300">- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">l</code> - Apply label (abre menu)
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">v</code> - Move to (folder)
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">Shift+i</code> - Mark as read
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">Shift+u</code> - Mark as unread
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">Shift+3</code> - Delete
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">Tab+Enter</code> - Envia email</span></p>
+          </div>
+
+
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Desafio:</span> <span class="text-neutral-700 dark:text-neutral-300">Processe 50 emails sem usar mouse.</span></p>
+          </div>
+
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-talento">1.4 Múltiplas Caixas de Entrada</h3>
+
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Settings → Inbox → Inbox type → Multiple Inboxes</p>
+
+
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Config:</span> <span class="text-neutral-700 dark:text-neutral-300">- <strong class="font-bold">Caixa 1:</strong> is:starred (favoritos)
+- <strong class="font-bold">Caixa 2:</strong> label:@Action (preciso agir)
+- <strong class="font-bold">Caixa 3:</strong> label:@Waiting (aguardando)
+- <strong class="font-bold">Caixa 4:</strong> is:unread (não lidos)</span></p>
+          </div>
+
+
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Resultado:</span> <span class="text-neutral-700 dark:text-neutral-300">Vê tudo importante num golpe de vista.</span></p>
           </div>
 
         </div>
@@ -751,167 +783,192 @@ Assunto: Reunião: [tópico]</p>
 
       <!-- Seção: 2. Google Sheets Avançado -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">2. Google Sheets Avançado</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">2. Google Sheets Avançado</h2>
 
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">2.1 Fórmulas Profissionais</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">2.1 Fórmulas Profissionais</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. QUERY (SQL-like em Sheets)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">1. QUERY (SQL-like em Sheets)</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Mais poderosa que FILTER, SORT, etc combinados.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Mais poderosa que FILTER, SORT, etc combinados.</p>
 
 
-          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
-            <pre class="text-sm text-green-400"><code>=QUERY(A1:F100, "SELECT A, B, SUM(F) WHERE C = 'Vendas' GROUP BY A, B ORDER BY SUM(F) DESC")</code></pre>
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-talento/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>=QUERY(A1:F100, "SELECT A, B, SUM(F) WHERE C = 'Vendas' GROUP BY A, B ORDER BY SUM(F) DESC")</code></pre>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Tradução: Seleciona colunas A e B, soma coluna F, filtra onde C = 'Vendas', agrupa por A e B, ordena por soma decrescente.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Tradução: Seleciona colunas A e B, soma coluna F, filtra onde C = 'Vendas', agrupa por A e B, ordena por soma decrescente.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplos práticos:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Exemplos práticos:</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Dashboard de vendas:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Dashboard de vendas:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 =QUERY(Vendas!A:F, 
   "SELECT A, SUM(F) 
    WHERE B >= date '2025-01-01' 
    GROUP BY A 
    LABEL A 'Produto', SUM(F) 'Total Vendido'")
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Top 10 clientes:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Top 10 clientes:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 =QUERY(Clientes!A:D,
   "SELECT A, SUM(D)
    GROUP BY A
    ORDER BY SUM(D) DESC
    LIMIT 10")
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. ARRAYFORMULA (Aplica fórmula em toda coluna)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">2. ARRAYFORMULA (Aplica fórmula em toda coluna)</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Em vez de arrastar fórmula:</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Em vez de arrastar fórmula:</p>
 
 
-          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
-            <pre class="text-sm text-green-400"><code>=ARRAYFORMULA(IF(A2:A="", "", B2:B * C2:C))</code></pre>
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-talento/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>=ARRAYFORMULA(IF(A2:A="", "", B2:B * C2:C))</code></pre>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Multiplica coluna B por C automaticamente. Se adicionar linha nova, já calcula.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Multiplica coluna B por C automaticamente. Se adicionar linha nova, já calcula.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. IMPORTRANGE (Importa de outra planilha)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">3. IMPORTRANGE (Importa de outra planilha)</strong></p>
 
 
-          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
-            <pre class="text-sm text-green-400"><code>=IMPORTRANGE("URL_da_planilha", "Sheet1!A1:F100")</code></pre>
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-talento/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>=IMPORTRANGE("URL_da_planilha", "Sheet1!A1:F100")</code></pre>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Caso de uso:</span> Consolida dados de múltiplas planilhas num dashboard central.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Caso de uso:</span> <span class="text-neutral-700 dark:text-neutral-300">Consolida dados de múltiplas planilhas num dashboard central.</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. SPARKLINE (Gráficos mini)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">4. SPARKLINE (Gráficos mini)</strong></p>
 
 
-          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
-            <pre class="text-sm text-green-400"><code>=SPARKLINE(B2:F2, {"charttype", "line"; "color", "blue"})</code></pre>
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-talento/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>=SPARKLINE(B2:F2, {"charttype", "line"; "color", "blue"})</code></pre>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Gráfico na célula! Ótimo para dashboards compactos.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Gráfico na célula! Ótimo para dashboards compactos.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>5. Combos poderosos:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">5. Combos poderosos:</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Calcular idade:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Calcular idade:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 =DATEDIF(A2, TODAY(), "Y") & " anos"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Extrair domínio de email:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Extrair domínio de email:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 =REGEXEXTRACT(A2, "@(.+)")
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Remover espaços extras:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Remover espaços extras:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 =TRIM(A2)
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Primeira letra maiúscula:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Primeira letra maiúscula:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 =PROPER(A2)
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">2.2 Formatação Condicional Avançada</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">2.2 Formatação Condicional Avançada</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Caso 1: Semáforo de status</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Caso 1: Semáforo de status</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Seleciona coluna Status:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Seleciona coluna Status:
 - Format → Conditional formatting
 - Format cells if: Text is exactly "Atrasado" → Background red
 - Add another rule: Text is exactly "Em dia" → Background green
 - Add another rule: Text is exactly "Alerta" → Background yellow</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Caso 2: Heatmap de valores</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Caso 2: Heatmap de valores</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Seleciona range numérico:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Seleciona range numérico:
 - Conditional formatting
 - Format cells if: Color scale
 - Min: Red, Midpoint: Yellow, Max: Green</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Caso 3: Destacar duplicatas</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Caso 3: Destacar duplicatas</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Seleciona coluna:
-- Custom formula: <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">=COUNTIF($A$2:$A, A2)>1</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Seleciona coluna:
+- Custom formula: <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">=COUNTIF($A$2:$A, A2)>1</code>
 - Background: Yellow</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Caso 4: Linhas alternadas (zebra)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Caso 4: Linhas alternadas (zebra)</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Seleciona range:
-- Custom formula: <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">=MOD(ROW(), 2)=0</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Seleciona range:
+- Custom formula: <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">=MOD(ROW(), 2)=0</code>
 - Background: Light gray</p>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">2.3 Dashboards Profissionais</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">2.3 Dashboards Profissionais</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Estrutura:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Estrutura:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Sheet 1: RAW DATA (dados brutos)</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Sheet 1: RAW DATA (dados brutos)</strong>
 - Importa de fonte (Form, API, manual)
 - Nunca edita aqui (só adiciona linhas)</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Sheet 2: PROCESSED (dados processados)</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Sheet 2: PROCESSED (dados processados)</strong>
 - Fórmulas limpam/transformam dados
 - QUERY, ARRAYFORMULA, etc</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Sheet 3: DASHBOARD (visualização)</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Sheet 3: DASHBOARD (visualização)</strong>
 - Charts
 - Cards com métricas principais
 - Sparklines
 - Conditional formatting</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo Dashboard Vendas:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Exemplo Dashboard Vendas:</strong></p>
 
 
-          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
-            <pre class="text-sm text-green-400"><code>┌────────────────────────────────────────┐
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-talento/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>┌────────────────────────────────────────┐
 │ 📊 VENDAS - JANEIRO 2025               │
 ├────────────────────────────────────────┤
 │                                         │
@@ -932,62 +989,67 @@ Assunto: Reunião: [tópico]</p>
 └────────────────────────────────────────┘</code></pre>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Fórmulas usadas:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Fórmulas usadas:</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Total vendido:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Total vendido:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 =SUM(Processed!F:F)
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Quantidade pedidos:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Quantidade pedidos:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 =COUNTA(Processed!A:A)-1
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Ticket médio:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Ticket médio:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 =Total/Quantidade
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Progress bar meta:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
-=REPT("▓", ROUND(Total/Meta<em>10, 0)) & REPT("░", 10-ROUND(Total/Meta</em>10, 0)) & " " & TEXT(Total/Meta, "0%")
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Progress bar meta:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
+=REPT("▓", ROUND(Total/Meta<em class="italic">10, 0)) & REPT("░", 10-ROUND(Total/Meta</em>10, 0)) & " " & TEXT(Total/Meta, "0%")
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Top 5 produtos:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Top 5 produtos:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 =QUERY(Processed!A:F, "SELECT A, SUM(F) GROUP BY A ORDER BY SUM(F) DESC LIMIT 5")
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">2.4 Apps Script (Automações Custom)</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">2.4 Apps Script (Automações Custom)</h3>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">O que é:</span> JavaScript que roda no Google Sheets. Automatiza qualquer coisa.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">O que é:</span> <span class="text-neutral-700 dark:text-neutral-300">JavaScript que roda no Google Sheets. Automatiza qualquer coisa.</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplos:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Exemplos:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Enviar email quando célula muda:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">1. Enviar email quando célula muda:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Extensions → Apps Script:</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Extensions → Apps Script:</p>
 
 
-          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
-            <pre class="text-sm text-green-400"><code>function onEdit(e) {
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-talento/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>function onEdit(e) {
   var sheet = e.source.getActiveSheet();
   var range = e.range;
   
@@ -1003,11 +1065,16 @@ Assunto: Reunião: [tópico]</p>
 }</code></pre>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Limpar dados automaticamente:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">2. Limpar dados automaticamente:</strong></p>
 
 
-          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
-            <pre class="text-sm text-green-400"><code>function cleanData() {
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-talento/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>function cleanData() {
   var sheet = SpreadsheetApp.getActiveSheet();
   var range = sheet.getDataRange();
   var values = range.getValues();
@@ -1021,13 +1088,18 @@ Assunto: Reunião: [tópico]</p>
 }</code></pre>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Agendar: Triggers → Add trigger → Time-driven → Every day at 2am</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Agendar: Triggers → Add trigger → Time-driven → Every day at 2am</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Integração API externa:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">3. Integração API externa:</strong></p>
 
 
-          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
-            <pre class="text-sm text-green-400"><code>function fetchDataFromAPI() {
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-talento/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>function fetchDataFromAPI() {
   var response = UrlFetchApp.fetch("https://api.exemplo.com/data");
   var data = JSON.parse(response.getContentText());
   
@@ -1037,8 +1109,8 @@ Assunto: Reunião: [tópico]</p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Poder:</span> Sheets vira mini-aplicação web.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Poder:</span> <span class="text-neutral-700 dark:text-neutral-300">Sheets vira mini-aplicação web.</span></p>
           </div>
 
         </div>
@@ -1047,17 +1119,22 @@ Assunto: Reunião: [tópico]</p>
 
       <!-- Seção: 3. Google Drive Organizado -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">3. Google Drive Organizado</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">3. Google Drive Organizado</h2>
 
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">3.1 Estrutura de Pastas Profissional</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">3.1 Estrutura de Pastas Profissional</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Método PARA:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Método PARA:</strong></p>
 
 
-          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
-            <pre class="text-sm text-green-400"><code>📁 My Drive
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-talento/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>📁 My Drive
 │
 ├── 📁 0-INBOX (tudo começa aqui)
 │
@@ -1086,133 +1163,133 @@ Assunto: Reunião: [tópico]</p>
     └── Older</code></pre>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Convenções de nomenclatura:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Convenções de nomenclatura:</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Arquivos:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
-YYYY-MM-DD_TipoDocumento_Descrição_vXX</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Arquivos:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
+YYYY-MM-DD_TipoDocumento_Descrição_vXX</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Exemplos:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Exemplos:
 2025-02-15_Proposta_ClienteX_v03.pdf
 2025-02-10_Contrato_FornecedorY_FINAL.pdf
 2025-02-01_Relatorio_Vendas_Janeiro.xlsx
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Pastas:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
-NúmeroOrdem_NomePasta</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Pastas:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
+NúmeroOrdem_NomePasta</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Exemplos:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Exemplos:
 01_Projetos_Ativos
 02_Clientes
 03_Templates
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Força ordem alfabética consistente.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Força ordem alfabética consistente.</p>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">3.2 Compartilhamento e Permissões</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">3.2 Compartilhamento e Permissões</h3>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Níveis:</span> - <strong>Viewer:</strong> Só vê
-- <strong>Commenter:</strong> Vê + comenta
-- <strong>Editor:</strong> Vê + edita
-- <strong>Owner:</strong> Controle total</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Níveis:</span> <span class="text-neutral-700 dark:text-neutral-300">- <strong class="font-bold">Viewer:</strong> Só vê
+- <strong class="font-bold">Commenter:</strong> Vê + comenta
+- <strong class="font-bold">Editor:</strong> Vê + edita
+- <strong class="font-bold">Owner:</strong> Controle total</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Best practices:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Best practices:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Nunca "Anyone with link can edit"</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">1. Nunca "Anyone with link can edit"</strong>
 - Risco: Qualquer um pode deletar/estragar
 - Use: Specific people</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Pastas compartilhadas para projetos</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">2. Pastas compartilhadas para projetos</strong>
 - Cria pasta projeto
 - Compartilha pasta (não arquivo individual)
 - Todo arquivo novo dentro já está compartilhado</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Grupos para times</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">3. Grupos para times</strong>
 - Cria Google Group: time-marketing@empresa.com
 - Compartilha pastas com grupo
 - Adicionar pessoa ao time = acesso automático a tudo</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. Link expiration para externos</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">4. Link expiration para externos</strong>
 - Compartilha com prazo (ex: 7 dias)
 - Drive revoga acesso automaticamente</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>5. Notificações de acesso</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">5. Notificações de acesso</strong>
 - Drive → Settings → Notifications
 - "Notify me when someone edits/comments"</p>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">3.3 Busca Avançada</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">3.3 Busca Avançada</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Operadores:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Operadores:</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Por tipo:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Por tipo:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 type:spreadsheet
 type:document
 type:presentation
 type:pdf
 type:image
 type:folder
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Por dono:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Por dono:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 owner:joao@empresa.com
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Por compartilhamento:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Por compartilhamento:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 to:maria@empresa.com (compartilhado com)
 from:maria@empresa.com (compartilhado por)
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Por data:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Por data:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 before:2025-01-01
 after:2025-01-01
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Combinados:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
-type:spreadsheet owner:me after:2025-01-01</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Combinados:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
+type:spreadsheet owner:me after:2025-01-01</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">= Planilhas minhas criadas depois de 01/01/2025
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">= Planilhas minhas criadas depois de 01/01/2025
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Starred/Trash:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Starred/Trash:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 is:starred
 is:trashed
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Atalho:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">/</code> (barra) vai direto pra busca</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Atalho:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">/</code> (barra) vai direto pra busca</span></p>
           </div>
 
         </div>
@@ -1221,22 +1298,27 @@ is:trashed
 
       <!-- Seção: 4. Google Calendar Produtivo -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">4. Google Calendar Produtivo</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">4. Google Calendar Produtivo</h2>
 
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">4.1 Time Blocking</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">4.1 Time Blocking</h3>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Método:</span> Agenda não é só reuniões. É TODO seu tempo.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Método:</span> <span class="text-neutral-700 dark:text-neutral-300">Agenda não é só reuniões. É TODO seu tempo.</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Estrutura ideal:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Estrutura ideal:</strong></p>
 
 
-          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
-            <pre class="text-sm text-green-400"><code>Segunda-Feira
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-talento/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>Segunda-Feira
 ─────────────────────
 08:00-09:00 ⚡ Morning routine + planning
 09:00-12:00 🎯 Deep Work - Projeto A
@@ -1248,88 +1330,88 @@ is:trashed
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Cores (code visual):</span> - 🔴 Deep Work (foco total, sem interrupções)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Cores (code visual):</span> <span class="text-neutral-700 dark:text-neutral-300">- 🔴 Deep Work (foco total, sem interrupções)
 - 🔵 Reuniões
 - 🟢 Admin/Email
 - 🟡 Breaks
-- 🟣 Pessoal</p>
+- 🟣 Pessoal</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Criar evento recorrente:</span> 1. Novo evento
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Criar evento recorrente:</span> <span class="text-neutral-700 dark:text-neutral-300">1. Novo evento
 2. "Does not repeat" → Custom
 3. Config recorrência
-4. Salva</p>
+4. Salva</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Evento "Focus Time":</span> - Bloqueia agenda
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Evento "Focus Time":</span> <span class="text-neutral-700 dark:text-neutral-300">- Bloqueia agenda
 - Others see: Busy
 - Notificações: Off
-- Description: "Trabalho focado - não agende reuniões"</p>
+- Description: "Trabalho focado - não agende reuniões"</span></p>
           </div>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">4.2 Múltiplos Calendários</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">4.2 Múltiplos Calendários</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Setup:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Setup:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Calendar 1: Trabalho (principal)</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Calendar 1: Trabalho (principal)</strong>
 - Reuniões
 - Deadlines
 - Time blocks</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Calendar 2: Pessoal</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Calendar 2: Pessoal</strong>
 - Compromissos família
 - Academia
 - Lazer</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Calendar 3: Metas/Hábitos</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Calendar 3: Metas/Hábitos</strong>
 - Exercício diário
 - Leitura
 - Study time</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Calendar 4: Feriados BR</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Calendar 4: Feriados BR</strong>
 - Adiciona: Browse calendars → Holidays in Brazil</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Vantagem:</span> Liga/desliga por contexto. Compartilha só o relevante.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Vantagem:</span> <span class="text-neutral-700 dark:text-neutral-300">Liga/desliga por contexto. Compartilha só o relevante.</span></p>
           </div>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">4.3 Integrações Calendar</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">4.3 Integrações Calendar</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Calendar + Gmail:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Calendar + Gmail:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Email com data/hora → Gmail sugere adicionar ao calendar automaticamente</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Email com data/hora → Gmail sugere adicionar ao calendar automaticamente</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Calendar + Meet:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Calendar + Meet:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Evento com convidados → Adiciona Google Meet automaticamente
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Evento com convidados → Adiciona Google Meet automaticamente
 Settings → Event settings → Add Google Meet automatically</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Calendar + Tasks:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Calendar + Tasks:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Tasks com prazo aparecem no calendar</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Tasks com prazo aparecem no calendar</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Calendar + Notion (via Make):</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Calendar + Notion (via Make):</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Google Calendar - Event starts
 → Notion - Create page (meeting notes)
   Title: {{event.summary}}
   Date: {{event.start}}
   Attendees: {{event.attendees}}
   Template: Meeting notes
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
         </div>
@@ -1338,15 +1420,15 @@ Google Calendar - Event starts
 
       <!-- Seção: 5. Google Workspace Integrações -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">5. Google Workspace Integrações</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">5. Google Workspace Integrações</h2>
 
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">5.1 Gmail + Sheets (Lead tracking)</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">5.1 Gmail + Sheets (Lead tracking)</h3>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Make automation:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Make automation:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Gmail - New email
   Label: Leads
 → Google Sheets - Add row
@@ -1358,33 +1440,33 @@ Gmail - New email
     - Subject: {{subject}}
     - Body preview: {{substring(text; 0; 200)}}
     - Link: {{webLink}}
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Resultado:</span> Todo lead email vira linha em planilha rastreável.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Resultado:</span> <span class="text-neutral-700 dark:text-neutral-300">Todo lead email vira linha em planilha rastreável.</span></p>
           </div>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">5.2 Forms + Sheets + Email (Automação completa)</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">5.2 Forms + Sheets + Email (Automação completa)</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Fluxo:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Fluxo:</strong></p>
 
-          <ol class="space-y-3 mb-6 list-decimal list-inside">
-            <li class="text-neutral-700 dark:text-neutral-300">Google Forms: Cliente preenche</li>
-            <li class="text-neutral-700 dark:text-neutral-300">Resposta cai no Sheets automaticamente</li>
-            <li class="text-neutral-700 dark:text-neutral-300">Apps Script detecta nova linha</li>
-            <li class="text-neutral-700 dark:text-neutral-300">Envia email personalizado</li>
-            <li class="text-neutral-700 dark:text-neutral-300">Cria evento no Calendar</li>
-            <li class="text-neutral-700 dark:text-neutral-300">Notifica Slack</li>
+          <ol class="space-y-3 mb-6 list-decimal list-inside marker:text-talento marker:font-bold">
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Google Forms: Cliente preenche</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Resposta cai no Sheets automaticamente</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Apps Script detecta nova linha</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Envia email personalizado</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Cria evento no Calendar</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Notifica Slack</li>
           </ol>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Apps Script:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>javascript
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Apps Script:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>javascript
 function onFormSubmit(e) {
   var nome = e.values[1];
   var email = e.values[2];
@@ -1405,42 +1487,42 @@ function onFormSubmit(e) {
     {description: "Contatar sobre " + servico}
   );
 }
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Trigger: Forms → On form submit</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Trigger: Forms → On form submit</p>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">5.3 Drive + Docs (Templates automáticos)</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">5.3 Drive + Docs (Templates automáticos)</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Gerar contrato personalizado:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Gerar contrato personalizado:</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Template (Google Docs):</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
-CONTRATO DE PRESTAÇÃO DE SERVIÇOS</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Template (Google Docs):</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
+CONTRATO DE PRESTAÇÃO DE SERVIÇOS</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">CONTRATANTE: {{nome_cliente}}
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">CONTRATANTE: {{nome_cliente}}
 CNPJ: {{cnpj}}
 ENDEREÇO: {{endereco}}</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">SERVIÇO: {{descricao_servico}}
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">SERVIÇO: {{descricao_servico}}
 VALOR: R$ {{valor}}
 PRAZO: {{prazo}} dias</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">DATA: {{data_contrato}}</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">DATA: {{data_contrato}}</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">____________________        ____________________
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">____________________        ____________________
   {{nome_cliente}}             {{nome_empresa}}
    Contratante                  Contratada
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Apps Script (em Sheets com dados):</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>javascript
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Apps Script (em Sheets com dados):</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>javascript
 function gerarContrato() {
   var sheet = SpreadsheetApp.getActiveSheet();
   var data = sheet.getDataRange().getValues();
@@ -1464,12 +1546,12 @@ function gerarContrato() {
     doc.saveAndClose();
   }
 }
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Resultado:</span> 1 clique → 100 contratos personalizados gerados.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Resultado:</span> <span class="text-neutral-700 dark:text-neutral-300">1 clique → 100 contratos personalizados gerados.</span></p>
           </div>
 
         </div>
@@ -1478,51 +1560,51 @@ function gerarContrato() {
 
       <!-- Seção: 6. Exercício Prático (60min) -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">6. Exercício Prático (60min)</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">6. Exercício Prático (60min)</h2>
 
         <div class="mb-6">
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>PARTE 1: Gmail Setup (20min)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">PARTE 1: Gmail Setup (20min)</strong></p>
 
-          <ol class="space-y-3 mb-6 list-decimal list-inside">
-            <li class="text-neutral-700 dark:text-neutral-300">Crie estrutura de labels (mínimo 5)</li>
-            <li class="text-neutral-700 dark:text-neutral-300">Configure 3 filtros automáticos</li>
-            <li class="text-neutral-700 dark:text-neutral-300">Crie 2 templates de email</li>
-            <li class="text-neutral-700 dark:text-neutral-300">Ative atalhos de teclado</li>
-            <li class="text-neutral-700 dark:text-neutral-300">Processe inbox até zero</li>
+          <ol class="space-y-3 mb-6 list-decimal list-inside marker:text-talento marker:font-bold">
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Crie estrutura de labels (mínimo 5)</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Configure 3 filtros automáticos</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Crie 2 templates de email</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Ative atalhos de teclado</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Processe inbox até zero</li>
           </ol>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>PARTE 2: Sheets Dashboard (20min)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">PARTE 2: Sheets Dashboard (20min)</strong></p>
 
-          <ol class="space-y-3 mb-6 list-decimal list-inside">
-            <li class="text-neutral-700 dark:text-neutral-300">Cria planilha com dados fictícios (vendas, leads, etc)</li>
-            <li class="text-neutral-700 dark:text-neutral-300">Sheet 1: Raw data</li>
-            <li class="text-neutral-700 dark:text-neutral-300">Sheet 2: Dashboard com:</li>
-            <li class="text-neutral-700 dark:text-neutral-300">- 3 métricas principais (cards)</li>
-            <li class="text-neutral-700 dark:text-neutral-300">- 2 gráficos</li>
-            <li class="text-neutral-700 dark:text-neutral-300">- 1 tabela com QUERY</li>
-            <li class="text-neutral-700 dark:text-neutral-300">- Formatação condicional</li>
+          <ol class="space-y-3 mb-6 list-decimal list-inside marker:text-talento marker:font-bold">
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Cria planilha com dados fictícios (vendas, leads, etc)</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Sheet 1: Raw data</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Sheet 2: Dashboard com:</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- 3 métricas principais (cards)</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- 2 gráficos</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- 1 tabela com QUERY</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Formatação condicional</li>
           </ol>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>PARTE 3: Automação (20min)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">PARTE 3: Automação (20min)</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Escolha 1:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Escolha 1:
 - A) Apps Script: Email automático quando célula muda
 - B) Make: Form → Sheets → Email
 - C) Drive: Estrutura de pastas profissional + compartilhamento</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">ENTREGA:</span> - Screenshots de cada parte
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">ENTREGA:</span> <span class="text-neutral-700 dark:text-neutral-300">- Screenshots de cada parte
 - Link compartilhado (view only)
-- Descrição: o que automatizou e por quê</p>
+- Descrição: o que automatizou e por quê</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">BÔNUS:</span> Compartilha no LinkedIn seu dashboard ou automação. Tag #googleworkspace</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">BÔNUS:</span> <span class="text-neutral-700 dark:text-neutral-300">Compartilha no LinkedIn seu dashboard ou automação. Tag #googleworkspace</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">---</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
 
         </div>
       </div>
@@ -1530,25 +1612,25 @@ function gerarContrato() {
 
       <!-- Seção: Próximos Passos -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">Próximos Passos</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">Próximos Passos</h2>
 
         <div class="mb-6">
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Módulo 7: Slack e Comunicação Assíncrona</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Módulo 7: Slack e Comunicação Assíncrona</strong>
 - Slack profissional (etiqueta, produtividade)
 - Canais e workflows
 - Bots e automações
 - Integração Slack + Make + Notion</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Prepare-se para:</span> Comunicação remota expert level</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Prepare-se para:</span> <span class="text-neutral-700 dark:text-neutral-300">Comunicação remota expert level</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Nos vemos lá! 🚀</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Nos vemos lá! 🚀</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">---</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>© 2025 FETD - Formação em Engenharia de Intenção</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">© 2025 FETD - Formação em Engenharia de Intenção</strong></p>
 
         </div>
       </div>
@@ -1557,13 +1639,14 @@ function gerarContrato() {
   </section>
 
   <!-- Footer / Navegação -->
-  <section class="py-12 bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-700">
+  <section class="py-12 bg-gradient-to-br from-neutral-100 to-neutral-50 dark:from-neutral-900 dark:to-neutral-800 border-t border-neutral-200 dark:border-neutral-700">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center">
-        <a href="../../trilhas/talento.html" class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90">
-          ← Voltar para Trilha
+        <a href="../../trilhas/talento.html" class="px-6 py-3 bg-gradient-to-r from-talento to-amber-600 text-white rounded-lg font-bold hover:opacity-90 shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2">
+          <span>←</span>
+          <span>Voltar para Trilha</span>
         </a>
-        <a href="modulo-07.html" class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90">Próximo Módulo →</a>
+        <a href="modulo-07.html" class="px-6 py-3 bg-gradient-to-r from-talento to-amber-600 text-white rounded-lg font-bold hover:opacity-90 shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2"><span>Próximo Módulo</span><span>→</span></a>
       </div>
     </div>
   </section>

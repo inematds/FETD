@@ -12,7 +12,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Tailwind Config -->
   <script>
@@ -47,18 +47,18 @@
 <body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
 
   <!-- Navbar -->
-  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-neutral-800/95 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-700 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <div class="flex items-center">
-          <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-talento to-talento bg-clip-text text-transparent">
+          <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-talento to-amber-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
             🎓 FETD
           </a>
         </div>
         <div class="hidden md:flex items-center space-x-8">
-          <a href="../../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Início</a>
-          <a href="../../trilhas/talento.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Trilha Talento Emergente</a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+          <a href="../../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors font-medium">Início</a>
+          <a href="../../trilhas/talento.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors font-medium">Trilha Talento Emergente</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-talento/10 transition-colors">
             <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
             </svg>
@@ -74,10 +74,10 @@
   <!-- Breadcrumb -->
   <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <nav class="flex text-sm" aria-label="Breadcrumb">
-        <a href="../../index.html" class="text-talento hover:opacity-80">Início</a>
+      <nav class="flex text-sm font-medium" aria-label="Breadcrumb">
+        <a href="../../index.html" class="text-talento hover:opacity-80 transition-opacity">Início</a>
         <span class="mx-2 text-neutral-400">/</span>
-        <a href="../../trilhas/talento.html" class="text-talento hover:opacity-80">Trilha Talento Emergente</a>
+        <a href="../../trilhas/talento.html" class="text-talento hover:opacity-80 transition-opacity">Trilha Talento Emergente</a>
         <span class="mx-2 text-neutral-400">/</span>
         <span class="text-neutral-600 dark:text-neutral-400">Módulo 7</span>
       </nav>
@@ -85,28 +85,32 @@
   </div>
 
   <!-- Hero Módulo -->
-  <section class="bg-gradient-to-r from-talento to-talento py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+  <section class="bg-gradient-to-br from-talento via-talento to-amber-600 py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white relative z-10">
 
-      <div class="flex items-center gap-3 mb-4">
-        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">Módulo 7 de 10</span>
-        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">⏱️ 45 minutos</span>
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <span class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-bold shadow-lg">Módulo 7 de 10</span>
+        <span class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-bold shadow-lg flex items-center gap-2">
+          <span>⏱️</span>
+          <span>45 minutos</span>
+        </span>
       </div>
 
-      <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
         Módulo 7: Slack e Comunicação Assíncrona
       </h1>
 
-      <p class="text-xl text-white/90 mb-6 max-w-3xl">
+      <p class="text-xl md:text-2xl text-white/95 mb-8 max-w-3xl font-medium leading-relaxed">
         Dominar ferramentas de comunicação profissional remota
       </p>
 
-      <div class="flex items-center gap-4">
-        <span class="text-white/80">📚 Teoria</span>
-        <span class="text-white/80">•</span>
-        <span class="text-white/80">💭 Reflexão</span>
-        <span class="text-white/80">•</span>
-        <span class="text-white/80">🛠️ Prática</span>
+      <div class="flex flex-wrap items-center gap-4 text-white/90">
+        <span class="flex items-center gap-2 font-medium"><span class="text-xl">📚</span> Teoria</span>
+        <span class="text-white/60">•</span>
+        <span class="flex items-center gap-2 font-medium"><span class="text-xl">💭</span> Reflexão</span>
+        <span class="text-white/60">•</span>
+        <span class="flex items-center gap-2 font-medium"><span class="text-xl">🛠️</span> Prática</span>
       </div>
     </div>
   </section>
@@ -117,36 +121,49 @@
 
       <!-- Download Button -->
       <div class="flex justify-end mb-8">
-        <a href="../../downloads/talento/modulo-07.md" download class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90 inline-flex items-center gap-2">
-          <span>📥</span>
+        <a href="../../downloads/talento/modulo-07.md" download class="px-6 py-3 bg-gradient-to-r from-talento to-amber-600 text-white rounded-lg font-bold hover:opacity-90 inline-flex items-center gap-2 shadow-lg hover:shadow-xl transition-all">
+          <span class="text-xl">📥</span>
           <span>Download MD</span>
         </a>
       </div>
 
 
+      <!-- Objetivo do Módulo -->
+      <div class="bg-talento/10 dark:bg-talento/20 border-l-4 border-talento p-6 rounded-lg mb-12 shadow-lg">
+        <h3 class="text-xl font-bold text-talento mb-2 flex items-center gap-2">
+          <span class="text-2xl">🎯</span>
+          <span>Objetivo deste Módulo</span>
+        </h3>
+        <p class="text-neutral-700 dark:text-neutral-300 text-lg">
+          Dominar ferramentas de comunicação profissional remota
+        </p>
+      </div>
+
+
+
       <!-- Seção: Introdução: A Nova Era do Trabalho Remoto -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">Introdução: A Nova Era do Trabalho Remoto</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">Introdução: A Nova Era do Trabalho Remoto</h2>
 
         <div class="mb-6">
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Trabalho remoto exige comunicação eficaz. <strong>Slack</strong> é padrão em 80%+ das startups e scale-ups brasileiras.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Trabalho remoto exige comunicação eficaz. <strong class="font-bold">Slack</strong> é padrão em 80%+ das startups e scale-ups brasileiras.</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Dados 2024-2025:</span> - 70% empresas tech usam Slack
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Dados 2024-2025:</span> <span class="text-neutral-700 dark:text-neutral-300">- 70% empresas tech usam Slack
 - Profissionais gastam 2-4h/dia no Slack
 - Má comunicação assíncrona: -20% produtividade
 - Boa comunicação assíncrona: +35% produtividade
-- Dominar Slack = diferencial em 90% das vagas remotas</p>
+- Dominar Slack = diferencial em 90% das vagas remotas</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">O que você vai aprender:</span> - Slack profissional (etiqueta que impressiona)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">O que você vai aprender:</span> <span class="text-neutral-700 dark:text-neutral-300">- Slack profissional (etiqueta que impressiona)
 - Canais e organização
 - Comunicação assíncrona eficaz
 - Bots e automações
-- Integrações (Slack + Make + Notion + IA)</p>
+- Integrações (Slack + Make + Notion + IA)</span></p>
           </div>
 
         </div>
@@ -155,255 +172,260 @@
 
       <!-- Seção: 0. Contexto de Mercado: A Guerra das Ferramentas de Comunicação -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">0. Contexto de Mercado: A Guerra das Ferramentas de Comunicação</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">0. Contexto de Mercado: A Guerra das Ferramentas de Comunicação</h2>
 
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">0.1 Concorrentes e Comparação</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">0.1 Concorrentes e Comparação</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>O mercado de comunicação empresarial/team collaboration é brutal:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">O mercado de comunicação empresarial/team collaboration é brutal:</strong></p>
 
 
-          <div class="overflow-x-auto mb-6">
+          <div class="overflow-x-auto mb-8 shadow-lg rounded-lg">
             <table class="w-full border-collapse">
               <thead>
-                <tr class="bg-talento/20 dark:bg-talento/30">
-                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Ferramenta</th>
-                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Foco</th>
-                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Pontos Fortes</th>
-                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Limitações</th>
-                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Preço</th>
+                <tr class="bg-gradient-to-r from-talento to-talento/80 text-white">
+                  <th class="px-6 py-4 text-left font-bold">Ferramenta</th>
+                  <th class="px-6 py-4 text-left font-bold">Foco</th>
+                  <th class="px-6 py-4 text-left font-bold">Pontos Fortes</th>
+                  <th class="px-6 py-4 text-left font-bold">Limitações</th>
+                  <th class="px-6 py-4 text-left font-bold">Preço</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr class="bg-white dark:bg-neutral-800">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">------------</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">------</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">---------------</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">------------</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">-------</td>
+              <tbody class="bg-white dark:bg-neutral-800">
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">------------</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">------</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">---------------</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">------------</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">-------</td>
                 </tr>
-                <tr class="bg-neutral-50 dark:bg-neutral-900">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700"><strong>Slack</strong></td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Team chat + integrations</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Integrações (6k+ apps), busca poderosa, UX excelente</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Caro pra grandes, threads confusos</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Grátis - $12/mês</td>
+                <tr class="bg-neutral-50 dark:bg-neutral-900 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Slack</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Team chat + integrations</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Integrações (6k+ apps), busca poderosa, UX excelente</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Caro pra grandes, threads confusos</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Grátis - $12/mês</td>
                 </tr>
-                <tr class="bg-white dark:bg-neutral-800">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700"><strong>Microsoft Teams</strong></td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Chat + collaboration Microsoft</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Incluso M365, videocall robusto, SharePoint integrado</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">UX ruim, lento, complexo</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Incluso M365</td>
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Microsoft Teams</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Chat + collaboration Microsoft</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Incluso M365, videocall robusto, SharePoint integrado</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">UX ruim, lento, complexo</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Incluso M365</td>
                 </tr>
-                <tr class="bg-neutral-50 dark:bg-neutral-900">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700"><strong>Discord</strong></td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Comunidades + gaming</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Grátis robusto, voz/vídeo excelente, servidores massivos</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Não é enterprise, menos profissional</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Grátis - $10/mês</td>
+                <tr class="bg-neutral-50 dark:bg-neutral-900 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Discord</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Comunidades + gaming</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Grátis robusto, voz/vídeo excelente, servidores massivos</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Não é enterprise, menos profissional</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Grátis - $10/mês</td>
                 </tr>
-                <tr class="bg-white dark:bg-neutral-800">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700"><strong>Telegram</strong></td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Messaging rápido</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Super rápido, grátis ilimitado, canais gigantes, bots</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Não é workspace, menos organização</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Grátis</td>
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Telegram</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Messaging rápido</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Super rápido, grátis ilimitado, canais gigantes, bots</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Não é workspace, menos organização</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Grátis</td>
                 </tr>
-                <tr class="bg-neutral-50 dark:bg-neutral-900">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700"><strong>WhatsApp Business</strong></td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Clientes + pequenas equipes</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Todo mundo usa, simples, grátis</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Não escala, sem integrações enterprise</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Grátis</td>
+                <tr class="bg-neutral-50 dark:bg-neutral-900 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">WhatsApp Business</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Clientes + pequenas equipes</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Todo mundo usa, simples, grátis</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Não escala, sem integrações enterprise</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Grátis</td>
                 </tr>
-                <tr class="bg-white dark:bg-neutral-800">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700"><strong>Mattermost</strong></td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Open source Slack</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Self-hosted, grátis, privacidade total</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Precisa manter, menos integrações</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Grátis - $10/mês</td>
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Mattermost</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Open source Slack</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Self-hosted, grátis, privacidade total</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Precisa manter, menos integrações</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Grátis - $10/mês</td>
                 </tr>
-                <tr class="bg-neutral-50 dark:bg-neutral-900">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700"><strong>Rocket.Chat</strong></td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Open source</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Self-hosted, customizável, GDPR-compliant</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Manutenção técnica, comunidade menor</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Grátis - $7/mês</td>
+                <tr class="bg-neutral-50 dark:bg-neutral-900 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Rocket.Chat</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Open source</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Self-hosted, customizável, GDPR-compliant</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Manutenção técnica, comunidade menor</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Grátis - $7/mês</td>
                 </tr>
-                <tr class="bg-white dark:bg-neutral-800">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700"><strong>Google Chat</strong></td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Workspace integrado</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Incluso Workspace, integra Gmail/Drive/Meet</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Limitado vs Slack, menos integrações</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Incluso Workspace</td>
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Google Chat</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Workspace integrado</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Incluso Workspace, integra Gmail/Drive/Meet</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Limitado vs Slack, menos integrações</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Incluso Workspace</td>
                 </tr>
-                <tr class="bg-neutral-50 dark:bg-neutral-900">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700"><strong>Zoom Team Chat</strong></td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Chat + video</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Integra Zoom Meetings, simples</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Menos features que Slack/Teams</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Grátis - $15/mês</td>
+                <tr class="bg-neutral-50 dark:bg-neutral-900 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Zoom Team Chat</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Chat + video</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Integra Zoom Meetings, simples</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Menos features que Slack/Teams</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Grátis - $15/mês</td>
                 </tr>
-                <tr class="bg-white dark:bg-neutral-800">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700"><strong>Chanty</strong></td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Small teams</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Barato, simples, Kanban integrado</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Pouco conhecido, menos integrações</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">$3-10/mês</td>
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700"><strong class="font-bold">Chanty</strong></td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Small teams</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Barato, simples, Kanban integrado</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Pouco conhecido, menos integrações</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">$3-10/mês</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Por que Slack domina startups/tech:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Por que Slack domina startups/tech:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Integrações absurdas</strong> (6.000+ apps: GitHub, Jira, Notion, Make, tudo)
-✅ <strong>Busca poderosa</strong> (acha qualquer conversa/arquivo em segundos, até em PDFs)
-✅ <strong>UX/UI excelente</strong> (mais intuitivo que Teams/outros)
-✅ <strong>Workflows/Bots</strong> (automação nativa poderosa)
-✅ <strong>Cultura startup</strong> (Slack = status quo em tech)
-✅ <strong>Mobile perfeito</strong> (experiência igual desktop)
-✅ <strong>Threads</strong> (organiza conversas sem poluir canal)
-✅ <strong>Channels ilimitados</strong> (vs Teams = complexo)</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ <strong class="font-bold">Integrações absurdas</strong> (6.000+ apps: GitHub, Jira, Notion, Make, tudo)
+✅ <strong class="font-bold">Busca poderosa</strong> (acha qualquer conversa/arquivo em segundos, até em PDFs)
+✅ <strong class="font-bold">UX/UI excelente</strong> (mais intuitivo que Teams/outros)
+✅ <strong class="font-bold">Workflows/Bots</strong> (automação nativa poderosa)
+✅ <strong class="font-bold">Cultura startup</strong> (Slack = status quo em tech)
+✅ <strong class="font-bold">Mobile perfeito</strong> (experiência igual desktop)
+✅ <strong class="font-bold">Threads</strong> (organiza conversas sem poluir canal)
+✅ <strong class="font-bold">Channels ilimitados</strong> (vs Teams = complexo)</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Por que Teams vence enterprise grande:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Por que Teams vence enterprise grande:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Incluso M365</strong> (empresas já pagam, Slack = custo extra)
-✅ <strong>Governança/compliance</strong> (enterprise features robustas)
-✅ <strong>Videocall integrado</strong> (Slack precisa Zoom/Meet separado)
-✅ <strong>SharePoint/OneDrive</strong> (integração profunda ecosystem Microsoft)</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ <strong class="font-bold">Incluso M365</strong> (empresas já pagam, Slack = custo extra)
+✅ <strong class="font-bold">Governança/compliance</strong> (enterprise features robustas)
+✅ <strong class="font-bold">Videocall integrado</strong> (Slack precisa Zoom/Meet separado)
+✅ <strong class="font-bold">SharePoint/OneDrive</strong> (integração profunda ecosystem Microsoft)</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Tendência mercado (2024-2025):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Tendência mercado (2024-2025):</strong></p>
 
           <ul class="space-y-3 mb-6">
-            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Slack:</strong> Domina startups/PMEs tech, mas crescimento desacelerou (Salesforce comprou, foco enterprise)</span></li>
-            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Teams:</strong> Explodindo (200M+ usuários, bundling M365 vence)</span></li>
-            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Discord:</strong> Entrando workspace (Discord Communities pra empresas)</span></li>
-            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Telegram:</strong> Crescendo como alternativa grátis (especialmente fora EUA)</span></li>
-            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>WhatsApp Business:</strong> Só muito pequeno (não escala)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-talento flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300"><strong class="font-bold">Slack:</strong> Domina startups/PMEs tech, mas crescimento desacelerou (Salesforce comprou, foco enterprise)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-talento flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300"><strong class="font-bold">Teams:</strong> Explodindo (200M+ usuários, bundling M365 vence)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-talento flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300"><strong class="font-bold">Discord:</strong> Entrando workspace (Discord Communities pra empresas)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-talento flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300"><strong class="font-bold">Telegram:</strong> Crescendo como alternativa grátis (especialmente fora EUA)</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-talento flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300"><strong class="font-bold">WhatsApp Business:</strong> Só muito pequeno (não escala)</span></li>
           </ul>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Escolha Slack se:</span> - Startup/tech/scale-up
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Escolha Slack se:</span> <span class="text-neutral-700 dark:text-neutral-300">- Startup/tech/scale-up
 - Integrações críticas (GitHub, Jira, Notion, etc)
 - Quer melhor UX (time value experiência)
-- Orçamento permite ($8-12/usuário/mês)</p>
+- Orçamento permite ($8-12/usuário/mês)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Escolha Teams se:</span> - Já paga Microsoft 365
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Escolha Teams se:</span> <span class="text-neutral-700 dark:text-neutral-300">- Já paga Microsoft 365
 - Enterprise grande (governança robusta)
 - Precisa videocall integrado (sem Zoom)
-- Ecosystem Microsoft (SharePoint, OneDrive, etc)</p>
+- Ecosystem Microsoft (SharePoint, OneDrive, etc)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Escolha Discord se:</span> - Comunidade/creators (não empresa tradicional)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Escolha Discord se:</span> <span class="text-neutral-700 dark:text-neutral-300">- Comunidade/creators (não empresa tradicional)
 - Precisa voz/vídeo grátis robusto
-- Orçamento zero (plano grátis generoso)</p>
+- Orçamento zero (plano grátis generoso)</span></p>
           </div>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">0.2 Por Que Dominar Ferramentas de Comunicação</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">0.2 Por Que Dominar Ferramentas de Comunicação</h3>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">A pergunta:</span> "Slack é só chat... por que preciso 'dominar'?"**</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">A pergunta:</span> <span class="text-neutral-700 dark:text-neutral-300">"Slack é só chat... por que preciso 'dominar'?"**</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Resposta:</span> Diferença entre usar e DOMINAR = produtividade time + sua reputação profissional.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Resposta:</span> <span class="text-neutral-700 dark:text-neutral-300">Diferença entre usar e DOMINAR = produtividade time + sua reputação profissional.</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Dados reais:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Dados reais:</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Usuário BÁSICO Slack (90% das pessoas):</span> - Notificações sempre ligadas (interrompido 50+ vezes/dia)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Usuário BÁSICO Slack (90% das pessoas):</span> <span class="text-neutral-700 dark:text-neutral-300">- Notificações sempre ligadas (interrompido 50+ vezes/dia)
 - Responde tudo imediatamente (zero deep work)
 - Perde contexto em threads (não sabe onde achar discussões)
 - DM pra tudo (não usa channels = conhecimento em silos)
-- <strong>Resultado:</strong> 3-4h/dia no Slack, sensação de "sempre trabalhando", pouco output real</p>
+- <strong class="font-bold">Resultado:</strong> 3-4h/dia no Slack, sensação de "sempre trabalhando", pouco output real</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Usuário AVANÇADO Slack (você após este módulo):</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Usuário AVANÇADO Slack (você após este módulo):</strong>
 - Notificações estratégicas (só urgente, horários focados)
 - Comunicação assíncrona (responde em batches)
 - Channels organizados (conhecimento acessível pra todos)
 - Threads sempre (conversas estruturadas)
 - Atalhos/automações (10x mais rápido)
-- <strong>Resultado:</strong> 1-1.5h/dia no Slack, comunicação eficaz, mais deep work</p>
+- <strong class="font-bold">Resultado:</strong> 1-1.5h/dia no Slack, comunicação eficaz, mais deep work</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>IMPACTO PRODUTIVIDADE:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">IMPACTO PRODUTIVIDADE:</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Indivíduo:</span> - Básico: 40h semana - 20h Slack/interrupções - 5h reuniões = <strong>15h trabalho real</strong>
-- Avançado: 40h semana - 7h Slack/interrupções - 5h reuniões = <strong>28h trabalho real</strong>
-- <strong>Ganho:</strong> +13h/semana produtivas = +87% output</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Indivíduo:</span> <span class="text-neutral-700 dark:text-neutral-300">- Básico: 40h semana - 20h Slack/interrupções - 5h reuniões = <strong class="font-bold">15h trabalho real</strong>
+- Avançado: 40h semana - 7h Slack/interrupções - 5h reuniões = <strong class="font-bold">28h trabalho real</strong>
+- <strong class="font-bold">Ganho:</strong> +13h/semana produtivas = +87% output</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Time 10 pessoas:</span> - Básico: 10 × 15h = <strong>150h/semana time</strong>
-- Avançado: 10 × 28h = <strong>280h/semana time</strong>
-- <strong>Ganho:</strong> +130h/semana = equivalente <strong>3+ funcionários grátis</strong></p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Time 10 pessoas:</span> <span class="text-neutral-700 dark:text-neutral-300">- Básico: 10 × 15h = <strong class="font-bold">150h/semana time</strong>
+- Avançado: 10 × 28h = <strong class="font-bold">280h/semana time</strong>
+- <strong class="font-bold">Ganho:</strong> +130h/semana = equivalente <strong class="font-bold">3+ funcionários grátis</strong></span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>IMPACTO REPUTAÇÃO:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">IMPACTO REPUTAÇÃO:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✨ <strong>Profissional que domina Slack:</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✨ <strong class="font-bold">Profissional que domina Slack:</strong>
 - Respostas claras, contextualizadas (cita mensagens, usa threads)
 - Compartilha conhecimento em channels públicos (não esconde em DMs)
 - Usa formatação (código, listas, negrito = legibilidade)
 - Comunica assíncrono (não espera resposta imediata, documenta decisões)
-- <strong>Percepção:</strong> "Pessoa organizada, eficiente, collaborativa"</p>
+- <strong class="font-bold">Percepção:</strong> "Pessoa organizada, eficiente, collaborativa"</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✨ <strong>Profissional que usa Slack mal:</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✨ <strong class="font-bold">Profissional que usa Slack mal:</strong>
 - Mensagens fragmentadas (10 mensagens de 1 linha vs 1 mensagem estruturada)
 - DM pra tudo (conhecimento morre em conversas privadas)
 - @channel desnecessário (interrompe todos por coisa trivial)
 - Sem contexto ("oi", "preciso falar", esperando resposta = tempo perdido)
-- <strong>Percepção:</strong> "Pessoa desorganizada, interrompe, dificulta colaboração"</p>
+- <strong class="font-bold">Percepção:</strong> "Pessoa desorganizada, interrompe, dificulta colaboração"</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Resumo:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Resumo:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Não é sobre "saber usar Slack".</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Não é sobre "saber usar Slack".</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">É sobre <strong>comunicar profissionalmente em ambientes remotos/assíncronos</strong>.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">É sobre <strong class="font-bold">comunicar profissionalmente em ambientes remotos/assíncronos</strong>.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Isso define sua reputação, produtividade time, e velocidade carreira.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Isso define sua reputação, produtividade time, e velocidade carreira.</p>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">0.3 O Futuro: IA Vai Gerenciar Comunicação Pra Nós?</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">0.3 O Futuro: IA Vai Gerenciar Comunicação Pra Nós?</h3>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">A pergunta:</span> "IA não vai ler Slack, sumarizar e responder pra mim?"</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">A pergunta:</span> <span class="text-neutral-700 dark:text-neutral-300">"IA não vai ler Slack, sumarizar e responder pra mim?"</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Resposta:</span> IA vai MUITO disso. Mas fundamentos de comunicação assíncrona permanecem críticos.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Resposta:</span> <span class="text-neutral-700 dark:text-neutral-300">IA vai MUITO disso. Mas fundamentos de comunicação assíncrona permanecem críticos.</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>O que está vindo (2025-2027):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">O que está vindo (2025-2027):</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">🔮 <strong>Slack AI (já começando 2025):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">🔮 <strong class="font-bold">Slack AI (já começando 2025):</strong></p>
 
 
-          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
-            <pre class="text-sm text-green-400"><code>Slack AI integrado:
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-talento/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>Slack AI integrado:
 - "Sumarize #projeto-x últimas 48h"
 - IA lê canal, extrai decisões/action items
 - "Responda thread X dizendo Y de forma profissional"
@@ -413,17 +435,22 @@
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Já existe (2025):</span> - <strong>Slack AI:</strong> Resumos threads/canais, busca semântica ("acha discussão sobre bug X")
-- <strong>ChatGPT/Claude in Slack:</strong> Responde perguntas, gera conteúdo
-- <strong>Workflow Builder AI:</strong> Cria automações baseado em descrição</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Já existe (2025):</span> <span class="text-neutral-700 dark:text-neutral-300">- <strong class="font-bold">Slack AI:</strong> Resumos threads/canais, busca semântica ("acha discussão sobre bug X")
+- <strong class="font-bold">ChatGPT/Claude in Slack:</strong> Responde perguntas, gera conteúdo
+- <strong class="font-bold">Workflow Builder AI:</strong> Cria automações baseado em descrição</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">🔮 <strong>Agentes IA Comunicação (2026-2027):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">🔮 <strong class="font-bold">Agentes IA Comunicação (2026-2027):</strong></p>
 
 
-          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
-            <pre class="text-sm text-green-400"><code>Seu agente IA Slack:
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-talento/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>Seu agente IA Slack:
 - Monitora canais relevantes 24/7
 - Detecta menções, decisões que impactam você
 - Sumariza daily: "3 decisões críticas, 2 action items pra você, 1 bloqueio time"
@@ -431,14 +458,19 @@
 - Auto-responde rotineiro: "Você é mencionado sobre status projeto → IA puxa Notion, responde automaticamente"</code></pre>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Você: Só decisões estratégicas, IA lida com rotineiro
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Você: Só decisões estratégicas, IA lida com rotineiro
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">🔮 <strong>Comunicação auto-organizada (2027+):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">🔮 <strong class="font-bold">Comunicação auto-organizada (2027+):</strong></p>
 
 
-          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
-            <pre class="text-sm text-green-400"><code>Slack futuro:
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-talento/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>Slack futuro:
 - IA auto-cria channels baseado em padrões de conversa
 - Sugere threads automaticamente (detecta quando conversa desvia tópico)
 - Auto-arquiva canais inativos
@@ -447,24 +479,24 @@
   → IA consolida decisões, progresso projetos, blockers de todos canais</code></pre>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>ENTÃO POR QUE DOMINAR SLACK AGORA?</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">ENTÃO POR QUE DOMINAR SLACK AGORA?</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Razão 1: IA amplifica boa comunicação, não salva má comunicação</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Razão 1: IA amplifica boa comunicação, não salva má comunicação</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Exemplo:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Exemplo:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Comunicação ruim:
 Mensagem 1: "oi"
 Mensagem 2: "vc ta ai?"
 Mensagem 3: "preciso falar"
 Mensagem 4: "é sobre o projeto"
-Mensagem 5: "tem um problema"</p>
+Mensagem 5: "tem um problema"</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">IA: "Não consegui extrair contexto. Qual projeto? Qual problema?"</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">IA: "Não consegui extrair contexto. Qual projeto? Qual problema?"</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Comunicação boa:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Comunicação boa:
 "Oi @pessoa!
 Contexto: Projeto X, sprint atual
 Problema: Deploy falhou (erro log: [link])
@@ -473,78 +505,78 @@ Preciso: Ajuda pra reverter migration OU fix deploy
 Urgência: Bloqueando release (previsto hoje 16h)
 CC: @team-backend pra visibilidade"</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">IA: "Entendi. Sugestão: [solução baseada em docs internos]. Criado thread #incident-deploy-x, notificou DevOps."
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">IA: "Entendi. Sugestão: [solução baseada em docs internos]. Criado thread #incident-deploy-x, notificou DevOps."
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Razão 2: Fundamentos comunicação assíncrona são atemporais</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Razão 2: Fundamentos comunicação assíncrona são atemporais</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Princípios que você aprende (contexto em mensagens, threads, channels vs DMs, documentar decisões) funcionam em:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Princípios que você aprende (contexto em mensagens, threads, channels vs DMs, documentar decisões) funcionam em:
 - Slack hoje
 - Microsoft Teams amanhã
 - Ferramenta IA futura X</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Ferramenta muda, princípios ficam.</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Ferramenta muda, princípios ficam.</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Razão 3: IA atual (2025) ainda precisa supervisão humana</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Razão 3: IA atual (2025) ainda precisa supervisão humana</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Realidade:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Realidade:
 - IA resume bem, mas você decide o que é crítico
 - IA responde rotineiro, mas você valida tom/contexto
 - IA não entende política/nuance organizacional
 - Você ainda escreve mensagens importantes (decisões, conflitos, negociação)</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Razão 4: Reputação profissional AGORA</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Razão 4: Reputação profissional AGORA</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Enquanto IA não gerencia tudo (3-5 anos), sua comunicação Slack define como team vê você.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Enquanto IA não gerencia tudo (3-5 anos), sua comunicação Slack define como team vê você.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Dominar agora = 3-5 anos vantagem competitiva (promoções, projetos, influência).</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Dominar agora = 3-5 anos vantagem competitiva (promoções, projetos, influência).</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Cenário mais provável (2025-2030):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Cenário mais provável (2025-2030):</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Não será:</span> IA responde tudo, você nunca abre Slack</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Não será:</span> <span class="text-neutral-700 dark:text-neutral-300">IA responde tudo, você nunca abre Slack</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Será:</span> Híbrido humano + IA</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Será:</span> <span class="text-neutral-700 dark:text-neutral-300">Híbrido humano + IA</span></p>
           </div>
 
           <ul class="space-y-3 mb-6">
-            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Você:</strong> Decisões, comunicação crítica, resolução conflitos, relacionamento</span></li>
-            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>IA:</strong> Sumariza, responde rotineiro, organiza, conecta pontos</span></li>
-            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1"><strong>Slack:</strong> Plataforma que conecta você + IA + team</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-talento flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300"><strong class="font-bold">Você:</strong> Decisões, comunicação crítica, resolução conflitos, relacionamento</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-talento flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300"><strong class="font-bold">IA:</strong> Sumariza, responde rotineiro, organiza, conecta pontos</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-talento flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300"><strong class="font-bold">Slack:</strong> Plataforma que conecta você + IA + team</span></li>
           </ul>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Analogia email:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Analogia email:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Antes: Email manual, sem filtros (caos)
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Antes: Email manual, sem filtros (caos)
 2025: Gmail com filtros, labels, templates (organizado)
 Futuro: IA lê email, sumariza, responde rotineiro (você só decisões)</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Slack é igual:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Slack é igual:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Você sempre lida com comunicação CRÍTICA.
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Você sempre lida com comunicação CRÍTICA.
 IA/automação lida com ROTINEIRO/ORGANIZAÇÃO.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>SUA ESTRATÉGIA:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">SUA ESTRATÉGIA:</strong></p>
 
-          <ol class="space-y-3 mb-6 list-decimal list-inside">
-            <li class="text-neutral-700 dark:text-neutral-300"><strong>Domine fundamentos AGORA</strong> (etiqueta, threads, channels, comunicação assíncrona)</li>
-            <li class="text-neutral-700 dark:text-neutral-300"><strong>Use Slack AI gradualmente</strong> (já disponível: test summaries, busca semântica)</li>
-            <li class="text-neutral-700 dark:text-neutral-300"><strong>Mantenha comunicação clara</strong> (IA amplifica clareza, não cria de caos)</li>
-            <li class="text-neutral-700 dark:text-neutral-300"><strong>Aprenda automações</strong> (Workflow Builder, bots, integrações Make)</li>
-            <li class="text-neutral-700 dark:text-neutral-300"><strong>Adapte</strong> (incorpore IA onde economiza tempo, mantenha humano onde crítico)</li>
+          <ol class="space-y-3 mb-6 list-decimal list-inside marker:text-talento marker:font-bold">
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2"><strong class="font-bold">Domine fundamentos AGORA</strong> (etiqueta, threads, channels, comunicação assíncrona)</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2"><strong class="font-bold">Use Slack AI gradualmente</strong> (já disponível: test summaries, busca semântica)</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2"><strong class="font-bold">Mantenha comunicação clara</strong> (IA amplifica clareza, não cria de caos)</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2"><strong class="font-bold">Aprenda automações</strong> (Workflow Builder, bots, integrações Make)</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2"><strong class="font-bold">Adapte</strong> (incorpore IA onde economiza tempo, mantenha humano onde crítico)</li>
           </ol>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>A habilidade mais valiosa não é "usar Slack".</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">A habilidade mais valiosa não é "usar Slack".</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>É "comunicar assincronamente, documentar decisões, colaborar transparentemente".</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">É "comunicar assincronamente, documentar decisões, colaborar transparentemente".</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Isso funciona em Slack, Teams, ferramenta futura, qualquer ambiente remoto.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Isso funciona em Slack, Teams, ferramenta futura, qualquer ambiente remoto.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Slack é MEIO de praticar. Habilidade é o FIM.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Slack é MEIO de praticar. Habilidade é o FIM.</p>
 
         </div>
       </div>
@@ -552,153 +584,153 @@ IA/automação lida com ROTINEIRO/ORGANIZAÇÃO.</p>
 
       <!-- Seção: 1. Slack Profissional: Fundamentos -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">1. Slack Profissional: Fundamentos</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">1. Slack Profissional: Fundamentos</h2>
 
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">1.1 Anatomia do Slack</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">1.1 Anatomia do Slack</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Elementos principais:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Elementos principais:</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Workspace:</span> Empresa/comunidade inteira
-- Exemplo: empresa-tech.slack.com</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Workspace:</span> <span class="text-neutral-700 dark:text-neutral-300">Empresa/comunidade inteira
+- Exemplo: empresa-tech.slack.com</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Channels:</span> Conversas organizadas por tópico
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Channels:</span> <span class="text-neutral-700 dark:text-neutral-300">Conversas organizadas por tópico
 - Públicos: Qualquer um no workspace vê
 - Privados: Só membros convidados
 - Prefixos comuns:
-  * <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">#geral</code> - Announcements gerais
-  * <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">#random</code> - Casual/off-topic
-  * <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">#proj-nome</code> - Por projeto
-  * <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">#team-nome</code> - Por equipe
-  * <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">#help-tema</code> - Suporte/dúvidas
-  * <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">#notif-sistema</code> - Notificações automáticas</p>
+  * <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">#geral</code> - Announcements gerais
+  * <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">#random</code> - Casual/off-topic
+  * <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">#proj-nome</code> - Por projeto
+  * <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">#team-nome</code> - Por equipe
+  * <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">#help-tema</code> - Suporte/dúvidas
+  * <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">#notif-sistema</code> - Notificações automáticas</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Direct Messages (DMs):</span> Conversas 1:1 ou pequenos grupos</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Direct Messages (DMs):</span> <span class="text-neutral-700 dark:text-neutral-300">Conversas 1:1 ou pequenos grupos</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Threads:</span> Respostas organizadas (NÃO polui canal)</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Threads:</span> <span class="text-neutral-700 dark:text-neutral-300">Respostas organizadas (NÃO polui canal)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Mentions:</span> - <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">@pessoa</code> - Notifica pessoa específica
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">@channel</code> - Notifica todos no canal (use com parcimônia!)
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">@here</code> - Notifica só quem está online agora</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Mentions:</span> <span class="text-neutral-700 dark:text-neutral-300">- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">@pessoa</code> - Notifica pessoa específica
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">@channel</code> - Notifica todos no canal (use com parcimônia!)
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">@here</code> - Notifica só quem está online agora</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Reações:</span> Emojis pra responder rápido (✅ ❌ 👀 🎉)</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Reações:</span> <span class="text-neutral-700 dark:text-neutral-300">Emojis pra responder rápido (✅ ❌ 👀 🎉)</span></p>
           </div>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">1.2 Etiqueta Slack que Impressiona</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">1.2 Etiqueta Slack que Impressiona</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>DO (Faça):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">DO (Faça):</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Use threads religiosamente</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ <strong class="font-bold">Use threads religiosamente</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Mensagem original:
 "Precisamos decidir sobre X"</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ Resposta solta no canal:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">❌ Resposta solta no canal:
 "Concordo, e também acho que..."</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ Resposta em thread:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ Resposta em thread:
 [Click "Reply in thread"]
 "Concordo, e também acho que..."
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Por quê: Mantém canal limpo. Facilita acompanhar discussões.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Por quê: Mantém canal limpo. Facilita acompanhar discussões.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Mensagens completas e claras</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ <strong class="font-bold">Mensagens completas e claras</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 ❌ Ruim:
 "Oi, tudo bem? Podemos conversar?"</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ Bom:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ Bom:
 "Oi Maria! Sobre projeto X:</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Contexto: Precisamos definir timeline
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Contexto: Precisamos definir timeline
 Pergunta: Você consegue entregar módulo Y até sexta?
 Urgência: Não urgente, responde quando puder</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Obrigado!"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Obrigado!"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Status claro</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ <strong class="font-bold">Status claro</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 🟢 Disponível (padrão)
 🟡 Ausente (afk, almoço)
 🔴 Não perturbe (deep work)
 🟣 Férias
 🔵 Reunião
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Settings → Set a status</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Settings → Set a status</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Reaja antes de responder</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ <strong class="font-bold">Reaja antes de responder</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Alguém posta: "Revisem doc X até amanhã"</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Você:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Você:
 1. Reage com 👀 (vi)
 2. Quando revisa, reage com ✅ (feito)
 3. Se tiver comentário, responde em thread
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Evita 20 mensagens de "ok", "vi", "feito".</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Evita 20 mensagens de "ok", "vi", "feito".</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ <strong>Code blocks para código/logs</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ <strong class="font-bold">Code blocks para código/logs</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 ❌ Ruim:
 Olha esse erro: TypeError: undefined is not a function</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ Bom:
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ Bom:
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 TypeError: undefined is not a function
   at Object.<anonymous> (/src/app.js:42:5)
   at Module._compile (module.js:652:30)
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Use <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded"> para inline code, </code>`` para blocos.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Use <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono"> para inline code, </code>`` para blocos.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>DON'T (Não faça):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">DON'T (Não faça):</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>@channel sem necessidade</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">❌ <strong class="font-bold">@channel sem necessidade</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 ❌ "@channel alguém sabe onde fica arquivo X?"
 ✅ "Alguém sabe onde fica arquivo X?" (sem @)
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">@channel só se:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">@channel só se:
 - Emergência (site fora, bug crítico)
 - Anúncio importante que TODO MUNDO precisa ver AGORA</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>DM quando deveria ser canal</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">❌ <strong class="font-bold">DM quando deveria ser canal</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 ❌ DM: "Como faço X?"
 ✅ Canal #help-tech: "Como faço X?"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Por quê: Outros aprendem também. Conhecimento fica documentado.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Por quê: Outros aprendem também. Conhecimento fica documentado.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>Mensagens quebradas</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">❌ <strong class="font-bold">Mensagens quebradas</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 ❌ Ruim:
 [13:04] "Oi"
 [13:04] "Tudo bem?"
@@ -706,119 +738,119 @@ TypeError: undefined is not a function
 [13:05] "de ajuda"
 [13:06] "com algo"</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ Bom:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ Bom:
 [13:04] "Oi! Tudo bem? Preciso de ajuda com X. [detalhes completos]"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>Sem contexto em threads antigas</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">❌ <strong class="font-bold">Sem contexto em threads antigas</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 ❌ "Resolveu?"
 (Ninguém lembra do que era)</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ "Resolveu aquele bug do login que você mencionou ontem?"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ "Resolveu aquele bug do login que você mencionou ontem?"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ <strong>TUDO EM CAPS LOCK</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">❌ <strong class="font-bold">TUDO EM CAPS LOCK</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 ❌ "URGENTE PRECISO AJUDA AGORA"
 ✅ "🚨 Urgente: Site fora do ar, precisamos investigar"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">1.3 Atalhos de Teclado (Slack Ninja)</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">1.3 Atalhos de Teclado (Slack Ninja)</h3>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Navegação:</span> - <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + K</code> - Jump to channel/DM (mais usado!)
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Alt + ↑/↓</code> - Canal anterior/próximo
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + [/]</code> - Navegação histórico
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + .</code> - Toggle right sidebar</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Navegação:</span> <span class="text-neutral-700 dark:text-neutral-300">- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">Ctrl/Cmd + K</code> - Jump to channel/DM (mais usado!)
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">Alt + ↑/↓</code> - Canal anterior/próximo
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">Ctrl/Cmd + [/]</code> - Navegação histórico
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">Ctrl/Cmd + .</code> - Toggle right sidebar</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Mensagens:</span> - <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + Enter</code> - Envia mensagem
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">↑</code> - Edita última mensagem sua
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">R</code> - Responder em thread (message selecionada)
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">E</code> - Adicionar emoji reaction
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">M</code> - Mencionar pessoa</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Mensagens:</span> <span class="text-neutral-700 dark:text-neutral-300">- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">Ctrl/Cmd + Enter</code> - Envia mensagem
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">↑</code> - Edita última mensagem sua
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">R</code> - Responder em thread (message selecionada)
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">E</code> - Adicionar emoji reaction
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">M</code> - Mencionar pessoa</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Marcação:</span> - <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Shift + Esc</code> - Marca tudo como lido
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Esc</code> - Limpa mensagens não lidas do canal atual</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Marcação:</span> <span class="text-neutral-700 dark:text-neutral-300">- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">Shift + Esc</code> - Marca tudo como lido
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">Esc</code> - Limpa mensagens não lidas do canal atual</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Formatação:</span> - <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + B</code> - <strong>Bold</strong>
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + I</code> - <em>Italic</em>
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + Shift + X</code> - ~~Strikethrough~~
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + Shift + C</code> - <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Code</code></p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Formatação:</span> <span class="text-neutral-700 dark:text-neutral-300">- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">Ctrl/Cmd + B</code> - <strong class="font-bold">Bold</strong>
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">Ctrl/Cmd + I</code> - <em class="italic">Italic</em>
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">Ctrl/Cmd + Shift + X</code> - ~~Strikethrough~~
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">Ctrl/Cmd + Shift + C</code> - <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">Code</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Busca:</span> - <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + G</code> - Busca avançada
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">Ctrl/Cmd + F</code> - Busca no canal atual</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Busca:</span> <span class="text-neutral-700 dark:text-neutral-300">- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">Ctrl/Cmd + G</code> - Busca avançada
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">Ctrl/Cmd + F</code> - Busca no canal atual</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Desafio:</span> 1 dia inteiro sem usar mouse no Slack.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Desafio:</span> <span class="text-neutral-700 dark:text-neutral-300">1 dia inteiro sem usar mouse no Slack.</span></p>
           </div>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">1.4 Configurações de Produtividade</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">1.4 Configurações de Produtividade</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Notificações (Settings → Notifications):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Notificações (Settings → Notifications):</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Recomendado:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Recomendado:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Desktop notifications:
 - Direct messages, mentions, keywords: ✓
-- All new messages: ✗ (NUNCA ative isso)</p>
+- All new messages: ✗ (NUNCA ative isso)</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Do Not Disturb:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Do Not Disturb:
 - Schedule: 20:00 - 08:00 (ou seu horário)
 - Duration: Quando ativar manual, 1h padrão</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Keywords: 
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Keywords: 
 - Seu nome
 - Palavras relacionadas ao seu trabalho
 - "urgente", "crítico" (se relevante)</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Sound:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Sound:
 - Direct messages, mentions: ✓
 - All messages: ✗
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Focus time:</span> 1. <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">/dnd 2 hours</code> - Ativa DND por 2h
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Focus time:</span> <span class="text-neutral-700 dark:text-neutral-300">1. <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">/dnd 2 hours</code> - Ativa DND por 2h
 2. Status: 🔴 Deep Work - Disponível às 16h
 3. Notificações: Off
-4. Trabalha focado</p>
+4. Trabalha focado</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Starred Channels:</span> - Canais que você acessa 5x/dia
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Starred Channels:</span> <span class="text-neutral-700 dark:text-neutral-300">- Canais que você acessa 5x/dia
 - Aparecem no topo da sidebar
-- Click na estrela ao lado do nome do canal</p>
+- Click na estrela ao lado do nome do canal</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Sections (sidebar organizada):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Sections (sidebar organizada):</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Organize canais em seções:
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Organize canais em seções:
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 ⭐ Starred
 📁 Projetos
   #proj-a
@@ -829,9 +861,9 @@ Desktop notifications:
 📢 Updates
   #anuncios
   #general
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Settings → Sidebar → Create new section</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Settings → Sidebar → Create new section</p>
 
         </div>
       </div>
@@ -839,144 +871,144 @@ Desktop notifications:
 
       <!-- Seção: 2. Comunicação Assíncrona Eficaz -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">2. Comunicação Assíncrona Eficaz</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">2. Comunicação Assíncrona Eficaz</h2>
 
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">2.1 O que é Comunicação Assíncrona</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">2.1 O que é Comunicação Assíncrona</h3>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Síncrona:</span> Resposta imediata esperada (call, reunião, chat ao vivo)</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Síncrona:</span> <span class="text-neutral-700 dark:text-neutral-300">Resposta imediata esperada (call, reunião, chat ao vivo)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Assíncrona:</span> Resposta quando conveniente (email, Slack, Notion comments)</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Assíncrona:</span> <span class="text-neutral-700 dark:text-neutral-300">Resposta quando conveniente (email, Slack, Notion comments)</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Por que assíncrona é melhor para trabalho profundo:</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Por que assíncrona é melhor para trabalho profundo:</strong>
 - Sem interrupções constantes
 - Responde quando tem contexto
 - Pensamento mais elaborado
 - Documentado automaticamente</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Mas requer disciplina e clareza.</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Mas requer disciplina e clareza.</strong></p>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">2.2 Framework de Mensagem Assíncrona Perfeita</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">2.2 Framework de Mensagem Assíncrona Perfeita</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>CRISP for Slack:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">CRISP for Slack:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>C - Context (Contexto)</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">C - Context (Contexto)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Sobre projeto X:"
 "Referente ao bug reportado ontem:"
 "No PR #123:"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>R - Request (Pedido específico)</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">R - Request (Pedido específico)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Preciso que você revise o doc Y"
 "Pode aprovar o PR?"
 "Confirma se esse approach faz sentido?"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>I - Information (Informações necessárias)</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">I - Information (Informações necessárias)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Link: [url]"
 "Prazo ideal: sexta"
 "Contexto adicional: [detalhes]"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>S - Support (Como ajudar)</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">S - Support (Como ajudar)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Se tiver dúvidas, me chama"
 "Posso explicar melhor em call se preferir"
 "Não urgente, responde quando conseguir"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>P - Priority (Urgência)</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">P - Priority (Urgência)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 🔴 Urgente: Preciso até EOD (end of day)
 🟡 Importante: Até esta semana
 🟢 Normal: Quando conseguir, próximos dias
 ⚪ FYI: Só informando, sem ação necessária
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Exemplo completo:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
-📊 Sobre projeto X (Dashboard vendas)</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Exemplo completo:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
+📊 Sobre projeto X (Dashboard vendas)</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Preciso que você revise o Figma antes da reunião de amanhã.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Preciso que você revise o Figma antes da reunião de amanhã.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Link: [figma.com/...]
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Link: [figma.com/...]
 Foco: UX do filtro de datas (slide 3-5)
 Contexto: Cliente pediu simplificar</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Se tiver dúvidas, marca call comigo.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Se tiver dúvidas, marca call comigo.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">🟡 Importante: Até amanhã 10h (reunião às 11h)
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">🟡 Importante: Até amanhã 10h (reunião às 11h)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">vs mensagem ruim:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">vs mensagem ruim:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Oi, vê isso aqui quando puder [link] valeu"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">2.3 Quando Usar Qual Canal</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">2.3 Quando Usar Qual Canal</h3>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Slack DM:</span> - Questão rápida pra 1 pessoa
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Slack DM:</span> <span class="text-neutral-700 dark:text-neutral-300">- Questão rápida pra 1 pessoa
 - Feedback pessoal (não público)
 - Conversa casual 1:1
-- Coordenar algo que não interessa ao time</p>
+- Coordenar algo que não interessa ao time</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Slack Channel:</span> - Discussão que beneficia time
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Slack Channel:</span> <span class="text-neutral-700 dark:text-neutral-300">- Discussão que beneficia time
 - Decisões que precisam documentação
 - Updates de projeto
-- Ajuda técnica (outros aprendem)</p>
+- Ajuda técnica (outros aprendem)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Thread:</span> - Resposta a mensagem específica
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Thread:</span> <span class="text-neutral-700 dark:text-neutral-300">- Resposta a mensagem específica
 - Discussão profunda sobre tópico
-- Não quer poluir canal principal</p>
+- Não quer poluir canal principal</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Reunião síncrona (Call):</span> - Discussão complexa com muitas idas e voltas
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Reunião síncrona (Call):</span> <span class="text-neutral-700 dark:text-neutral-300">- Discussão complexa com muitas idas e voltas
 - Brainstorming criativo
 - Decisão crítica e urgente
-- Alinhar quando assíncrono falhando</p>
+- Alinhar quando assíncrono falhando</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Email:</span> - Formal/oficial
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Email:</span> <span class="text-neutral-700 dark:text-neutral-300">- Formal/oficial
 - Externo (fora da empresa)
 - Documento/contrato
-- Registro legal</p>
+- Registro legal</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Regra de ouro:</span> Default = assíncrono. Só vai pra síncrono se necessário.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Regra de ouro:</span> <span class="text-neutral-700 dark:text-neutral-300">Default = assíncrono. Só vai pra síncrono se necessário.</span></p>
           </div>
 
         </div>
@@ -985,57 +1017,67 @@ Contexto: Cliente pediu simplificar</p>
 
       <!-- Seção: 3. Slack Bots e Automações -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">3. Slack Bots e Automações</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">3. Slack Bots e Automações</h2>
 
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">3.1 Bots Essenciais</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">3.1 Bots Essenciais</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Polly (Polls/Votações)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">1. Polly (Polls/Votações)</strong></p>
 
 
-          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
-            <pre class="text-sm text-green-400"><code>/polly "Qual horário melhor pra reunião?" "10h" "14h" "16h"</code></pre>
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-talento/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>/polly "Qual horário melhor pra reunião?" "10h" "14h" "16h"</code></pre>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Cria poll interativa. Time vota com cliques.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Cria poll interativa. Time vota com cliques.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Simple Poll</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">2. Simple Poll</strong></p>
 
 
-          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6">
-            <pre class="text-sm text-green-400"><code>/poll "Aprovam proposta X?" "Sim" "Não" "Preciso mais info"</code></pre>
+          <div class="bg-neutral-900 dark:bg-black p-6 rounded-lg overflow-x-auto mb-6 shadow-xl border border-talento/30">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="text-sm text-green-400 font-mono"><code>/poll "Aprovam proposta X?" "Sim" "Não" "Preciso mais info"</code></pre>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Standup Bot (Daily standup assíncrono)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">3. Standup Bot (Daily standup assíncrono)</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Config:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Config:
 - Pergunta diariamente (9h):
   * O que fez ontem?
   * O que vai fazer hoje?
   * Algum bloqueio?
 - Respostas compiladas e postadas no canal</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Substitui reunião diária de 30min por 5min assíncronos.</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Substitui reunião diária de 30min por 5min assíncronos.</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. Donut (Team bonding)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">4. Donut (Team bonding)</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Pareia aleatoriamente pessoas do time pra coffee chat.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Pareia aleatoriamente pessoas do time pra coffee chat.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>5. Geekbot (Async standups + retrospectives)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">5. Geekbot (Async standups + retrospectives)</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Templates prontos:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Templates prontos:
 - Daily standup
 - Weekly check-in
 - Sprint retrospective
 - 1:1 prep</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>6. Workflow Builder (Slack nativo - sem code)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">6. Workflow Builder (Slack nativo - sem code)</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Cria workflows:</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Cria workflows:</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo: Onboarding automatizado</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Exemplo: Onboarding automatizado</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Trigger: Pessoa entra no workspace
 → Envia DM:
   "Bem-vindo! 👋
@@ -1048,10 +1090,10 @@ Trigger: Pessoa entra no workspace
    Dúvidas? Chama @HR"
 → Add aos canais: #geral, #random, #anuncios
 → Notifica RH: "Novo membro: [nome]"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo: Request de férias</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Exemplo: Request de férias</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Trigger: Comando /ferias
 → Form aparece:
   - Datas
@@ -1060,19 +1102,19 @@ Trigger: Comando /ferias
 → Post no #rh-requests
 → Notifica gestor
 → Add ao Google Calendar
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Slack → Tools → Workflow Builder → Create</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Slack → Tools → Workflow Builder → Create</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Não precisa código!</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Não precisa código!</strong></p>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">3.2 Slack + Make (Automações Custom)</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">3.2 Slack + Make (Automações Custom)</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Automação 1: Novo lead → Slack notification</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Automação 1: Novo lead → Slack notification</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Google Forms - New response (Lead form)
 → Slack - Send Message
   Channel: #vendas
@@ -1085,10 +1127,10 @@ Google Forms - New response (Lead form)
     Budget: {{1.orcamento}}
     
     @vendedor, fazer follow-up!"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Automação 2: Deploy falhou → Alert Slack</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Automação 2: Deploy falhou → Alert Slack</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 GitHub - Workflow Run Failed
 → Slack - Send Message
   Channel: #tech-alerts
@@ -1101,10 +1143,10 @@ GitHub - Workflow Run Failed
     Author: @{{1.author}}
     
     Logs: {{1.logs_url}}"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Automação 3: Task Notion completada → Celebrar no Slack</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Automação 3: Task Notion completada → Celebrar no Slack</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Notion - Watch Database Items (Tasks)
   Filter: Status = Done AND Priority = P1
 → Slack - Send Message
@@ -1116,10 +1158,10 @@ Notion - Watch Database Items (Tasks)
     Projeto: {{1.project}}
     
     Great job! 🚀"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Automação 4: Slack → Notion (Capture ideas)</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Automação 4: Slack → Notion (Capture ideas)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Slack - New Message
   Channel: #ideias
   Filter: Contains emoji :bulb:
@@ -1130,42 +1172,42 @@ Slack - New Message
     - Autor: {{1.user}}
     - Data: {{1.timestamp}}
     - Link Slack: {{1.permalink}}
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Workflow: Teve ideia → posta no #ideias com 💡 → vai pro Notion automaticamente</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Workflow: Teve ideia → posta no #ideias com 💡 → vai pro Notion automaticamente</p>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">3.3 Slash Commands Custom</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">3.3 Slash Commands Custom</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Crie comandos próprios:</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Crie comandos próprios:</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>API → Slack webhook:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">API → Slack webhook:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo: <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">/deploy production</code></strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Exemplo: <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">/deploy production</code></strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Quando você digita isso no Slack:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Quando você digita isso no Slack:
 1. Slack envia webhook pra seu servidor
 2. Servidor executa deploy
 3. Responde no Slack: "Deploy iniciado... ✓ Completo!"</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Como configurar:</span> 1. Slack API → Create app
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Como configurar:</span> <span class="text-neutral-700 dark:text-neutral-300">1. Slack API → Create app
 2. Slash Commands → Create command
-   - Command: <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">/deploy</code>
-   - Request URL: <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">https://seu-servidor.com/slack/deploy</code>
+   - Command: <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">/deploy</code>
+   - Request URL: <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">https://seu-servidor.com/slack/deploy</code>
 3. Permissions: Adicione ao workspace
-4. Código no servidor processa e responde</p>
+4. Código no servidor processa e responde</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Outros exemplos:</span> - <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">/standup</code> - Posta standup
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">/analytics</code> - Mostra métricas
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">/support</code> - Abre ticket
-- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">/lunch</code> - Pede comida (integra com iFood API 😄)</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Outros exemplos:</span> <span class="text-neutral-700 dark:text-neutral-300">- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">/standup</code> - Posta standup
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">/analytics</code> - Mostra métricas
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">/support</code> - Abre ticket
+- <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">/lunch</code> - Pede comida (integra com iFood API 😄)</span></p>
           </div>
 
         </div>
@@ -1174,53 +1216,53 @@ Slack - New Message
 
       <!-- Seção: 4. Integrações Avançadas -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">4. Integrações Avançadas</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">4. Integrações Avançadas</h2>
 
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">4.1 Slack + Notion</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">4.1 Slack + Notion</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Via Make:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Via Make:</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Sync bidirecional:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Sync bidirecional:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Notion - New page em Database "Tasks"
 → Slack - Post em #tasks
   "Nova task: {{1.name}}
    Owner: @{{1.owner}}
-   Due: {{1.due_date}}"</p>
+   Due: {{1.due_date}}"</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Slack - Reaction added (:white_check_mark:)
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Slack - Reaction added (:white_check_mark:)
 → Notion - Update page
   Status: Done
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Meeting notes:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Meeting notes:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Slack - Scheduled Message (antes reunião)
   "Reunião em 1h: [tópico]
    Notas: [link Notion]
-   Agenda: [lista]"</p>
+   Agenda: [lista]"</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Google Calendar - Event ended
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Google Calendar - Event ended
 → Slack - Reminder
   "@participantes: Preencham notas reunião [link]"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">4.2 Slack + IA (ChatGPT/Claude)</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">4.2 Slack + IA (ChatGPT/Claude)</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Bot IA no Slack:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Bot IA no Slack:</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Via Make + OpenAI API:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Via Make + OpenAI API:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Slack - New Message
   Channel: #ai-assistant
 → OpenAI - Create Completion
@@ -1228,51 +1270,51 @@ Slack - New Message
   Model: gpt-4
 → Slack - Reply Thread
   Text: {{2.response}}
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Resultado:</span> Qualquer pergunta no #ai-assistant → IA responde</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Resultado:</span> <span class="text-neutral-700 dark:text-neutral-300">Qualquer pergunta no #ai-assistant → IA responde</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Use cases:</span> - "Resuma este doc: [link]"
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Use cases:</span> <span class="text-neutral-700 dark:text-neutral-300">- "Resuma este doc: [link]"
 - "Traduza para inglês: [texto]"
 - "Crie email de follow-up para [contexto]"
-- "Analise estes dados: [dados]"</p>
+- "Analise estes dados: [dados]"</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Atenção:</span> Custo de API. Configure limits.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Atenção:</span> <span class="text-neutral-700 dark:text-neutral-300">Custo de API. Configure limits.</span></p>
           </div>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">4.3 Slack + Google Workspace</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">4.3 Slack + Google Workspace</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Native integrations (Slack app):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Native integrations (Slack app):</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Google Calendar:</span> - Eventos aparecem como status Slack
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Google Calendar:</span> <span class="text-neutral-700 dark:text-neutral-300">- Eventos aparecem como status Slack
 - Reminder 10min antes
-- Join meet direto do Slack</p>
+- Join meet direto do Slack</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Google Drive:</span> - Post link Drive → preview automático
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Google Drive:</span> <span class="text-neutral-700 dark:text-neutral-300">- Post link Drive → preview automático
 - Commenta no Drive → notifica Slack
-- Share Drive file direto no Slack</p>
+- Share Drive file direto no Slack</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Gmail:</span> - Email importante → forward pro Slack (email único por canal)</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Gmail:</span> <span class="text-neutral-700 dark:text-neutral-300">- Email importante → forward pro Slack (email único por canal)</span></p>
           </div>
 
         </div>
@@ -1281,109 +1323,109 @@ Slack - New Message
 
       <!-- Seção: 5. Slack Analytics e Produtividade -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">5. Slack Analytics e Produtividade</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">5. Slack Analytics e Produtividade</h2>
 
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">5.1 Search (Busca Profissional)</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">5.1 Search (Busca Profissional)</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Operadores:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Operadores:</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Por pessoa:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Por pessoa:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 from:@joao
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Por canal:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Por canal:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 in:#tech
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Por data:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Por data:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 after:2025-01-01
 before:2025-02-01
 during:january
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Por tipo:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Por tipo:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 has:link
 has:file
 has:emoji
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Combinados:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
-from:@maria in:#projeto-x has:link after:2025-01-15</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Combinados:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
+from:@maria in:#projeto-x has:link after:2025-01-15</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">= Mensagens da Maria no #projeto-x com links após 15/01
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">= Mensagens da Maria no #projeto-x com links após 15/01
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Saved searches:</span> - Busca complexa frequente
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Saved searches:</span> <span class="text-neutral-700 dark:text-neutral-300">- Busca complexa frequente
 - Click "Save this search"
-- Acesso rápido depois</p>
+- Acesso rápido depois</span></p>
           </div>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">5.2 Produtividade no Slack</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">5.2 Produtividade no Slack</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Tips:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Tips:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Inbox Zero diário</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">1. Inbox Zero diário</strong>
 - Todas mentions/DMs respondidos ou marcados pra depois
 - "Mark as unread" se precisa voltar depois
 - Ou salva com estrela</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Snooze messages</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">2. Snooze messages</strong>
 - Mensagem que precisa responder depois
 - Click ⋮ → Remind me about this
 - Choose: 20min, 1h, tomorrow, custom</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Scheduled messages</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">3. Scheduled messages</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 /remind @pessoa "fazer X" at 9am tomorrow
 /remind #canal "reunião em 10min" in 10 minutes
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Ou:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Ou:
 - Escreve mensagem
 - Click ⌄ ao lado do Send
 - Schedule for later</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Caso de uso:</span> Trabalha de noite, mas não quer notificar time → agenda pra 9am</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Caso de uso:</span> <span class="text-neutral-700 dark:text-neutral-300">Trabalha de noite, mas não quer notificar time → agenda pra 9am</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. Saved items</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">4. Saved items</strong>
 - Mensagem importante
 - Click estrela ⭐
 - Acessa depois: Saved items (sidebar)</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>5. Custom status</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">5. Custom status</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 🏖️ Férias até 20/02
 🤒 Doente hoje
 🏃 Academia - volto 14h
 🎧 Focus time - respondo às 16h
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Settings → Set a status</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Settings → Set a status</p>
 
         </div>
       </div>
@@ -1391,50 +1433,50 @@ from:@maria in:#projeto-x has:link after:2025-01-15</p>
 
       <!-- Seção: 6. Exercício Prático (45min) -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">6. Exercício Prático (45min)</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">6. Exercício Prático (45min)</h2>
 
         <div class="mb-6">
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>PARTE 1: Setup Profissional (15min)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">PARTE 1: Setup Profissional (15min)</strong></p>
 
-          <ol class="space-y-3 mb-6 list-decimal list-inside">
-            <li class="text-neutral-700 dark:text-neutral-300">Configure notificações otimizadas</li>
-            <li class="text-neutral-700 dark:text-neutral-300">Crie 3 sections na sidebar</li>
-            <li class="text-neutral-700 dark:text-neutral-300">Configure status com emoji + texto</li>
-            <li class="text-neutral-700 dark:text-neutral-300">Starre 3 canais mais usados</li>
-            <li class="text-neutral-700 dark:text-neutral-300">Salve 2 searches úteis</li>
+          <ol class="space-y-3 mb-6 list-decimal list-inside marker:text-talento marker:font-bold">
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Configure notificações otimizadas</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Crie 3 sections na sidebar</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Configure status com emoji + texto</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Starre 3 canais mais usados</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Salve 2 searches úteis</li>
           </ol>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>PARTE 2: Comunicação (15min)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">PARTE 2: Comunicação (15min)</strong></p>
 
-          <ol class="space-y-3 mb-6 list-decimal list-inside">
-            <li class="text-neutral-700 dark:text-neutral-300">Escreva 3 mensagens usando framework CRISP:</li>
-            <li class="text-neutral-700 dark:text-neutral-300">- Request de revisão</li>
-            <li class="text-neutral-700 dark:text-neutral-300">- Update de projeto</li>
-            <li class="text-neutral-700 dark:text-neutral-300">- Dúvida técnica</li>
-            <li class="text-neutral-700 dark:text-neutral-300">Pratique threads (não polua canal!)</li>
-            <li class="text-neutral-700 dark:text-neutral-300">Use reações adequadamente</li>
+          <ol class="space-y-3 mb-6 list-decimal list-inside marker:text-talento marker:font-bold">
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Escreva 3 mensagens usando framework CRISP:</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Request de revisão</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Update de projeto</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">- Dúvida técnica</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Pratique threads (não polua canal!)</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">Use reações adequadamente</li>
           </ol>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>PARTE 3: Automação (15min)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">PARTE 3: Automação (15min)</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Escolha 1:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Escolha 1:
 - A) Configure Workflow Builder (onboarding ou request)
 - B) Make: Slack notification de algo (Form, Notion, etc)
 - C) Configure bot (Polly, Standup, etc)</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">ENTREGA:</span> - Screenshots de cada parte
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">ENTREGA:</span> <span class="text-neutral-700 dark:text-neutral-300">- Screenshots de cada parte
 - 3 mensagens escritas (exemplos reais ou simulados)
-- 1 automação funcionando</p>
+- 1 automação funcionando</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">BÔNUS:</span> Compartilha no LinkedIn dica de Slack que aprendeu. Tag #slack #comunicacaoassincrona</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">BÔNUS:</span> <span class="text-neutral-700 dark:text-neutral-300">Compartilha no LinkedIn dica de Slack que aprendeu. Tag #slack #comunicacaoassincrona</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">---</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
 
         </div>
       </div>
@@ -1442,25 +1484,25 @@ from:@maria in:#projeto-x has:link after:2025-01-15</p>
 
       <!-- Seção: Próximos Passos -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">Próximos Passos</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">Próximos Passos</h2>
 
         <div class="mb-6">
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Módulo 8: Canva e Design Básico</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Módulo 8: Canva e Design Básico</strong>
 - Criar visuais profissionais sem ser designer
 - Posts LinkedIn que convertem
 - Apresentações impactantes
 - Brand kit pessoal</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Prepare-se para:</span> Comunicação visual que destaca</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Prepare-se para:</span> <span class="text-neutral-700 dark:text-neutral-300">Comunicação visual que destaca</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Nos vemos lá! 🚀</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Nos vemos lá! 🚀</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">---</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>© 2025 FETD - Formação em Engenharia de Intenção</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">© 2025 FETD - Formação em Engenharia de Intenção</strong></p>
 
         </div>
       </div>
@@ -1469,13 +1511,14 @@ from:@maria in:#projeto-x has:link after:2025-01-15</p>
   </section>
 
   <!-- Footer / Navegação -->
-  <section class="py-12 bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-700">
+  <section class="py-12 bg-gradient-to-br from-neutral-100 to-neutral-50 dark:from-neutral-900 dark:to-neutral-800 border-t border-neutral-200 dark:border-neutral-700">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center">
-        <a href="../../trilhas/talento.html" class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90">
-          ← Voltar para Trilha
+        <a href="../../trilhas/talento.html" class="px-6 py-3 bg-gradient-to-r from-talento to-amber-600 text-white rounded-lg font-bold hover:opacity-90 shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2">
+          <span>←</span>
+          <span>Voltar para Trilha</span>
         </a>
-        <a href="modulo-08.html" class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90">Próximo Módulo →</a>
+        <a href="modulo-08.html" class="px-6 py-3 bg-gradient-to-r from-talento to-amber-600 text-white rounded-lg font-bold hover:opacity-90 shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2"><span>Próximo Módulo</span><span>→</span></a>
       </div>
     </div>
   </section>

@@ -12,7 +12,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Tailwind Config -->
   <script>
@@ -47,18 +47,18 @@
 <body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
 
   <!-- Navbar -->
-  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-neutral-800/95 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-700 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <div class="flex items-center">
-          <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-talento to-talento bg-clip-text text-transparent">
+          <a href="../../index.html" class="text-2xl font-bold bg-gradient-to-r from-talento to-amber-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
             🎓 FETD
           </a>
         </div>
         <div class="hidden md:flex items-center space-x-8">
-          <a href="../../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Início</a>
-          <a href="../../trilhas/talento.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors">Trilha Talento Emergente</a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+          <a href="../../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors font-medium">Início</a>
+          <a href="../../trilhas/talento.html" class="text-neutral-700 dark:text-neutral-300 hover:text-talento transition-colors font-medium">Trilha Talento Emergente</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-talento/10 transition-colors">
             <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
             </svg>
@@ -74,10 +74,10 @@
   <!-- Breadcrumb -->
   <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <nav class="flex text-sm" aria-label="Breadcrumb">
-        <a href="../../index.html" class="text-talento hover:opacity-80">Início</a>
+      <nav class="flex text-sm font-medium" aria-label="Breadcrumb">
+        <a href="../../index.html" class="text-talento hover:opacity-80 transition-opacity">Início</a>
         <span class="mx-2 text-neutral-400">/</span>
-        <a href="../../trilhas/talento.html" class="text-talento hover:opacity-80">Trilha Talento Emergente</a>
+        <a href="../../trilhas/talento.html" class="text-talento hover:opacity-80 transition-opacity">Trilha Talento Emergente</a>
         <span class="mx-2 text-neutral-400">/</span>
         <span class="text-neutral-600 dark:text-neutral-400">Módulo 9</span>
       </nav>
@@ -85,28 +85,32 @@
   </div>
 
   <!-- Hero Módulo -->
-  <section class="bg-gradient-to-r from-talento to-talento py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+  <section class="bg-gradient-to-br from-talento via-talento to-amber-600 py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white relative z-10">
 
-      <div class="flex items-center gap-3 mb-4">
-        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">Módulo 9 de 10</span>
-        <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">⏱️ 60 minutos</span>
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <span class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-bold shadow-lg">Módulo 9 de 10</span>
+        <span class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-bold shadow-lg flex items-center gap-2">
+          <span>⏱️</span>
+          <span>60 minutos</span>
+        </span>
       </div>
 
-      <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
         Módulo 09: Primeiros Freelances
       </h1>
 
-      <p class="text-xl text-white/90 mb-6 max-w-3xl">
+      <p class="text-xl md:text-2xl text-white/95 mb-8 max-w-3xl font-medium leading-relaxed">
         Conseguir seus primeiros trabalhos pagos
       </p>
 
-      <div class="flex items-center gap-4">
-        <span class="text-white/80">📚 Teoria</span>
-        <span class="text-white/80">•</span>
-        <span class="text-white/80">💭 Reflexão</span>
-        <span class="text-white/80">•</span>
-        <span class="text-white/80">🛠️ Prática</span>
+      <div class="flex flex-wrap items-center gap-4 text-white/90">
+        <span class="flex items-center gap-2 font-medium"><span class="text-xl">📚</span> Teoria</span>
+        <span class="text-white/60">•</span>
+        <span class="flex items-center gap-2 font-medium"><span class="text-xl">💭</span> Reflexão</span>
+        <span class="text-white/60">•</span>
+        <span class="flex items-center gap-2 font-medium"><span class="text-xl">🛠️</span> Prática</span>
       </div>
     </div>
   </section>
@@ -117,42 +121,55 @@
 
       <!-- Download Button -->
       <div class="flex justify-end mb-8">
-        <a href="../../downloads/talento/modulo-09.md" download class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90 inline-flex items-center gap-2">
-          <span>📥</span>
+        <a href="../../downloads/talento/modulo-09.md" download class="px-6 py-3 bg-gradient-to-r from-talento to-amber-600 text-white rounded-lg font-bold hover:opacity-90 inline-flex items-center gap-2 shadow-lg hover:shadow-xl transition-all">
+          <span class="text-xl">📥</span>
           <span>Download MD</span>
         </a>
       </div>
 
 
+      <!-- Objetivo do Módulo -->
+      <div class="bg-talento/10 dark:bg-talento/20 border-l-4 border-talento p-6 rounded-lg mb-12 shadow-lg">
+        <h3 class="text-xl font-bold text-talento mb-2 flex items-center gap-2">
+          <span class="text-2xl">🎯</span>
+          <span>Objetivo deste Módulo</span>
+        </h3>
+        <p class="text-neutral-700 dark:text-neutral-300 text-lg">
+          Conseguir seus primeiros trabalhos pagos
+        </p>
+      </div>
+
+
+
       <!-- Seção: Introdução: Hora de Monetizar -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">Introdução: Hora de Monetizar</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">Introdução: Hora de Monetizar</h2>
 
         <div class="mb-6">
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Você aprendeu muito. Agora é hora de transformar conhecimento em R$.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Você aprendeu muito. Agora é hora de transformar conhecimento em R$.</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Realidade:</span> Primeiros R$ 500-2.000 são mais fáceis que você imagina.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Realidade:</span> <span class="text-neutral-700 dark:text-neutral-300">Primeiros R$ 500-2.000 são mais fáceis que você imagina.</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Dados Brasil 2024-2025:</span> - Freelancers iniciantes (0-6 meses): média R$ 800-2.500/mês
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Dados Brasil 2024-2025:</span> <span class="text-neutral-700 dark:text-neutral-300">- Freelancers iniciantes (0-6 meses): média R$ 800-2.500/mês
 - Freelancers intermediários (6-18 meses): R$ 3.000-8.000/mês
 - Especialistas (18+ meses): R$ 8.000-20.000+/mês
 - Plataformas brasileiras: 400k+ freelancers ativos
-- Demanda por no-code/IA: +380% em 2024</p>
+- Demanda por no-code/IA: +380% em 2024</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">O que você vai aprender:</span> - Plataformas certas (onde trabalhos pagam bem)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">O que você vai aprender:</span> <span class="text-neutral-700 dark:text-neutral-300">- Plataformas certas (onde trabalhos pagam bem)
 - Perfil que vende (primeiras impressões)
 - Precificação inteligente (cobrar certo)
 - Proposta que converte (40-60% aceitação)
 - Evitar ciladas (red flags, proteção)
-- Primeiros clientes (estratégias testadas)</p>
+- Primeiros clientes (estratégias testadas)</span></p>
           </div>
 
         </div>
@@ -161,232 +178,232 @@
 
       <!-- Seção: 1. Plataformas Freelance (Onde Começar) -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">1. Plataformas Freelance (Onde Começar)</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">1. Plataformas Freelance (Onde Começar)</h2>
 
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">1.1 Plataformas Brasileiras</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">1.1 Plataformas Brasileiras</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Workana (⭐ Top Recomendação Brasil)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">1. Workana (⭐ Top Recomendação Brasil)</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Prós:</span> - Maior plataforma América Latina
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Prós:</span> <span class="text-neutral-700 dark:text-neutral-300">- Maior plataforma América Latina
 - Preços em R$ (sem conversão)
 - Público BR/LATAM
 - Menos competição que Upwork
-- Proteção pagamento (escrow)</p>
+- Proteção pagamento (escrow)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Contras:</span> - Taxa 10-20% (diminui com volume)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Contras:</span> <span class="text-neutral-700 dark:text-neutral-300">- Taxa 10-20% (diminui com volume)
 - Alguns projetos pagam pouco
-- Necessário destacar-se (muitos candidatos)</p>
+- Necessário destacar-se (muitos candidatos)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Tipos trabalho:</span> - Automação no-code (Make, Zapier)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Tipos trabalho:</span> <span class="text-neutral-700 dark:text-neutral-300">- Automação no-code (Make, Zapier)
 - Setup Notion
 - Design (Canva, Figma básico)
 - IA/ChatGPT consulting
-- Data entry/análise</p>
+- Data entry/análise</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Como começar:</span> 1. Perfil 100% completo
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Como começar:</span> <span class="text-neutral-700 dark:text-neutral-300">1. Perfil 100% completo
 2. Portfolio 3+ projetos (pode ser fictício inicial)
 3. Candidata 10-15 projetos/dia primeiras 2 semanas
-4. Preço competitivo inicial (ganha reviews)</p>
+4. Preço competitivo inicial (ganha reviews)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Primeiro projeto:</span> R$ 300-800 (abaixo mercado pra entrar)
-<strong>Depois 5 projetos:</strong> Sobe 30-50%</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Primeiro projeto:</span> <span class="text-neutral-700 dark:text-neutral-300">R$ 300-800 (abaixo mercado pra entrar)
+<strong class="font-bold">Depois 5 projetos:</strong> Sobe 30-50%</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. 99Freelas</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">2. 99Freelas</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Prós:</span> - 100% brasileiro
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Prós:</span> <span class="text-neutral-700 dark:text-neutral-300">- 100% brasileiro
 - Interface simples
 - Comunidade ativa
-- Bons projetos tech</p>
+- Bons projetos tech</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Contras:</span> - Menos projetos que Workana
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Contras:</span> <span class="text-neutral-700 dark:text-neutral-300">- Menos projetos que Workana
 - Alguns clientes não-profissionais
-- Suporte limitado</p>
+- Suporte limitado</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Tipos trabalho:</span> - Sites simples (Webflow, WordPress)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Tipos trabalho:</span> <span class="text-neutral-700 dark:text-neutral-300">- Sites simples (Webflow, WordPress)
 - Automações
 - Design
-- Copywriting</p>
+- Copywriting</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. GetNinjas</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">3. GetNinjas</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Prós:</span> - Serviços locais (presencial)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Prós:</span> <span class="text-neutral-700 dark:text-neutral-300">- Serviços locais (presencial)
 - Pagamento direto (sem taxa plataforma)
-- Lead qualificado (pagaram pra solicitar)</p>
+- Lead qualificado (pagaram pra solicitar)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Contras:</span> - Você paga por lead (~R$ 5-20/lead)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Contras:</span> <span class="text-neutral-700 dark:text-neutral-300">- Você paga por lead (~R$ 5-20/lead)
 - Competição alta
-- Mais adequado serviços presenciais</p>
+- Mais adequado serviços presenciais</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Tipos trabalho:</span> - Consultoria presencial
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Tipos trabalho:</span> <span class="text-neutral-700 dark:text-neutral-300">- Consultoria presencial
 - Treinamentos
-- Setup sistemas (in loco)</p>
+- Setup sistemas (in loco)</span></p>
           </div>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">1.2 Plataformas Internacionais (Dólar 💰)</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">1.2 Plataformas Internacionais (Dólar 💰)</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Upwork (⭐⭐ Melhor global, difícil entrar)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">1. Upwork (⭐⭐ Melhor global, difícil entrar)</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Prós:</span> - Preços em USD ($$ >>> R$)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Prós:</span> <span class="text-neutral-700 dark:text-neutral-300">- Preços em USD ($$ >>> R$)
 - Projetos de alta qualidade
 - Clientes internacionais sérios
 - Proteção robusta
-- Payment processor integrado</p>
+- Payment processor integrado</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Contras:</span> - Aprovação perfil difícil (rejeitam 80%)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Contras:</span> <span class="text-neutral-700 dark:text-neutral-300">- Aprovação perfil difícil (rejeitam 80%)
 - Competição ALTA (globais)
 - Taxa 5-20%
-- Precisa inglês fluente (mínimo técnico)</p>
+- Precisa inglês fluente (mínimo técnico)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Estratégia entrada:</span> - Nicho específico (não generalista)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Estratégia entrada:</span> <span class="text-neutral-700 dark:text-neutral-300">- Nicho específico (não generalista)
 - Portfolio FORTE (link projetos reais)
 - Inglês correto (sem erros)
-- Preço competitivo inicial ($10-20/h)</p>
+- Preço competitivo inicial ($10-20/h)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Tipos trabalho:</span> - Automação (Make, Zapier, n8n)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Tipos trabalho:</span> <span class="text-neutral-700 dark:text-neutral-300">- Automação (Make, Zapier, n8n)
 - IA (ChatGPT, Claude integration)
 - Data analysis (Sheets, Python básico)
-- Virtual assistance (tools setup)</p>
+- Virtual assistance (tools setup)</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Fiverr (Volume, preço baixo)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">2. Fiverr (Volume, preço baixo)</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Prós:</span> - Fácil começar
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Prós:</span> <span class="text-neutral-700 dark:text-neutral-300">- Fácil começar
 - Você cria "gig" (serviço fixo)
 - Cliente vem até você (não concorre em propostas)
-- Global</p>
+- Global</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Contras:</span> - Preços baixos (race to bottom)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Contras:</span> <span class="text-neutral-700 dark:text-neutral-300">- Preços baixos (race to bottom)
 - Taxa 20%
 - Muito trabalho por pouco $
-- Difícil destacar (milhões sellers)</p>
+- Difícil destacar (milhões sellers)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Estratégia:</span> - Gig ultra-específico ("Notion setup for coaches", não "I'll do anything")
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Estratégia:</span> <span class="text-neutral-700 dark:text-neutral-300">- Gig ultra-específico ("Notion setup for coaches", não "I'll do anything")
 - Preço inicial $20-50 (pra ganhar reviews)
 - Depois aumenta $100-300
-- Pacotes (Basic/Standard/Premium)</p>
+- Pacotes (Basic/Standard/Premium)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Exemplo gig:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
-I will set up your Notion workspace for productivity</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Exemplo gig:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
+I will set up your Notion workspace for productivity</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Basic ($25): 3 databases + templates
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Basic ($25): 3 databases + templates
 Standard ($75): Full workspace + automations
 Premium ($150): Custom + training + 1 month support</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Delivery: 3 days
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Delivery: 3 days
 Revisions: 2
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Toptal (💰💰 Elite, muito difícil)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">3. Toptal (💰💰 Elite, muito difícil)</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Prós:</span> - Top 3% freelancers globalmente
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Prós:</span> <span class="text-neutral-700 dark:text-neutral-300">- Top 3% freelancers globalmente
 - Clientes Fortune 500
 - $80-200/hora típico
-- Prestígio</p>
+- Prestígio</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Contras:</span> - Processo seleção rigoroso (3-5 semanas)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Contras:</span> <span class="text-neutral-700 dark:text-neutral-300">- Processo seleção rigoroso (3-5 semanas)
 - Rejeitam 97%
 - Precisa expertise comprovada
-- Mínimo 2-3 anos experiência</p>
+- Mínimo 2-3 anos experiência</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Não recomendado pra iniciante.</strong> Meta futura.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Não recomendado pra iniciante.</strong> Meta futura.</p>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">1.3 Comunidades e Grupos (Underrated)</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">1.3 Comunidades e Grupos (Underrated)</h3>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Discord/Slack communities:</span> - No-code Brasil
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Discord/Slack communities:</span> <span class="text-neutral-700 dark:text-neutral-300">- No-code Brasil
 - Automação BR
 - IA & Automação
-- Startups BR</p>
+- Startups BR</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Como funciona:</span> 1. Participa ativamente
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Como funciona:</span> <span class="text-neutral-700 dark:text-neutral-300">1. Participa ativamente
 2. Ajuda outros gratuitamente
 3. Demonstra expertise
-4. Oportunidades vêm naturalmente</p>
+4. Oportunidades vêm naturalmente</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">LinkedIn:</span> - Posta projetos (showcase)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">LinkedIn:</span> <span class="text-neutral-700 dark:text-neutral-300">- Posta projetos (showcase)
 - Comenta posts relevantes
-- DM em empresas (cold outreach)</p>
+- DM em empresas (cold outreach)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Taxa conversão LinkedIn (bem feito):</span> 5-10%</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Taxa conversão LinkedIn (bem feito):</span> <span class="text-neutral-700 dark:text-neutral-300">5-10%</span></p>
           </div>
 
         </div>
@@ -395,24 +412,24 @@ Revisions: 2
 
       <!-- Seção: 2. Perfil que Vende -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">2. Perfil que Vende</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">2. Perfil que Vende</h2>
 
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">2.1 Anatomia do Perfil Perfeito</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">2.1 Anatomia do Perfil Perfeito</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Elementos essenciais (qualquer plataforma):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Elementos essenciais (qualquer plataforma):</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Foto Profissional</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">1. Foto Profissional</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ Ruim:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">❌ Ruim:
 - Selfie
 - Foto cortada
 - Ambiente bagunçado
 - Muito filtro
 - Sem rosto visível</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ Bom:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ Bom:
 - Fundo neutro ou profissional
 - Iluminação boa
 - Roupa profissional (não precisa terno, mas arrumado)
@@ -420,323 +437,323 @@ Revisions: 2
 - Alta resolução</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Dica:</span> Foto headshot gratuita → pede amigo fotógrafo ou usa timer câmera</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Dica:</span> <span class="text-neutral-700 dark:text-neutral-300">Foto headshot gratuita → pede amigo fotógrafo ou usa timer câmera</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Título/Headline</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">2. Título/Headline</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">❌ Ruim:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">❌ Ruim:
 - "Freelancer"
 - "Faço de tudo"
 - "Designer & Developer & Marketer"</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">✅ Bom (específico + benefício):
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">✅ Bom (específico + benefício):
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Automação no-code (Make/Zapier) que economiza 15h/semana"
 "Notion Specialist | Transformo caos em sistema organizado"
 "IA Operations | ChatGPT/Claude para empresas"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Formula:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Formula:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 [Skill específica] | [Resultado que entrega]
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Descrição (Overview)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">3. Descrição (Overview)</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Estrutura CRISP:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Estrutura CRISP:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>C - Credibilidade (Quem você é)</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">C - Credibilidade (Quem você é)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Especialista em automação no-code com 25+ projetos entregues.
 Ajudei empresas economizarem 200+ horas/mês automatizando processos."
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>R - Resultados (O que entrega)</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">R - Resultados (O que entrega)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Resultados típicos:
 ✓ Redução 60-80% tempo tarefas repetitivas
 ✓ Eliminação de erros manuais
 ✓ ROI médio: 500% em 3 meses"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>I - Indicadores (Prova social)</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">I - Indicadores (Prova social)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "20+ clientes satisfeitos
 4.9/5 rating médio
 100% projetos entregues no prazo"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>S - Serviços (O que oferece)</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">S - Serviços (O que oferece)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Serviços:
 • Automações Make/Zapier
 • Setup Notion completo
 • IA workflows (ChatGPT/Claude)
 • Treinamento e documentação"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>P - Proposta (CTA)</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">P - Proposta (CTA)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Vamos conversar sobre como posso ajudar seu negócio?
 Click 'Contact' ou envie mensagem!"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Tamanho total:</span> 150-250 palavras (conciso e completo)</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Tamanho total:</span> <span class="text-neutral-700 dark:text-neutral-300">150-250 palavras (conciso e completo)</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. Portfolio (3-5 projetos)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">4. Portfolio (3-5 projetos)</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Cada projeto deve ter:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Cada projeto deve ter:</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Screenshot/Visual:</span> - Antes/Depois
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Screenshot/Visual:</span> <span class="text-neutral-700 dark:text-neutral-300">- Antes/Depois
 - Diagrama da automação
 - Dashboard final
-- Print de resultados</p>
+- Print de resultados</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Título:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Título:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Automação e-commerce: Pedido → Envio (zero manual)"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Descrição (100-150 palavras):</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
-Cliente: E-commerce moda (50-100 pedidos/dia)</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Descrição (100-150 palavras):</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
+Cliente: E-commerce moda (50-100 pedidos/dia)</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Problema: Processo manual (2h/dia):
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Problema: Processo manual (2h/dia):
 - Receber pedido
 - Calcular frete
 - Criar etiqueta
 - Enviar tracking cliente
 - Atualizar planilha</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Solução (Make automação):
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Solução (Make automação):
 1. Shopify webhook → detecta pedido pago
 2. API Correios → calcula frete
 3. Gera etiqueta PDF
 4. Email automático cliente (tracking)
 5. Atualiza Google Sheets</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Resultado:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Resultado:
 ✓ 2h/dia → 5min/dia (95% redução)
 ✓ Zero erros (antes: 5-10 emails errados/semana)
 ✓ Cliente satisfação: +40% (tracking instantâneo)
 ✓ ROI: 6 semanas</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Ferramentas: Make, Shopify, Gmail, Google Sheets
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Ferramentas: Make, Shopify, Gmail, Google Sheets
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Link (se possível):</span> - Video demonstração (Loom)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Link (se possível):</span> <span class="text-neutral-700 dark:text-neutral-300">- Video demonstração (Loom)
 - Documento case study
-- Testimonial cliente</p>
+- Testimonial cliente</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>5. Skills (Tags)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">5. Skills (Tags)</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Regra:</span> Só lista se realmente sabe.</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Regra:</span> <span class="text-neutral-700 dark:text-neutral-300">Só lista se realmente sabe.</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Exemplo (iniciante real):</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Exemplo (iniciante real):</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Expert (realmente domina):
 - Notion
 - Google Workspace
-- Canva</p>
+- Canva</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Advanced (conhece bem):
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Advanced (conhece bem):
 - Make/Integromat
 - ChatGPT prompts
 - Google Sheets (fórmulas)</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Intermediate (sabe usar):
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Intermediate (sabe usar):
 - Slack
 - Trello
 - Zapier
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Não minta.</strong> Cliente testa.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Não minta.</strong> Cliente testa.</p>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">2.2 Primeira Proposta (Template)</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">2.2 Primeira Proposta (Template)</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Estrutura winning proposal:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Estrutura winning proposal:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Gancho (mostra que leu)</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">1. Gancho (mostra que leu)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Oi [Nome]!</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Vi seu projeto "[título]" e tenho experiência exata nisso.
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Vi seu projeto "[título]" e tenho experiência exata nisso.
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Credibilidade (prova relevante)</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">2. Credibilidade (prova relevante)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Recentemente fiz similar para [cliente/projeto]:
 - [Resultado específico 1]
 - [Resultado específico 2]</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">[Link portfolio se relevante]
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">[Link portfolio se relevante]
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Entendimento (reformula problema)</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">3. Entendimento (reformula problema)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Se entendi certo, você precisa:
 - [Requisito 1 deles]
 - [Requisito 2 deles]
 - [Requisito 3 deles]</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Correto?
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Correto?
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. Solução (como você resolve)</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">4. Solução (como você resolve)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Minha abordagem:</p>
 
-          <ol class="space-y-3 mb-6 list-decimal list-inside">
-            <li class="text-neutral-700 dark:text-neutral-300">[Passo 1 específico]</li>
-            <li class="text-neutral-700 dark:text-neutral-300">[Passo 2 específico]</li>
-            <li class="text-neutral-700 dark:text-neutral-300">[Passo 3 específico]</li>
+          <ol class="space-y-3 mb-6 list-decimal list-inside marker:text-talento marker:font-bold">
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">[Passo 1 específico]</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">[Passo 2 específico]</li>
+            <li class="text-lg text-neutral-700 dark:text-neutral-300 pl-2">[Passo 3 específico]</li>
           </ol>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Ferramentas: [lista]
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Ferramentas: [lista]
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>5. Proposta (valores claros)</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">5. Proposta (valores claros)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Proposta:</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Prazo: X dias
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Prazo: X dias
 Investimento: R$ Y [ou $Z se internacional]</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Inclui:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Inclui:
 ✓ [Entrega 1]
 ✓ [Entrega 2]
 ✓ [Entrega 3]
 ✓ 7 dias suporte pós-entrega
 ✓ Documentação completa</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Não inclui: [seja claro sobre limites]
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Não inclui: [seja claro sobre limites]
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>6. CTA (próximo passo)</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">6. CTA (próximo passo)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Posso começar [quando].</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Quer agendar call rápida (15min) pra alinhar detalhes?</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Quer agendar call rápida (15min) pra alinhar detalhes?</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Ou prefere que eu já prepare proposta detalhada?</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Ou prefere que eu já prepare proposta detalhada?</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Aguardo retorno!</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Aguardo retorno!</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Abraço,
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Abraço,
 [Seu Nome]
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Tamanho total:</span> 200-300 palavras (not too long)</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Tamanho total:</span> <span class="text-neutral-700 dark:text-neutral-300">200-300 palavras (not too long)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Taxa conversão esperada:</span> - Proposta genérica: 5-10%
-- Proposta CRISP: 40-60%</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Taxa conversão esperada:</span> <span class="text-neutral-700 dark:text-neutral-300">- Proposta genérica: 5-10%
+- Proposta CRISP: 40-60%</span></p>
           </div>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">2.3 Pricing (Precificação Estratégica)</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">2.3 Pricing (Precificação Estratégica)</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Modelos:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Modelos:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. Por Hora (iniciante)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">1. Por Hora (iniciante)</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Vantagens:</span> - Simples calcular
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Vantagens:</span> <span class="text-neutral-700 dark:text-neutral-300">- Simples calcular
 - Sem risco subprecificar
-- Flexível</p>
+- Flexível</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Desvantagens:</span> - Penaliza eficiência (rápido = ganha menos)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Desvantagens:</span> <span class="text-neutral-700 dark:text-neutral-300">- Penaliza eficiência (rápido = ganha menos)
 - Cliente resiste (vê clock rodando)
-- Cap no ganho (24h/dia limite)</p>
+- Cap no ganho (24h/dia limite)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Valores Brasil (2025):</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Valores Brasil (2025):</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Iniciante (0-6 meses): R$ 30-60/h
 Pleno (6-18 meses): R$ 60-120/h
 Sênior (18+ meses): R$ 120-250/h
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Valores Internacional (USD):</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Valores Internacional (USD):</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Iniciante: $15-30/h
 Pleno: $30-60/h
 Sênior: $60-150/h
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Por Projeto (recomendado)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">2. Por Projeto (recomendado)</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Vantagens:</span> - Cliente sabe custo total (preferem)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Vantagens:</span> <span class="text-neutral-700 dark:text-neutral-300">- Cliente sabe custo total (preferem)
 - Você ganha por resultado, não tempo
 - Eficiência = maior lucro
-- Pode escalar</p>
+- Pode escalar</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Desvantagens:</span> - Risco subestimar tempo
-- Scope creep (cliente quer mais)</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Desvantagens:</span> <span class="text-neutral-700 dark:text-neutral-300">- Risco subestimar tempo
+- Scope creep (cliente quer mais)</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Como precificar:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Como precificar:</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Formula básica:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
-Preço = (Horas estimadas × Valor/hora) × 1.5</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Formula básica:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
+Preço = (Horas estimadas × Valor/hora) × 1.5</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Multiplicador 1.5 = buffer (imprevistos, revisões)
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Multiplicador 1.5 = buffer (imprevistos, revisões)
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Exemplo:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
-Projeto: Setup Notion workspace</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Exemplo:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
+Projeto: Setup Notion workspace</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Estimativa:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Estimativa:
 - Discovery/planejamento: 2h
 - Build databases: 4h
 - Templates: 2h
@@ -745,114 +762,114 @@ Projeto: Setup Notion workspace</p>
 - Treinamento: 2h
 TOTAL: 14h</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Valor hora: R$ 80
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Valor hora: R$ 80
 Cálculo: 14 × 80 × 1.5 = R$ 1.680</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Arredonda: R$ 1.700
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Arredonda: R$ 1.700
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Categorias projeto:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Categorias projeto:</strong></p>
 
 
-          <div class="overflow-x-auto mb-6">
+          <div class="overflow-x-auto mb-8 shadow-lg rounded-lg">
             <table class="w-full border-collapse">
               <thead>
-                <tr class="bg-talento/20 dark:bg-talento/30">
-                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Tipo</th>
-                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Horas</th>
-                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Preço BR</th>
-                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Preço USD</th>
+                <tr class="bg-gradient-to-r from-talento to-talento/80 text-white">
+                  <th class="px-6 py-4 text-left font-bold">Tipo</th>
+                  <th class="px-6 py-4 text-left font-bold">Horas</th>
+                  <th class="px-6 py-4 text-left font-bold">Preço BR</th>
+                  <th class="px-6 py-4 text-left font-bold">Preço USD</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr class="bg-white dark:bg-neutral-800">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">------</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">-------</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">----------</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">-----------</td>
+              <tbody class="bg-white dark:bg-neutral-800">
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">------</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">-------</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">----------</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">-----------</td>
                 </tr>
-                <tr class="bg-neutral-50 dark:bg-neutral-900">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Mini</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">2-5h</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">R$ 500-1.200</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">$100-250</td>
+                <tr class="bg-neutral-50 dark:bg-neutral-900 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Mini</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">2-5h</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">R$ 500-1.200</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">$100-250</td>
                 </tr>
-                <tr class="bg-white dark:bg-neutral-800">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Pequeno</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">5-15h</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">R$ 1.200-3.500</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">$250-700</td>
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Pequeno</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">5-15h</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">R$ 1.200-3.500</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">$250-700</td>
                 </tr>
-                <tr class="bg-neutral-50 dark:bg-neutral-900">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Médio</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">15-40h</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">R$ 3.500-10.000</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">$700-2.000</td>
+                <tr class="bg-neutral-50 dark:bg-neutral-900 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Médio</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">15-40h</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">R$ 3.500-10.000</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">$700-2.000</td>
                 </tr>
-                <tr class="bg-white dark:bg-neutral-800">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Grande</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">40+h</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">R$ 10.000+</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">$2.000+</td>
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Grande</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">40+h</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">R$ 10.000+</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">$2.000+</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Valor-Based (avançado - melhor ROI)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">3. Valor-Based (avançado - melhor ROI)</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Precifica baseado no VALOR que entrega pro cliente, não tempo.</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Precifica baseado no VALOR que entrega pro cliente, não tempo.</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Exemplo:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Exemplo:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Cliente economiza 20h/semana com sua automação.
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Cliente economiza 20h/semana com sua automação.
 - 20h × 4 semanas = 80h/mês
 - Funcionário custa R$ 50/h
 - Economia: R$ 4.000/mês = R$ 48.000/ano</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Seu preço:</span> - Setup: R$ 5.000 (payback 1,25 mês)
-- Ou mensal: R$ 800/mês (20% da economia)</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Seu preço:</span> <span class="text-neutral-700 dark:text-neutral-300">- Setup: R$ 5.000 (payback 1,25 mês)
+- Ou mensal: R$ 800/mês (20% da economia)</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Cliente fica FELIZ (economiza R$ 3.200/mês líquido)
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Cliente fica FELIZ (economiza R$ 3.200/mês líquido)
 Você ganha BEM (muito mais que cobrar por hora)</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. Retainer (recorrente - estabilidade)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">4. Retainer (recorrente - estabilidade)</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Modelo:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
-R$ X/mês por Y horas + suporte contínuo</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Modelo:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
+R$ X/mês por Y horas + suporte contínuo</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Exemplo:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Exemplo:
 R$ 1.500/mês:
 - 10h desenvolvimento/mês
 - Suporte ilimitado (resposta 24h)
 - Ajustes pequenos inclusos
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Vantagens:</span> - Receita previsível
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Vantagens:</span> <span class="text-neutral-700 dark:text-neutral-300">- Receita previsível
 - Relação longo prazo
-- Menos prospecção</p>
+- Menos prospecção</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Ideal para:</span> Consultoria, manutenção, suporte contínuo</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Ideal para:</span> <span class="text-neutral-700 dark:text-neutral-300">Consultoria, manutenção, suporte contínuo</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Estratégia iniciante:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Estratégia iniciante:</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Mês 1-2:</span> Por projeto, preço competitivo (ganha reviews)
-<strong>Mês 3-6:</strong> Por projeto, preço mercado (aumenta 30-50%)
-<strong>Mês 6+:</strong> Mix projetos + 1-2 retainers + valor-based</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Mês 1-2:</span> <span class="text-neutral-700 dark:text-neutral-300">Por projeto, preço competitivo (ganha reviews)
+<strong class="font-bold">Mês 3-6:</strong> Por projeto, preço mercado (aumenta 30-50%)
+<strong class="font-bold">Mês 6+:</strong> Mix projetos + 1-2 retainers + valor-based</span></p>
           </div>
 
         </div>
@@ -861,195 +878,195 @@ R$ 1.500/mês:
 
       <!-- Seção: 3. Evitando Ciladas (Red Flags) -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">3. Evitando Ciladas (Red Flags)</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">3. Evitando Ciladas (Red Flags)</h2>
 
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">3.1 Red Flags Cliente</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">3.1 Red Flags Cliente</h3>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">🚩 Pede trabalho antes de contratar:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">🚩 Pede trabalho antes de contratar:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Faz um teste rápido pra eu ver sua qualidade"
 "Manda proposta detalhada com mockups"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Resposta:</span> "Teste combinado fico feliz. Envio proposta com orçamento e após aprovação começo trabalho. Posso enviar portfolio pra você avaliar!"</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Resposta:</span> <span class="text-neutral-700 dark:text-neutral-300">"Teste combinado fico feliz. Envio proposta com orçamento e após aprovação começo trabalho. Posso enviar portfolio pra você avaliar!"</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">🚩 Quer pagar só depois de "validar":</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">🚩 Quer pagar só depois de "validar":</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Faz o trabalho, se aprovar pago"
 "Vamos testar primeiro, depois vejo se compensa"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Resposta:</span> "Trabalho com 50% adiantado, 50% na entrega. É prática padrão. Posso enviar exemplos trabalhos anteriores pra você ter certeza!"</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Resposta:</span> <span class="text-neutral-700 dark:text-neutral-300">"Trabalho com 50% adiantado, 50% na entrega. É prática padrão. Posso enviar exemplos trabalhos anteriores pra você ter certeza!"</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">🚩 Preço muito ALTO (scam):</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">🚩 Preço muito ALTO (scam):</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Pago $5.000 por trabalho de 2 horas"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Provavelmente:</span> Scam (vai pedir dados bancários, ou cheque falso)</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Provavelmente:</span> <span class="text-neutral-700 dark:text-neutral-300">Scam (vai pedir dados bancários, ou cheque falso)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">🚩 Comunicação confusa/unprofessional:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">🚩 Comunicação confusa/unprofessional:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "oi presiso mto urgente faser isso quanto vc cobra"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Sinal:</span> Cliente problemático (vai ter scope creep, não pagar, etc)</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Sinal:</span> <span class="text-neutral-700 dark:text-neutral-300">Cliente problemático (vai ter scope creep, não pagar, etc)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">🚩 Sem contrato claro:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">🚩 Sem contrato claro:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Vamos começar, depois acertamos detalhes"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Resposta:</span> "Prefiro tudo alinhado antes. Envio proposta simples (1 página) pra assinarmos. Ok?"</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Resposta:</span> <span class="text-neutral-700 dark:text-neutral-300">"Prefiro tudo alinhado antes. Envio proposta simples (1 página) pra assinarmos. Ok?"</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">🚩 Scope vago:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">🚩 Scope vago:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Preciso automação de 'algumas coisas'"
 "Website 'simples'"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Resposta:</span> "Ótimo! Vamos detalhar exatamente o que você precisa. Pode listar as funcionalidades?"</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Resposta:</span> <span class="text-neutral-700 dark:text-neutral-300">"Ótimo! Vamos detalhar exatamente o que você precisa. Pode listar as funcionalidades?"</span></p>
           </div>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">3.2 Proteção (Como se Proteger)</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">3.2 Proteção (Como se Proteger)</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>1. SEMPRE contrato (mesmo simples):</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">1. SEMPRE contrato (mesmo simples):</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Contrato mínimo (1 página):</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
-ACORDO DE SERVIÇOS</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Contrato mínimo (1 página):</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
+ACORDO DE SERVIÇOS</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Cliente: [Nome, Email]
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Cliente: [Nome, Email]
 Freelancer: [Seu nome, Email]</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Serviço:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Serviço:
 [Descrição específica]</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Entregáveis:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Entregáveis:
 - [Lista exata]</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Prazo: [Data]</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Prazo: [Data]</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Valor: R$ [X]
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Valor: R$ [X]
 Pagamento:
 - 50% adiantado (R$ [Y])
 - 50% na entrega (R$ [Z])</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Revisões: Até 2 rodadas inclusas</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Revisões: Até 2 rodadas inclusas</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Fora de escopo:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Fora de escopo:
 [Lista o que NÃO está incluído]</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Assinaturas:</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Assinaturas:</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">___________________    ___________________
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">___________________    ___________________
 Cliente                Freelancer
 Data:                  Data:
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>2. Usa plataforma (não direto) inicial:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">2. Usa plataforma (não direto) inicial:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Vantagens escrow (Workana, Upwork):
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Vantagens escrow (Workana, Upwork):
 - Dinheiro garantido (cliente depositou)
 - Mediação se disputa
 - Proteção ambos lados</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Aceita pagamento direto SÓ quando:</span> - Cliente verificado (projetos anteriores)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Aceita pagamento direto SÓ quando:</span> <span class="text-neutral-700 dark:text-neutral-300">- Cliente verificado (projetos anteriores)
 - Referências checadas
-- 50% adiantado RECEBIDO antes começar</p>
+- 50% adiantado RECEBIDO antes começar</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>3. Escopo MUITO claro:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">3. Escopo MUITO claro:</strong></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Template scope:</span> <code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Template scope:</span> <span class="text-neutral-700 dark:text-neutral-300"><code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 Inclui:
 ✓ [Item 1 específico]
 ✓ [Item 2 específico]
-✓ [Item 3 específico]</p>
+✓ [Item 3 específico]</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">NÃO inclui:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">NÃO inclui:
 ✗ [Item que cliente pode pedir mas não tá incluído]
 ✗ [Outro]</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Revisões: Até 2 rodadas
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Revisões: Até 2 rodadas
 - Rodada 1: ajustes menores
 - Rodada 2: refinamentos
 - Mudanças grandes = orçamento adicional
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>4. Comunicação escrita:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">4. Comunicação escrita:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">TUDO por escrito (email, chat plataforma).</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">TUDO por escrito (email, chat plataforma).</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Nunca só telefone/WhatsApp.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Nunca só telefone/WhatsApp.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Se decidir algo em call → confirma por escrito:
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Se decidir algo em call → confirma por escrito:
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Oi [Nome], confirmando nossa call:</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Decidimos:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Decidimos:
 - [Decisão 1]
 - [Decisão 2]</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Correto? Pode confirmar?"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Correto? Pode confirmar?"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>5. Watermark até pagamento:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">5. Watermark até pagamento:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Entregas visuais (design, apresentação):
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Entregas visuais (design, apresentação):
 - Envia preview com watermark
 - Recebeu pagamento → envia limpo</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>6. Backup tudo:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">6. Backup tudo:</strong></p>
 
           <ul class="space-y-3 mb-6">
-            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Todos arquivos: GitHub, Drive backup</span></li>
-            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Conversas: screenshots importantes</span></li>
-            <li class="flex items-start gap-3"><span class="text-talento">•</span><span class="flex-1">Contrato: PDF salvo</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-talento flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">Todos arquivos: GitHub, Drive backup</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-talento flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">Conversas: screenshots importantes</span></li>
+            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-talento flex-shrink-0 mt-2"></span><span class="flex-1 text-neutral-700 dark:text-neutral-300">Contrato: PDF salvo</span></li>
           </ul>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Se disputa, tem evidências.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Se disputa, tem evidências.</p>
 
         </div>
       </div>
@@ -1057,119 +1074,119 @@ Inclui:
 
       <!-- Seção: 4. Primeiros Clientes (Estratégias) -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">4. Primeiros Clientes (Estratégias)</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">4. Primeiros Clientes (Estratégias)</h2>
 
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">4.1 Estratégia "3x3x3"</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">4.1 Estratégia "3x3x3"</h3>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">3 Projetos grátis (ou muito barato):</span> - Portfólio inicial
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">3 Projetos grátis (ou muito barato):</span> <span class="text-neutral-700 dark:text-neutral-300">- Portfólio inicial
 - Testimonials
 - Aprendizado
-- Escolhe projetos interessantes (bom pra portfolio)</p>
+- Escolhe projetos interessantes (bom pra portfolio)</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">3 Projetos preço mercado:</span> - Cobra valor justo (não barato)
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">3 Projetos preço mercado:</span> <span class="text-neutral-700 dark:text-neutral-300">- Cobra valor justo (não barato)
 - Clientes pagantes
-- Relação profissional</p>
+- Relação profissional</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">3 Projetos valor premium:</span> - Especialização
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">3 Projetos valor premium:</span> <span class="text-neutral-700 dark:text-neutral-300">- Especialização
 - Preço alto
-- Clientes ideais</p>
+- Clientes ideais</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Timeline:</span> 3-6 meses</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Timeline:</span> <span class="text-neutral-700 dark:text-neutral-300">3-6 meses</span></p>
           </div>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">4.2 Cold Outreach (LinkedIn)</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">4.2 Cold Outreach (LinkedIn)</h3>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Funciona se bem feito:</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Funciona se bem feito:</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 1: Identifica prospects</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Passo 1: Identifica prospects</strong>
 - Empresas 10-50 funcionários
 - Que usam ferramentas que você domina
 - Decisor (fundador, ops manager)</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 2: Conecta (pedido conexão personalizado)</strong>
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Passo 2: Conecta (pedido conexão personalizado)</strong>
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Oi [Nome]! Vi que [Empresa] usa [Ferramenta X].
 Trabalho com automações nisso. Adoraria trocar ideias!</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Aceita conexão?"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Aceita conexão?"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Taxa aceitação: 30-50%</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Taxa aceitação: 30-50%</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 3: Valor primeiro (não vende)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Passo 3: Valor primeiro (não vende)</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Após conectar, aguarda 2-3 dias, então:
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Após conectar, aguarda 2-3 dias, então:
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Oi [Nome]!</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Estava pensando: vi que vocês usam Notion.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Estava pensando: vi que vocês usam Notion.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Criei template de [algo útil pra eles] que pode ajudar.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Criei template de [algo útil pra eles] que pode ajudar.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Quer que envie? É grátis! 😊"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Quer que envie? É grátis! 😊"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 4: Relacionamento</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Passo 4: Relacionamento</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Comentários posts deles, shares, etc.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Comentários posts deles, shares, etc.</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Passo 5: Oferta (depois de valor)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Passo 5: Oferta (depois de valor)</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Semanas depois:
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Semanas depois:
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code>
 "Oi [Nome]!</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Falando com outras empresas [setor deles], comum terem [problema X].</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Falando com outras empresas [setor deles], comum terem [problema X].</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Vocês passam por isso?</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Vocês passam por isso?</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Resolvo isso com [solução]. Quer marcar call rápida pra ver se faz sentido?"
-<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded">`</code></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Resolvo isso com [solução]. Quer marcar call rápida pra ver se faz sentido?"
+<code class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-sm font-mono">`</code></p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Taxa conversão:</span> 5-10% viram clientes</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Taxa conversão:</span> <span class="text-neutral-700 dark:text-neutral-300">5-10% viram clientes</span></p>
           </div>
 
         </div>
 
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold mb-4">4.3 Network (mais eficaz que parece)</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-talento">4.3 Network (mais eficaz que parece)</h3>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Familia/Amigos:</span> - "Tô oferecendo [serviço]. Conhece alguém que precise?"</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Familia/Amigos:</span> <span class="text-neutral-700 dark:text-neutral-300">- "Tô oferecendo [serviço]. Conhece alguém que precise?"</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Não subestime.</strong> Primeiros 3-5 clientes muitas vezes vêm de rede próxima.</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Não subestime.</strong> Primeiros 3-5 clientes muitas vezes vêm de rede próxima.</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Ex-colegas trabalho:</span> - Empresas onde trabalhou
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Ex-colegas trabalho:</span> <span class="text-neutral-700 dark:text-neutral-300">- Empresas onde trabalhou
 - Conhecem você, confiam
-- Ofereça consultoria</p>
+- Ofereça consultoria</span></p>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Comunidades online:</span> - Ajuda grátis primeiro (demonstra expertise)
-- Oportunidades surgem</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Comunidades online:</span> <span class="text-neutral-700 dark:text-neutral-300">- Ajuda grátis primeiro (demonstra expertise)
+- Oportunidades surgem</span></p>
           </div>
 
         </div>
@@ -1178,79 +1195,79 @@ Trabalho com automações nisso. Adoraria trocar ideias!</p>
 
       <!-- Seção: 5. Exercício Prático (60min) -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">5. Exercício Prático (60min)</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">5. Exercício Prático (60min)</h2>
 
         <div class="mb-6">
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>PARTE 1: Setup Perfil (20min)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">PARTE 1: Setup Perfil (20min)</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Escolhe 1 plataforma (Workana recomendado Brasil):
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Escolhe 1 plataforma (Workana recomendado Brasil):
 1. Cria conta
 2. Preenche perfil 100% (foto, headline, descrição)
 3. Adiciona 3 projetos portfolio (pode ser fictício, mas realista)
 4. Lista skills honest</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>PARTE 2: Aplicações (20min)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">PARTE 2: Aplicações (20min)</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Procura 5 projetos relevantes:
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Procura 5 projetos relevantes:
 1. Lê descrição completa
 2. Escreve proposta customizada (usa template CRISP)
 3. Envia
 4. Repete 5x</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Métrica:</span> 10-15 aplicações/dia primeiras 2 semanas = 1-3 primeiros clientes</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Métrica:</span> <span class="text-neutral-700 dark:text-neutral-300">10-15 aplicações/dia primeiras 2 semanas = 1-3 primeiros clientes</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>PARTE 3: Pricing (20min)</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">PARTE 3: Pricing (20min)</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Cria tabela de preços seus:</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Cria tabela de preços seus:</p>
 
 
-          <div class="overflow-x-auto mb-6">
+          <div class="overflow-x-auto mb-8 shadow-lg rounded-lg">
             <table class="w-full border-collapse">
               <thead>
-                <tr class="bg-talento/20 dark:bg-talento/30">
-                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Serviço</th>
-                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Tempo estimado</th>
-                  <th class="px-4 py-3 text-left font-semibold border border-talento/30">Preço</th>
+                <tr class="bg-gradient-to-r from-talento to-talento/80 text-white">
+                  <th class="px-6 py-4 text-left font-bold">Serviço</th>
+                  <th class="px-6 py-4 text-left font-bold">Tempo estimado</th>
+                  <th class="px-6 py-4 text-left font-bold">Preço</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr class="bg-white dark:bg-neutral-800">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">---------</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">---------------</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">-------</td>
+              <tbody class="bg-white dark:bg-neutral-800">
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">---------</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">---------------</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">-------</td>
                 </tr>
-                <tr class="bg-neutral-50 dark:bg-neutral-900">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">[Serviço 1]</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Xh</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">R$ Y</td>
+                <tr class="bg-neutral-50 dark:bg-neutral-900 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">[Serviço 1]</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Xh</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">R$ Y</td>
                 </tr>
-                <tr class="bg-white dark:bg-neutral-800">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">[Serviço 2]</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Xh</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">R$ Y</td>
+                <tr class="bg-white dark:bg-neutral-800 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">[Serviço 2]</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Xh</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">R$ Y</td>
                 </tr>
-                <tr class="bg-neutral-50 dark:bg-neutral-900">
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">[Serviço 3]</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">Xh</td>
-                  <td class="px-4 py-3 border border-neutral-200 dark:border-neutral-700">R$ Y</td>
+                <tr class="bg-neutral-50 dark:bg-neutral-900 hover:bg-talento/5 transition-colors">
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">[Serviço 3]</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">Xh</td>
+                  <td class="px-6 py-4 border-b border-neutral-200 dark:border-neutral-700">R$ Y</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">ENTREGA:</span> - Link perfil plataforma
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">ENTREGA:</span> <span class="text-neutral-700 dark:text-neutral-300">- Link perfil plataforma
 - 5 propostas enviadas (screenshots)
-- Tabela pricing</p>
+- Tabela pricing</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Meta: Primeiro projeto em 14 dias.</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Meta: Primeiro projeto em 14 dias.</strong></p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">---</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
 
         </div>
       </div>
@@ -1258,25 +1275,25 @@ Trabalho com automações nisso. Adoraria trocar ideias!</p>
 
       <!-- Seção: Próximos Passos -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 pb-4 border-b-2 border-talento/20">Próximos Passos</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 pb-4 border-b-2 border-talento/20 bg-gradient-to-r from-talento/10 to-transparent -mx-4 px-4 py-4 rounded-lg">Próximos Passos</h2>
 
         <div class="mb-6">
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>Módulo 10: Próximos Passos na Carreira</strong>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">Módulo 10: Próximos Passos na Carreira</strong>
 - Roadmap 6-12 meses
 - Júnior → Pleno
 - Especialização vs Generalista
 - Freelance → CLT (quando/como)</p>
 
 
-          <div class="mb-4">
-            <p class="text-lg"><span class="font-bold text-talento">Prepare-se para:</span> Planejar crescimento profissional!</p>
+          <div class="bg-talento/5 dark:bg-talento/10 p-4 rounded-lg mb-4 border-l-4 border-talento">
+            <p class="text-lg"><span class="font-bold text-talento text-xl">Prepare-se para:</span> <span class="text-neutral-700 dark:text-neutral-300">Planejar crescimento profissional!</span></p>
           </div>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Nos vemos lá! 🚀</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">Nos vemos lá! 🚀</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">---</p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">---</p>
 
-          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6"><strong>© 2025 FETD - Formação em Engenharia de Intenção</strong></p>
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed"><strong class="font-bold">© 2025 FETD - Formação em Engenharia de Intenção</strong></p>
 
         </div>
       </div>
@@ -1285,13 +1302,14 @@ Trabalho com automações nisso. Adoraria trocar ideias!</p>
   </section>
 
   <!-- Footer / Navegação -->
-  <section class="py-12 bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-700">
+  <section class="py-12 bg-gradient-to-br from-neutral-100 to-neutral-50 dark:from-neutral-900 dark:to-neutral-800 border-t border-neutral-200 dark:border-neutral-700">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center">
-        <a href="../../trilhas/talento.html" class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90">
-          ← Voltar para Trilha
+        <a href="../../trilhas/talento.html" class="px-6 py-3 bg-gradient-to-r from-talento to-amber-600 text-white rounded-lg font-bold hover:opacity-90 shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2">
+          <span>←</span>
+          <span>Voltar para Trilha</span>
         </a>
-        <a href="modulo-10.html" class="px-6 py-3 bg-talento text-white rounded-lg font-semibold hover:opacity-90">Próximo Módulo →</a>
+        <a href="modulo-10.html" class="px-6 py-3 bg-gradient-to-r from-talento to-amber-600 text-white rounded-lg font-bold hover:opacity-90 shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2"><span>Próximo Módulo</span><span>→</span></a>
       </div>
     </div>
   </section>
